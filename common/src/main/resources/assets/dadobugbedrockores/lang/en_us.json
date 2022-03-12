@@ -1,0 +1,125 @@
+{
+
+  "block.dadobugbedrockores.bedrock_fractured": "Fractured Bedrock",
+  "block.dadobugbedrockores.bedrock_hollow": "Hollow Bedrock",
+
+  "block.dadobugbedrockores.bedrock_lava_ore": "Lava Seep",
+  "block.dadobugbedrockores.bedrock_water_ore": "Water Seep",
+
+
+  "block.dadobugbedrockores.bedrock_milk_ore": "Milk Seep",
+  "block.dadobugbedrockores.bedrock_cookie_ore": "Bedrock Cookie Ore",
+
+
+  "block.dadobugbedrockores.bedrock_coal_ore": "Bedrock Coal Ore",
+  "block.dadobugbedrockores.bedrock_iron_ore": "Bedrock Iron Ore",
+  "block.dadobugbedrockores.bedrock_gold_ore": "Bedrock Gold Ore",
+  "block.dadobugbedrockores.bedrock_diamond_ore": "Bedrock Diamond Ore",
+  "block.dadobugbedrockores.bedrock_redstone_ore": "Bedrock Redstone Ore",
+  "block.dadobugbedrockores.bedrock_copper_ore": "Bedrock Copper Ore",
+  "block.dadobugbedrockores.bedrock_lapis_ore": "Bedrock Lapis Lazuli Ore",
+  "block.dadobugbedrockores.bedrock_emerald_ore": "Bedrock Emerald Ore",
+
+  "block.dadobugbedrockores.bedrock_nether_gold_ore": "Bedrock Nether Gold Ore",
+  "block.dadobugbedrockores.bedrock_nether_quartz_ore": "Bedrock Nether Quartz Ore",
+  "block.dadobugbedrockores.bedrock_ancient_debris_ore": "Bedrock Ancient Debris Ore",
+
+  "itemGroup.dadobugbedrockores.item_group": "Bedrock Ores",
+
+  "item.dadobugbedrockores.regen_broken.tooltip": "It hums with uncontained power, and lightly burns to the touch",
+  "item.dadobugbedrockores.regen_power.tooltip": "It hums with great power",
+  "item.dadobugbedrockores.regen_need_host.tooltip": "Place in Hollow Bedrock to activate",
+  "item.dadobugbedrockores.regen_fluid.tooltip": "It hums with great power, slowly dripping",
+  "item.dadobugbedrockores.regen_joke_fluid_one.tooltip": "If only you had some cookies to go with this...",
+  "item.dadobugbedrockores.regen_joke_item_one.tooltip": "If only you had some milk to go with this...",
+
+
+  "item.dadobugbedrockores.regenerative_milk": "Regenerative Milk Shake",
+  "item.dadobugbedrockores.regenerative_cookie": "Regenerative Cookie Cluster",
+
+  "item.dadobugbedrockores.regenerative_coal": "Regenerative Coal Cluster",
+  "item.dadobugbedrockores.regenerative_iron": "Regenerative Iron Cluster",
+  "item.dadobugbedrockores.regenerative_gold": "Regenerative Gold Cluster",
+  "item.dadobugbedrockores.regenerative_diamond": "Regenerative Diamond Cluster",
+  "item.dadobugbedrockores.regenerative_redstone": "Regenerative Redstone Cluster",
+  "item.dadobugbedrockores.regenerative_copper": "Regenerative Copper Cluster",
+  "item.dadobugbedrockores.regenerative_lapis": "Regenerative Lapis Lazuli Cluster",
+  "item.dadobugbedrockores.regenerative_emerald": "Regenerative Emerald Cluster",
+
+  "item.dadobugbedrockores.regenerative_lava": "Regenerative Lava Shale",
+  "item.dadobugbedrockores.regenerative_water": "Regenerative Water Shale",
+
+  "item.dadobugbedrockores.regenerative_nether_gold": "Regenerative Nether Gold Cluster",
+  "item.dadobugbedrockores.regenerative_nether_quartz": "Regenerative Nether Quartz Cluster",
+  "item.dadobugbedrockores.regenerative_ancient_debris": "Regenerative Ancient Debris Cluster",
+
+
+  "item.dadobugbedrockores.regenerative_fractured": "Fractured Regenerative Cluster",
+
+
+
+  "enchantment.dadobugbedrockores.shattering": "Shattering",
+  "enchantment.dadobugbedrockores.curse_of_fracturing": "Curse of Fracturing",
+  "enchantment.dadobugbedrockores.extraction": "Extraction",
+
+
+  "block.dadobugbedrockores.bedrock_bauxite_ore": "Bedrock Bauxite Ore",
+  "block.dadobugbedrockores.bedrock_galena_ore": "Bedrock Galena Ore",
+  "block.dadobugbedrockores.bedrock_iridium_ore": "Bedrock Iridium Ore",
+  "block.dadobugbedrockores.bedrock_lead_ore": "Bedrock Lead Ore",
+  "block.dadobugbedrockores.bedrock_ruby_ore": "Bedrock Ruby Ore",
+  "block.dadobugbedrockores.bedrock_sapphire_ore": "Bedrock Sapphire Ore",
+  "block.dadobugbedrockores.bedrock_silver_ore": "Bedrock Silver Ore",
+  "block.dadobugbedrockores.bedrock_tin_ore": "Bedrock Tin Ore",
+
+  "block.dadobugbedrockores.bedrock_cinnabar_ore": "Bedrock Cinnabar Ore",
+  "block.dadobugbedrockores.bedrock_pyrite_ore": "Bedrock Pyrite Ore",
+  "block.dadobugbedrockores.bedrock_sphalerite_ore": "Bedrock Sphalerite Ore",
+
+  "block.dadobugbedrockores.bedrock_peridot_ore": "Bedrock Peridot Ore",
+  "block.dadobugbedrockores.bedrock_sheldonite_ore": "Bedrock Sheldonite Ore",
+  "block.dadobugbedrockores.bedrock_sodalite_ore": "Bedrock Sodalite Ore",
+  "block.dadobugbedrockores.bedrock_tungsten_ore": "Bedrock Tungsten Ore",
+
+  "item.dadobugbedrockores.regenerative_bauxite": "Regenerative Bauxite Cluster",
+  "item.dadobugbedrockores.regenerative_galena": "Regenerative Galena Cluster",
+  "item.dadobugbedrockores.regenerative_iridium": "Regenerative Iridium Cluster",
+  "item.dadobugbedrockores.regenerative_lead": "Regenerative Lead Cluster",
+  "item.dadobugbedrockores.regenerative_ruby": "Regenerative Ruby Cluster",
+  "item.dadobugbedrockores.regenerative_sapphire": "Regenerative Sapphire Cluster",
+  "item.dadobugbedrockores.regenerative_silver": "Regenerative Silver Cluster",
+  "item.dadobugbedrockores.regenerative_tin": "Regenerative Tin Cluster",
+
+  "item.dadobugbedrockores.regenerative_cinnabar": "Regenerative Cinnabar Cluster",
+  "item.dadobugbedrockores.regenerative_pyrite": "Regenerative Pyrite Cluster",
+  "item.dadobugbedrockores.regenerative_sphalerite": "Regenerative Sphalerite Cluster",
+
+  "item.dadobugbedrockores.regenerative_peridot": "Regenerative Peridot Cluster",
+  "item.dadobugbedrockores.regenerative_sheldonite": "Regenerative Sheldonite Cluster",
+  "item.dadobugbedrockores.regenerative_sodalite": "Regenerative Sodalite Cluster",
+  "item.dadobugbedrockores.regenerative_tungsten": "Regenerative Tungsten Cluster",
+
+
+  "block.dadobugbedrockores.bedrock_tc_cobalt_ore": "Bedrock Cobalt Ore",
+
+  "item.dadobugbedrockores.regenerative_tc_cobalt": "Regenerative Cobalt Cluster",
+
+
+  "block.dadobugbedrockores.bedrock_ae_certus_quartz_ore": "Bedrock Certus Quartz Ore",
+
+  "item.dadobugbedrockores.regenerative_ae_certus_quartz": "Regenerative Certus Quartz Cluster",
+
+
+  "block.dadobugbedrockores.bedrock_er_yellorite_ore": "Bedrock Yellorite Ore",
+  "block.dadobugbedrockores.bedrock_er_anglesite_ore": "Bedrock Anglesite Ore",
+  "block.dadobugbedrockores.bedrock_er_benitoite_ore": "Bedrock Benitoite Ore",
+
+  "item.dadobugbedrockores.regenerative_er_yellorium": "Regenerative Yellorium Cluster",
+  "item.dadobugbedrockores.regenerative_er_anglesite": "Regenerative Anglesite Cluster",
+  "item.dadobugbedrockores.regenerative_er_benitoite": "Regenerative Benitoite Cluster",
+
+
+  "block.dadobugbedrockores.bedrock_br_uranium_ore": "Bedrock Uranium Ore",
+
+  "item.dadobugbedrockores.regenerative_br_uranium": "Regenerative Uranium Cluster"
+}

@@ -1,0 +1,33 @@
+modLoader = "javafml"
+loaderVersion = "[39,)"
+#issueTrackerURL = ""
+license = "MIT License"
+
+[[mods]]
+modId = "dadobugbedrockores"
+version = "${version}"
+displayName = "Dadobug1111's Bedrock Ores"
+authors = "Dadobug1111"
+description = "Adds Bedrock ores into the game, giving slow, but unlimited resources."
+logoFile = "bedrock_diamond_ore_big.png"
+
+[[dependencies.dadobugbedrockores]]
+modId = "forge"
+mandatory = true
+versionRange = "[40,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.dadobugbedrockores]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.18.2,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.dadobugbedrockores]]
+modId = "architectury"
+mandatory = true
+versionRange = "[4.0.30,)"
+ordering = "AFTER"
+side = "BOTH"

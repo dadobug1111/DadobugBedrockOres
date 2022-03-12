@@ -1,0 +1,7 @@
+{
+  "parent": "dadobugbedrockores:block/fluid_ore_two",
+  "textures": {
+    "back": "dadobugbedrockores:block/white_square",
+    "overlay": "dadobugbedrockores:block/bedrock_milk_ore"
+  }
+}

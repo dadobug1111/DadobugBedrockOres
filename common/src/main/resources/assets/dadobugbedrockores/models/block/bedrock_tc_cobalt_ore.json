@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "dadobugbedrockores:block/bedrock_tc_cobalt_ore"
+  }
+}

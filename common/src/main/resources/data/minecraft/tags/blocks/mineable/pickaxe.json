@@ -1,0 +1,63 @@
+{
+  "replace": false,
+  "values": [
+    "dadobugbedrockores:bedrock_coal_ore",
+    "dadobugbedrockores:bedrock_iron_ore",
+    "dadobugbedrockores:bedrock_gold_ore",
+    "dadobugbedrockores:bedrock_diamond_ore",
+    "dadobugbedrockores:bedrock_redstone_ore",
+    "dadobugbedrockores:bedrock_copper_ore",
+    "dadobugbedrockores:bedrock_lapis_ore",
+    "dadobugbedrockores:bedrock_emerald_ore",
+
+    "dadobugbedrockores:bedrock_nether_gold_ore",
+    "dadobugbedrockores:bedrock_nether_quartz_ore",
+    "dadobugbedrockores:bedrock_ancient_debris_ore",
+
+
+    "dadobugbedrockores:bedrock_bauxite_ore",
+    "dadobugbedrockores:bedrock_galena_ore",
+    "dadobugbedrockores:bedrock_iridium_ore",
+    "dadobugbedrockores:bedrock_lead_ore",
+    "dadobugbedrockores:bedrock_ruby_ore",
+    "dadobugbedrockores:bedrock_sapphire_ore",
+    "dadobugbedrockores:bedrock_silver_ore",
+    "dadobugbedrockores:bedrock_tin_ore",
+
+    "dadobugbedrockores:bedrock_cinnabar_ore",
+    "dadobugbedrockores:bedrock_pyrite_ore",
+    "dadobugbedrockores:bedrock_sphalerite_ore",
+
+    "dadobugbedrockores:bedrock_peridot_ore",
+    "dadobugbedrockores:bedrock_sheldonite_ore",
+    "dadobugbedrockores:bedrock_sodalite_ore",
+    "dadobugbedrockores:bedrock_tungsten_ore",
+
+
+    "dadobugbedrockores:bedrock_fractured",
+    "dadobugbedrockores:bedrock_hollow",
+
+    "dadobugbedrockores:bedrock_water_ore",
+    "dadobugbedrockores:bedrock_lava_ore",
+
+    "dadobugbedrockores:bedrock_cookie_ore",
+    "dadobugbedrockores:bedrock_milk_ore",
+
+
+    "dadobugbedrockores:bedrock_tc_cobalt_ore",
+
+
+    "dadobugbedrockores:bedrock_ae_certus_quartz_ore",
+
+
+    "dadobugbedrockores:bedrock_er_yellorite_ore",
+    "dadobugbedrockores:bedrock_er_anglesite_ore",
+    "dadobugbedrockores:bedrock_er_benitoite_ore",
+
+
+    "dadobugbedrockores:bedrock_br_uranium_ore"
+
+
+
+  ]
+}

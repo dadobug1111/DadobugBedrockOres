@@ -1,0 +1,28 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "conditions": [
+        {
+          "condition": "match_tool",
+          "predicate": {
+            "enchantments": [
+              {
+                "enchantment": "dadobugbedrockores:extraction",
+                "levels": {
+                  "min": 1
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "dadobugbedrockores:regenerative_milk"
+        }
+      ]
+    }
+  ]
+}

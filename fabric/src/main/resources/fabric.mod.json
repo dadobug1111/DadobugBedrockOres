@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "dadobugbedrockores",
+  "version": "${version}",
+  "name": "Dadobug1111's Bedrock Ores",
+  "description": "Adds Bedrock ores into the game, giving slow, but unlimited resources.",
+  "authors": [
+    "Dadobug1111"
+  ],
+  "contact": {
+  },
+  "license": "MIT License",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "no.dadobug.fabric.dadobugbedrockoresFabric"
+    ]
+  },
+  "mixins": [
+    "dadobugbedrockores.mixins.json",
+    "mixin.dadobugbedrockores-common.json"
+  ],
+  "depends": {
+    "fabric": "*",
+    "minecraft": ">=1.18.2",
+    "architectury": ">=4.0.30"
+  }
+}

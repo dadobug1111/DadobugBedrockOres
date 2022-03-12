@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "no.dadobug.fabric.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "client": [
+  ],
+  "mixins": [
+    "MixinServerPlayer"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
