@@ -35,11 +35,8 @@ public class EntryModule {
     // Registering a new creative tab
     public static final ItemGroup ITEMGROUP = CreativeTabRegistry.create(new Identifier(modid, "item_group"), () ->
             new ItemStack(EntryModule.BEDROCK_DIAMOND_ORE.get()));
+
     
-
-
-    public static final DeferredRegister<ConfiguredFeature<?,?>> CONFIGURED_FEATURES = DeferredRegister.create(modid, Registry.CONFIGURED_FEATURE_KEY);
-    public static final DeferredRegister<PlacedFeature> PLACED_FEATURES = DeferredRegister.create(modid, Registry.PLACED_FEATURE_KEY);
 
     public static final AbstractBlock.Settings DefaultBlockSettings = AbstractBlock.Settings.of(Material.STONE, MapColor.STONE_GRAY).strength(50.0f, 0f).requiresTool();
     public static final AbstractBlock.Settings LightBlockSettings = AbstractBlock.Settings.of(Material.STONE, MapColor.STONE_GRAY).strength(50.0f, 0f).requiresTool().luminance((state) -> 15);
@@ -246,8 +243,6 @@ public class EntryModule {
         ENCHANTS.register();
         BLOCKS.register();
         ITEMS.register();
-        CONFIGURED_FEATURES.register();
-        PLACED_FEATURES.register();
     }
 
     public static void initLate() {
