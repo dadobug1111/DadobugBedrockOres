@@ -55,7 +55,14 @@
     "dadobugbedrockores:bedrock_er_benitoite_ore",
 
 
-    "dadobugbedrockores:bedrock_br_uranium_ore"
+    "dadobugbedrockores:bedrock_br_uranium_ore",
+
+
+    "dadobugbedrockores:bedrock_ie_aluminum_ore",
+    "dadobugbedrockores:bedrock_ie_lead_ore",
+    "dadobugbedrockores:bedrock_ie_silver_ore",
+    "dadobugbedrockores:bedrock_ie_nickel_ore",
+    "dadobugbedrockores:bedrock_ie_uranium_ore"
 
   ]
 }

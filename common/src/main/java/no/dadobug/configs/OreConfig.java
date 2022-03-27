@@ -107,6 +107,15 @@ public class OreConfig {
     public static OreGen ORE_BR_URANIUM_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, 8, 8, EntryModule.BEDROCK_BR_URANIUM_ORE.get().getDefaultState(), "ore_br_uranium_bedrock_overworld");
 
 
+
+    //immersiveengineering
+    public static OreGen ORE_IE_ALUMINUM_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, 6, 3, EntryModule.BEDROCK_IE_ALUMINUM_ORE.get().getDefaultState(), "ore_ie_aluminum_bedrock_overworld");
+    public static OreGen ORE_IE_LEAD_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, 8, 5, EntryModule.BEDROCK_IE_LEAD_ORE.get().getDefaultState(), "ore_ie_lead_bedrock_overworld");
+    public static OreGen ORE_IE_SILVER_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, 9, 6, EntryModule.BEDROCK_IE_SILVER_ORE.get().getDefaultState(), "ore_ie_silver_bedrock_overworld");
+    public static OreGen ORE_IE_NICKEL_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, 7, 5, EntryModule.BEDROCK_IE_NICKEL_ORE.get().getDefaultState(), "ore_ie_nickel_bedrock_overworld");
+    public static OreGen ORE_IE_URANIUM_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, 4, 7, EntryModule.BEDROCK_IE_URANIUM_ORE.get().getDefaultState(), "ore_ie_uranium_bedrock_overworld");
+
+
     public static void init(){
         ORE_COAL_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
         ORE_IRON_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
@@ -178,6 +187,13 @@ public class OreConfig {
         }
         if(Platform.isModLoaded("biggerreactors")) {
             ORE_BR_URANIUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+        }
+        if(Platform.isModLoaded("immersiveengineering")) {
+            ORE_IE_ALUMINUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+            ORE_IE_LEAD_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+            ORE_IE_SILVER_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+            ORE_IE_NICKEL_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+            ORE_IE_URANIUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
         }
     }
 

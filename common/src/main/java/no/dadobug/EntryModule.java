@@ -36,7 +36,7 @@ public class EntryModule {
     public static final ItemGroup ITEMGROUP = CreativeTabRegistry.create(new Identifier(modid, "item_group"), () ->
             new ItemStack(EntryModule.BEDROCK_DIAMOND_ORE.get()));
 
-    
+
 
     public static final AbstractBlock.Settings DefaultBlockSettings = AbstractBlock.Settings.of(Material.STONE, MapColor.STONE_GRAY).strength(50.0f, 0f).requiresTool();
     public static final AbstractBlock.Settings LightBlockSettings = AbstractBlock.Settings.of(Material.STONE, MapColor.STONE_GRAY).strength(50.0f, 0f).requiresTool().luminance((state) -> 15);
@@ -47,6 +47,7 @@ public class EntryModule {
     public static final Supplier<Item.Settings> ae2ItemSettings = () -> {if(Platform.isModLoaded("ae2")){return DefaultItemSettings;}else return CloakedItemSettings;};
     public static final Supplier<Item.Settings> bigreactorsItemSettings = () -> {if(Platform.isModLoaded("bigreactors")){return DefaultItemSettings;}else return CloakedItemSettings;};
     public static final Supplier<Item.Settings> biggerreactorsItemSettings = () -> {if(Platform.isModLoaded("biggerreactors")){return DefaultItemSettings;}else return CloakedItemSettings;};
+    public static final Supplier<Item.Settings> immersiveengineeringItemSettings = () -> {if(Platform.isModLoaded("immersiveengineering")){return DefaultItemSettings;}else return CloakedItemSettings;};
 
 
 
@@ -235,6 +236,28 @@ public class EntryModule {
     public static final RegistrySupplier<Block> BEDROCK_BR_URANIUM_ORE = BLOCKS.register("bedrock_br_uranium_ore",() -> ExpectPlatformBox.newBedrockOre(DefaultBlockSettings, true));
     public static final RegistrySupplier<Item> BEDROCK_BR_URANIUM_ORE_ITEM = ITEMS.register("bedrock_br_uranium_ore",() -> new BlockItem(BEDROCK_BR_URANIUM_ORE.get(), biggerreactorsItemSettings.get()));
     public static final RegistrySupplier<Item> REGENERATIVE_BR_URANIUM = ITEMS.register("regenerative_br_uranium",() -> new RegenerativeCore(biggerreactorsItemSettings.get(), BEDROCK_BR_URANIUM_ORE.get(), BedrockStates.CoreType.NORMAL));
+
+
+    //immersiveengineering
+    public static final RegistrySupplier<Block> BEDROCK_IE_ALUMINUM_ORE = BLOCKS.register("bedrock_ie_aluminum_ore",() -> ExpectPlatformBox.newBedrockOre(DefaultBlockSettings, true));
+    public static final RegistrySupplier<Item> BEDROCK_IE_ALUMINUM_ORE_ITEM = ITEMS.register("bedrock_ie_aluminum_ore",() -> new BlockItem(BEDROCK_IE_ALUMINUM_ORE.get(), immersiveengineeringItemSettings.get()));
+    public static final RegistrySupplier<Item> REGENERATIVE_IE_ALUMINUM = ITEMS.register("regenerative_ie_aluminum",() -> new RegenerativeCore(immersiveengineeringItemSettings.get(), BEDROCK_IE_ALUMINUM_ORE.get(), BedrockStates.CoreType.NORMAL));
+
+    public static final RegistrySupplier<Block> BEDROCK_IE_LEAD_ORE = BLOCKS.register("bedrock_ie_lead_ore",() -> ExpectPlatformBox.newBedrockOre(DefaultBlockSettings, true));
+    public static final RegistrySupplier<Item> BEDROCK_IE_LEAD_ORE_ITEM = ITEMS.register("bedrock_ie_lead_ore",() -> new BlockItem(BEDROCK_IE_LEAD_ORE.get(), immersiveengineeringItemSettings.get()));
+    public static final RegistrySupplier<Item> REGENERATIVE_IE_LEAD = ITEMS.register("regenerative_ie_lead",() -> new RegenerativeCore(immersiveengineeringItemSettings.get(), BEDROCK_IE_LEAD_ORE.get(), BedrockStates.CoreType.NORMAL));
+
+    public static final RegistrySupplier<Block> BEDROCK_IE_SILVER_ORE = BLOCKS.register("bedrock_ie_silver_ore",() -> ExpectPlatformBox.newBedrockOre(DefaultBlockSettings, true));
+    public static final RegistrySupplier<Item> BEDROCK_IE_SILVER_ORE_ITEM = ITEMS.register("bedrock_ie_silver_ore",() -> new BlockItem(BEDROCK_IE_SILVER_ORE.get(), immersiveengineeringItemSettings.get()));
+    public static final RegistrySupplier<Item> REGENERATIVE_IE_SILVER = ITEMS.register("regenerative_ie_silver",() -> new RegenerativeCore(immersiveengineeringItemSettings.get(), BEDROCK_IE_SILVER_ORE.get(), BedrockStates.CoreType.NORMAL));
+
+    public static final RegistrySupplier<Block> BEDROCK_IE_NICKEL_ORE = BLOCKS.register("bedrock_ie_nickel_ore",() -> ExpectPlatformBox.newBedrockOre(DefaultBlockSettings, true));
+    public static final RegistrySupplier<Item> BEDROCK_IE_NICKEL_ORE_ITEM = ITEMS.register("bedrock_ie_nickel_ore",() -> new BlockItem(BEDROCK_IE_NICKEL_ORE.get(), immersiveengineeringItemSettings.get()));
+    public static final RegistrySupplier<Item> NICKEL_IE_URANIUM = ITEMS.register("regenerative_ie_nickel",() -> new RegenerativeCore(immersiveengineeringItemSettings.get(), BEDROCK_IE_NICKEL_ORE.get(), BedrockStates.CoreType.NORMAL));
+
+    public static final RegistrySupplier<Block> BEDROCK_IE_URANIUM_ORE = BLOCKS.register("bedrock_ie_uranium_ore",() -> ExpectPlatformBox.newBedrockOre(DefaultBlockSettings, true));
+    public static final RegistrySupplier<Item> BEDROCK_IE_URANIUM_ORE_ITEM = ITEMS.register("bedrock_ie_uranium_ore",() -> new BlockItem(BEDROCK_IE_URANIUM_ORE.get(), immersiveengineeringItemSettings.get()));
+    public static final RegistrySupplier<Item> REGENERATIVE_IE_URANIUM = ITEMS.register("regenerative_ie_uranium",() -> new RegenerativeCore(immersiveengineeringItemSettings.get(), BEDROCK_IE_URANIUM_ORE.get(), BedrockStates.CoreType.NORMAL));
 
 
 

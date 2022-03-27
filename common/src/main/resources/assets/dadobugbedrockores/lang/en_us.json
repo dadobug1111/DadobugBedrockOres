@@ -121,5 +121,18 @@
 
   "block.dadobugbedrockores.bedrock_br_uranium_ore": "Bedrock Uranium Ore",
 
-  "item.dadobugbedrockores.regenerative_br_uranium": "Regenerative Uranium Cluster"
+  "item.dadobugbedrockores.regenerative_br_uranium": "Regenerative Uranium Cluster",
+
+
+  "block.dadobugbedrockores.bedrock_ie_aluminum_ore": "Bedrock Bauxite Ore",
+  "block.dadobugbedrockores.bedrock_ie_lead_ore": "Bedrock Lead Ore",
+  "block.dadobugbedrockores.bedrock_ie_silver_ore": "Bedrock Silver Ore",
+  "block.dadobugbedrockores.bedrock_ie_nickel_ore": "Bedrock Nickel Ore",
+  "block.dadobugbedrockores.bedrock_ie_uranium_ore": "Bedrock Uranium Ore",
+
+  "item.dadobugbedrockores.regenerative_ie_aluminum": "Regenerative Bauxite Cluster",
+  "item.dadobugbedrockores.regenerative_ie_lead": "Regenerative Lead Cluster",
+  "item.dadobugbedrockores.regenerative_ie_silver": "Regenerative Silver Cluster",
+  "item.dadobugbedrockores.regenerative_ie_nickel": "Regenerative Nickel Cluster",
+  "item.dadobugbedrockores.regenerative_ie_uranium": "Regenerative Uranium Cluster"
 }
