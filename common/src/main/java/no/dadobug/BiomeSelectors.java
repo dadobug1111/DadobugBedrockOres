@@ -33,9 +33,10 @@ public class BiomeSelectors {
 
         return context -> context.getProperties().getGenerationProperties().getFeatures().stream().anyMatch((ctx) -> {
             for (RegistryEntry<PlacedFeature> placedFeatureRegistryEntry : ctx) {
-                if (Objects.equals(BuiltinRegistries.PLACED_FEATURE.get(placedFeatureRegistryEntry.getKey().get()), FeatureIn.value()))
+                if (Objects.equals(BuiltinRegistries.PLACED_FEATURE.getOrEmpty(placedFeatureRegistryEntry.getKey().orElse(null)).orElse(null), FeatureIn.value()))
                     return true;
             }
+
             return false;
         });
 
