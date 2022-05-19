@@ -7,7 +7,9 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLDedicatedServerSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import no.dadobug.EntryModule;
 
@@ -21,13 +23,17 @@ public class dadobugbedrockoresForge {
         EventBuses.registerModEventBus("dadobugbedrockores", FMLJavaModLoadingContext.get().getModEventBus());
         EntryModule.init();
         IEventBus bus = EventBuses.getModEventBus("dadobugbedrockores").get();
-        bus.addListener(this::registerLate);
+        bus.addListener(this::registerLateClient);
+        bus.addListener(this::registerLateServer);
 
 
     }
 
 
-    private void registerLate(FMLCommonSetupEvent event) {
-        EntryModule.initLate();
+    private void registerLateClient(FMLClientSetupEvent event) {
+        EntryModule.initLate(true);
+    }
+    private void registerLateServer(FMLDedicatedServerSetupEvent event) {
+        EntryModule.initLate(false);
     }
 }

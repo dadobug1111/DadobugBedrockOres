@@ -276,17 +276,19 @@ public class EntryModule {
         ITEMS.register();
     }
 
-    public static void initLate() {
+    public static void initLate(boolean isClient) {
         OreConfig.init();
-        ColorHandlerRegistry.registerBlockColors((state, world, pos, tintIndex) -> {
-            if (world == null || pos == null) {
-                return 0x3f76e4;
-            }
-            return BiomeColors.getWaterColor(world, pos);
-        }, BEDROCK_WATER_ORE.get() );
-        ColorHandlerRegistry.registerItemColors((state, tintIndex) -> 0x3f76e4, BEDROCK_WATER_ORE.get() );
-        RenderTypeRegistry.register(RenderLayer.getTranslucent(), BEDROCK_WATER_ORE.get());
-        RenderTypeRegistry.register(RenderLayer.getTranslucent(), BEDROCK_MILK_ORE.get());
+        if(isClient) {
+            ColorHandlerRegistry.registerBlockColors((state, world, pos, tintIndex) -> {
+                if (world == null || pos == null) {
+                    return 0x3f76e4;
+                }
+                return BiomeColors.getWaterColor(world, pos);
+            }, BEDROCK_WATER_ORE.get());
+            ColorHandlerRegistry.registerItemColors((state, tintIndex) -> 0x3f76e4, BEDROCK_WATER_ORE.get());
+            RenderTypeRegistry.register(RenderLayer.getTranslucent(), BEDROCK_WATER_ORE.get());
+            RenderTypeRegistry.register(RenderLayer.getTranslucent(), BEDROCK_MILK_ORE.get());
+        }
     }
 
 }

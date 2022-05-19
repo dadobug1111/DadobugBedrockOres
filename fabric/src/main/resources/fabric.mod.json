@@ -15,6 +15,12 @@
   "entrypoints": {
     "main": [
       "no.dadobug.fabric.dadobugbedrockoresFabric"
+    ],
+    "client": [
+      "no.dadobug.fabric.dadobugbedrockoresFabric"
+    ],
+    "server": [
+      "no.dadobug.fabric.dadobugbedrockoresFabric"
     ]
   },
   "mixins": [
