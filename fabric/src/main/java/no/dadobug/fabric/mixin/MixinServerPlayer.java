@@ -34,8 +34,8 @@ public class MixinServerPlayer {
 
         } else if(state.isIn(EntryModule.FRACTURE_TAG) && (EnchantmentHelper.getEquipmentLevel(EntryModule.CURSE_OF_FRACTURING.get(), player) > 0)){
 
-            if(state.contains(BedrockStates.REPLACE_WITH_BEDROCK)) this.world.setBlockState(pos, EntryModule.BEDROCK_FRACTURED.get().getDefaultState().with(BedrockStates.REPLACE_WITH_BEDROCK, state.get(BedrockStates.REPLACE_WITH_BEDROCK)));
-            else this.world.setBlockState(pos, EntryModule.BEDROCK_FRACTURED.get().getDefaultState());
+            if(state.contains(BedrockStates.REPLACE_WITH_BEDROCK)) this.world.setBlockState(pos, EntryModule.BEDROCK_FRACTURED.ore().get().getDefaultState().with(BedrockStates.REPLACE_WITH_BEDROCK, state.get(BedrockStates.REPLACE_WITH_BEDROCK)));
+            else this.world.setBlockState(pos, EntryModule.BEDROCK_FRACTURED.ore().get().getDefaultState());
 
         } else if(state.isIn(EntryModule.CORE_TAG) && (EnchantmentHelper.getEquipmentLevel(EntryModule.EXTRACTION.get(), player) > 0)){
 

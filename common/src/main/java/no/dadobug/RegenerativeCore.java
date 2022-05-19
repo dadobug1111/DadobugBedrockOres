@@ -8,6 +8,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
@@ -21,12 +22,12 @@ import java.util.List;
 
 
 public class RegenerativeCore extends Item {
+    private final MutableText toolTip;
     private final Block coreblock;
-    private final BedrockStates.CoreType coreType;
-    public RegenerativeCore(Settings settings, Block coreblock, BedrockStates.CoreType coreType) {
+    public RegenerativeCore(Settings settings, Block coreblock, MutableText toolTip) {
         super(settings);
         this.coreblock = coreblock;
-        this.coreType = coreType;
+        this.toolTip = toolTip;
     }
 
     @Override
@@ -56,15 +57,10 @@ public class RegenerativeCore extends Item {
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
 
 
-        if(this.coreType == BedrockStates.CoreType.FRACTURED)tooltip.add( new TranslatableText("item.dadobugbedrockores.regen_broken.tooltip").formatted(Formatting.RED) );
-        else if(this.coreType == BedrockStates.CoreType.FLUID)tooltip.add( new TranslatableText("item.dadobugbedrockores.regen_fluid.tooltip").formatted(Formatting.GREEN) );
-        else if(this.coreType == BedrockStates.CoreType.JOKE_FLUID_ONE)tooltip.add( new TranslatableText("item.dadobugbedrockores.regen_joke_fluid_one.tooltip").formatted(Formatting.GOLD) );
-        else if(this.coreType == BedrockStates.CoreType.JOKE_ITEM_ONE)tooltip.add( new TranslatableText("item.dadobugbedrockores.regen_joke_item_one.tooltip").formatted(Formatting.GOLD) );
-        else tooltip.add( new TranslatableText("item.dadobugbedrockores.regen_power.tooltip").formatted(Formatting.GREEN) );
-
+        tooltip.add(this.toolTip);
         tooltip.add( new TranslatableText("item.dadobugbedrockores.regen_need_host.tooltip").formatted(Formatting.LIGHT_PURPLE) );
 
-        // formatted red text
+
 
     }
 
