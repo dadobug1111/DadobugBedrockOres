@@ -28,11 +28,11 @@ public final class BedrockStack {
         return new BedrockStack(name, "bedrock_", "", "regenerative_", "", itemSettings, blockSettings, replaceWithBedrock, toolTip);
     }
 
-    public BedrockStack BedrockStackStandardOre(String name, Supplier<Item.Settings> itemSettings, AbstractBlock.Settings blockSettings, boolean replaceWithBedrock, MutableText toolTip) {
+    public static BedrockStack BedrockStackStandardOre(String name, Supplier<Item.Settings> itemSettings, AbstractBlock.Settings blockSettings, boolean replaceWithBedrock, MutableText toolTip) {
         return new BedrockStack(name, "bedrock_", "_ore", "regenerative_", "", itemSettings, blockSettings, replaceWithBedrock, toolTip);
     }
 
-    public BedrockStack BedrockStackFluidOre(String name, Supplier<Item.Settings> itemSettings, AbstractBlock.Settings blockSettings, boolean replaceWithBedrock, MutableText toolTip, Fluid fluid) {
+    public static BedrockStack BedrockStackFluidOre(String name, Supplier<Item.Settings> itemSettings, AbstractBlock.Settings blockSettings, boolean replaceWithBedrock, MutableText toolTip, Fluid fluid) {
         return new BedrockStack(name, "bedrock_", "_ore", "regenerative_", "", itemSettings, blockSettings, replaceWithBedrock, toolTip, fluid);
     }
 

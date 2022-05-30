@@ -43,6 +43,7 @@ public class EntryModule {
 
     public static final AbstractBlock.Settings DefaultBlockSettings = AbstractBlock.Settings.of(Material.STONE, MapColor.STONE_GRAY).strength(50.0f, 0f).requiresTool();
     public static final AbstractBlock.Settings LightBlockSettings = AbstractBlock.Settings.of(Material.STONE, MapColor.STONE_GRAY).strength(50.0f, 0f).requiresTool().luminance((state) -> 15);
+    public static final AbstractBlock.Settings LowLightBlockSettings = AbstractBlock.Settings.of(Material.STONE, MapColor.STONE_GRAY).strength(50.0f, 0f).requiresTool().luminance((state) -> 1);
     public static final  Item.Settings DefaultItemSettings = new Item.Settings().group(EntryModule.ITEMGROUP);
     public static final  Item.Settings CloakedItemSettings = new Item.Settings();
     public static final Supplier<Item.Settings> vanillaItemSettings = () -> DefaultItemSettings;
@@ -52,6 +53,7 @@ public class EntryModule {
     public static final Supplier<Item.Settings> bigreactorsItemSettings = () -> {if(Platform.isModLoaded("bigreactors")){return DefaultItemSettings;}else return CloakedItemSettings;};
     public static final Supplier<Item.Settings> biggerreactorsItemSettings = () -> {if(Platform.isModLoaded("biggerreactors")){return DefaultItemSettings;}else return CloakedItemSettings;};
     public static final Supplier<Item.Settings> immersiveengineeringItemSettings = () -> {if(Platform.isModLoaded("immersiveengineering")){return DefaultItemSettings;}else return CloakedItemSettings;};
+    public static final Supplier<Item.Settings> mythicmetalsItemSettings = () -> {if(Platform.isModLoaded("mythicmetals")){return DefaultItemSettings;}else return CloakedItemSettings;};
 
 
 
@@ -268,6 +270,31 @@ public class EntryModule {
     public static final RegistrySupplier<Item> REGENERATIVE_IE_URANIUM = ITEMS.register("regenerative_ie_uranium",() -> new RegenerativeCore(immersiveengineeringItemSettings.get(), BEDROCK_IE_URANIUM_ORE.get(), DEFAULT_TOOLTIP));
 
 
+    //mythicmetals overworld
+    public static final BedrockStack BEDROCK_MM_ADAMANTITE_ORE = BedrockStack.BedrockStackStandardOre("mm_adamantite", mythicmetalsItemSettings, DefaultBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_AQUARIUM_ORE = BedrockStack.BedrockStackStandardOre("mm_aquarium", mythicmetalsItemSettings, DefaultBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_BANGLUM_ORE = BedrockStack.BedrockStackStandardOre("mm_banglum", mythicmetalsItemSettings, DefaultBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_CARMOT_ORE = BedrockStack.BedrockStackStandardOre("mm_carmot", mythicmetalsItemSettings, DefaultBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_KYBER_ORE = BedrockStack.BedrockStackStandardOre("mm_kyber", mythicmetalsItemSettings, DefaultBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_MANGANESE_ORE = BedrockStack.BedrockStackStandardOre("mm_maganese", mythicmetalsItemSettings, DefaultBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_MORKITE_ORE = BedrockStack.BedrockStackStandardOre("mm_morkite", mythicmetalsItemSettings, DefaultBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_MYTHRIL_ORE = BedrockStack.BedrockStackStandardOre("mm_mythril", mythicmetalsItemSettings, DefaultBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_ORICHALCUM_ORE = BedrockStack.BedrockStackStandardOre("mm_orichalcum", mythicmetalsItemSettings, DefaultBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_OSMIUM_ORE = BedrockStack.BedrockStackStandardOre("mm_osmium", mythicmetalsItemSettings, DefaultBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_PLATINUM_ORE = BedrockStack.BedrockStackStandardOre("mm_platinum", mythicmetalsItemSettings, DefaultBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_PROMETHEUM_ORE = BedrockStack.BedrockStackStandardOre("mm_prometheum", mythicmetalsItemSettings, DefaultBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_QUADRILLUM_ORE = BedrockStack.BedrockStackStandardOre("mm_quadrillum", mythicmetalsItemSettings, DefaultBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_RUNITE_ORE = BedrockStack.BedrockStackStandardOre("mm_runite", mythicmetalsItemSettings, DefaultBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_SILVER_ORE = BedrockStack.BedrockStackStandardOre("mm_silver", mythicmetalsItemSettings, DefaultBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_STARRITE_ORE = BedrockStack.BedrockStackStandardOre("mm_starrite", mythicmetalsItemSettings, DefaultBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_TIN_ORE = BedrockStack.BedrockStackStandardOre("mm_tin", mythicmetalsItemSettings, DefaultBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_UNOBTAINIUM_ORE = BedrockStack.BedrockStackStandardOre("mm_unobtainium", mythicmetalsItemSettings, LowLightBlockSettings, true, DEFAULT_TOOLTIP);
+
+    //mythicmetals nether
+    public static final BedrockStack BEDROCK_MM_NETHER_BANGLUM_ORE = BedrockStack.BedrockStackStandardOre("mm_nether_banglum", mythicmetalsItemSettings, DefaultBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_MIDAS_GOLD_ORE = BedrockStack.BedrockStackStandardOre("mm_midas_gold", mythicmetalsItemSettings, DefaultBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_PALLADIUM_ORE = BedrockStack.BedrockStackStandardOre("mm_palladium", mythicmetalsItemSettings, DefaultBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_STORMYX_ORE = BedrockStack.BedrockStackStandardOre("mm_stormyx", mythicmetalsItemSettings, DefaultBlockSettings, true, DEFAULT_TOOLTIP);
 
 
     public static void init() {

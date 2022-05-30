@@ -116,6 +116,42 @@ public class OreConfig {
     public static OreGen ORE_IE_URANIUM_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, 4, 7, EntryModule.BEDROCK_IE_URANIUM_ORE.get().getDefaultState(), "ore_ie_uranium_bedrock_overworld");
 
 
+
+    //mythicmetals overworld
+    public static OreGen ORE_MM_ADAMANTITE_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, 6, 3, EntryModule.BEDROCK_MM_ADAMANTITE_ORE.ore().get().getDefaultState(), "ore_mm_adamantite_bedrock_overworld");
+    public static OreGen ORE_MM_AQUARIUM_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, 6, 3, EntryModule.BEDROCK_MM_AQUARIUM_ORE.ore().get().getDefaultState(), "ore_mm_aquarium_bedrock_overworld");
+    public static OreGen ORE_MM_BANGLUM_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, 6, 3, EntryModule.BEDROCK_MM_BANGLUM_ORE.ore().get().getDefaultState(), "ore_mm_banglum_bedrock_overworld");
+    public static OreGen ORE_MM_CARMOT_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, 6, 3, EntryModule.BEDROCK_MM_CARMOT_ORE.ore().get().getDefaultState(), "ore_mm_carmot_bedrock_overworld");
+    public static OreGen ORE_MM_KYBER_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, 6, 3, EntryModule.BEDROCK_MM_KYBER_ORE.ore().get().getDefaultState(), "ore_mm_kyber_bedrock_overworld");
+    public static OreGen ORE_MM_MANGANESE_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, 6, 3, EntryModule.BEDROCK_MM_MANGANESE_ORE.ore().get().getDefaultState(), "ore_mm_maganese_bedrock_overworld");
+    public static OreGen ORE_MM_MORKITE_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, 6, 3, EntryModule.BEDROCK_MM_MORKITE_ORE.ore().get().getDefaultState(), "ore_mm_morkite_bedrock_overworld");
+    public static OreGen ORE_MM_MYTHRIL_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, 6, 3, EntryModule.BEDROCK_MM_MYTHRIL_ORE.ore().get().getDefaultState(), "ore_mm_mythril_bedrock_overworld");
+    public static OreGen ORE_MM_ORICHALCUM_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, 6, 3, EntryModule.BEDROCK_MM_ORICHALCUM_ORE.ore().get().getDefaultState(), "ore_mm_orichalcum_bedrock_overworld");
+    public static OreGen ORE_MM_OSMIUM_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, 6, 3, EntryModule.BEDROCK_MM_OSMIUM_ORE.ore().get().getDefaultState(), "ore_mm_osmium_bedrock_overworld");
+    public static OreGen ORE_MM_PLATINUM_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, 6, 3, EntryModule.BEDROCK_MM_PLATINUM_ORE.ore().get().getDefaultState(), "ore_mm_platinum_bedrock_overworld");
+    public static OreGen ORE_MM_PROMETHEUM_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, 6, 3, EntryModule.BEDROCK_MM_PROMETHEUM_ORE.ore().get().getDefaultState(), "ore_mm_prometheum_bedrock_overworld");
+    public static OreGen ORE_MM_QUADRILLUM_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, 6, 3, EntryModule.BEDROCK_MM_QUADRILLUM_ORE.ore().get().getDefaultState(), "ore_mm_quadrillum_bedrock_overworld");
+    public static OreGen ORE_MM_RUNITE_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, 6, 3, EntryModule.BEDROCK_MM_RUNITE_ORE.ore().get().getDefaultState(), "ore_mm_runite_bedrock_overworld");
+    public static OreGen ORE_MM_SILVER_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, 6, 3, EntryModule.BEDROCK_MM_SILVER_ORE.ore().get().getDefaultState(), "ore_mm_silver_bedrock_overworld");
+    public static OreGen ORE_MM_STARRITE_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, 6, 3, EntryModule.BEDROCK_MM_STARRITE_ORE.ore().get().getDefaultState(), "ore_mm_starrite_bedrock_overworld");
+    public static OreGen ORE_MM_TIN_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, 6, 3, EntryModule.BEDROCK_MM_TIN_ORE.ore().get().getDefaultState(), "ore_mm_tin_bedrock_overworld");
+    public static OreGen ORE_MM_UNOBTAINIUM_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, 6, 3, EntryModule.BEDROCK_MM_UNOBTAINIUM_ORE.ore().get().getDefaultState(), "ore_mm_unobtainium_bedrock_overworld");
+
+    //mythicmetals nether
+    public static OreGen ORE_MM_NETHER_BANGLUM_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, 6, 3, EntryModule.BEDROCK_MM_NETHER_BANGLUM_ORE.ore().get().getDefaultState(), "ore_mm_nether_banglum_bedrock_nether");
+    public static OreGen ORE_MM_MIDAS_GOLD_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, 6, 3, EntryModule.BEDROCK_MM_MIDAS_GOLD_ORE.ore().get().getDefaultState(), "ore_mm_midas_gold_bedrock_nether");
+    public static OreGen ORE_MM_PALLADIUM_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, 6, 3, EntryModule.BEDROCK_MM_PALLADIUM_ORE.ore().get().getDefaultState(), "ore_mm_palladium_bedrock_nether");
+    public static OreGen ORE_MM_STORMYX_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, 6, 3, EntryModule.BEDROCK_MM_STORMYX_ORE.ore().get().getDefaultState(), "ore_mm_stormyx_bedrock_nether");
+
+    public static OreGen ORE_MM_NETHER_BANGLUM_BEDROCK_NETHER_TOP = new OreGen().GenTop(1, ORE_MM_NETHER_BANGLUM_BEDROCK_NETHER.getOre(), "ore_mm_nether_banglum_bedrock_nether_top");
+    public static OreGen ORE_MM_MIDAS_GOLD_BEDROCK_NETHER_TOP = new OreGen().GenTop(1, ORE_MM_MIDAS_GOLD_BEDROCK_NETHER.getOre(), "ore_mm_midas_gold_bedrock_nether_top");
+    public static OreGen ORE_MM_PALLADIUM_BEDROCK_NETHER_TOP = new OreGen().GenTop(1, ORE_MM_PALLADIUM_BEDROCK_NETHER.getOre(), "ore_mm_palladium_bedrock_nether_top");
+    public static OreGen ORE_MM_STORMYX_BEDROCK_NETHER_TOP = new OreGen().GenTop(1, ORE_MM_STORMYX_BEDROCK_NETHER.getOre(), "ore_mm_stormyx_bedrock_nether_top");
+
+    //mythicmetals end
+    public static OreGen ORE_MM_STARRITE_BEDROCK_END = new OreGen().GenAll(BEDROCK, 6, 3, EntryModule.BEDROCK_MM_STARRITE_ORE.ore().get().getDefaultState().with(BedrockStates.REPLACE_WITH_BEDROCK, false), "ore_mm_starrite_bedrock_end");
+
+
     public static void init(){
         ORE_COAL_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
         ORE_IRON_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
@@ -194,6 +230,38 @@ public class OreConfig {
             ORE_IE_SILVER_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
             ORE_IE_NICKEL_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
             ORE_IE_URANIUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+        }
+        if(Platform.isModLoaded("mythicmetals")) {
+            ORE_MM_ADAMANTITE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+            ORE_MM_AQUARIUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+            ORE_MM_BANGLUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+            ORE_MM_CARMOT_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+            ORE_MM_KYBER_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+            ORE_MM_MANGANESE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+            ORE_MM_MORKITE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+            ORE_MM_MYTHRIL_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+            ORE_MM_ORICHALCUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+            ORE_MM_OSMIUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+            ORE_MM_PLATINUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+            ORE_MM_PROMETHEUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+            ORE_MM_QUADRILLUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+            ORE_MM_RUNITE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+            ORE_MM_SILVER_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+            ORE_MM_STARRITE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+            ORE_MM_TIN_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+            ORE_MM_UNOBTAINIUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+
+            ORE_MM_NETHER_BANGLUM_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether());
+            ORE_MM_MIDAS_GOLD_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether());
+            ORE_MM_PALLADIUM_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether());
+            ORE_MM_STORMYX_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether());
+
+            ORE_MM_NETHER_BANGLUM_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether());
+            ORE_MM_MIDAS_GOLD_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether());
+            ORE_MM_PALLADIUM_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether());
+            ORE_MM_STORMYX_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether());
+
+            ORE_MM_STARRITE_BEDROCK_END.addOreToGen(BiomeSelectors.gensInEnd());
         }
     }
 
