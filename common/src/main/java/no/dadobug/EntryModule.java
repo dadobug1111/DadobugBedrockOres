@@ -7,6 +7,8 @@ import dev.architectury.registry.client.rendering.ColorHandlerRegistry;
 import dev.architectury.registry.client.rendering.RenderTypeRegistry;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.minecraft.block.*;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.render.RenderLayer;
@@ -20,10 +22,8 @@ import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.PlacedFeature;
-import no.dadobug.blocks.BedrockStates;
-import no.dadobug.configs.OreConfig;
+import no.dadobug.configs.MainConfig;
+import no.dadobug.configs.OreGenConfig;
 import no.dadobug.enchantments.ExtractionEnchant;
 import no.dadobug.enchantments.FracturingEnchant;
 import no.dadobug.enchantments.ShatteringEnchantment;
@@ -33,6 +33,7 @@ import java.util.function.Supplier;
 @SuppressWarnings("unused")
 public class EntryModule {
     public static final String modid = "dadobugbedrockores";
+    public static final MainConfig CONFIG = AutoConfig.register(MainConfig.class, GsonConfigSerializer::new).getConfig();
     // We can use this if we don't want to use DeferredRegister
     //public static final Supplier<Registries> REGISTRIES = Suppliers.memoize(() -> Registries.get(MOD_ID));
     // Registering a new creative tab
@@ -304,7 +305,7 @@ public class EntryModule {
     }
 
     public static void initLate(boolean isClient) {
-        OreConfig.init();
+        OreGenConfig.init();
         if(isClient) {
             ColorHandlerRegistry.registerBlockColors((state, world, pos, tintIndex) -> {
                 if (world == null || pos == null) {
