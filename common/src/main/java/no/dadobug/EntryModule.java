@@ -62,6 +62,8 @@ public class EntryModule {
     public static TagKey<Block> FRACTURE_TAG = TagKey.of(Registry.BLOCK_KEY, new Identifier("dadobugbedrockores", "fracture-able_block"));
     public static TagKey<Block> CORE_TAG = TagKey.of(Registry.BLOCK_KEY, new Identifier("dadobugbedrockores", "contains_core"));
     public static TagKey<Block> HOLLOW_TAG = TagKey.of(Registry.BLOCK_KEY, new Identifier("dadobugbedrockores", "can_accept_core"));
+    public static TagKey<Block> INDESTRUCTABLE_TAG = TagKey.of(Registry.BLOCK_KEY, new Identifier("dadobugbedrockores", "no_break"));
+    public static TagKey<Block> ENCHANT_ONLY_TAG = TagKey.of(Registry.BLOCK_KEY, new Identifier("dadobugbedrockores", "enchant_break"));
 
 
 
