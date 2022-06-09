@@ -1,6 +1,8 @@
 package no.dadobug.configs;
 
 import dev.architectury.platform.Platform;
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.minecraft.block.Blocks;
 import net.minecraft.structure.rule.BlockMatchRuleTest;
 import net.minecraft.structure.rule.RuleTest;
@@ -12,7 +14,7 @@ import no.dadobug.blocks.BedrockStates;
 public class OreGenConfig {
     public static final RuleTest BEDROCK = new BlockMatchRuleTest(Blocks.BEDROCK);
     public static final RuleTest ENDSTONE = new BlockMatchRuleTest(Blocks.END_STONE);
-    public static final MainConfig CONFIG = EntryModule.CONFIG;
+    public static final GenConfig CONFIG = AutoConfig.register(GenConfig.class, GsonConfigSerializer::new).getConfig();
 
 
     //overworld

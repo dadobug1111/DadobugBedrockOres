@@ -6,8 +6,8 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry;
 import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.Comment;
 import no.dadobug.EntryModule;
 
-@Config(name = EntryModule.modid + "_config")
-public class MainConfig implements ConfigData {
+@Config(name = EntryModule.modid + "_gen_config")
+public class GenConfig implements ConfigData {
 
     @ConfigEntry.Category("vanilla_overworld")
     @ConfigEntry.Gui.CollapsibleObject()
