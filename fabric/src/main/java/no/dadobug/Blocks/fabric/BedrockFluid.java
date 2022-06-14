@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.world.WorldAccess;
 
 import java.util.Optional;
@@ -20,13 +21,29 @@ public class BedrockFluid extends BedrockOre implements FluidDrainable {
     protected final ItemStack BucketItem;
     protected final Optional<SoundEvent> BucketSound;
     public BedrockFluid(Settings settings, Boolean ReplaceWithBedrock, Fluid fluidIn) {
-        super(settings, ReplaceWithBedrock);
+        this(settings, ReplaceWithBedrock, fluidIn, UniformIntProvider.create(0, 0));
+    }
+    public BedrockFluid(Settings settings, Boolean ReplaceWithBedrock, ItemStack bucketIn, Optional<SoundEvent> bucketSoundIn) {
+        this(settings, ReplaceWithBedrock, bucketIn, bucketSoundIn, UniformIntProvider.create(0, 0));
+
+    }
+
+    public BedrockFluid(Settings settings, Boolean ReplaceWithBedrock, Fluid fluidIn, int XPmin, int XPmax) {
+        this(settings, ReplaceWithBedrock, fluidIn, UniformIntProvider.create(XPmin, XPmax));
+    }
+    public BedrockFluid(Settings settings, Boolean ReplaceWithBedrock, ItemStack bucketIn, Optional<SoundEvent> bucketSoundIn, int XPmin, int XPmax) {
+        this(settings, ReplaceWithBedrock, bucketIn, bucketSoundIn, UniformIntProvider.create(XPmin, XPmax));
+
+    }
+
+    public BedrockFluid(Settings settings, Boolean ReplaceWithBedrock, Fluid fluidIn, UniformIntProvider experienceDropped) {
+        super(settings, ReplaceWithBedrock, experienceDropped);
         this.fluid = fluidIn;
         this.BucketItem = ItemStack.EMPTY;
         this.BucketSound = Fluids.WATER.getBucketFillSound();
     }
-    public BedrockFluid(Settings settings, Boolean ReplaceWithBedrock, ItemStack bucketIn, Optional<SoundEvent> bucketSoundIn) {
-        super(settings, ReplaceWithBedrock);
+    public BedrockFluid(Settings settings, Boolean ReplaceWithBedrock, ItemStack bucketIn, Optional<SoundEvent> bucketSoundIn, UniformIntProvider experienceDropped) {
+        super(settings, ReplaceWithBedrock, experienceDropped);
         this.fluid = Fluids.EMPTY;
         this.BucketItem = bucketIn;
         this.BucketSound = bucketSoundIn;

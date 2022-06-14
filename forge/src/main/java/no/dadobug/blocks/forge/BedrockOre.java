@@ -4,17 +4,31 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.world.BlockView;
 import no.dadobug.EntryModule;
 import no.dadobug.blocks.BedrockStates;
 
 public class BedrockOre extends RegenerativeBlock {
+    private final UniformIntProvider experienceDropped;
     public BedrockOre(Settings settings, Boolean ReplaceWithBedrock) {
+        this(settings, ReplaceWithBedrock, UniformIntProvider.create(0, 0));
+    }
 
+
+    public BedrockOre(Settings settings, Boolean ReplaceWithBedrock, int XPmin, int XPmax) {
+        this(settings, ReplaceWithBedrock, UniformIntProvider.create(XPmin, XPmax));
+    }
+
+    public BedrockOre(Settings settings, Boolean ReplaceWithBedrock, UniformIntProvider experienceDropped){
         super(settings);
+        this.experienceDropped = experienceDropped;
         setDefaultState(getStateManager().getDefaultState().with(BedrockStates.REPLACE_WITH_BEDROCK, ReplaceWithBedrock));
     }
 
@@ -42,6 +56,17 @@ public class BedrockOre extends RegenerativeBlock {
     @Override
     public boolean isTranslucent(BlockState state, BlockView world, BlockPos pos) {
         return true;
+    }
+
+    public void onStacksDropped(BlockState state, ServerWorld world, BlockPos pos, ItemStack stack) {
+        super.onStacksDropped(state, world, pos, stack);
+        if (EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, stack) == 0 && EnchantmentHelper.getLevel(EntryModule.CURSE_OF_FRACTURING.get(), stack) == 0 ) {
+            int i = this.experienceDropped.get(world.random);
+            if (i > 0) {
+                this.dropExperience(world, pos, ((EnchantmentHelper.getLevel(EntryModule.SHATTERING.get(), stack)*2)+1)*i);
+            }
+        }
+
     }
 
 }

@@ -12,17 +12,17 @@ import java.util.Optional;
 
 public class ExpectPlatformBoxImpl {
 
-    public static Block newBedrockOre(AbstractBlock.Settings settings, boolean replaceWithBedrock){
-        return new BedrockOre(settings, replaceWithBedrock);
+    public static Block newBedrockOre(AbstractBlock.Settings settings, boolean replaceWithBedrock, int XPmin, int XPmax){
+        return new BedrockOre(settings, replaceWithBedrock, XPmin, XPmax);
     }
 
 
-    public static Block newBedrockFluid(AbstractBlock.Settings settings, boolean replaceWithBedrock, Fluid fluidIn){
-        return new BedrockFluid(settings, replaceWithBedrock, fluidIn);
+    public static Block newBedrockFluid(AbstractBlock.Settings settings, boolean replaceWithBedrock, Fluid fluidIn, int XPmin, int XPmax){
+        return new BedrockFluid(settings, replaceWithBedrock, fluidIn, XPmin, XPmax);
     }
 
 
-    public static Block newBedrockFluid(AbstractBlock.Settings settings, boolean replaceWithBedrock, ItemStack bucketIn, Optional<SoundEvent> bucketSoundIn){
-        return new BedrockFluid(settings, replaceWithBedrock, bucketIn, bucketSoundIn);
+    public static Block newBedrockFluid(AbstractBlock.Settings settings, boolean replaceWithBedrock, ItemStack bucketIn, Optional<SoundEvent> bucketSoundIn, int XPmin, int XPmax){
+        return new BedrockFluid(settings, replaceWithBedrock, bucketIn, bucketSoundIn, XPmin, XPmax);
     }
 }

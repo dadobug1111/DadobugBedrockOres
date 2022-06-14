@@ -18,30 +18,30 @@ public class OreGenConfig {
 
 
     //overworld
-    public static OreGen ORE_COAL_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_COAL_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_COAL_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_COAL_ORE.get().getDefaultState(), "ore_coal_bedrock_overworld");
-    public static OreGen ORE_IRON_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_IRON_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_IRON_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_IRON_ORE.get().getDefaultState(), "ore_iron_bedrock_overworld");
-    public static OreGen ORE_GOLD_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_GOLD_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_GOLD_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_GOLD_ORE.get().getDefaultState(), "ore_gold_bedrock_overworld");
-    public static OreGen ORE_DIAMOND_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_DIAMOND_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_DIAMOND_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_DIAMOND_ORE.get().getDefaultState(), "ore_diamond_bedrock_overworld");
-    public static OreGen ORE_REDSTONE_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_REDSTONE_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_REDSTONE_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_REDSTONE_ORE.get().getDefaultState(), "ore_redstone_bedrock_overworld");
-    public static OreGen ORE_COPPER_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_COPPER_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_COPPER_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_COPPER_ORE.get().getDefaultState(), "ore_copper_bedrock_overworld");
-    public static OreGen ORE_LAPIS_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_LAPIS_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_LAPIS_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_LAPIS_ORE.get().getDefaultState(), "ore_lapis_bedrock_overworld");
-    public static OreGen ORE_EMERALD_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_EMERALD_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_EMERALD_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_EMERALD_ORE.get().getDefaultState(), "ore_emerald_bedrock_overworld");
+    public static OreGen ORE_COAL_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_COAL_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_COAL_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_COAL_ORE.ore().get().getDefaultState(), "ore_coal_bedrock_overworld");
+    public static OreGen ORE_IRON_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_IRON_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_IRON_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_IRON_ORE.ore().get().getDefaultState(), "ore_iron_bedrock_overworld");
+    public static OreGen ORE_GOLD_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_GOLD_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_GOLD_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_GOLD_ORE.ore().get().getDefaultState(), "ore_gold_bedrock_overworld");
+    public static OreGen ORE_DIAMOND_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_DIAMOND_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_DIAMOND_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_DIAMOND_ORE.ore().get().getDefaultState(), "ore_diamond_bedrock_overworld");
+    public static OreGen ORE_REDSTONE_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_REDSTONE_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_REDSTONE_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_REDSTONE_ORE.ore().get().getDefaultState(), "ore_redstone_bedrock_overworld");
+    public static OreGen ORE_COPPER_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_COPPER_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_COPPER_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_COPPER_ORE.ore().get().getDefaultState(), "ore_copper_bedrock_overworld");
+    public static OreGen ORE_LAPIS_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_LAPIS_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_LAPIS_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_LAPIS_ORE.ore().get().getDefaultState(), "ore_lapis_bedrock_overworld");
+    public static OreGen ORE_EMERALD_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_EMERALD_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_EMERALD_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_EMERALD_ORE.ore().get().getDefaultState(), "ore_emerald_bedrock_overworld");
     public static OreGen ORE_HOLLOW_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_HOLLOW_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_HOLLOW_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_HOLLOW.get().getDefaultState(), "ore_hollow_bedrock_overworld");
 
-    public static OreGen ORE_WATER_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_WATER_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_WATER_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_WATER_ORE.get().getDefaultState(), "ore_water_bedrock_overworld");
-    public static OreGen ORE_LAVA_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_LAVA_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_LAVA_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_LAVA_ORE.get().getDefaultState(), "ore_lava_bedrock_overworld");
+    public static OreGen ORE_WATER_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_WATER_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_WATER_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_WATER_ORE.ore().get().getDefaultState(), "ore_water_bedrock_overworld");
+    public static OreGen ORE_LAVA_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_LAVA_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_LAVA_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_LAVA_ORE.ore().get().getDefaultState(), "ore_lava_bedrock_overworld");
 
-    public static OreGen ORE_MILK_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_MILK_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_MILK_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_MILK_ORE.get().getDefaultState(), "ore_milk_bedrock_overworld");
-    public static OreGen ORE_COOKIE_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_COOKIE_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_COOKIE_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_COOKIE_ORE.get().getDefaultState(), "ore_cookie_bedrock_overworld");
+    public static OreGen ORE_MILK_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_MILK_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_MILK_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_MILK_ORE.ore().get().getDefaultState(), "ore_milk_bedrock_overworld");
+    public static OreGen ORE_COOKIE_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_COOKIE_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_COOKIE_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_COOKIE_ORE.ore().get().getDefaultState(), "ore_cookie_bedrock_overworld");
 
 
     //nether
-    public static OreGen ORE_NETHER_GOLD_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_NETHER_GOLD_BEDROCK_NETHER.oreSize, CONFIG.ORE_NETHER_GOLD_BEDROCK_NETHER.oreChance, EntryModule.BEDROCK_NETHER_GOLD.get().getDefaultState(), "ore_nether_gold_bedrock_nether");
-    public static OreGen ORE_NETHER_QUARTZ_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_NETHER_QUARTZ_BEDROCK_NETHER.oreSize, CONFIG.ORE_NETHER_QUARTZ_BEDROCK_NETHER.oreChance, EntryModule.BEDROCK_NETHER_QUARTZ.get().getDefaultState(), "ore_nether_quartz_bedrock_nether");
-    public static OreGen ORE_ANCIENT_DEBRIS_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_ANCIENT_DEBRIS_BEDROCK_NETHER.oreSize, CONFIG.ORE_ANCIENT_DEBRIS_BEDROCK_NETHER.oreChance, EntryModule.BEDROCK_ANCIENT_DEBRIS.get().getDefaultState(), "ore_ancient_debris_bedrock_nether");
+    public static OreGen ORE_NETHER_GOLD_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_NETHER_GOLD_BEDROCK_NETHER.oreSize, CONFIG.ORE_NETHER_GOLD_BEDROCK_NETHER.oreChance, EntryModule.BEDROCK_NETHER_GOLD.ore().get().getDefaultState(), "ore_nether_gold_bedrock_nether");
+    public static OreGen ORE_NETHER_QUARTZ_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_NETHER_QUARTZ_BEDROCK_NETHER.oreSize, CONFIG.ORE_NETHER_QUARTZ_BEDROCK_NETHER.oreChance, EntryModule.BEDROCK_NETHER_QUARTZ.ore().get().getDefaultState(), "ore_nether_quartz_bedrock_nether");
+    public static OreGen ORE_ANCIENT_DEBRIS_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_ANCIENT_DEBRIS_BEDROCK_NETHER.oreSize, CONFIG.ORE_ANCIENT_DEBRIS_BEDROCK_NETHER.oreChance, EntryModule.BEDROCK_ANCIENT_DEBRIS.ore().get().getDefaultState(), "ore_ancient_debris_bedrock_nether");
     public static OreGen ORE_HOLLOW_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_HOLLOW_BEDROCK_NETHER.oreSize, CONFIG.ORE_HOLLOW_BEDROCK_NETHER.oreChance, EntryModule.BEDROCK_HOLLOW.get().getDefaultState(), "ore_hollow_bedrock_nether");
 
-    public static OreGen ORE_LAVA_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_LAVA_BEDROCK_NETHER.oreSize, CONFIG.ORE_LAVA_BEDROCK_NETHER.oreChance, EntryModule.BEDROCK_LAVA_ORE.get().getDefaultState(), "ore_lava_bedrock_nether");
+    public static OreGen ORE_LAVA_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_LAVA_BEDROCK_NETHER.oreSize, CONFIG.ORE_LAVA_BEDROCK_NETHER.oreChance, EntryModule.BEDROCK_LAVA_ORE.ore().get().getDefaultState(), "ore_lava_bedrock_nether");
 
 
     public static OreGen ORE_NETHER_GOLD_BEDROCK_NETHER_TOP = new OreGen().GenTop( CONFIG.ORE_NETHER_GOLD_BEDROCK_NETHER.topOreChance, ORE_NETHER_GOLD_BEDROCK_NETHER.getOre(), "ore_nether_gold_bedrock_nether_top");
@@ -57,66 +57,66 @@ public class OreGenConfig {
 
 
     //techreborn overworld
-    public static OreGen ORE_BAUXITE_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_BAUXITE_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_BAUXITE_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_BAUXITE_ORE.get().getDefaultState(), "ore_bauxite_bedrock_overworld");
-    public static OreGen ORE_GALENA_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_GALENA_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_GALENA_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_GALENA_ORE.get().getDefaultState(), "ore_galena_bedrock_overworld");
-    public static OreGen ORE_IRIDIUM_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_IRIDIUM_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_IRIDIUM_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_IRIDIUM_ORE.get().getDefaultState(), "ore_iridium_bedrock_overworld");
-    public static OreGen ORE_LEAD_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_LEAD_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_LEAD_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_LEAD_ORE.get().getDefaultState(), "ore_lead_bedrock_overworld");
-    public static OreGen ORE_RUBY_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_RUBY_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_RUBY_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_RUBY_ORE.get().getDefaultState(), "ore_ruby_bedrock_overworld");
-    public static OreGen ORE_SAPPHIRE_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_SAPPHIRE_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_SAPPHIRE_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_SAPPHIRE_ORE.get().getDefaultState(), "ore_sapphire_bedrock_overworld");
-    public static OreGen ORE_SILVER_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_SILVER_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_SILVER_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_SILVER_ORE.get().getDefaultState(), "ore_silver_bedrock_overworld");
-    public static OreGen ORE_TIN_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_TIN_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_TIN_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_TIN_ORE.get().getDefaultState(), "ore_tin_bedrock_overworld");
+    public static OreGen ORE_BAUXITE_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_BAUXITE_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_BAUXITE_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_BAUXITE_ORE.ore().get().getDefaultState(), "ore_bauxite_bedrock_overworld");
+    public static OreGen ORE_GALENA_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_GALENA_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_GALENA_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_GALENA_ORE.ore().get().getDefaultState(), "ore_galena_bedrock_overworld");
+    public static OreGen ORE_IRIDIUM_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_IRIDIUM_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_IRIDIUM_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_IRIDIUM_ORE.ore().get().getDefaultState(), "ore_iridium_bedrock_overworld");
+    public static OreGen ORE_LEAD_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_LEAD_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_LEAD_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_LEAD_ORE.ore().get().getDefaultState(), "ore_lead_bedrock_overworld");
+    public static OreGen ORE_RUBY_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_RUBY_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_RUBY_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_RUBY_ORE.ore().get().getDefaultState(), "ore_ruby_bedrock_overworld");
+    public static OreGen ORE_SAPPHIRE_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_SAPPHIRE_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_SAPPHIRE_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_SAPPHIRE_ORE.ore().get().getDefaultState(), "ore_sapphire_bedrock_overworld");
+    public static OreGen ORE_SILVER_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_SILVER_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_SILVER_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_SILVER_ORE.ore().get().getDefaultState(), "ore_silver_bedrock_overworld");
+    public static OreGen ORE_TIN_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_TIN_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_TIN_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_TIN_ORE.ore().get().getDefaultState(), "ore_tin_bedrock_overworld");
 
     //techreborn nether
-    public static OreGen ORE_CINNABAR_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_CINNABAR_BEDROCK_NETHER.oreSize, CONFIG.ORE_CINNABAR_BEDROCK_NETHER.oreChance, EntryModule.BEDROCK_SAPPHIRE_ORE.get().getDefaultState(), "ore_cinnabar_bedrock_nether");
-    public static OreGen ORE_PYRITE_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_PYRITE_BEDROCK_NETHER.oreSize, CONFIG.ORE_PYRITE_BEDROCK_NETHER.oreChance, EntryModule.BEDROCK_SILVER_ORE.get().getDefaultState(), "ore_pyrite_bedrock_nether");
-    public static OreGen ORE_SPHALERITE_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_SPHALERITE_BEDROCK_NETHER.oreSize, CONFIG.ORE_SPHALERITE_BEDROCK_NETHER.oreChance, EntryModule.BEDROCK_TIN_ORE.get().getDefaultState(), "ore_sphalerite_bedrock_overworld_nether");
+    public static OreGen ORE_CINNABAR_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_CINNABAR_BEDROCK_NETHER.oreSize, CONFIG.ORE_CINNABAR_BEDROCK_NETHER.oreChance, EntryModule.BEDROCK_CINNABAR_ORE.ore().get().getDefaultState(), "ore_cinnabar_bedrock_nether");
+    public static OreGen ORE_PYRITE_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_PYRITE_BEDROCK_NETHER.oreSize, CONFIG.ORE_PYRITE_BEDROCK_NETHER.oreChance, EntryModule.BEDROCK_PYRITE_ORE.ore().get().getDefaultState(), "ore_pyrite_bedrock_nether");
+    public static OreGen ORE_SPHALERITE_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_SPHALERITE_BEDROCK_NETHER.oreSize, CONFIG.ORE_SPHALERITE_BEDROCK_NETHER.oreChance, EntryModule.BEDROCK_SPHALERITE_ORE.ore().get().getDefaultState(), "ore_sphalerite_bedrock_overworld_nether");
 
     public static OreGen ORE_CINNABAR_BEDROCK_NETHER_TOP = new OreGen().GenTop(CONFIG.ORE_CINNABAR_BEDROCK_NETHER.topOreChance, ORE_CINNABAR_BEDROCK_NETHER.getOre(),  "ore_cinnabar_bedrock_nether_top");
     public static OreGen ORE_PYRITE_BEDROCK_NETHER_TOP = new OreGen().GenTop(CONFIG.ORE_PYRITE_BEDROCK_NETHER.topOreChance, ORE_PYRITE_BEDROCK_NETHER.getOre(), "ore_pyrite_bedrock_nether_top");
     public static OreGen ORE_SPHALERITE_BEDROCK_NETHER_TOP = new OreGen().GenTop(CONFIG.ORE_SPHALERITE_BEDROCK_NETHER.topOreChance, ORE_SPHALERITE_BEDROCK_NETHER.getOre(), "ore_sphalerite_bedrock_nether_top");
 
     //techreborn end
-    public static OreGen ORE_PERIDOT_BEDROCK_END = new OreGen().GenAll(ENDSTONE, CONFIG.ORE_PERIDOT_BEDROCK_END.oreSize, CONFIG.ORE_PERIDOT_BEDROCK_END.OreCount, EntryModule.BEDROCK_PERIDOT_ORE.get().getDefaultState(), "ore_peridot_bedrock_end");
-    public static OreGen ORE_SHELDONITE_BEDROCK_END = new OreGen().GenAll(ENDSTONE, CONFIG.ORE_SHELDONITE_BEDROCK_END.oreSize, CONFIG.ORE_SHELDONITE_BEDROCK_END.OreCount, EntryModule.BEDROCK_SHELDONITE_ORE.get().getDefaultState(), "ore_sheldonite_bedrock_end");
-    public static OreGen ORE_SODALITE_BEDROCK_END = new OreGen().GenAll(ENDSTONE, CONFIG.ORE_SODALITE_BEDROCK_END.oreSize, CONFIG.ORE_SODALITE_BEDROCK_END.OreCount, EntryModule.BEDROCK_SODALITE_ORE.get().getDefaultState(), "ore_sodalite_bedrock_end");
-    public static OreGen ORE_TUNGSTEN_BEDROCK_END = new OreGen().GenAll(ENDSTONE, CONFIG.ORE_TUNGSTEN_BEDROCK_END.oreSize, CONFIG.ORE_TUNGSTEN_BEDROCK_END.OreCount, EntryModule.BEDROCK_TUNGSTEN_ORE.get().getDefaultState(), "ore_tungsten_bedrock_end");
+    public static OreGen ORE_PERIDOT_BEDROCK_END = new OreGen().GenAll(ENDSTONE, CONFIG.ORE_PERIDOT_BEDROCK_END.oreSize, CONFIG.ORE_PERIDOT_BEDROCK_END.OreCount, EntryModule.BEDROCK_PERIDOT_ORE.ore().get().getDefaultState(), "ore_peridot_bedrock_end");
+    public static OreGen ORE_SHELDONITE_BEDROCK_END = new OreGen().GenAll(ENDSTONE, CONFIG.ORE_SHELDONITE_BEDROCK_END.oreSize, CONFIG.ORE_SHELDONITE_BEDROCK_END.OreCount, EntryModule.BEDROCK_SHELDONITE_ORE.ore().get().getDefaultState(), "ore_sheldonite_bedrock_end");
+    public static OreGen ORE_SODALITE_BEDROCK_END = new OreGen().GenAll(ENDSTONE, CONFIG.ORE_SODALITE_BEDROCK_END.oreSize, CONFIG.ORE_SODALITE_BEDROCK_END.OreCount, EntryModule.BEDROCK_SODALITE_ORE.ore().get().getDefaultState(), "ore_sodalite_bedrock_end");
+    public static OreGen ORE_TUNGSTEN_BEDROCK_END = new OreGen().GenAll(ENDSTONE, CONFIG.ORE_TUNGSTEN_BEDROCK_END.oreSize, CONFIG.ORE_TUNGSTEN_BEDROCK_END.OreCount, EntryModule.BEDROCK_TUNGSTEN_ORE.ore().get().getDefaultState(), "ore_tungsten_bedrock_end");
 
 
 
     //tconstruct
-    public static OreGen ORE_TC_COBALT_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_TC_COBALT_BEDROCK_NETHER.oreSize, CONFIG.ORE_TC_COBALT_BEDROCK_NETHER.oreChance, EntryModule.BEDROCK_TC_COBALT_ORE.get().getDefaultState(), "ore_tc_cobalt_bedrock_nether");
+    public static OreGen ORE_TC_COBALT_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_TC_COBALT_BEDROCK_NETHER.oreSize, CONFIG.ORE_TC_COBALT_BEDROCK_NETHER.oreChance, EntryModule.BEDROCK_TC_COBALT_ORE.ore().get().getDefaultState(), "ore_tc_cobalt_bedrock_nether");
 
     public static OreGen ORE_TC_COBALT_BEDROCK_NETHER_TOP = new OreGen().GenTop(CONFIG.ORE_TC_COBALT_BEDROCK_NETHER.topOreChance, ORE_TC_COBALT_BEDROCK_NETHER.getOre(),  "ore_tc_cobalt_bedrock_nether_top");
 
 
 
     //ae2
-    public static OreGen ORE_AE_CERTUS_QUARTZ_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_AE_CERTUS_QUARTZ_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_AE_CERTUS_QUARTZ_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_AE_CERTUS_QUARTZ_ORE.get().getDefaultState(), "ore_ae_certus_quartz_bedrock_overworld");
+    public static OreGen ORE_AE_CERTUS_QUARTZ_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_AE_CERTUS_QUARTZ_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_AE_CERTUS_QUARTZ_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_AE_CERTUS_QUARTZ_ORE.ore().get().getDefaultState(), "ore_ae_certus_quartz_bedrock_overworld");
 
 
 
     //bigreactors (Extreme Reactors)
-    public static OreGen ORE_ER_YELLORITE_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_ER_YELLORITE_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_ER_YELLORITE_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_ER_YELLORITE_ORE.get().getDefaultState(), "ore_er_yellorium_bedrock_overworld");
+    public static OreGen ORE_ER_YELLORITE_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_ER_YELLORITE_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_ER_YELLORITE_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_ER_YELLORITE_ORE.ore().get().getDefaultState(), "ore_er_yellorium_bedrock_overworld");
 
-    public static OreGen ORE_ER_ANGLESITE_BEDROCK_END = new OreGen().GenAll(BEDROCK, CONFIG.ORE_ER_ANGLESITE_BEDROCK_END.oreSize, CONFIG.ORE_ER_ANGLESITE_BEDROCK_END.OreCount, EntryModule.BEDROCK_ER_ANGLESITE_ORE.get().getDefaultState(), "ore_er_anglesite_bedrock_end");
+    public static OreGen ORE_ER_ANGLESITE_BEDROCK_END = new OreGen().GenAll(BEDROCK, CONFIG.ORE_ER_ANGLESITE_BEDROCK_END.oreSize, CONFIG.ORE_ER_ANGLESITE_BEDROCK_END.OreCount, EntryModule.BEDROCK_ER_ANGLESITE_ORE.ore().get().getDefaultState(), "ore_er_anglesite_bedrock_end");
 
-    public static OreGen ORE_ER_BENITOITE_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_ER_BENITOITE_BEDROCK_NETHER.oreSize, CONFIG.ORE_ER_BENITOITE_BEDROCK_NETHER.oreChance, EntryModule.BEDROCK_ER_BENITOITE_ORE.get().getDefaultState(), "ore_er_benitoite_bedrock_nether");
+    public static OreGen ORE_ER_BENITOITE_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_ER_BENITOITE_BEDROCK_NETHER.oreSize, CONFIG.ORE_ER_BENITOITE_BEDROCK_NETHER.oreChance, EntryModule.BEDROCK_ER_BENITOITE_ORE.ore().get().getDefaultState(), "ore_er_benitoite_bedrock_nether");
 
     public static OreGen ORE_ER_BENITOITE_BEDROCK_NETHER_TOP = new OreGen().GenTop( CONFIG.ORE_ER_BENITOITE_BEDROCK_NETHER.topOreChance, ORE_ER_BENITOITE_BEDROCK_NETHER.getOre(), "ore_er_benitoite_bedrock_nether_top");
 
 
 
     //biggerreactors
-    public static OreGen ORE_BR_URANIUM_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_BR_URANIUM_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_BR_URANIUM_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_BR_URANIUM_ORE.get().getDefaultState(), "ore_br_uranium_bedrock_overworld");
+    public static OreGen ORE_BR_URANIUM_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_BR_URANIUM_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_BR_URANIUM_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_BR_URANIUM_ORE.ore().get().getDefaultState(), "ore_br_uranium_bedrock_overworld");
 
 
 
     //immersiveengineering
-    public static OreGen ORE_IE_ALUMINUM_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_IE_ALUMINUM_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_IE_ALUMINUM_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_IE_ALUMINUM_ORE.get().getDefaultState(), "ore_ie_aluminum_bedrock_overworld");
-    public static OreGen ORE_IE_LEAD_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_IE_LEAD_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_IE_LEAD_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_IE_LEAD_ORE.get().getDefaultState(), "ore_ie_lead_bedrock_overworld");
-    public static OreGen ORE_IE_SILVER_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_IE_SILVER_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_IE_SILVER_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_IE_SILVER_ORE.get().getDefaultState(), "ore_ie_silver_bedrock_overworld");
-    public static OreGen ORE_IE_NICKEL_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_IE_NICKEL_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_IE_NICKEL_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_IE_NICKEL_ORE.get().getDefaultState(), "ore_ie_nickel_bedrock_overworld");
-    public static OreGen ORE_IE_URANIUM_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_IE_URANIUM_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_IE_URANIUM_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_IE_URANIUM_ORE.get().getDefaultState(), "ore_ie_uranium_bedrock_overworld");
+    public static OreGen ORE_IE_ALUMINUM_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_IE_ALUMINUM_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_IE_ALUMINUM_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_IE_ALUMINUM_ORE.ore().get().getDefaultState(), "ore_ie_aluminum_bedrock_overworld");
+    public static OreGen ORE_IE_LEAD_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_IE_LEAD_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_IE_LEAD_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_IE_LEAD_ORE.ore().get().getDefaultState(), "ore_ie_lead_bedrock_overworld");
+    public static OreGen ORE_IE_SILVER_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_IE_SILVER_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_IE_SILVER_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_IE_SILVER_ORE.ore().get().getDefaultState(), "ore_ie_silver_bedrock_overworld");
+    public static OreGen ORE_IE_NICKEL_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_IE_NICKEL_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_IE_NICKEL_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_IE_NICKEL_ORE.ore().get().getDefaultState(), "ore_ie_nickel_bedrock_overworld");
+    public static OreGen ORE_IE_URANIUM_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_IE_URANIUM_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_IE_URANIUM_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_IE_URANIUM_ORE.ore().get().getDefaultState(), "ore_ie_uranium_bedrock_overworld");
 
 
 

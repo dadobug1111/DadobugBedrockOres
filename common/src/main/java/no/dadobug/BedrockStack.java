@@ -6,12 +6,15 @@ import net.minecraft.block.Block;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.MutableText;
 import no.dadobug.blocks.BedrockStates;
 import no.dadobug.configs.BlockConfig;
 import no.dadobug.configs.BlockConfigLambda;
 
 import java.util.Objects;
+import java.util.Optional;
 import java.util.function.Supplier;
 
 public final class BedrockStack {
@@ -38,14 +41,24 @@ public final class BedrockStack {
         return new BedrockStack(name, "bedrock_", "_ore", "regenerative_", "", config, itemSettings, blockSettings, replaceWithBedrock, toolTip, fluid);
     }
 
+    public static BedrockStack BedrockStackFluidOre(String name, BlockConfig config, BlockConfigLambda<Item.Settings> itemSettings, BlockConfigLambda<AbstractBlock.Settings> blockSettings, boolean replaceWithBedrock, MutableText toolTip, ItemStack bucketIn, Optional<SoundEvent> bucketSoundIn) {
+        return new BedrockStack(name, "bedrock_", "_ore", "regenerative_", "", config, itemSettings, blockSettings, replaceWithBedrock, toolTip, bucketIn, bucketSoundIn);
+    }
+    //
+
 
     public BedrockStack(String name, String orePrefix, String oreSuffix, String corePrefix, String coreSuffix, BlockConfig config, BlockConfigLambda<Item.Settings> itemSettings, BlockConfigLambda<AbstractBlock.Settings> blockSettings, boolean replaceWithBedrock, MutableText toolTip) {
-        this.ore = EntryModule.BLOCKS.register(orePrefix + name + oreSuffix, () -> ExpectPlatformBox.newBedrockOre(blockSettings.get(config), replaceWithBedrock));
+        this.ore = EntryModule.BLOCKS.register(orePrefix + name + oreSuffix, () -> ExpectPlatformBox.newBedrockOre(blockSettings.get(config), replaceWithBedrock, config.XPmin, config.XPmax));
         this.oreItem = EntryModule.ITEMS.register(orePrefix + name + oreSuffix, () -> new BlockItem(this.ore.get(), itemSettings.get(config)));
         this.core = EntryModule.ITEMS.register(corePrefix + name + coreSuffix, () -> new RegenerativeCore(itemSettings.get(config), this.ore.get(), toolTip));
     }
     public BedrockStack(String name, String orePrefix, String oreSuffix, String corePrefix, String coreSuffix, BlockConfig config, BlockConfigLambda<Item.Settings> itemSettings, BlockConfigLambda<AbstractBlock.Settings> blockSettings, boolean replaceWithBedrock, MutableText toolTip, Fluid fluid) {
-        this.ore = EntryModule.BLOCKS.register(orePrefix + name + oreSuffix, () -> ExpectPlatformBox.newBedrockFluid(blockSettings.get(config), replaceWithBedrock, fluid));
+        this.ore = EntryModule.BLOCKS.register(orePrefix + name + oreSuffix, () -> ExpectPlatformBox.newBedrockFluid(blockSettings.get(config), replaceWithBedrock, fluid, config.XPmin, config.XPmax));
+        this.oreItem = EntryModule.ITEMS.register(orePrefix + name + oreSuffix, () -> new BlockItem(this.ore.get(), itemSettings.get(config)));
+        this.core = EntryModule.ITEMS.register(corePrefix + name + coreSuffix, () -> new RegenerativeCore(itemSettings.get(config), this.ore.get(), toolTip));
+    }
+    public BedrockStack(String name, String orePrefix, String oreSuffix, String corePrefix, String coreSuffix, BlockConfig config, BlockConfigLambda<Item.Settings> itemSettings, BlockConfigLambda<AbstractBlock.Settings> blockSettings, boolean replaceWithBedrock, MutableText toolTip, ItemStack bucketIn, Optional<SoundEvent> bucketSoundIn) {
+        this.ore = EntryModule.BLOCKS.register(orePrefix + name + oreSuffix, () -> ExpectPlatformBox.newBedrockFluid(blockSettings.get(config), replaceWithBedrock, bucketIn, bucketSoundIn, config.XPmin, config.XPmax));
         this.oreItem = EntryModule.ITEMS.register(orePrefix + name + oreSuffix, () -> new BlockItem(this.ore.get(), itemSettings.get(config)));
         this.core = EntryModule.ITEMS.register(corePrefix + name + coreSuffix, () -> new RegenerativeCore(itemSettings.get(config), this.ore.get(), toolTip));
     }
