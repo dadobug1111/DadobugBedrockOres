@@ -79,13 +79,13 @@ public class OreGen {
     public ConfiguredFeature<?,?> getOre() {
         return this.Ore;
     }
-    public void addOreToGen(Predicate<BiomeModifications.BiomeContext> where){
+    public void addOreToGen(Predicate<BiomeModifications.BiomeContext> where, boolean doIt){
         //BiomeModifications.addFeature(where, GenerationStep.Feature.UNDERGROUND_ORES, this.key);
-        BiomeModifications.addProperties(
-                where,
-                (ctx, mutable) -> mutable.getGenerationProperties().addFeature(GenerationStep.Feature.UNDERGROUND_ORES, this.PlacedOre)
-        );
-
-
+        if (doIt) {
+            BiomeModifications.addProperties(
+                    where,
+                    (ctx, mutable) -> mutable.getGenerationProperties().addFeature(GenerationStep.Feature.UNDERGROUND_ORES, this.PlacedOre)
+            );
+        }
     }
 }

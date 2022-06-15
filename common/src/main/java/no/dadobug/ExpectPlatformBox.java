@@ -26,6 +26,11 @@ public class ExpectPlatformBox {
         throw new AssertionError();
     }
 
+    @ExpectPlatform
+    public static Block newXPLeak(AbstractBlock.Settings settings, boolean replaceWithBedrock, int XPmin, int XPmax){
+        throw new AssertionError();
+    }
+
 
 
 

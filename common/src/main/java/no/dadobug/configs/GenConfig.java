@@ -38,6 +38,9 @@ public class GenConfig implements ConfigData {
     public OreConfig ORE_HOLLOW_BEDROCK_OVERWORLD = new OreConfig(true, 40, 16);
     @ConfigEntry.Category("vanilla_overworld")
     @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_XP_LEAK_BEDROCK_OVERWORLD = new OreConfig(true, 5, 13);
+    @ConfigEntry.Category("vanilla_overworld")
+    @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_WATER_BEDROCK_OVERWORLD = new OreConfig(true, 15, 3);
     @ConfigEntry.Category("vanilla_overworld")
     @ConfigEntry.Gui.CollapsibleObject()
@@ -63,11 +66,17 @@ public class GenConfig implements ConfigData {
     public OreConfig ORE_HOLLOW_BEDROCK_NETHER = new OreConfig(true, 50, 14, 12);
     @ConfigEntry.Category("vanilla_nether")
     @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_XP_LEAK_BEDROCK_NETHER = new OreConfig(true, 7, 9, 8);
+    @ConfigEntry.Category("vanilla_nether")
+    @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_LAVA_BEDROCK_NETHER = new OreConfig(true, 30, 3, 3);
 
     @ConfigEntry.Category("vanilla_end")
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_HOLLOW_BEDROCK_END = new OreConfig( 60, 1, true);
+    @ConfigEntry.Category("vanilla_end")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_XP_LEAK_BEDROCK_END = new OreConfig( 12, 2, true);
 
 
     @ConfigEntry.Category("techreborn_overworld")

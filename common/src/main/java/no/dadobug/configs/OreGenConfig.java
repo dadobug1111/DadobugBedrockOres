@@ -27,6 +27,7 @@ public class OreGenConfig {
     public static OreGen ORE_LAPIS_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_LAPIS_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_LAPIS_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_LAPIS_ORE.ore().get().getDefaultState(), "ore_lapis_bedrock_overworld");
     public static OreGen ORE_EMERALD_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_EMERALD_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_EMERALD_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_EMERALD_ORE.ore().get().getDefaultState(), "ore_emerald_bedrock_overworld");
     public static OreGen ORE_HOLLOW_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_HOLLOW_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_HOLLOW_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_HOLLOW.get().getDefaultState(), "ore_hollow_bedrock_overworld");
+    public static OreGen ORE_XP_LEAK_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_XP_LEAK_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_XP_LEAK_BEDROCK_OVERWORLD.oreChance, EntryModule.XP_LEAK.ore().get().getDefaultState(), "ore_xp_leak_bedrock_overworld");
 
     public static OreGen ORE_WATER_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_WATER_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_WATER_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_WATER_ORE.ore().get().getDefaultState(), "ore_water_bedrock_overworld");
     public static OreGen ORE_LAVA_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_LAVA_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_LAVA_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_LAVA_ORE.ore().get().getDefaultState(), "ore_lava_bedrock_overworld");
@@ -40,6 +41,7 @@ public class OreGenConfig {
     public static OreGen ORE_NETHER_QUARTZ_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_NETHER_QUARTZ_BEDROCK_NETHER.oreSize, CONFIG.ORE_NETHER_QUARTZ_BEDROCK_NETHER.oreChance, EntryModule.BEDROCK_NETHER_QUARTZ.ore().get().getDefaultState(), "ore_nether_quartz_bedrock_nether");
     public static OreGen ORE_ANCIENT_DEBRIS_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_ANCIENT_DEBRIS_BEDROCK_NETHER.oreSize, CONFIG.ORE_ANCIENT_DEBRIS_BEDROCK_NETHER.oreChance, EntryModule.BEDROCK_ANCIENT_DEBRIS.ore().get().getDefaultState(), "ore_ancient_debris_bedrock_nether");
     public static OreGen ORE_HOLLOW_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_HOLLOW_BEDROCK_NETHER.oreSize, CONFIG.ORE_HOLLOW_BEDROCK_NETHER.oreChance, EntryModule.BEDROCK_HOLLOW.get().getDefaultState(), "ore_hollow_bedrock_nether");
+    public static OreGen ORE_XP_LEAK_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_XP_LEAK_BEDROCK_NETHER.oreSize, CONFIG.ORE_XP_LEAK_BEDROCK_NETHER.oreChance, EntryModule.XP_LEAK.ore().get().getDefaultState(), "ore_xp_leak_bedrock_nether");
 
     public static OreGen ORE_LAVA_BEDROCK_NETHER = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_LAVA_BEDROCK_NETHER.oreSize, CONFIG.ORE_LAVA_BEDROCK_NETHER.oreChance, EntryModule.BEDROCK_LAVA_ORE.ore().get().getDefaultState(), "ore_lava_bedrock_nether");
 
@@ -48,11 +50,13 @@ public class OreGenConfig {
     public static OreGen ORE_NETHER_QUARTZ_BEDROCK_NETHER_TOP = new OreGen().GenTop( CONFIG.ORE_NETHER_QUARTZ_BEDROCK_NETHER.topOreChance, ORE_NETHER_QUARTZ_BEDROCK_NETHER.getOre(), "ore_nether_quartz_bedrock_nether_top");
     public static OreGen ORE_ANCIENT_DEBRIS_BEDROCK_NETHER_TOP = new OreGen().GenTop( CONFIG.ORE_ANCIENT_DEBRIS_BEDROCK_NETHER.topOreChance, ORE_ANCIENT_DEBRIS_BEDROCK_NETHER.getOre(), "ore_ancient_debris_bedrock_nether_top");
     public static OreGen ORE_HOLLOW_BEDROCK_NETHER_TOP = new OreGen().GenTop( CONFIG.ORE_HOLLOW_BEDROCK_NETHER.topOreChance, ORE_HOLLOW_BEDROCK_NETHER.getOre(), "ore_hollow_bedrock_nether_top");
+    public static OreGen ORE_XP_LEAK_BEDROCK_NETHER_TOP = new OreGen().GenTop( CONFIG.ORE_XP_LEAK_BEDROCK_NETHER.topOreChance, ORE_XP_LEAK_BEDROCK_NETHER.getOre(), "ore_xp_leak_bedrock_nether_top");
 
     public static OreGen ORE_LAVA_BEDROCK_NETHER_TOP = new OreGen().GenTop( CONFIG.ORE_LAVA_BEDROCK_NETHER.topOreChance, ORE_LAVA_BEDROCK_NETHER.getOre(), "ore_lava_bedrock_nether_top");
 
     //end
     public static OreGen ORE_HOLLOW_BEDROCK_END = new OreGen().GenAll(ENDSTONE, CONFIG.ORE_HOLLOW_BEDROCK_END.oreSize, CONFIG.ORE_HOLLOW_BEDROCK_END.OreCount, EntryModule.BEDROCK_HOLLOW.get().getDefaultState().with(BedrockStates.REPLACE_WITH_BEDROCK, false), "ore_hollow_bedrock_end");
+    public static OreGen ORE_XP_LEAK_BEDROCK_END = new OreGen().GenAll(ENDSTONE, CONFIG.ORE_XP_LEAK_BEDROCK_END.oreSize, CONFIG.ORE_XP_LEAK_BEDROCK_END.OreCount, EntryModule.XP_LEAK.ore().get().getDefaultState().with(BedrockStates.REPLACE_WITH_BEDROCK, false), "ore_xp_leak_bedrock_end");
 
 
 
@@ -156,115 +160,119 @@ public class OreGenConfig {
 
 
     public static void init(){
-        ORE_COAL_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-        ORE_IRON_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-        ORE_GOLD_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-        ORE_DIAMOND_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-        ORE_REDSTONE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-        ORE_COPPER_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-        ORE_LAPIS_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-        ORE_EMERALD_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensEmeralds());
-        ORE_WATER_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-        ORE_LAVA_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-        ORE_MILK_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-        ORE_COOKIE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-        ORE_HOLLOW_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+        ORE_COAL_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_COAL_BEDROCK_OVERWORLD.genOre);
+        ORE_IRON_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_IRON_BEDROCK_OVERWORLD.genOre);
+        ORE_GOLD_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_GOLD_BEDROCK_OVERWORLD.genOre);
+        ORE_DIAMOND_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_DIAMOND_BEDROCK_OVERWORLD.genOre);
+        ORE_REDSTONE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_REDSTONE_BEDROCK_OVERWORLD.genOre);
+        ORE_COPPER_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_COPPER_BEDROCK_OVERWORLD.genOre);
+        ORE_LAPIS_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_LAPIS_BEDROCK_OVERWORLD.genOre);
+        ORE_EMERALD_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensEmeralds(), CONFIG.ORE_EMERALD_BEDROCK_OVERWORLD.genOre);
+        ORE_WATER_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_WATER_BEDROCK_OVERWORLD.genOre);
+        ORE_LAVA_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_LAVA_BEDROCK_OVERWORLD.genOre);
+        ORE_MILK_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MILK_BEDROCK_OVERWORLD.genOre);
+        ORE_COOKIE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_COOKIE_BEDROCK_OVERWORLD.genOre);
+        ORE_HOLLOW_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_HOLLOW_BEDROCK_OVERWORLD.genOre);
+        ORE_XP_LEAK_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_XP_LEAK_BEDROCK_OVERWORLD.genOre);
 
 
-        ORE_NETHER_GOLD_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether());
-        ORE_NETHER_QUARTZ_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether());
-        ORE_ANCIENT_DEBRIS_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether());
-        ORE_LAVA_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether());
-        ORE_HOLLOW_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether());
+        ORE_NETHER_GOLD_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_NETHER_GOLD_BEDROCK_NETHER.genOre);
+        ORE_NETHER_QUARTZ_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_NETHER_QUARTZ_BEDROCK_NETHER.genOre);
+        ORE_ANCIENT_DEBRIS_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_ANCIENT_DEBRIS_BEDROCK_NETHER.genOre);
+        ORE_LAVA_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_LAVA_BEDROCK_NETHER.genOre);
+        ORE_HOLLOW_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_HOLLOW_BEDROCK_NETHER.genOre);
+        ORE_XP_LEAK_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_XP_LEAK_BEDROCK_NETHER.genOre);
 
-        ORE_NETHER_GOLD_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether());
-        ORE_NETHER_QUARTZ_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether());
-        ORE_ANCIENT_DEBRIS_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether());
-        ORE_LAVA_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether());
-        ORE_HOLLOW_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether());
+        ORE_NETHER_GOLD_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_NETHER_GOLD_BEDROCK_NETHER.genOre);
+        ORE_NETHER_QUARTZ_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_NETHER_QUARTZ_BEDROCK_NETHER.genOre);
+        ORE_ANCIENT_DEBRIS_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_ANCIENT_DEBRIS_BEDROCK_NETHER.genOre);
+        ORE_LAVA_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_LAVA_BEDROCK_NETHER.genOre);
+        ORE_HOLLOW_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_HOLLOW_BEDROCK_NETHER.genOre);
+        ORE_XP_LEAK_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_XP_LEAK_BEDROCK_NETHER.genOre);
 
-        ORE_HOLLOW_BEDROCK_END.addOreToGen(BiomeSelectors.gensInEnd());
+        ORE_HOLLOW_BEDROCK_END.addOreToGen(BiomeSelectors.gensInEnd(), CONFIG.ORE_HOLLOW_BEDROCK_END.genOre);
+        ORE_XP_LEAK_BEDROCK_END.addOreToGen(BiomeSelectors.gensInEnd(), CONFIG.ORE_XP_LEAK_BEDROCK_END.genOre);
 
 
         if(Platform.isModLoaded("techreborn")) {
-            ORE_BAUXITE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_GALENA_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_IRIDIUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_LEAD_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_RUBY_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_SAPPHIRE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_SILVER_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_TIN_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+            ORE_BAUXITE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_BAUXITE_BEDROCK_OVERWORLD.genOre);
+            ORE_GALENA_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_GALENA_BEDROCK_OVERWORLD.genOre);
+            ORE_IRIDIUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_IRIDIUM_BEDROCK_OVERWORLD.genOre);
+            ORE_LEAD_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_LEAD_BEDROCK_OVERWORLD.genOre);
+            ORE_RUBY_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_RUBY_BEDROCK_OVERWORLD.genOre);
+            ORE_SAPPHIRE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_SAPPHIRE_BEDROCK_OVERWORLD.genOre);
+            ORE_SILVER_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_SILVER_BEDROCK_OVERWORLD.genOre);
+            ORE_TIN_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_TIN_BEDROCK_OVERWORLD.genOre);
 
-            ORE_CINNABAR_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether());
-            ORE_PYRITE_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether());
-            ORE_SPHALERITE_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether());
+            ORE_CINNABAR_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_CINNABAR_BEDROCK_NETHER.genOre);
+            ORE_PYRITE_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_PYRITE_BEDROCK_NETHER.genOre);
+            ORE_SPHALERITE_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_SPHALERITE_BEDROCK_NETHER.genOre);
 
-            ORE_CINNABAR_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether());
-            ORE_PYRITE_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether());
-            ORE_SPHALERITE_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether());
+            ORE_CINNABAR_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_CINNABAR_BEDROCK_NETHER.genOre);
+            ORE_PYRITE_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_PYRITE_BEDROCK_NETHER.genOre);
+            ORE_SPHALERITE_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_SPHALERITE_BEDROCK_NETHER.genOre);
 
-            ORE_PERIDOT_BEDROCK_END.addOreToGen(BiomeSelectors.gensInEnd());
-            ORE_SHELDONITE_BEDROCK_END.addOreToGen(BiomeSelectors.gensInEnd());
-            ORE_SODALITE_BEDROCK_END.addOreToGen(BiomeSelectors.gensInEnd());
-            ORE_TUNGSTEN_BEDROCK_END.addOreToGen(BiomeSelectors.gensInEnd());
+            ORE_PERIDOT_BEDROCK_END.addOreToGen(BiomeSelectors.gensInEnd(), CONFIG.ORE_PERIDOT_BEDROCK_END.genOre);
+            ORE_SHELDONITE_BEDROCK_END.addOreToGen(BiomeSelectors.gensInEnd(), CONFIG.ORE_SHELDONITE_BEDROCK_END.genOre);
+            ORE_SODALITE_BEDROCK_END.addOreToGen(BiomeSelectors.gensInEnd(), CONFIG.ORE_SODALITE_BEDROCK_END.genOre);
+            ORE_TUNGSTEN_BEDROCK_END.addOreToGen(BiomeSelectors.gensInEnd(), CONFIG.ORE_TUNGSTEN_BEDROCK_END.genOre);
         }
         if(Platform.isModLoaded("tconstruct")) {
-            ORE_TC_COBALT_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether());
+            ORE_TC_COBALT_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_TC_COBALT_BEDROCK_NETHER.genOre);
 
-            ORE_TC_COBALT_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether());
+            ORE_TC_COBALT_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_TC_COBALT_BEDROCK_NETHER.genOre);
         }
         if(Platform.isModLoaded("ae2")) {
-            ORE_AE_CERTUS_QUARTZ_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+            ORE_AE_CERTUS_QUARTZ_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_AE_CERTUS_QUARTZ_BEDROCK_OVERWORLD.genOre);
         }
         if(Platform.isModLoaded("bigreactors")) {
-            ORE_ER_YELLORITE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_ER_ANGLESITE_BEDROCK_END.addOreToGen(BiomeSelectors.gensInEnd());
-            ORE_ER_BENITOITE_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether());
+            ORE_ER_YELLORITE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_ER_YELLORITE_BEDROCK_OVERWORLD.genOre);
+            ORE_ER_ANGLESITE_BEDROCK_END.addOreToGen(BiomeSelectors.gensInEnd(), CONFIG.ORE_ER_ANGLESITE_BEDROCK_END.genOre);
+            ORE_ER_BENITOITE_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_ER_BENITOITE_BEDROCK_NETHER.genOre);
 
-            ORE_ER_BENITOITE_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether());
+            ORE_ER_BENITOITE_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_ER_BENITOITE_BEDROCK_NETHER.genOre);
         }
         if(Platform.isModLoaded("biggerreactors")) {
-            ORE_BR_URANIUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+            ORE_BR_URANIUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_BR_URANIUM_BEDROCK_OVERWORLD.genOre);
         }
         if(Platform.isModLoaded("immersiveengineering")) {
-            ORE_IE_ALUMINUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_IE_LEAD_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_IE_SILVER_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_IE_NICKEL_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_IE_URANIUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+            ORE_IE_ALUMINUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_IE_ALUMINUM_BEDROCK_OVERWORLD.genOre);
+            ORE_IE_LEAD_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_IE_LEAD_BEDROCK_OVERWORLD.genOre);
+            ORE_IE_SILVER_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_IE_SILVER_BEDROCK_OVERWORLD.genOre);
+            ORE_IE_NICKEL_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_IE_NICKEL_BEDROCK_OVERWORLD.genOre);
+            ORE_IE_URANIUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_IE_URANIUM_BEDROCK_OVERWORLD.genOre);
         }
         if(Platform.isModLoaded("mythicmetals")) {
-            ORE_MM_ADAMANTITE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_MM_AQUARIUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_MM_BANGLUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_MM_CARMOT_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_MM_KYBER_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_MM_MANGANESE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_MM_MORKITE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_MM_MYTHRIL_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_MM_ORICHALCUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_MM_OSMIUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_MM_PLATINUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_MM_PROMETHEUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_MM_QUADRILLUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_MM_RUNITE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_MM_SILVER_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_MM_STARRITE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_MM_TIN_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
-            ORE_MM_UNOBTAINIUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld());
+            ORE_MM_ADAMANTITE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MM_ADAMANTITE_BEDROCK_OVERWORLD.genOre);
+            ORE_MM_AQUARIUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MM_AQUARIUM_BEDROCK_OVERWORLD.genOre);
+            ORE_MM_BANGLUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MM_BANGLUM_BEDROCK_OVERWORLD.genOre);
+            ORE_MM_CARMOT_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MM_CARMOT_BEDROCK_OVERWORLD.genOre);
+            ORE_MM_KYBER_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MM_KYBER_BEDROCK_OVERWORLD.genOre);
+            ORE_MM_MANGANESE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MM_MANGANESE_BEDROCK_OVERWORLD.genOre);
+            ORE_MM_MORKITE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MM_MORKITE_BEDROCK_OVERWORLD.genOre);
+            ORE_MM_MYTHRIL_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MM_MYTHRIL_BEDROCK_OVERWORLD.genOre);
+            ORE_MM_ORICHALCUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MM_ORICHALCUM_BEDROCK_OVERWORLD.genOre);
+            ORE_MM_OSMIUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MM_OSMIUM_BEDROCK_OVERWORLD.genOre);
+            ORE_MM_PLATINUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MM_PLATINUM_BEDROCK_OVERWORLD.genOre);
+            ORE_MM_PROMETHEUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MM_PROMETHEUM_BEDROCK_OVERWORLD.genOre);
+            ORE_MM_QUADRILLUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MM_QUADRILLUM_BEDROCK_OVERWORLD.genOre);
+            ORE_MM_RUNITE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MM_RUNITE_BEDROCK_OVERWORLD.genOre);
+            ORE_MM_SILVER_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MM_SILVER_BEDROCK_OVERWORLD.genOre);
+            ORE_MM_STARRITE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MM_STARRITE_BEDROCK_OVERWORLD.genOre);
+            ORE_MM_TIN_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MM_TIN_BEDROCK_OVERWORLD.genOre);
+            ORE_MM_UNOBTAINIUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MM_UNOBTAINIUM_BEDROCK_OVERWORLD.genOre);
 
-            ORE_MM_NETHER_BANGLUM_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether());
-            ORE_MM_MIDAS_GOLD_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether());
-            ORE_MM_PALLADIUM_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether());
-            ORE_MM_STORMYX_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether());
+            ORE_MM_NETHER_BANGLUM_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_MM_NETHER_BANGLUM_BEDROCK_NETHER.genOre);
+            ORE_MM_MIDAS_GOLD_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_MM_MIDAS_GOLD_BEDROCK_NETHER.genOre);
+            ORE_MM_PALLADIUM_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_MM_PALLADIUM_BEDROCK_NETHER.genOre);
+            ORE_MM_STORMYX_BEDROCK_NETHER.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_MM_STORMYX_BEDROCK_NETHER.genOre);
 
-            ORE_MM_NETHER_BANGLUM_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether());
-            ORE_MM_MIDAS_GOLD_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether());
-            ORE_MM_PALLADIUM_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether());
-            ORE_MM_STORMYX_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether());
+            ORE_MM_NETHER_BANGLUM_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_MM_NETHER_BANGLUM_BEDROCK_NETHER.genOre);
+            ORE_MM_MIDAS_GOLD_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_MM_MIDAS_GOLD_BEDROCK_NETHER.genOre);
+            ORE_MM_PALLADIUM_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_MM_PALLADIUM_BEDROCK_NETHER.genOre);
+            ORE_MM_STORMYX_BEDROCK_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_MM_STORMYX_BEDROCK_NETHER.genOre);
 
-            ORE_MM_STARRITE_BEDROCK_END.addOreToGen(BiomeSelectors.gensInEnd());
+            ORE_MM_STARRITE_BEDROCK_END.addOreToGen(BiomeSelectors.gensInEnd(), CONFIG.ORE_MM_STARRITE_BEDROCK_END.genOre);
         }
     }
 

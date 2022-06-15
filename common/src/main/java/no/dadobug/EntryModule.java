@@ -75,6 +75,7 @@ public class EntryModule {
     public static MutableText FLUID_TOOLTIP = new TranslatableText("item.dadobugbedrockores.regen_fluid.tooltip").formatted(Formatting.GREEN);
     public static MutableText JOKE_FLUID_ONE_TOOLTIP = new TranslatableText("item.dadobugbedrockores.regen_joke_fluid_one.tooltip").formatted(Formatting.GOLD);
     public static MutableText JOKE_ITEM_ONE_TOOLTIP = new TranslatableText("item.dadobugbedrockores.regen_joke_item_one.tooltip").formatted(Formatting.GOLD);
+    public static MutableText XP_TOOLTIP = new TranslatableText("item.dadobugbedrockores.regen_xp.tooltip").formatted(Formatting.AQUA);
 
 
 
@@ -92,6 +93,7 @@ public class EntryModule {
     public static final BedrockStack BEDROCK_FRACTURED = BedrockStack.BedrockStackAlteredBedrock("fractured", CONFIG.BEDROCK_FRACTURED, vanillaItemSettings, DynamicBlockSettings, true, FRACTURED_TOOLTIP);
     public static final RegistrySupplier<Block> BEDROCK_HOLLOW = BLOCKS.register("bedrock_hollow",() -> ExpectPlatformBox.newBedrockOre(DynamicBlockSettings.get(CONFIG.BEDROCK_HOLLOW), true, CONFIG.BEDROCK_HOLLOW.XPmin, CONFIG.BEDROCK_HOLLOW.XPmax));
     public static final RegistrySupplier<Item> BEDROCK_HOLLOW_ITEM = ITEMS.register("bedrock_hollow",() -> new BlockItem(BEDROCK_HOLLOW.get(), vanillaItemSettings.get(CONFIG.BEDROCK_HOLLOW)));
+    public static final BedrockStack XP_LEAK = BedrockStack.BedrockStackXPLeak("xp_leak", CONFIG.XP_LEAK, vanillaItemSettings, DynamicBlockSettings, true, XP_TOOLTIP);
 
     //easter egg
     public static final BedrockStack BEDROCK_MILK_ORE = BedrockStack.BedrockStackFluidOre("milk", CONFIG.BEDROCK_MILK_ORE, vanillaItemSettings, DynamicBlockSettings, true, JOKE_FLUID_ONE_TOOLTIP, Items.MILK_BUCKET.getDefaultStack(), java.util.Optional.ofNullable(SoundEvents.ENTITY_COW_MILK));

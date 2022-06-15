@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundEvent;
 import no.dadobug.blocks.forge.BedrockFluid;
 import no.dadobug.blocks.forge.BedrockOre;
+import no.dadobug.blocks.forge.XPLeak;
 
 import java.util.Optional;
 
@@ -24,5 +25,10 @@ public class ExpectPlatformBoxImpl {
 
     public static Block newBedrockFluid(AbstractBlock.Settings settings, boolean replaceWithBedrock, ItemStack bucketIn, Optional<SoundEvent> bucketSoundIn, int XPmin, int XPmax){
         return new BedrockFluid(settings, replaceWithBedrock, bucketIn, bucketSoundIn, XPmin, XPmax);
+    }
+
+
+    public static Block newXPLeak(AbstractBlock.Settings settings, boolean replaceWithBedrock, int XPmin, int XPmax){
+        return new XPLeak(settings, replaceWithBedrock, XPmin, XPmax);
     }
 }

@@ -2,6 +2,7 @@
 
   "block.dadobugbedrockores.bedrock_fractured": "Fractured Bedrock",
   "block.dadobugbedrockores.bedrock_hollow": "Hollow Bedrock",
+  "block.dadobugbedrockores.bedrock_xp_leak": "XP Leak",
 
   "block.dadobugbedrockores.bedrock_lava_ore": "Lava Seep",
   "block.dadobugbedrockores.bedrock_water_ore": "Water Seep",
@@ -32,6 +33,7 @@
   "item.dadobugbedrockores.regen_fluid.tooltip": "It hums with great power, slowly dripping",
   "item.dadobugbedrockores.regen_joke_fluid_one.tooltip": "If only you had some cookies to go with this...",
   "item.dadobugbedrockores.regen_joke_item_one.tooltip": "If only you had some milk to go with this...",
+  "item.dadobugbedrockores.regen_xp.tooltip" : "It hums with great magical potential",
 
 
   "item.dadobugbedrockores.regenerative_milk": "Regenerative Milk Shake",
@@ -55,6 +57,7 @@
 
 
   "item.dadobugbedrockores.regenerative_fractured": "Fractured Regenerative Cluster",
+  "item.dadobugbedrockores.regenerative_xp_leak": "Leaky XP Conduit",
 
 
 

@@ -16,6 +16,9 @@ public class BlocksConfig implements ConfigData {
     public BlockConfig BEDROCK_HOLLOW = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
     @ConfigEntry.Category("vanilla")
     @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig XP_LEAK = new BlockConfig(true, 50f, 0.5f, 13, 50, 200);
+    @ConfigEntry.Category("vanilla")
+    @ConfigEntry.Gui.CollapsibleObject()
     public BlockConfig BEDROCK_COAL_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 2);
     @ConfigEntry.Category("vanilla")
     @ConfigEntry.Gui.CollapsibleObject()
