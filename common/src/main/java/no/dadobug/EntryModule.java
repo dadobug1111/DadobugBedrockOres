@@ -171,7 +171,7 @@ public class EntryModule {
     public static final BedrockStack BEDROCK_MM_BANGLUM_ORE = BedrockStack.BedrockStackStandardOre("mm_banglum", CONFIG.BEDROCK_MM_BANGLUM_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
     public static final BedrockStack BEDROCK_MM_CARMOT_ORE = BedrockStack.BedrockStackStandardOre("mm_carmot", CONFIG.BEDROCK_MM_CARMOT_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
     public static final BedrockStack BEDROCK_MM_KYBER_ORE = BedrockStack.BedrockStackStandardOre("mm_kyber", CONFIG.BEDROCK_MM_KYBER_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_MM_MANGANESE_ORE = BedrockStack.BedrockStackStandardOre("mm_maganese", CONFIG.BEDROCK_MM_MANGANESE_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_MANGANESE_ORE = BedrockStack.BedrockStackStandardOre("mm_manganese", CONFIG.BEDROCK_MM_MANGANESE_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
     public static final BedrockStack BEDROCK_MM_MORKITE_ORE = BedrockStack.BedrockStackStandardOre("mm_morkite", CONFIG.BEDROCK_MM_MORKITE_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
     public static final BedrockStack BEDROCK_MM_MYTHRIL_ORE = BedrockStack.BedrockStackStandardOre("mm_mythril", CONFIG.BEDROCK_MM_MYTHRIL_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
     public static final BedrockStack BEDROCK_MM_ORICHALCUM_ORE = BedrockStack.BedrockStackStandardOre("mm_orichalcum", CONFIG.BEDROCK_MM_ORICHALCUM_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
