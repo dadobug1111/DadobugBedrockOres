@@ -39,7 +39,7 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "name": "mythicmetals:blocks/maganese_ore",
+          "name": "mythicmetals:blocks/manganese_ore",
           "functions": [
             {
               "function": "minecraft:set_count",
