@@ -10,7 +10,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
 import no.dadobug.EntryModule;
-import no.dadobug.blocks.BedrockStates;
+import no.dadobug.blocks.OresBlockStates;
 
 public class RegenerativeBlock extends TransparentBlock {
     public RegenerativeBlock(Settings settings) {
@@ -31,17 +31,17 @@ public class RegenerativeBlock extends TransparentBlock {
             if (state.isIn(EntryModule.REGEN_TAG) && !(EnchantmentHelper.getEquipmentLevel(EntryModule.SHATTERING.get(), player) > 0) && (!(EnchantmentHelper.getEquipmentLevel(EntryModule.CURSE_OF_FRACTURING.get(), player) > 0) || !state.isIn(EntryModule.FRACTURE_TAG)) && (!(EnchantmentHelper.getEquipmentLevel(EntryModule.EXTRACTION.get(), player) > 0) || !state.isIn(EntryModule.CORE_TAG))) {
                 return true;
             } else if (state.isIn(EntryModule.FRACTURE_TAG) && (EnchantmentHelper.getEquipmentLevel(EntryModule.CURSE_OF_FRACTURING.get(), player) > 0)) {
-                if (state.contains(BedrockStates.REPLACE_WITH_BEDROCK))
-                    return world.setBlockState(pos, EntryModule.BEDROCK_FRACTURED.ore().get().getDefaultState().with(BedrockStates.REPLACE_WITH_BEDROCK, state.get(BedrockStates.REPLACE_WITH_BEDROCK)), world.isClient ? 11 : 3);
+                if (state.contains(OresBlockStates.REPLACE_WITH_BEDROCK))
+                    return world.setBlockState(pos, EntryModule.BEDROCK_FRACTURED.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BEDROCK, state.get(OresBlockStates.REPLACE_WITH_BEDROCK)), world.isClient ? 11 : 3);
                 else
                     return world.setBlockState(pos, EntryModule.BEDROCK_FRACTURED.ore().get().getDefaultState(), world.isClient ? 11 : 3);
             } else if (state.isIn(EntryModule.CORE_TAG) && (EnchantmentHelper.getEquipmentLevel(EntryModule.EXTRACTION.get(), player) > 0)) {
-                if (state.contains(BedrockStates.REPLACE_WITH_BEDROCK))
-                    return world.setBlockState(pos, EntryModule.BEDROCK_HOLLOW.get().getDefaultState().with(BedrockStates.REPLACE_WITH_BEDROCK, state.get(BedrockStates.REPLACE_WITH_BEDROCK)), world.isClient ? 11 : 3);
+                if (state.contains(OresBlockStates.REPLACE_WITH_BEDROCK))
+                    return world.setBlockState(pos, EntryModule.BEDROCK_HOLLOW.get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BEDROCK, state.get(OresBlockStates.REPLACE_WITH_BEDROCK)), world.isClient ? 11 : 3);
                 else
                     return world.setBlockState(pos, EntryModule.BEDROCK_HOLLOW.get().getDefaultState(), world.isClient ? 11 : 3);
-            } else if (state.contains(BedrockStates.REPLACE_WITH_BEDROCK) && (EnchantmentHelper.getEquipmentLevel(EntryModule.SHATTERING.get(), player) > 0)) {
-                if (state.get(BedrockStates.REPLACE_WITH_BEDROCK))
+            } else if (state.contains(OresBlockStates.REPLACE_WITH_BEDROCK) && (EnchantmentHelper.getEquipmentLevel(EntryModule.SHATTERING.get(), player) > 0)) {
+                if (state.get(OresBlockStates.REPLACE_WITH_BEDROCK))
                     return world.setBlockState(pos, Blocks.BEDROCK.getDefaultState(), world.isClient ? 11 : 3);
             }
         }

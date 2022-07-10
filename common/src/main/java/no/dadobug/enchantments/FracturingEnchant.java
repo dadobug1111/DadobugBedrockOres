@@ -8,8 +8,11 @@ import net.minecraft.item.PickaxeItem;
 import no.dadobug.EntryModule;
 
 public class FracturingEnchant extends Enchantment {
-    public FracturingEnchant() {
+
+    private final boolean doEnchant;
+    public FracturingEnchant(boolean doEnchant) {
         super(Rarity.RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        this.doEnchant = doEnchant;
     }
 
     @Override
@@ -33,12 +36,17 @@ public class FracturingEnchant extends Enchantment {
     }
 
     @Override
-    protected boolean canAccept(Enchantment other) {
-        return this != other && other != EntryModule.SHATTERING && other != EntryModule.EXTRACTION;
+    public boolean isAvailableForEnchantedBookOffer() {
+        return this.doEnchant;
     }
 
     @Override
-    public boolean isAcceptableItem(ItemStack stack) {
-        return stack.getItem() instanceof PickaxeItem;
+    public boolean isAvailableForRandomSelection() {
+        return this.doEnchant;
+    }
+
+    @Override
+    protected boolean canAccept(Enchantment other) {
+        return this != other && other != EntryModule.SHATTERING.get() && other != EntryModule.EXTRACTION.get() && other != EntryModule.CURSE_OF_SHATTERING.get();
     }
 }

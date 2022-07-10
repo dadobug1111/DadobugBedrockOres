@@ -13,10 +13,9 @@ import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import no.dadobug.blocks.BedrockStates;
+import no.dadobug.blocks.OresBlockStates;
 
 import java.util.List;
 
@@ -36,8 +35,8 @@ public class RegenerativeCore extends Item {
         BlockPos blockPos = context.getBlockPos();
         BlockState state = world.getBlockState(blockPos);
         if(state.isIn(EntryModule.HOLLOW_TAG)){
-            if(coreblock.getDefaultState().contains(BedrockStates.REPLACE_WITH_BEDROCK) && state.contains(BedrockStates.REPLACE_WITH_BEDROCK)) {
-                world.setBlockState(blockPos, coreblock.getDefaultState().with(BedrockStates.REPLACE_WITH_BEDROCK, state.get(BedrockStates.REPLACE_WITH_BEDROCK)));
+            if(coreblock.getDefaultState().contains(OresBlockStates.REPLACE_WITH_BEDROCK) && state.contains(OresBlockStates.REPLACE_WITH_BEDROCK)) {
+                world.setBlockState(blockPos, coreblock.getDefaultState().with(OresBlockStates.REPLACE_WITH_BEDROCK, state.get(OresBlockStates.REPLACE_WITH_BEDROCK)));
             } else {
                 world.setBlockState(blockPos, coreblock.getDefaultState());
             }

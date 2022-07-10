@@ -16,7 +16,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
 import no.dadobug.EntryModule;
-import no.dadobug.blocks.BedrockStates;
+import no.dadobug.blocks.OresBlockStates;
 
 public class BedrockOre extends TransparentBlock {
     private final UniformIntProvider experienceDropped;
@@ -32,7 +32,7 @@ public class BedrockOre extends TransparentBlock {
     public BedrockOre(Settings settings, Boolean ReplaceWithBedrock, UniformIntProvider experienceDropped){
         super(settings);
         this.experienceDropped = experienceDropped;
-        setDefaultState(getStateManager().getDefaultState().with(BedrockStates.REPLACE_WITH_BEDROCK, ReplaceWithBedrock));
+        setDefaultState(getStateManager().getDefaultState().with(OresBlockStates.REPLACE_WITH_BEDROCK, ReplaceWithBedrock));
     }
 
     @Override
@@ -46,7 +46,7 @@ public class BedrockOre extends TransparentBlock {
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
-        stateManager.add(BedrockStates.REPLACE_WITH_BEDROCK);
+        stateManager.add(OresBlockStates.REPLACE_WITH_BEDROCK);
     }
 
     @Override

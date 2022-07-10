@@ -6,11 +6,9 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.network.ServerPlayerInteractionManager;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.tag.BlockTags;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import no.dadobug.EntryModule;
-import no.dadobug.blocks.BedrockStates;
+import no.dadobug.blocks.OresBlockStates;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -25,7 +23,7 @@ public class MixinServerPlayer {
     @Shadow
     public ServerPlayerEntity player;
 
-
+    /*
     @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;postMine(Lnet/minecraft/world/World;Lnet/minecraft/block/BlockState;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/entity/player/PlayerEntity;)V"), method = "tryBreakBlock", locals = LocalCapture.CAPTURE_FAILHARD)
     private void regenBlock(BlockPos pos, CallbackInfoReturnable<Boolean> cir, BlockState state) {
         if(state.isIn(EntryModule.REGEN_TAG) && !(EnchantmentHelper.getEquipmentLevel(EntryModule.SHATTERING.get(), player) > 0) && (!(EnchantmentHelper.getEquipmentLevel(EntryModule.CURSE_OF_FRACTURING.get(), player) > 0) || !state.isIn(EntryModule.FRACTURE_TAG)) && (!(EnchantmentHelper.getEquipmentLevel(EntryModule.EXTRACTION.get(), player) > 0) || !state.isIn(EntryModule.CORE_TAG))){
@@ -34,16 +32,17 @@ public class MixinServerPlayer {
 
         } else if(state.isIn(EntryModule.FRACTURE_TAG) && (EnchantmentHelper.getEquipmentLevel(EntryModule.CURSE_OF_FRACTURING.get(), player) > 0)){
 
-            if(state.contains(BedrockStates.REPLACE_WITH_BEDROCK)) this.world.setBlockState(pos, EntryModule.BEDROCK_FRACTURED.ore().get().getDefaultState().with(BedrockStates.REPLACE_WITH_BEDROCK, state.get(BedrockStates.REPLACE_WITH_BEDROCK)));
+            if(state.contains(OresBlockStates.REPLACE_WITH_BEDROCK)) this.world.setBlockState(pos, EntryModule.BEDROCK_FRACTURED.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BEDROCK, state.get(OresBlockStates.REPLACE_WITH_BEDROCK)));
             else this.world.setBlockState(pos, EntryModule.BEDROCK_FRACTURED.ore().get().getDefaultState());
 
         } else if(state.isIn(EntryModule.CORE_TAG) && (EnchantmentHelper.getEquipmentLevel(EntryModule.EXTRACTION.get(), player) > 0)){
 
-            if(state.contains(BedrockStates.REPLACE_WITH_BEDROCK)) this.world.setBlockState(pos, EntryModule.BEDROCK_HOLLOW.get().getDefaultState().with(BedrockStates.REPLACE_WITH_BEDROCK, state.get(BedrockStates.REPLACE_WITH_BEDROCK)));
+            if(state.contains(OresBlockStates.REPLACE_WITH_BEDROCK)) this.world.setBlockState(pos, EntryModule.BEDROCK_HOLLOW.get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BEDROCK, state.get(OresBlockStates.REPLACE_WITH_BEDROCK)));
             else this.world.setBlockState(pos, EntryModule.BEDROCK_HOLLOW.get().getDefaultState());
 
-        } else if(state.contains(BedrockStates.REPLACE_WITH_BEDROCK) && (EnchantmentHelper.getEquipmentLevel(EntryModule.SHATTERING.get(), player) > 0)){
-            if(state.get(BedrockStates.REPLACE_WITH_BEDROCK))this.world.setBlockState(pos, Blocks.BEDROCK.getDefaultState());
+        } else if(state.contains(OresBlockStates.REPLACE_WITH_BEDROCK) && (EnchantmentHelper.getEquipmentLevel(EntryModule.SHATTERING.get(), player) > 0)){
+            if(state.get(OresBlockStates.REPLACE_WITH_BEDROCK))this.world.setBlockState(pos, Blocks.BEDROCK.getDefaultState());
         }
     }
+     */
 }

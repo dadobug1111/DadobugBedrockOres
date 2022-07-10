@@ -9,33 +9,40 @@ import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
+import me.shedaniel.cloth.clothconfig.shadowed.org.yaml.snakeyaml.nodes.Tag;
 import net.minecraft.block.*;
+import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.*;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.tag.TagGroupLoader;
 import net.minecraft.tag.TagKey;
+import net.minecraft.tag.TagManagerLoader;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import no.dadobug.blocks.RegenerativeBlockEntity;
 import no.dadobug.configs.BlockConfigLambda;
 import no.dadobug.configs.BlocksConfig;
-import no.dadobug.configs.GenConfig;
 import no.dadobug.configs.OreGenConfig;
-import no.dadobug.enchantments.ExtractionEnchant;
-import no.dadobug.enchantments.FracturingEnchant;
-import no.dadobug.enchantments.ShatteringEnchantment;
+import no.dadobug.enchantments.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.util.function.Supplier;
+import java.util.ArrayList;
 
 @SuppressWarnings("unused")
 public class EntryModule {
     public static final String modid = "dadobugbedrockores";
     public static final BlocksConfig CONFIG = AutoConfig.register(BlocksConfig.class, GsonConfigSerializer::new).getConfig();
+    public static final Logger LOGGER = LoggerFactory.getLogger(modid);
+
     // We can use this if we don't want to use DeferredRegister
     //public static final Supplier<Registries> REGISTRIES = Suppliers.memoize(() -> Registries.get(MOD_ID));
     // Registering a new creative tab
@@ -80,18 +87,30 @@ public class EntryModule {
 
 
     public static final DeferredRegister<Enchantment> ENCHANTS = DeferredRegister.create(modid, Registry.ENCHANTMENT_KEY);
-    public static final RegistrySupplier<Enchantment> SHATTERING = ENCHANTS.register("shattering", ShatteringEnchantment::new);
-    public static final RegistrySupplier<Enchantment> CURSE_OF_FRACTURING = ENCHANTS.register("curse_of_fracturing", FracturingEnchant::new);
-    public static final RegistrySupplier<Enchantment> EXTRACTION = ENCHANTS.register("extraction", ExtractionEnchant::new);
+    public static final RegistrySupplier<Enchantment> SHATTERING = ENCHANTS.register("shattering", () -> new ShatteringEnchantment(true));
+    public static final RegistrySupplier<Enchantment> CURSE_OF_FRACTURING = ENCHANTS.register("curse_of_fracturing", () -> new FracturingEnchant(true));
+    public static final RegistrySupplier<Enchantment> EXTRACTION = ENCHANTS.register("extraction", () -> new ExtractionEnchant(true));
+    public static final RegistrySupplier<Enchantment> GENTLE_MINING = ENCHANTS.register("gentle_mining", () -> new GentleMiningEnchant(true));
+    public static final RegistrySupplier<Enchantment> CURSE_OF_SHATTERING = ENCHANTS.register("curse_of_shattering", () -> new CursedShatteringEnchant(true));
 
 
 
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(modid, Registry.BLOCK_KEY);
+    public static final DeferredRegister<Block> REGENERATIVE_BLOCKS = DeferredRegister.create(modid, Registry.BLOCK_KEY);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(modid, Registry.ITEM_KEY);
 
 
+    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES = DeferredRegister.create(modid, Registry.BLOCK_ENTITY_TYPE_KEY);
+    public static RegistrySupplier<BlockEntityType<RegenerativeBlockEntity>> REGENERATIVEBLOCKTYPE = BLOCK_ENTITY_TYPES.register("", () -> {
+        ArrayList<Block> RegenerativeBlockList = new ArrayList<>();
+        REGENERATIVE_BLOCKS.iterator().forEachRemaining((supplier) -> RegenerativeBlockList.add(supplier.get()));
+        return BlockEntityType.Builder.create(RegenerativeBlockEntity::new, RegenerativeBlockList.toArray(new Block[0])).build(null);
+    });
+
+
+
+
     public static final BedrockStack BEDROCK_FRACTURED = BedrockStack.BedrockStackAlteredBedrock("fractured", CONFIG.BEDROCK_FRACTURED, vanillaItemSettings, DynamicBlockSettings, true, FRACTURED_TOOLTIP);
-    public static final RegistrySupplier<Block> BEDROCK_HOLLOW = BLOCKS.register("bedrock_hollow",() -> ExpectPlatformBox.newBedrockOre(DynamicBlockSettings.get(CONFIG.BEDROCK_HOLLOW), true, CONFIG.BEDROCK_HOLLOW.XPmin, CONFIG.BEDROCK_HOLLOW.XPmax));
+    public static final RegistrySupplier<Block> BEDROCK_HOLLOW = REGENERATIVE_BLOCKS.register("bedrock_hollow",() -> ExpectPlatformBox.newBedrockOre(DynamicBlockSettings.get(CONFIG.BEDROCK_HOLLOW), true, CONFIG.BEDROCK_HOLLOW.XPmin, CONFIG.BEDROCK_HOLLOW.XPmax));
     public static final RegistrySupplier<Item> BEDROCK_HOLLOW_ITEM = ITEMS.register("bedrock_hollow",() -> new BlockItem(BEDROCK_HOLLOW.get(), vanillaItemSettings.get(CONFIG.BEDROCK_HOLLOW)));
     public static final BedrockStack XP_LEAK = BedrockStack.BedrockStackXPLeak("xp_leak", CONFIG.XP_LEAK, vanillaItemSettings, DynamicBlockSettings, true, XP_TOOLTIP);
 
@@ -196,11 +215,13 @@ public class EntryModule {
 
     public static void init() {
         ENCHANTS.register();
-        BLOCKS.register();
+        REGENERATIVE_BLOCKS.register();
         ITEMS.register();
+        BLOCK_ENTITY_TYPES.register();
     }
 
     public static void initLate(boolean isClient) {
+
         OreGenConfig.init();
         if(isClient) {
             ColorHandlerRegistry.registerBlockColors((state, world, pos, tintIndex) -> {
@@ -210,8 +231,8 @@ public class EntryModule {
                 return BiomeColors.getWaterColor(world, pos);
             }, BEDROCK_WATER_ORE.ore().get());
             ColorHandlerRegistry.registerItemColors((state, tintIndex) -> 0x3f76e4, BEDROCK_WATER_ORE.ore().get());
-            RenderTypeRegistry.register(RenderLayer.getTranslucent(), BEDROCK_WATER_ORE.ore().get());
-            RenderTypeRegistry.register(RenderLayer.getTranslucent(), BEDROCK_MILK_ORE.ore().get());
+            RenderTypeRegistry.register(RenderLayer.getCutout(), BEDROCK_WATER_ORE.ore().get());
+            RenderTypeRegistry.register(RenderLayer.getCutout(), BEDROCK_MILK_ORE.ore().get());
         }
     }
 
