@@ -33,42 +33,45 @@
               ]
             }
           }
+        },
+        {
+          "condition": "inverted",
+          "term": {
+            "condition": "match_tool",
+            "predicate": {
+              "enchantments": [
+                {
+                  "enchantment": "dadobugbedrockores:curse_of_shattering",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "condition": "inverted",
+          "term": {
+            "condition": "match_tool",
+            "predicate": {
+              "enchantments": [
+                {
+                  "enchantment": "dadobugbedrockores:arcane_extraction",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
         }
       ],
       "rolls": 1,
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "name": "blocks/ancient_debris",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 3,
-                "max": 7
-              },
-              "conditions": [
-                {
-                  "condition": "match_tool",
-                  "predicate": {
-                    "enchantments": [
-                      {
-                        "enchantment": "dadobugbedrockores:shattering",
-                        "levels": {
-                          "min": 1
-                        }
-                      }
-                    ]
-                  }
-                }
-              ]
-            },
-            {
-              "function": "minecraft:apply_bonus",
-              "enchantment": "dadobugbedrockores:shattering",
-              "formula": "minecraft:ore_drops"
-            }
-          ]
+          "name": "blocks/ancient_debris"
         }
       ]
     },
@@ -92,7 +95,20 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "dadobugbedrockores:regenerative_ancient_debris"
+          "name": "dadobugbedrockores:regenerative_ancient_debris",
+          "functions": [
+            {
+              "function": "minecraft:copy_nbt",
+              "source": "block_entity",
+              "ops": [
+                {
+                  "source": "durability",
+                  "target": "BlockEntityTag.durability",
+                  "op": "replace"
+                }
+              ]
+            }
+          ]
         }
       ]
     }

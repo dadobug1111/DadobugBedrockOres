@@ -5,7 +5,6 @@
   "client": [
   ],
   "mixins": [
-    "MixinServerPlayer"
   ],
   "injectors": {
     "defaultRequire": 1

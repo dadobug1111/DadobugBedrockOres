@@ -1,6 +1,8 @@
 package no.dadobug;
 
 
+import com.google.gson.JsonObject;
+import dev.architectury.core.AbstractRecipeSerializer;
 import dev.architectury.platform.Platform;
 import dev.architectury.registry.CreativeTabRegistry;
 import dev.architectury.registry.client.rendering.ColorHandlerRegistry;
@@ -9,29 +11,34 @@ import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
-import me.shedaniel.cloth.clothconfig.shadowed.org.yaml.snakeyaml.nodes.Tag;
 import net.minecraft.block.*;
-import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.*;
+import net.minecraft.recipe.Recipe;
+import net.minecraft.recipe.RecipeSerializer;
+import net.minecraft.recipe.ShapedRecipe;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.tag.TagGroupLoader;
 import net.minecraft.tag.TagKey;
-import net.minecraft.tag.TagManagerLoader;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.registry.Registry;
+import no.dadobug.blocks.HollowBedrock;
+import no.dadobug.blocks.RegenerativeBlock;
 import no.dadobug.blocks.RegenerativeBlockEntity;
 import no.dadobug.configs.BlockConfigLambda;
 import no.dadobug.configs.BlocksConfig;
+import no.dadobug.configs.EnchantmentsConfig;
 import no.dadobug.configs.OreGenConfig;
 import no.dadobug.enchantments.*;
+import org.checkerframework.checker.units.qual.A;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,6 +48,7 @@ import java.util.ArrayList;
 public class EntryModule {
     public static final String modid = "dadobugbedrockores";
     public static final BlocksConfig CONFIG = AutoConfig.register(BlocksConfig.class, GsonConfigSerializer::new).getConfig();
+    public static final EnchantmentsConfig ENCHANT_CONFIG = AutoConfig.register(EnchantmentsConfig.class, GsonConfigSerializer::new).getConfig();
     public static final Logger LOGGER = LoggerFactory.getLogger(modid);
 
     // We can use this if we don't want to use DeferredRegister
@@ -75,6 +83,8 @@ public class EntryModule {
     public static TagKey<Block> INDESTRUCTABLE_TAG = TagKey.of(Registry.BLOCK_KEY, new Identifier("dadobugbedrockores", "no_break"));
     public static TagKey<Block> ENCHANT_ONLY_TAG = TagKey.of(Registry.BLOCK_KEY, new Identifier("dadobugbedrockores", "enchant_break"));
 
+    public static TagKey<Item> IS_CORE_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier("dadobugbedrockores", "is_core"));
+
 
 
     public static MutableText DEFAULT_TOOLTIP = new TranslatableText("item.dadobugbedrockores.regen_power.tooltip").formatted(Formatting.GREEN);
@@ -87,16 +97,23 @@ public class EntryModule {
 
 
     public static final DeferredRegister<Enchantment> ENCHANTS = DeferredRegister.create(modid, Registry.ENCHANTMENT_KEY);
-    public static final RegistrySupplier<Enchantment> SHATTERING = ENCHANTS.register("shattering", () -> new ShatteringEnchantment(true));
-    public static final RegistrySupplier<Enchantment> CURSE_OF_FRACTURING = ENCHANTS.register("curse_of_fracturing", () -> new FracturingEnchant(true));
-    public static final RegistrySupplier<Enchantment> EXTRACTION = ENCHANTS.register("extraction", () -> new ExtractionEnchant(true));
-    public static final RegistrySupplier<Enchantment> GENTLE_MINING = ENCHANTS.register("gentle_mining", () -> new GentleMiningEnchant(true));
-    public static final RegistrySupplier<Enchantment> CURSE_OF_SHATTERING = ENCHANTS.register("curse_of_shattering", () -> new CursedShatteringEnchant(true));
+    public static final RegistrySupplier<Enchantment> SHATTERING = ENCHANTS.register("shattering", () -> new ShatteringEnchantment(ENCHANT_CONFIG.SHATTERING));
+    public static final RegistrySupplier<Enchantment> CURSE_OF_FRACTURING = ENCHANTS.register("curse_of_fracturing", () -> new FracturingEnchant(ENCHANT_CONFIG.CURSE_OF_FRACTURING));
+    public static final RegistrySupplier<Enchantment> EXTRACTION = ENCHANTS.register("extraction", () -> new ExtractionEnchant(ENCHANT_CONFIG.EXTRACTION));
+    public static final RegistrySupplier<Enchantment> GENTLE_MINING = ENCHANTS.register("gentle_mining", () -> new GentleMiningEnchant(ENCHANT_CONFIG.GENTLE_MINING));
+    public static final RegistrySupplier<Enchantment> CURSE_OF_SHATTERING = ENCHANTS.register("curse_of_shattering", () -> new CursedShatteringEnchant(ENCHANT_CONFIG.CURSE_OF_SHATTERING));
+    public static final RegistrySupplier<Enchantment> ARCANE_EXTRACTION = ENCHANTS.register("arcane_extraction", () -> new ArcaneExtractionEnchant(ENCHANT_CONFIG.ARCANE_EXTRACTION));
 
 
 
     public static final DeferredRegister<Block> REGENERATIVE_BLOCKS = DeferredRegister.create(modid, Registry.BLOCK_KEY);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(modid, Registry.ITEM_KEY);
+    //public static final DeferredRegister<RecipeSerializer<?>> RECIPES = DeferredRegister.create(modid, Registry.RECIPE_SERIALIZER_KEY)
+    //public static final ShapedRecipeJsonBuilder builder = new ShapedRecipeJsonBuilder(Items.ACACIA_BOAT, 2);
+
+
+    //public static final RegistrySupplier<RecipeSerializer<?>> TEST_RECIPE = RECIPES.register("test",() -> );
+
 
 
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES = DeferredRegister.create(modid, Registry.BLOCK_ENTITY_TYPE_KEY);
@@ -110,7 +127,7 @@ public class EntryModule {
 
 
     public static final BedrockStack BEDROCK_FRACTURED = BedrockStack.BedrockStackAlteredBedrock("fractured", CONFIG.BEDROCK_FRACTURED, vanillaItemSettings, DynamicBlockSettings, true, FRACTURED_TOOLTIP);
-    public static final RegistrySupplier<Block> BEDROCK_HOLLOW = REGENERATIVE_BLOCKS.register("bedrock_hollow",() -> ExpectPlatformBox.newBedrockOre(DynamicBlockSettings.get(CONFIG.BEDROCK_HOLLOW), true, CONFIG.BEDROCK_HOLLOW.XPmin, CONFIG.BEDROCK_HOLLOW.XPmax));
+    public static final RegistrySupplier<Block> BEDROCK_HOLLOW = REGENERATIVE_BLOCKS.register("bedrock_hollow",() -> new HollowBedrock(DynamicBlockSettings.get(CONFIG.BEDROCK_HOLLOW), true, CONFIG.BEDROCK_HOLLOW.XPmin, CONFIG.BEDROCK_HOLLOW.XPmax, CONFIG.BEDROCK_HOLLOW.DurabilityMin, CONFIG.BEDROCK_HOLLOW.DurabilityMax, CONFIG.BEDROCK_HOLLOW.infinite, false, Blocks.BEDROCK.getDefaultState()));
     public static final RegistrySupplier<Item> BEDROCK_HOLLOW_ITEM = ITEMS.register("bedrock_hollow",() -> new BlockItem(BEDROCK_HOLLOW.get(), vanillaItemSettings.get(CONFIG.BEDROCK_HOLLOW)));
     public static final BedrockStack XP_LEAK = BedrockStack.BedrockStackXPLeak("xp_leak", CONFIG.XP_LEAK, vanillaItemSettings, DynamicBlockSettings, true, XP_TOOLTIP);
 
@@ -221,7 +238,8 @@ public class EntryModule {
     }
 
     public static void initLate(boolean isClient) {
-
+        //ArrayList<JsonObject> object = new ArrayList<>();
+        //builder.offerTo((RecipeJsonProviderA) -> object.add(RecipeJsonProviderA.toJson()));
         OreGenConfig.init();
         if(isClient) {
             ColorHandlerRegistry.registerBlockColors((state, world, pos, tintIndex) -> {

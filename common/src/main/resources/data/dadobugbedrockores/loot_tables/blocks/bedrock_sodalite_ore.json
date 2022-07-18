@@ -33,62 +33,45 @@
               ]
             }
           }
+        },
+        {
+          "condition": "inverted",
+          "term": {
+            "condition": "match_tool",
+            "predicate": {
+              "enchantments": [
+                {
+                  "enchantment": "dadobugbedrockores:curse_of_shattering",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "condition": "inverted",
+          "term": {
+            "condition": "match_tool",
+            "predicate": {
+              "enchantments": [
+                {
+                  "enchantment": "dadobugbedrockores:arcane_extraction",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
         }
       ],
       "rolls": 1,
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "name": "techreborn:blocks/sodalite_ore",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 3,
-                "max": 7
-              },
-              "conditions": [
-                {
-                  "condition": "match_tool",
-                  "predicate": {
-                    "enchantments": [
-                      {
-                        "enchantment": "dadobugbedrockores:shattering",
-                        "levels": {
-                          "min": 1
-                        }
-                      }
-                    ]
-                  }
-                }
-              ]
-            },
-            {
-              "function": "minecraft:apply_bonus",
-              "enchantment": "dadobugbedrockores:shattering",
-              "formula": "minecraft:ore_drops"
-            },
-            {
-              "function": "minecraft:apply_bonus",
-              "enchantment": "minecraft:fortune",
-              "formula": "minecraft:ore_drops",
-              "conditions": [
-                {
-                  "condition": "match_tool",
-                  "predicate": {
-                    "enchantments": [
-                      {
-                        "enchantment": "dadobugbedrockores:shattering",
-                        "levels": {
-                          "min": 1
-                        }
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          ]
+          "name": "techreborn:blocks/sodalite_ore"
         }
       ]
     },
@@ -112,7 +95,20 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "dadobugbedrockores:regenerative_sodalite"
+          "name": "dadobugbedrockores:regenerative_sodalite",
+          "functions": [
+            {
+              "function": "minecraft:copy_nbt",
+              "source": "block_entity",
+              "ops": [
+                {
+                  "source": "durability",
+                  "target": "BlockEntityTag.durability",
+                  "op": "replace"
+                }
+              ]
+            }
+          ]
         }
       ]
     }

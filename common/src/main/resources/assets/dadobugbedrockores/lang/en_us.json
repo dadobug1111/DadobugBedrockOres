@@ -34,6 +34,7 @@
   "item.dadobugbedrockores.regen_joke_fluid_one.tooltip": "If only you had some cookies to go with this...",
   "item.dadobugbedrockores.regen_joke_item_one.tooltip": "If only you had some milk to go with this...",
   "item.dadobugbedrockores.regen_xp.tooltip" : "It hums with great magical potential",
+  "item.dadobugbedrockores.durability.tooltip" : "Remaining ore durability: ",
 
 
   "item.dadobugbedrockores.regenerative_milk": "Regenerative Milk Shake",
@@ -64,6 +65,9 @@
   "enchantment.dadobugbedrockores.shattering": "Shattering",
   "enchantment.dadobugbedrockores.curse_of_fracturing": "Curse of Fracturing",
   "enchantment.dadobugbedrockores.extraction": "Extraction",
+  "enchantment.dadobugbedrockores.gentle_mining": "Gentle Mining",
+  "enchantment.dadobugbedrockores.curse_of_shattering": "Curse of Shattering",
+  "enchantment.dadobugbedrockores.arcane_extraction": "Arcane Extraction",
 
 
   "block.dadobugbedrockores.bedrock_bauxite_ore": "Bedrock Bauxite Ore",

@@ -7,10 +7,12 @@ import dev.architectury.registry.registries.Registries;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.tag.Tag;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.*;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.biome.source.BiomeSource;
 import net.minecraft.world.biome.source.MultiNoiseBiomeSource;
 import net.minecraft.world.biome.source.TheEndBiomeSource;
@@ -56,7 +58,7 @@ public class BiomeSelectors {
     }
 
     public static Predicate<BiomeModifications.BiomeContext> gensEmeralds() {
-        return BiomeSelectors.gensFeature(OrePlacedFeatures.ORE_EMERALD);
+        return (context) -> hasTag(TagKey.of(Registry.BIOME_KEY, new Identifier("minecraft", "is_mountain"))).test(context) || hasTag(TagKey.of(Registry.BIOME_KEY, new Identifier("minecraft", "is_hill"))).test(context) || BiomeKeys.GROVE.getValue().equals(context.getKey());
     }
 
     public static Optional<World> getWorld(MinecraftServer server, RegistryKey<World> world) {
@@ -71,6 +73,10 @@ public class BiomeSelectors {
 
     public static Predicate<BiomeModifications.BiomeContext> hasTag(Tag<Biome> tag) {
         return context -> tag.values().contains(BuiltinRegistries.BIOME.get(context.getKey()));
+    }
+
+    public static Predicate<BiomeModifications.BiomeContext> hasTag(TagKey<Biome> tag) {
+        return context -> BuiltinRegistries.BIOME.getEntryList(tag).stream().anyMatch((taglist) -> taglist.stream().anyMatch((biome) -> biome.matchesId(context.getKey())));
     }
 
     public static Predicate<BiomeModifications.BiomeContext> gensInSource(BiomeSource sourceIn) {

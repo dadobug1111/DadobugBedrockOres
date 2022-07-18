@@ -6,13 +6,18 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.PickaxeItem;
 import no.dadobug.EntryModule;
+import no.dadobug.configs.EnchantConfig;
 
 public class ExtractionEnchant extends Enchantment{
 
-    private final boolean doEnchant;
-    public ExtractionEnchant(boolean doEnchant) {
+    private boolean doTableEnchant;
+    private boolean doVillagerEnchant;
+    private boolean doLootEnchant;
+    public ExtractionEnchant(EnchantConfig config) {
         super(Enchantment.Rarity.RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
-        this.doEnchant = doEnchant;
+        this.doTableEnchant = config.doTableEnchant;
+        this.doVillagerEnchant = config.doVillagerEnchant;
+        this.doLootEnchant = config.doLootEnchant;
     }
 
     @Override
@@ -27,21 +32,21 @@ public class ExtractionEnchant extends Enchantment{
 
     @Override
     public boolean isTreasure() {
-        return true;
+        return !doTableEnchant;
     }
 
     @Override
     public boolean isAvailableForEnchantedBookOffer() {
-        return this.doEnchant;
+        return this.doVillagerEnchant;
     }
 
     @Override
     public boolean isAvailableForRandomSelection() {
-        return this.doEnchant;
+        return this.doLootEnchant;
     }
 
     @Override
     protected boolean canAccept(Enchantment other) {
-        return this != other && other != EntryModule.CURSE_OF_FRACTURING.get() && other != EntryModule.SHATTERING.get() && other != EntryModule.CURSE_OF_SHATTERING.get();
+        return this != other && other != EntryModule.CURSE_OF_FRACTURING.get() && other != EntryModule.SHATTERING.get() && other != EntryModule.CURSE_OF_SHATTERING.get() && other != EntryModule.ARCANE_EXTRACTION.get();
     }
 }

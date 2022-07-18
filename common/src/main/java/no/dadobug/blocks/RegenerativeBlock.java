@@ -10,6 +10,9 @@ import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.stat.Stats;
@@ -19,15 +22,19 @@ import net.minecraft.util.math.intprovider.IntProvider;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldView;
 import no.dadobug.EntryModule;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Random;
+
 public class RegenerativeBlock extends BlockWithEntity {
-    private final UniformIntProvider experienceDropped;
-    private final IntProvider durabilityProvider;
-    private final boolean infinite;
-    private final boolean silk_able;
-    private final BlockState replaceBlock;
+    protected final UniformIntProvider experienceDropped;
+    protected final IntProvider durabilityProvider;
+    protected final boolean infinite;
+    protected final boolean silk_able;
+    protected final BlockState replaceBlock;
+    protected Random random;
 
 
     public RegenerativeBlock(AbstractBlock.Settings settings, boolean ReplaceWithBlock, boolean infinite, boolean silk_able, BlockState replaceBlock) {
@@ -54,6 +61,7 @@ public class RegenerativeBlock extends BlockWithEntity {
 
     public RegenerativeBlock(Settings settings, boolean ReplaceWithBlock, UniformIntProvider experienceDropped, IntProvider durabilityProvider, boolean infinite, boolean silk_able, BlockState replaceBlock){
         super(settings);
+        this.random = new Random();
         this.experienceDropped = experienceDropped;
         this.durabilityProvider = durabilityProvider;
         this.infinite = infinite;
@@ -81,9 +89,6 @@ public class RegenerativeBlock extends BlockWithEntity {
 
     public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack itemStack) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof RegenerativeBlockEntity && !world.isClient) {
-                ((RegenerativeBlockEntity)blockEntity).resetDurability(world, this.durabilityProvider);
-            }
 
     }
 
@@ -97,7 +102,7 @@ public class RegenerativeBlock extends BlockWithEntity {
     public float calcBlockBreakingDelta(BlockState state, PlayerEntity player, BlockView world, BlockPos pos) {
         if(!player.canHarvest(state))return 0.0f;
         if(state.isIn(EntryModule.INDESTRUCTABLE_TAG))return 0.0f;
-        if(state.isIn(EntryModule.ENCHANT_ONLY_TAG) && !(EnchantmentHelper.getEquipmentLevel(EntryModule.SHATTERING.get(), player)>0 || EnchantmentHelper.getEquipmentLevel(EntryModule.CURSE_OF_FRACTURING.get(), player)>0 || EnchantmentHelper.getEquipmentLevel(EntryModule.EXTRACTION.get(), player)>0))return 0.0f;
+        if(state.isIn(EntryModule.ENCHANT_ONLY_TAG) && !(EnchantmentHelper.getEquipmentLevel(EntryModule.SHATTERING.get(), player)>0 || EnchantmentHelper.getEquipmentLevel(EntryModule.CURSE_OF_FRACTURING.get(), player)>0 || EnchantmentHelper.getEquipmentLevel(EntryModule.EXTRACTION.get(), player)>0 || EnchantmentHelper.getEquipmentLevel(EntryModule.CURSE_OF_SHATTERING.get(), player)>0 || EnchantmentHelper.getEquipmentLevel(EntryModule.GENTLE_MINING.get(), player)>0))return 0.0f;
         return super.calcBlockBreakingDelta(state, player, world, pos);
     }
 
@@ -144,13 +149,13 @@ public class RegenerativeBlock extends BlockWithEntity {
         //EntryModule.LOGGER.info("dropMultiStacks");
         if (world instanceof ServerWorld) {
             if (EnchantmentHelper.getLevel(EntryModule.CURSE_OF_SHATTERING.get(), stack) < 1 && EnchantmentHelper.getLevel(EntryModule.CURSE_OF_FRACTURING.get(), stack) < 1) {
-                int i1 = (1 + EnchantmentHelper.getLevel(EntryModule.SHATTERING.get(), stack)) * ((this.infinite && EnchantmentHelper.getLevel(EntryModule.SHATTERING.get(), stack) > 0) ? world.random.nextInt(3, 7) : 1);
 
                 if (this.silk_able && EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, stack) > 0) {
                     getDroppedStacks(state, (ServerWorld) world, pos, blockEntity, entity, stack).forEach((stackx) -> {
                         dropStack(world, pos, stackx);
                     });
                 } else {
+                    int i1 = (1 + EnchantmentHelper.getLevel(EntryModule.SHATTERING.get(), stack)) * ((this.infinite && EnchantmentHelper.getLevel(EntryModule.SHATTERING.get(), stack) > 0) ? world.random.nextInt(3, 7) : 1);
                     for (int x = 0; x < i1; x++) {
                         getDroppedStacks(state, (ServerWorld) world, pos, blockEntity, entity, stack).forEach((stackx) -> {
                             dropStack(world, pos, stackx);
@@ -207,5 +212,34 @@ public class RegenerativeBlock extends BlockWithEntity {
     @Override
     public BlockRenderType getRenderType(BlockState state) {
         return BlockRenderType.MODEL;
+    }
+
+    public int getExpDrop(BlockState state, WorldView reader, BlockPos pos, int fortune, int silktouch) {
+        EntryModule.LOGGER.debug("checked XP");
+        BlockEntity entity = reader.getBlockEntity(pos);
+        if (entity instanceof RegenerativeBlockEntity) {
+            if (silktouch == 0 && EnchantmentHelper.getLevel(EntryModule.CURSE_OF_FRACTURING.get(), ((RegenerativeBlockEntity)entity).getLastItem()) == 0 && EnchantmentHelper.getLevel(EntryModule.CURSE_OF_SHATTERING.get(), ((RegenerativeBlockEntity)entity).getLastItem()) == 0) {
+                int z = 0;
+                int i1 = 1 + EnchantmentHelper.getLevel(EntryModule.SHATTERING.get(), ((RegenerativeBlockEntity)entity).getLastItem());
+                for (int x = 0; x < i1; x++) {
+                    int i = this.experienceDropped.get(this.random);
+                    if (i > 0) {
+                        z = z + ((EnchantmentHelper.getLevel(EntryModule.SHATTERING.get(), ((RegenerativeBlockEntity)entity).getLastItem()) * (this.infinite ? 2 : 1)) + 1) * i;
+                    }
+                }
+                return z;
+            }
+        }
+        return 0;
+    }
+
+    @Override
+    @Nullable
+    public BlockState getPlacementState(ItemPlacementContext ctx) {
+        BlockState state = ctx.getWorld().getBlockState(ctx.getBlockPos());
+        if(state.getProperties().contains(OresBlockStates.REPLACE_WITH_BLOCK)){
+            return this.getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, state.get(OresBlockStates.REPLACE_WITH_BLOCK));
+        }
+        return this.getDefaultState();
     }
 }

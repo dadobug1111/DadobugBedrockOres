@@ -55,8 +55,9 @@ public class OreGenConfig {
     public static OreGen ORE_LAVA_BEDROCK_NETHER_TOP = new OreGen().GenTop( CONFIG.ORE_LAVA_BEDROCK_NETHER.topOreChance, ORE_LAVA_BEDROCK_NETHER.getOre(), "ore_lava_bedrock_nether_top");
 
     //end
-    public static OreGen ORE_HOLLOW_BEDROCK_END = new OreGen().GenAll(ENDSTONE, CONFIG.ORE_HOLLOW_BEDROCK_END.oreSize, CONFIG.ORE_HOLLOW_BEDROCK_END.OreCount, EntryModule.BEDROCK_HOLLOW.get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BEDROCK, false), "ore_hollow_bedrock_end");
-    public static OreGen ORE_XP_LEAK_BEDROCK_END = new OreGen().GenAll(ENDSTONE, CONFIG.ORE_XP_LEAK_BEDROCK_END.oreSize, CONFIG.ORE_XP_LEAK_BEDROCK_END.OreCount, EntryModule.XP_LEAK.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BEDROCK, false), "ore_xp_leak_bedrock_end");
+
+    public static OreGen ORE_HOLLOW_BEDROCK_END = new OreGen().GenAll(ENDSTONE, CONFIG.ORE_HOLLOW_BEDROCK_END.oreSize, CONFIG.ORE_HOLLOW_BEDROCK_END.OreCount, EntryModule.BEDROCK_HOLLOW.get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, false), "ore_hollow_bedrock_end");
+    public static OreGen ORE_XP_LEAK_BEDROCK_END = new OreGen().GenAll(ENDSTONE, CONFIG.ORE_XP_LEAK_BEDROCK_END.oreSize, CONFIG.ORE_XP_LEAK_BEDROCK_END.OreCount, EntryModule.XP_LEAK.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, false), "ore_xp_leak_bedrock_end");
 
 
 

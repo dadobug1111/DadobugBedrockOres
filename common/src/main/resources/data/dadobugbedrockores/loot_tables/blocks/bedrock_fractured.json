@@ -20,7 +20,20 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "dadobugbedrockores:regenerative_fractured"
+          "name": "dadobugbedrockores:regenerative_fractured",
+          "functions": [
+            {
+              "function": "minecraft:copy_nbt",
+              "source": "block_entity",
+              "ops": [
+                {
+                  "source": "durability",
+                  "target": "BlockEntityTag.durability",
+                  "op": "replace"
+                }
+              ]
+            }
+          ]
         }
       ]
     }
