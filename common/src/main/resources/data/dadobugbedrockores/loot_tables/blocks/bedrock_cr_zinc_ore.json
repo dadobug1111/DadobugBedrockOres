@@ -71,7 +71,11 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "name": "mythicmetals:blocks/quadrillum_ore"
+          "name": "create:blocks/zinc_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "create:blocks/deepslate_zinc_ore"
         }
       ]
     },
@@ -95,7 +99,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "dadobugbedrockores:regenerative_mm_quadrillum",
+          "name": "dadobugbedrockores:regenerative_cr_zinc",
           "functions": [
             {
               "function": "minecraft:copy_nbt",
@@ -132,7 +136,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "dadobugbedrockores:bedrock_mm_quadrillum_ore",
+          "name": "dadobugbedrockores:bedrock_cr_zinc_ore",
           "functions": [
             {
               "function": "minecraft:copy_nbt",

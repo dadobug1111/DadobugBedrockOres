@@ -111,6 +111,43 @@
           ]
         }
       ]
+    },
+    {
+      "rolls": 1,
+      "conditions": [
+        {
+          "condition": "match_tool",
+          "predicate": {
+            "enchantments": [
+              {
+                "enchantment": "dadobugbedrockores:arcane_extraction",
+                "levels": {
+                  "min": 1
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "dadobugbedrockores:bedrock_tc_cobalt_ore",
+          "functions": [
+            {
+              "function": "minecraft:copy_nbt",
+              "source": "block_entity",
+              "ops": [
+                {
+                  "source": "durability",
+                  "target": "BlockEntityTag.durability",
+                  "op": "replace"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }

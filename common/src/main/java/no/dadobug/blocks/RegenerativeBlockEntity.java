@@ -112,24 +112,38 @@ public class RegenerativeBlockEntity extends BlockEntity {
                 return false;
             }
         }
-        if(this.regenComplete){
-            this.damageBlock(this.keepstate);
-        }else if(!this.stacksDropped) {
-            this.keepstate.getBlock().afterBreak(worldIn, this.lastPlayer, pos, this.keepstate, this, this.lastItem);
-            this.stacksDropped = false;
-            EntryModule.LOGGER.debug("forced drops");
-        }
+
         if(worldIn != null && !worldIn.isClient) {
+            if(this.regenComplete){
+                this.damageBlock(this.keepstate);
+            }
             if (this.keepstate.isIn(EntryModule.FRACTURE_TAG) && (EnchantmentHelper.getLevel(EntryModule.CURSE_OF_FRACTURING.get(), this.lastItem) > 0)) {
                 worldIn.setBlockState(pos, EntryModule.BEDROCK_FRACTURED.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, this.keepstate.get(OresBlockStates.REPLACE_WITH_BLOCK)));
+                if (!this.stacksDropped && !this.regenComplete) {
+                    this.keepstate.getBlock().afterBreak(worldIn, this.lastPlayer, pos, this.keepstate, this, this.lastItem);
+                    this.stacksDropped = false;
+                    EntryModule.LOGGER.debug("forced drops");
+                }
                 sendData(worldIn);
                 return false;
-            } else if (this.keepstate.isIn(EntryModule.CORE_TAG) && ((EnchantmentHelper.getLevel(EntryModule.EXTRACTION.get(), this.lastItem) > 0) || (EnchantmentHelper.getLevel(EntryModule.ARCANE_EXTRACTION.get(), this.lastItem) > 0))) {
+            } else if (this.keepstate.isIn(EntryModule.CORE_TAG) && ((EnchantmentHelper.getLevel(EntryModule.EXTRACTION.get(), this.lastItem) > 0))){
                 worldIn.setBlockState(pos, EntryModule.BEDROCK_HOLLOW.get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, this.keepstate.get(OresBlockStates.REPLACE_WITH_BLOCK)));
+                if (!this.stacksDropped && !this.regenComplete) {
+                    this.keepstate.getBlock().afterBreak(worldIn, this.lastPlayer, pos, this.keepstate, this, this.lastItem);
+                    this.stacksDropped = false;
+                    EntryModule.LOGGER.debug("forced drops");
+                }
                 sendData(worldIn);
                 return false;
-            }else if ((this.keepstate.contains(OresBlockStates.REPLACE_WITH_BLOCK) && (((EnchantmentHelper.getLevel(EntryModule.SHATTERING.get(), this.lastItem) > 0) && ((RegenerativeBlock) this.keepstate.getBlock()).isInfinite()) || (EnchantmentHelper.getLevel(EntryModule.CURSE_OF_SHATTERING.get(), this.lastItem) > 0))) || this.durability < 0) {
-                worldIn.setBlockState(pos, ((RegenerativeBlock) this.keepstate.getBlock()).getReplaceBlock());
+            } else if((this.keepstate.contains(OresBlockStates.REPLACE_WITH_BLOCK) && (((EnchantmentHelper.getLevel(EntryModule.SHATTERING.get(), this.lastItem) > 0) && ((RegenerativeBlock) this.keepstate.getBlock()).isInfinite()) || (EnchantmentHelper.getLevel(EntryModule.CURSE_OF_SHATTERING.get(), this.lastItem) > 0))) || this.durability < 0  || (EnchantmentHelper.getLevel(EntryModule.ARCANE_EXTRACTION.get(), this.lastItem) > 0)) {
+                if(this.keepstate.get(OresBlockStates.REPLACE_WITH_BLOCK)) {
+                    worldIn.setBlockState(pos, ((RegenerativeBlock) this.keepstate.getBlock()).getReplaceBlock());
+                    if (!this.stacksDropped && !this.regenComplete) {
+                        this.keepstate.getBlock().afterBreak(worldIn, this.lastPlayer, pos, this.keepstate, this, this.lastItem);
+                        this.stacksDropped = false;
+                        EntryModule.LOGGER.debug("forced drops");
+                    }
+                }
                 sendData(worldIn);
                 return false;
             } else if(((RegenerativeBlock) this.keepstate.getBlock()).isSilk_able() && (EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, this.lastItem) > 0)){
@@ -137,9 +151,14 @@ public class RegenerativeBlockEntity extends BlockEntity {
             } else if(newState != this.keepstate && this.durability >0){
                 EntryModule.LOGGER.debug("put it back");
                 worldIn.setBlockState(this.pos, this.keepstate);
+                if (!this.stacksDropped && !this.regenComplete) {
+                    this.keepstate.getBlock().afterBreak(worldIn, this.lastPlayer, pos, this.keepstate, this, this.lastItem);
+                    EntryModule.LOGGER.debug("forced drops");
+                }
                 this.lastItem = ItemStack.EMPTY;
                 this.regenComplete = true;
                 this.lastPlayer = null;
+                this.stacksDropped = false;
                 sendData(worldIn);
                 return true;
             }

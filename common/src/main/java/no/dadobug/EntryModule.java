@@ -73,6 +73,7 @@ public class EntryModule {
     public static final BlockConfigLambda<Item.Settings> biggerreactorsItemSettings = (cfg) -> {if(Platform.isModLoaded("biggerreactors") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
     public static final BlockConfigLambda<Item.Settings> immersiveengineeringItemSettings = (cfg) -> {if(Platform.isModLoaded("immersiveengineering") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
     public static final BlockConfigLambda<Item.Settings> mythicmetalsItemSettings = (cfg) -> {if(Platform.isModLoaded("mythicmetals") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
+    public static final BlockConfigLambda<Item.Settings> createItemSettings = (cfg) -> {if(Platform.isModLoaded("create") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
 
 
 
@@ -126,49 +127,49 @@ public class EntryModule {
 
 
 
-    public static final BedrockStack BEDROCK_FRACTURED = BedrockStack.BedrockStackAlteredBedrock("fractured", CONFIG.BEDROCK_FRACTURED, vanillaItemSettings, DynamicBlockSettings, true, FRACTURED_TOOLTIP);
-    public static final RegistrySupplier<Block> BEDROCK_HOLLOW = REGENERATIVE_BLOCKS.register("bedrock_hollow",() -> new HollowBedrock(DynamicBlockSettings.get(CONFIG.BEDROCK_HOLLOW), true, CONFIG.BEDROCK_HOLLOW.XPmin, CONFIG.BEDROCK_HOLLOW.XPmax, CONFIG.BEDROCK_HOLLOW.DurabilityMin, CONFIG.BEDROCK_HOLLOW.DurabilityMax, CONFIG.BEDROCK_HOLLOW.infinite, false, Blocks.BEDROCK.getDefaultState()));
+    public static final BedrockStack BEDROCK_FRACTURED = BedrockStack.BedrockStackAlteredBedrock("fractured", CONFIG.BEDROCK_FRACTURED, vanillaItemSettings, DynamicBlockSettings, false, FRACTURED_TOOLTIP);
+    public static final RegistrySupplier<Block> BEDROCK_HOLLOW = REGENERATIVE_BLOCKS.register("bedrock_hollow",() -> new HollowBedrock(DynamicBlockSettings.get(CONFIG.BEDROCK_HOLLOW), false, CONFIG.BEDROCK_HOLLOW.XPmin, CONFIG.BEDROCK_HOLLOW.XPmax, CONFIG.BEDROCK_HOLLOW.DurabilityMin, CONFIG.BEDROCK_HOLLOW.DurabilityMax, CONFIG.BEDROCK_HOLLOW.infinite, false, Blocks.BEDROCK.getDefaultState()));
     public static final RegistrySupplier<Item> BEDROCK_HOLLOW_ITEM = ITEMS.register("bedrock_hollow",() -> new BlockItem(BEDROCK_HOLLOW.get(), vanillaItemSettings.get(CONFIG.BEDROCK_HOLLOW)));
-    public static final BedrockStack XP_LEAK = BedrockStack.BedrockStackXPLeak("xp_leak", CONFIG.XP_LEAK, vanillaItemSettings, DynamicBlockSettings, true, XP_TOOLTIP);
+    public static final BedrockStack XP_LEAK = BedrockStack.BedrockStackXPLeak("xp_leak", CONFIG.XP_LEAK, vanillaItemSettings, DynamicBlockSettings, false, XP_TOOLTIP);
 
     //easter egg
-    public static final BedrockStack BEDROCK_MILK_ORE = BedrockStack.BedrockStackFluidOre("milk", CONFIG.BEDROCK_MILK_ORE, vanillaItemSettings, DynamicBlockSettings, true, JOKE_FLUID_ONE_TOOLTIP, Items.MILK_BUCKET.getDefaultStack(), java.util.Optional.ofNullable(SoundEvents.ENTITY_COW_MILK));
-    public static final BedrockStack BEDROCK_COOKIE_ORE = BedrockStack.BedrockStackStandardOre("cookie", CONFIG.BEDROCK_COOKIE_ORE, vanillaItemSettings, DynamicBlockSettings, true, JOKE_ITEM_ONE_TOOLTIP);
+    public static final BedrockStack BEDROCK_MILK_ORE = BedrockStack.BedrockStackFluidOre("milk", CONFIG.BEDROCK_MILK_ORE, vanillaItemSettings, DynamicBlockSettings, false, JOKE_FLUID_ONE_TOOLTIP, Items.MILK_BUCKET.getDefaultStack(), java.util.Optional.ofNullable(SoundEvents.ENTITY_COW_MILK));
+    public static final BedrockStack BEDROCK_COOKIE_ORE = BedrockStack.BedrockStackStandardOre("cookie", CONFIG.BEDROCK_COOKIE_ORE, vanillaItemSettings, DynamicBlockSettings, false, JOKE_ITEM_ONE_TOOLTIP);
 
     //overworld
-    public static final BedrockStack BEDROCK_COAL_ORE = BedrockStack.BedrockStackStandardOre("coal", CONFIG.BEDROCK_COAL_ORE, vanillaItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_IRON_ORE = BedrockStack.BedrockStackStandardOre("iron", CONFIG.BEDROCK_IRON_ORE, vanillaItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_GOLD_ORE = BedrockStack.BedrockStackStandardOre("gold", CONFIG.BEDROCK_GOLD_ORE, vanillaItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_DIAMOND_ORE = BedrockStack.BedrockStackStandardOre("diamond", CONFIG.BEDROCK_DIAMOND_ORE, vanillaItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_REDSTONE_ORE = BedrockStack.BedrockStackStandardOre("redstone", CONFIG.BEDROCK_REDSTONE_ORE, vanillaItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_COPPER_ORE = BedrockStack.BedrockStackStandardOre("copper", CONFIG.BEDROCK_COPPER_ORE, vanillaItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_LAPIS_ORE = BedrockStack.BedrockStackStandardOre("lapis", CONFIG.BEDROCK_LAPIS_ORE, vanillaItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_EMERALD_ORE = BedrockStack.BedrockStackStandardOre("emerald", CONFIG.BEDROCK_EMERALD_ORE, vanillaItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_COAL_ORE = BedrockStack.BedrockStackStandardOre("coal", CONFIG.BEDROCK_COAL_ORE, vanillaItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_IRON_ORE = BedrockStack.BedrockStackStandardOre("iron", CONFIG.BEDROCK_IRON_ORE, vanillaItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_GOLD_ORE = BedrockStack.BedrockStackStandardOre("gold", CONFIG.BEDROCK_GOLD_ORE, vanillaItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_DIAMOND_ORE = BedrockStack.BedrockStackStandardOre("diamond", CONFIG.BEDROCK_DIAMOND_ORE, vanillaItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_REDSTONE_ORE = BedrockStack.BedrockStackStandardOre("redstone", CONFIG.BEDROCK_REDSTONE_ORE, vanillaItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_COPPER_ORE = BedrockStack.BedrockStackStandardOre("copper", CONFIG.BEDROCK_COPPER_ORE, vanillaItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_LAPIS_ORE = BedrockStack.BedrockStackStandardOre("lapis", CONFIG.BEDROCK_LAPIS_ORE, vanillaItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_EMERALD_ORE = BedrockStack.BedrockStackStandardOre("emerald", CONFIG.BEDROCK_EMERALD_ORE, vanillaItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
 
     //fluid
-    public static final BedrockStack BEDROCK_WATER_ORE = BedrockStack.BedrockStackFluidOre("water", CONFIG.BEDROCK_WATER_ORE, vanillaItemSettings, DynamicBlockSettings, true, FLUID_TOOLTIP, Fluids.WATER);
-    public static final BedrockStack BEDROCK_LAVA_ORE = BedrockStack.BedrockStackFluidOre("lava", CONFIG.BEDROCK_LAVA_ORE, vanillaItemSettings, DynamicBlockSettings, true, FLUID_TOOLTIP, Fluids.LAVA);
+    public static final BedrockStack BEDROCK_WATER_ORE = BedrockStack.BedrockStackFluidOre("water", CONFIG.BEDROCK_WATER_ORE, vanillaItemSettings, DynamicBlockSettings, false, FLUID_TOOLTIP, Fluids.WATER);
+    public static final BedrockStack BEDROCK_LAVA_ORE = BedrockStack.BedrockStackFluidOre("lava", CONFIG.BEDROCK_LAVA_ORE, vanillaItemSettings, DynamicBlockSettings, false, FLUID_TOOLTIP, Fluids.LAVA);
 
     //nether
-    public static final BedrockStack BEDROCK_NETHER_GOLD = BedrockStack.BedrockStackStandardOre("nether_gold", CONFIG.BEDROCK_NETHER_GOLD, vanillaItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_NETHER_QUARTZ = BedrockStack.BedrockStackStandardOre("nether_quartz", CONFIG.BEDROCK_NETHER_QUARTZ, vanillaItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_ANCIENT_DEBRIS = BedrockStack.BedrockStackStandardOre("ancient_debris", CONFIG.BEDROCK_ANCIENT_DEBRIS, vanillaItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_NETHER_GOLD = BedrockStack.BedrockStackStandardOre("nether_gold", CONFIG.BEDROCK_NETHER_GOLD, vanillaItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_NETHER_QUARTZ = BedrockStack.BedrockStackStandardOre("nether_quartz", CONFIG.BEDROCK_NETHER_QUARTZ, vanillaItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_ANCIENT_DEBRIS = BedrockStack.BedrockStackStandardOre("ancient_debris", CONFIG.BEDROCK_ANCIENT_DEBRIS, vanillaItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
 
 
     //techreborn overworld
-    public static final BedrockStack BEDROCK_BAUXITE_ORE = BedrockStack.BedrockStackStandardOre("bauxite", CONFIG.BEDROCK_BAUXITE_ORE, techrebornItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_GALENA_ORE = BedrockStack.BedrockStackStandardOre("galena", CONFIG.BEDROCK_GALENA_ORE, techrebornItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_IRIDIUM_ORE = BedrockStack.BedrockStackStandardOre("iridium", CONFIG.BEDROCK_IRIDIUM_ORE, techrebornItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_LEAD_ORE = BedrockStack.BedrockStackStandardOre("lead", CONFIG.BEDROCK_LEAD_ORE, techrebornItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_RUBY_ORE = BedrockStack.BedrockStackStandardOre("ruby", CONFIG.BEDROCK_RUBY_ORE, techrebornItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_SAPPHIRE_ORE = BedrockStack.BedrockStackStandardOre("sapphire", CONFIG.BEDROCK_SAPPHIRE_ORE, techrebornItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_SILVER_ORE = BedrockStack.BedrockStackStandardOre("silver", CONFIG.BEDROCK_SILVER_ORE, techrebornItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_TIN_ORE = BedrockStack.BedrockStackStandardOre("tin", CONFIG.BEDROCK_TIN_ORE, techrebornItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_BAUXITE_ORE = BedrockStack.BedrockStackStandardOre("bauxite", CONFIG.BEDROCK_BAUXITE_ORE, techrebornItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_GALENA_ORE = BedrockStack.BedrockStackStandardOre("galena", CONFIG.BEDROCK_GALENA_ORE, techrebornItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_IRIDIUM_ORE = BedrockStack.BedrockStackStandardOre("iridium", CONFIG.BEDROCK_IRIDIUM_ORE, techrebornItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_LEAD_ORE = BedrockStack.BedrockStackStandardOre("lead", CONFIG.BEDROCK_LEAD_ORE, techrebornItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_RUBY_ORE = BedrockStack.BedrockStackStandardOre("ruby", CONFIG.BEDROCK_RUBY_ORE, techrebornItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_SAPPHIRE_ORE = BedrockStack.BedrockStackStandardOre("sapphire", CONFIG.BEDROCK_SAPPHIRE_ORE, techrebornItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_SILVER_ORE = BedrockStack.BedrockStackStandardOre("silver", CONFIG.BEDROCK_SILVER_ORE, techrebornItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_TIN_ORE = BedrockStack.BedrockStackStandardOre("tin", CONFIG.BEDROCK_TIN_ORE, techrebornItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
 
     //techreborn nether
-    public static final BedrockStack BEDROCK_CINNABAR_ORE = BedrockStack.BedrockStackStandardOre("cinnabar", CONFIG.BEDROCK_CINNABAR_ORE, techrebornItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_PYRITE_ORE = BedrockStack.BedrockStackStandardOre("pyrite", CONFIG.BEDROCK_PYRITE_ORE, techrebornItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_SPHALERITE_ORE = BedrockStack.BedrockStackStandardOre("sphalerite", CONFIG.BEDROCK_SPHALERITE_ORE, techrebornItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_CINNABAR_ORE = BedrockStack.BedrockStackStandardOre("cinnabar", CONFIG.BEDROCK_CINNABAR_ORE, techrebornItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_PYRITE_ORE = BedrockStack.BedrockStackStandardOre("pyrite", CONFIG.BEDROCK_PYRITE_ORE, techrebornItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_SPHALERITE_ORE = BedrockStack.BedrockStackStandardOre("sphalerite", CONFIG.BEDROCK_SPHALERITE_ORE, techrebornItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
 
     //techreborn end
     public static final BedrockStack BEDROCK_PERIDOT_ORE = BedrockStack.BedrockStackStandardOre("peridot", CONFIG.BEDROCK_PERIDOT_ORE, techrebornItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
@@ -178,57 +179,60 @@ public class EntryModule {
 
 
     //tconstruct
-    public static final BedrockStack BEDROCK_TC_COBALT_ORE = BedrockStack.BedrockStackStandardOre("tc_cobalt", CONFIG.BEDROCK_TC_COBALT_ORE, tconstructItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_TC_COBALT_ORE = BedrockStack.BedrockStackStandardOre("tc_cobalt", CONFIG.BEDROCK_TC_COBALT_ORE, tconstructItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
 
 
     //ae2
-    public static final BedrockStack BEDROCK_AE_CERTUS_QUARTZ_ORE = BedrockStack.BedrockStackStandardOre("ae_certus_quartz", CONFIG.BEDROCK_AE_CERTUS_QUARTZ_ORE, ae2ItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_AE_CERTUS_QUARTZ_ORE = BedrockStack.BedrockStackStandardOre("ae_certus_quartz", CONFIG.BEDROCK_AE_CERTUS_QUARTZ_ORE, ae2ItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
 
 
     //bigreactors (Extreme Reactors)
-    public static final BedrockStack BEDROCK_ER_YELLORITE_ORE = BedrockStack.BedrockStackStandardOre("er_yellorite", CONFIG.BEDROCK_ER_YELLORITE_ORE, bigreactorsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_ER_YELLORITE_ORE = BedrockStack.BedrockStackStandardOre("er_yellorite", CONFIG.BEDROCK_ER_YELLORITE_ORE, bigreactorsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
     public static final BedrockStack BEDROCK_ER_ANGLESITE_ORE = BedrockStack.BedrockStackStandardOre("er_anglesite", CONFIG.BEDROCK_ER_ANGLESITE_ORE, bigreactorsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_ER_BENITOITE_ORE = BedrockStack.BedrockStackStandardOre("er_benitoite", CONFIG.BEDROCK_ER_BENITOITE_ORE, bigreactorsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_ER_BENITOITE_ORE = BedrockStack.BedrockStackStandardOre("er_benitoite", CONFIG.BEDROCK_ER_BENITOITE_ORE, bigreactorsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
 
 
     //biggerreactors
-    public static final BedrockStack BEDROCK_BR_URANIUM_ORE = BedrockStack.BedrockStackStandardOre("br_uranium", CONFIG.BEDROCK_BR_URANIUM_ORE, biggerreactorsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_BR_URANIUM_ORE = BedrockStack.BedrockStackStandardOre("br_uranium", CONFIG.BEDROCK_BR_URANIUM_ORE, biggerreactorsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
 
 
     //immersiveengineering
-    public static final BedrockStack BEDROCK_IE_ALUMINUM_ORE = BedrockStack.BedrockStackStandardOre("ie_aluminum", CONFIG.BEDROCK_IE_ALUMINUM_ORE, immersiveengineeringItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_IE_LEAD_ORE = BedrockStack.BedrockStackStandardOre("ie_lead", CONFIG.BEDROCK_IE_LEAD_ORE, immersiveengineeringItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_IE_SILVER_ORE = BedrockStack.BedrockStackStandardOre("ie_silver", CONFIG.BEDROCK_IE_SILVER_ORE, immersiveengineeringItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_IE_NICKEL_ORE = BedrockStack.BedrockStackStandardOre("ie_nickel", CONFIG.BEDROCK_IE_NICKEL_ORE, immersiveengineeringItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_IE_URANIUM_ORE = BedrockStack.BedrockStackStandardOre("ie_uranium", CONFIG.BEDROCK_IE_URANIUM_ORE, immersiveengineeringItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_IE_ALUMINUM_ORE = BedrockStack.BedrockStackStandardOre("ie_aluminum", CONFIG.BEDROCK_IE_ALUMINUM_ORE, immersiveengineeringItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_IE_LEAD_ORE = BedrockStack.BedrockStackStandardOre("ie_lead", CONFIG.BEDROCK_IE_LEAD_ORE, immersiveengineeringItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_IE_SILVER_ORE = BedrockStack.BedrockStackStandardOre("ie_silver", CONFIG.BEDROCK_IE_SILVER_ORE, immersiveengineeringItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_IE_NICKEL_ORE = BedrockStack.BedrockStackStandardOre("ie_nickel", CONFIG.BEDROCK_IE_NICKEL_ORE, immersiveengineeringItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_IE_URANIUM_ORE = BedrockStack.BedrockStackStandardOre("ie_uranium", CONFIG.BEDROCK_IE_URANIUM_ORE, immersiveengineeringItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
 
 
     //mythicmetals overworld
-    public static final BedrockStack BEDROCK_MM_ADAMANTITE_ORE = BedrockStack.BedrockStackStandardOre("mm_adamantite", CONFIG.BEDROCK_MM_ADAMANTITE_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_MM_AQUARIUM_ORE = BedrockStack.BedrockStackStandardOre("mm_aquarium", CONFIG.BEDROCK_MM_AQUARIUM_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_MM_BANGLUM_ORE = BedrockStack.BedrockStackStandardOre("mm_banglum", CONFIG.BEDROCK_MM_BANGLUM_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_MM_CARMOT_ORE = BedrockStack.BedrockStackStandardOre("mm_carmot", CONFIG.BEDROCK_MM_CARMOT_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_MM_KYBER_ORE = BedrockStack.BedrockStackStandardOre("mm_kyber", CONFIG.BEDROCK_MM_KYBER_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_MM_MANGANESE_ORE = BedrockStack.BedrockStackStandardOre("mm_manganese", CONFIG.BEDROCK_MM_MANGANESE_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_MM_MORKITE_ORE = BedrockStack.BedrockStackStandardOre("mm_morkite", CONFIG.BEDROCK_MM_MORKITE_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_MM_MYTHRIL_ORE = BedrockStack.BedrockStackStandardOre("mm_mythril", CONFIG.BEDROCK_MM_MYTHRIL_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_MM_ORICHALCUM_ORE = BedrockStack.BedrockStackStandardOre("mm_orichalcum", CONFIG.BEDROCK_MM_ORICHALCUM_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_MM_OSMIUM_ORE = BedrockStack.BedrockStackStandardOre("mm_osmium", CONFIG.BEDROCK_MM_OSMIUM_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_MM_PLATINUM_ORE = BedrockStack.BedrockStackStandardOre("mm_platinum", CONFIG.BEDROCK_MM_PLATINUM_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_MM_PROMETHEUM_ORE = BedrockStack.BedrockStackStandardOre("mm_prometheum", CONFIG.BEDROCK_MM_PROMETHEUM_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_MM_QUADRILLUM_ORE = BedrockStack.BedrockStackStandardOre("mm_quadrillum", CONFIG.BEDROCK_MM_QUADRILLUM_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_MM_RUNITE_ORE = BedrockStack.BedrockStackStandardOre("mm_runite", CONFIG.BEDROCK_MM_RUNITE_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_MM_SILVER_ORE = BedrockStack.BedrockStackStandardOre("mm_silver", CONFIG.BEDROCK_MM_SILVER_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_MM_STARRITE_ORE = BedrockStack.BedrockStackStandardOre("mm_starrite", CONFIG.BEDROCK_MM_STARRITE_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_MM_TIN_ORE = BedrockStack.BedrockStackStandardOre("mm_tin", CONFIG.BEDROCK_MM_TIN_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_MM_UNOBTAINIUM_ORE = BedrockStack.BedrockStackStandardOre("mm_unobtainium", CONFIG.BEDROCK_MM_UNOBTAINIUM_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_ADAMANTITE_ORE = BedrockStack.BedrockStackStandardOre("mm_adamantite", CONFIG.BEDROCK_MM_ADAMANTITE_ORE, mythicmetalsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_AQUARIUM_ORE = BedrockStack.BedrockStackStandardOre("mm_aquarium", CONFIG.BEDROCK_MM_AQUARIUM_ORE, mythicmetalsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_BANGLUM_ORE = BedrockStack.BedrockStackStandardOre("mm_banglum", CONFIG.BEDROCK_MM_BANGLUM_ORE, mythicmetalsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_CARMOT_ORE = BedrockStack.BedrockStackStandardOre("mm_carmot", CONFIG.BEDROCK_MM_CARMOT_ORE, mythicmetalsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_KYBER_ORE = BedrockStack.BedrockStackStandardOre("mm_kyber", CONFIG.BEDROCK_MM_KYBER_ORE, mythicmetalsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_MANGANESE_ORE = BedrockStack.BedrockStackStandardOre("mm_manganese", CONFIG.BEDROCK_MM_MANGANESE_ORE, mythicmetalsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_MORKITE_ORE = BedrockStack.BedrockStackStandardOre("mm_morkite", CONFIG.BEDROCK_MM_MORKITE_ORE, mythicmetalsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_MYTHRIL_ORE = BedrockStack.BedrockStackStandardOre("mm_mythril", CONFIG.BEDROCK_MM_MYTHRIL_ORE, mythicmetalsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_ORICHALCUM_ORE = BedrockStack.BedrockStackStandardOre("mm_orichalcum", CONFIG.BEDROCK_MM_ORICHALCUM_ORE, mythicmetalsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_OSMIUM_ORE = BedrockStack.BedrockStackStandardOre("mm_osmium", CONFIG.BEDROCK_MM_OSMIUM_ORE, mythicmetalsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_PLATINUM_ORE = BedrockStack.BedrockStackStandardOre("mm_platinum", CONFIG.BEDROCK_MM_PLATINUM_ORE, mythicmetalsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_PROMETHEUM_ORE = BedrockStack.BedrockStackStandardOre("mm_prometheum", CONFIG.BEDROCK_MM_PROMETHEUM_ORE, mythicmetalsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_QUADRILLUM_ORE = BedrockStack.BedrockStackStandardOre("mm_quadrillum", CONFIG.BEDROCK_MM_QUADRILLUM_ORE, mythicmetalsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_RUNITE_ORE = BedrockStack.BedrockStackStandardOre("mm_runite", CONFIG.BEDROCK_MM_RUNITE_ORE, mythicmetalsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_SILVER_ORE = BedrockStack.BedrockStackStandardOre("mm_silver", CONFIG.BEDROCK_MM_SILVER_ORE, mythicmetalsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_STARRITE_ORE = BedrockStack.BedrockStackStandardOre("mm_starrite", CONFIG.BEDROCK_MM_STARRITE_ORE, mythicmetalsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_TIN_ORE = BedrockStack.BedrockStackStandardOre("mm_tin", CONFIG.BEDROCK_MM_TIN_ORE, mythicmetalsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_UNOBTAINIUM_ORE = BedrockStack.BedrockStackStandardOre("mm_unobtainium", CONFIG.BEDROCK_MM_UNOBTAINIUM_ORE, mythicmetalsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
 
     //mythicmetals nether
-    public static final BedrockStack BEDROCK_MM_NETHER_BANGLUM_ORE = BedrockStack.BedrockStackStandardOre("mm_nether_banglum", CONFIG.BEDROCK_MM_NETHER_BANGLUM_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_MM_MIDAS_GOLD_ORE = BedrockStack.BedrockStackStandardOre("mm_midas_gold", CONFIG.BEDROCK_MM_MIDAS_GOLD_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_MM_PALLADIUM_ORE = BedrockStack.BedrockStackStandardOre("mm_palladium", CONFIG.BEDROCK_MM_PALLADIUM_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_MM_STORMYX_ORE = BedrockStack.BedrockStackStandardOre("mm_stormyx", CONFIG.BEDROCK_MM_STORMYX_ORE, mythicmetalsItemSettings, DynamicBlockSettings, true, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_NETHER_BANGLUM_ORE = BedrockStack.BedrockStackStandardOre("mm_nether_banglum", CONFIG.BEDROCK_MM_NETHER_BANGLUM_ORE, mythicmetalsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_MIDAS_GOLD_ORE = BedrockStack.BedrockStackStandardOre("mm_midas_gold", CONFIG.BEDROCK_MM_MIDAS_GOLD_ORE, mythicmetalsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_PALLADIUM_ORE = BedrockStack.BedrockStackStandardOre("mm_palladium", CONFIG.BEDROCK_MM_PALLADIUM_ORE, mythicmetalsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MM_STORMYX_ORE = BedrockStack.BedrockStackStandardOre("mm_stormyx", CONFIG.BEDROCK_MM_STORMYX_ORE, mythicmetalsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
 
+
+    //create
+    public static final BedrockStack BEDROCK_CR_ZINC_ORE = BedrockStack.BedrockStackStandardOre("cr_zinc", CONFIG.BEDROCK_CR_ZINC_ORE, createItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
 
     public static void init() {
         ENCHANTS.register();

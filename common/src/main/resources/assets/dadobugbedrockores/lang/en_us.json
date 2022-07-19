@@ -188,5 +188,10 @@
   "item.dadobugbedrockores.regenerative_mm_nether_banglum": "Regenerative Nether Banglum Cluster",
   "item.dadobugbedrockores.regenerative_mm_midas_gold": "Regenerative Midas Gold Cluster",
   "item.dadobugbedrockores.regenerative_mm_palladium": "Regenerative Palladium Cluster",
-  "item.dadobugbedrockores.regenerative_mm_stormyx": "Regenerative Stormyx Cluster"
+  "item.dadobugbedrockores.regenerative_mm_stormyx": "Regenerative Stormyx Cluster",
+
+
+  "block.dadobugbedrockores.bedrock_cr_zinc_ore": "Bedrock Zinc Ore",
+
+  "item.dadobugbedrockores.regenerative_cr_zinc": "Regenerative Zinc Cluster"
 }

@@ -245,4 +245,9 @@ public class GenConfig implements ConfigData {
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_MM_STARRITE_BEDROCK_END = new OreConfig( 7, 1, true);
 
+
+    @ConfigEntry.Category("create")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_CR_ZINC_BEDROCK_OVERWORLD = new OreConfig(true, 12, 3);
+
 }

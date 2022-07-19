@@ -10,8 +10,6 @@ import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
@@ -133,7 +131,7 @@ public class RegenerativeBlock extends BlockWithEntity {
 
     public void onStacksDropped(BlockState state, ServerWorld world, BlockPos pos, ItemStack stack) {
         super.onStacksDropped(state, world, pos, stack);
-        if (EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, stack) == 0 && EnchantmentHelper.getLevel(EntryModule.CURSE_OF_FRACTURING.get(), stack) == 0 && EnchantmentHelper.getLevel(EntryModule.CURSE_OF_SHATTERING.get(), stack) == 0 ) {
+        if (EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, stack) == 0 && EnchantmentHelper.getLevel(EntryModule.CURSE_OF_FRACTURING.get(), stack) == 0 && EnchantmentHelper.getLevel(EntryModule.CURSE_OF_SHATTERING.get(), stack) == 0 && EnchantmentHelper.getLevel(EntryModule.ARCANE_EXTRACTION.get(), stack) == 0 && EnchantmentHelper.getLevel(EntryModule.EXTRACTION.get(), stack) == 0) {
             int i1 = 1 + EnchantmentHelper.getLevel(EntryModule.SHATTERING.get(), stack);
             for(int x = 0; x<i1; x++) {
                 int i = this.experienceDropped.get(world.random);
@@ -146,11 +144,11 @@ public class RegenerativeBlock extends BlockWithEntity {
 
 
     public void dropMultiStacks(BlockState state, World world, BlockPos pos, @Nullable BlockEntity blockEntity, Entity entity, ItemStack stack) {
-        //EntryModule.LOGGER.info("dropMultiStacks");
+        EntryModule.LOGGER.debug("dropMultiStacks");
         if (world instanceof ServerWorld) {
             if (EnchantmentHelper.getLevel(EntryModule.CURSE_OF_SHATTERING.get(), stack) < 1 && EnchantmentHelper.getLevel(EntryModule.CURSE_OF_FRACTURING.get(), stack) < 1) {
 
-                if (this.silk_able && EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, stack) > 0) {
+                if ((this.silk_able && EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, stack) > 0) || EnchantmentHelper.getLevel(EntryModule.ARCANE_EXTRACTION.get(), stack) > 0 || EnchantmentHelper.getLevel(EntryModule.EXTRACTION.get(), stack) > 0){
                     getDroppedStacks(state, (ServerWorld) world, pos, blockEntity, entity, stack).forEach((stackx) -> {
                         dropStack(world, pos, stackx);
                     });
@@ -184,7 +182,7 @@ public class RegenerativeBlock extends BlockWithEntity {
 
     @Override
     public void afterBreak(World world, PlayerEntity player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack stack) {
-        //EntryModule.LOGGER.info("afterBreak");
+        EntryModule.LOGGER.debug("afterBreak");
         player.incrementStat(Stats.MINED.getOrCreateStat(this));
         player.addExhaustion(0.005F);
         if (blockEntity instanceof RegenerativeBlockEntity) {
@@ -218,7 +216,7 @@ public class RegenerativeBlock extends BlockWithEntity {
         EntryModule.LOGGER.debug("checked XP");
         BlockEntity entity = reader.getBlockEntity(pos);
         if (entity instanceof RegenerativeBlockEntity) {
-            if (silktouch == 0 && EnchantmentHelper.getLevel(EntryModule.CURSE_OF_FRACTURING.get(), ((RegenerativeBlockEntity)entity).getLastItem()) == 0 && EnchantmentHelper.getLevel(EntryModule.CURSE_OF_SHATTERING.get(), ((RegenerativeBlockEntity)entity).getLastItem()) == 0) {
+            if (silktouch == 0 && EnchantmentHelper.getLevel(EntryModule.CURSE_OF_FRACTURING.get(), ((RegenerativeBlockEntity)entity).getLastItem()) == 0 && EnchantmentHelper.getLevel(EntryModule.CURSE_OF_SHATTERING.get(), ((RegenerativeBlockEntity)entity).getLastItem()) == 0 && EnchantmentHelper.getLevel(EntryModule.ARCANE_EXTRACTION.get(), ((RegenerativeBlockEntity)entity).getLastItem()) == 0 && EnchantmentHelper.getLevel(EntryModule.EXTRACTION.get(), ((RegenerativeBlockEntity)entity).getLastItem()) == 0) {
                 int z = 0;
                 int i1 = 1 + EnchantmentHelper.getLevel(EntryModule.SHATTERING.get(), ((RegenerativeBlockEntity)entity).getLastItem());
                 for (int x = 0; x < i1; x++) {

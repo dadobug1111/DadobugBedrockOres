@@ -222,4 +222,9 @@ public class BlocksConfig implements ConfigData {
     @ConfigEntry.Category("mythicmetals")
     @ConfigEntry.Gui.CollapsibleObject()
     public BlockConfig BEDROCK_MM_STORMYX_ORE = new BlockConfig(true, 50f, 0.5f, 0, 2, 4);
+
+
+    @ConfigEntry.Category("create")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_CR_ZINC_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
 }
