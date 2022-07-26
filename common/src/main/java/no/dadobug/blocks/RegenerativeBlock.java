@@ -203,6 +203,18 @@ public class RegenerativeBlock extends BlockWithEntity {
             } else {
                 world.removeBlockEntity(pos);
             }
+        } else {
+            //fixes old blocks (hopefully)
+            world.addBlockEntity(this.createBlockEntity(pos, state));
+            BlockEntity entity = world.getBlockEntity(pos);
+            if(entity instanceof RegenerativeBlockEntity){
+                boolean regen = ((RegenerativeBlockEntity) entity).regen(world, newState);
+                if(!regen){
+                    world.removeBlockEntity(pos);
+                }
+            } else {
+                world.removeBlockEntity(pos);
+            }
         }
 
     }
