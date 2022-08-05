@@ -133,42 +133,42 @@ public class GenConfig implements ConfigData {
     public OreConfig ORE_TC_COBALT_BEDROCK_NETHER = new OreConfig(true, 4, 10, 10);
 
 
-    @ConfigEntry.Category("ae2")
+    @ConfigEntry.Category("ae2_overworld")
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_AE_CERTUS_QUARTZ_BEDROCK_OVERWORLD = new OreConfig(true, 8, 4);
 
 
-    @ConfigEntry.Category("bigreactors")
+    @ConfigEntry.Category("bigreactors_overworld")
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_ER_YELLORITE_BEDROCK_OVERWORLD = new OreConfig(true, 8, 8);
 
-    @ConfigEntry.Category("bigreactors")
+    @ConfigEntry.Category("bigreactors_nether")
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_ER_BENITOITE_BEDROCK_NETHER = new OreConfig(true, 8, 10, 10);
 
-    @ConfigEntry.Category("bigreactors")
+    @ConfigEntry.Category("bigreactors_end")
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_ER_ANGLESITE_BEDROCK_END = new OreConfig( 8, 4, true);
 
 
-    @ConfigEntry.Category("biggerreactors")
+    @ConfigEntry.Category("biggerreactors_overworld")
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_BR_URANIUM_BEDROCK_OVERWORLD = new OreConfig(true, 8, 8);
 
 
-    @ConfigEntry.Category("immersiveengineering")
+    @ConfigEntry.Category("immersiveengineering_overworld")
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_IE_ALUMINUM_BEDROCK_OVERWORLD = new OreConfig(true, 6, 3);
-    @ConfigEntry.Category("immersiveengineering")
+    @ConfigEntry.Category("immersiveengineering_overworld")
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_IE_LEAD_BEDROCK_OVERWORLD = new OreConfig(true, 8, 5);
-    @ConfigEntry.Category("immersiveengineering")
+    @ConfigEntry.Category("immersiveengineering_overworld")
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_IE_SILVER_BEDROCK_OVERWORLD = new OreConfig(true, 9, 6);
-    @ConfigEntry.Category("immersiveengineering")
+    @ConfigEntry.Category("immersiveengineering_overworld")
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_IE_NICKEL_BEDROCK_OVERWORLD = new OreConfig(true, 7, 5);
-    @ConfigEntry.Category("immersiveengineering")
+    @ConfigEntry.Category("immersiveengineering_overworld")
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_IE_URANIUM_BEDROCK_OVERWORLD = new OreConfig(true, 4, 7);
 
@@ -246,8 +246,15 @@ public class GenConfig implements ConfigData {
     public OreConfig ORE_MM_STARRITE_BEDROCK_END = new OreConfig( 7, 1, true);
 
 
-    @ConfigEntry.Category("create")
+    @ConfigEntry.Category("create_overworld")
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_CR_ZINC_BEDROCK_OVERWORLD = new OreConfig(true, 12, 3);
 
+
+    @ConfigEntry.Category("mekanism_overworld")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_MK_OSMIUM_BEDROCK_OVERWORLD = new OreConfig(true, 9, 5);
+    @ConfigEntry.Category("mekanism_overworld")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_MK_FLUORITE_BEDROCK_OVERWORLD = new OreConfig(true, 8, 12);
 }

@@ -227,4 +227,12 @@ public class BlocksConfig implements ConfigData {
     @ConfigEntry.Category("create")
     @ConfigEntry.Gui.CollapsibleObject()
     public BlockConfig BEDROCK_CR_ZINC_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+
+
+    @ConfigEntry.Category("mekanism")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_MK_OSMIUM_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+    @ConfigEntry.Category("mekanism")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_MK_FLUORITE_ORE = new BlockConfig(true, 50f, 0.5f, 0, 1, 4);
 }

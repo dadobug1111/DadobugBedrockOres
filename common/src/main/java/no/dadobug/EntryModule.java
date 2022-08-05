@@ -74,6 +74,8 @@ public class EntryModule {
     public static final BlockConfigLambda<Item.Settings> immersiveengineeringItemSettings = (cfg) -> {if(Platform.isModLoaded("immersiveengineering") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
     public static final BlockConfigLambda<Item.Settings> mythicmetalsItemSettings = (cfg) -> {if(Platform.isModLoaded("mythicmetals") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
     public static final BlockConfigLambda<Item.Settings> createItemSettings = (cfg) -> {if(Platform.isModLoaded("create") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
+    public static final BlockConfigLambda<Item.Settings> mekanismItemSettings = (cfg) -> {if(Platform.isModLoaded("mekanism") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
+    
 
 
 
@@ -233,6 +235,12 @@ public class EntryModule {
 
     //create
     public static final BedrockStack BEDROCK_CR_ZINC_ORE = BedrockStack.BedrockStackStandardOre("cr_zinc", CONFIG.BEDROCK_CR_ZINC_ORE, createItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+
+
+    //mekanism
+    public static final BedrockStack BEDROCK_MK_OSMIUM_ORE = BedrockStack.BedrockStackStandardOre("mk_osmium", CONFIG.BEDROCK_MK_OSMIUM_ORE, mekanismItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MK_FLUORITE_ORE = BedrockStack.BedrockStackStandardOre("mk_fluorite", CONFIG.BEDROCK_MK_FLUORITE_ORE, mekanismItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+
 
     public static void init() {
         ENCHANTS.register();
