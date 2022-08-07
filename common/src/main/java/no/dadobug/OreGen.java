@@ -76,15 +76,16 @@ public class OreGen {
 
 
     public PlacedFeature getPlacedOre() {return this.PlacedOre;}
+
     public ConfiguredFeature<?,?> getOre() {
         return this.Ore;
     }
+
     public void addOreToGen(Predicate<BiomeModifications.BiomeContext> where, boolean doIt){
-        //BiomeModifications.addFeature(where, GenerationStep.Feature.UNDERGROUND_ORES, this.key);
         if (doIt) {
             BiomeModifications.addProperties(
                     where,
-                    (ctx, mutable) -> mutable.getGenerationProperties().addFeature(GenerationStep.Feature.UNDERGROUND_ORES, this.PlacedOre)
+                    (ctx, mutable) -> mutable.getGenerationProperties().addFeature(GenerationStep.Feature.UNDERGROUND_ORES, BuiltinRegistries.PLACED_FEATURE.entryOf(BuiltinRegistries.PLACED_FEATURE.getKey(this.PlacedOre).get()))
             );
         }
     }
