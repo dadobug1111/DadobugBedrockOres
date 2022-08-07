@@ -1,9 +1,21 @@
 plugins {
     id "com.github.johnrengelman.shadow" version "7.1.2"
 }
+
 loom {
     forge {
         mixinConfig "mixin.dadobugbedrockores-common.json"
+
+        dataGen {
+            mod "dadobugbedrockores"
+        }
+    }
+
+    launches {
+        data {
+            arg "--existing", file("../common/src/main/resources").absolutePath
+            arg "--existing", file("src/generated/resources").absolutePath
+        }
     }
 }
 
@@ -12,14 +24,6 @@ architectury {
     forge()
 }
 
-loom {
-    //accessWidenerPath = project(":common").loom.accessWidenerPath
-
-    forge {
-        //convertAccessWideners = true
-        //extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
-    }
-}
 
 configurations {
     common
