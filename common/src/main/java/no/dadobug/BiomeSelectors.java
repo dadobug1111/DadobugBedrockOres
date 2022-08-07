@@ -20,6 +20,8 @@ import net.minecraft.world.dimension.DimensionOptions;
 import net.minecraft.world.gen.feature.OrePlacedFeatures;
 import net.minecraft.world.gen.feature.PlacedFeature;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Objects;
 import java.util.Optional;
@@ -30,6 +32,8 @@ public class BiomeSelectors {
     public static BiomeSource overworld = MultiNoiseBiomeSource.Preset.OVERWORLD.getBiomeSource(BuiltinRegistries.BIOME);
     public static BiomeSource nether = MultiNoiseBiomeSource.Preset.NETHER.getBiomeSource(BuiltinRegistries.BIOME);
     public static BiomeSource end = new TheEndBiomeSource(BuiltinRegistries.BIOME, 0);
+    public static String[] undergardenBiomesIds = new String[]{"undergarden:forgotten_field", "undergarden:ancient_sea", "undergarden:frostfields", "undergarden:icy_sea", "undergarden:smogstem_forest", "undergarden:wigglewood_forest", "undergarden:dense_forest", "undergarden:gronglegrowth", "undergarden:barren_abyss", "undergarden:dead_sea", "undergarden:smog_spires", "undergarden:mushroom_bog"};
+    public static ArrayList<String> undergardenBiomes = new ArrayList<>(Arrays.asList(undergardenBiomesIds));
 
     public static Predicate<BiomeModifications.BiomeContext> gensFeature(RegistryEntry<PlacedFeature> FeatureIn) {
 
@@ -84,6 +88,11 @@ public class BiomeSelectors {
     }
 
     @ExpectPlatform
+    public static Predicate<BiomeModifications.BiomeContext> gensInBiome(String identifier) {
+        return context -> BuiltinRegistries.BIOME.get(new Identifier(identifier)).equals(BuiltinRegistries.BIOME.get(context.getKey()));
+    }
+
+    @ExpectPlatform
     public static Predicate<BiomeModifications.BiomeContext> gensInOverworld() {
         return gensInSource(overworld);
     }
@@ -97,4 +106,19 @@ public class BiomeSelectors {
     public static Predicate<BiomeModifications.BiomeContext> gensInEnd() {
         return gensInSource(end);
     }
-}
+
+    public static Predicate<BiomeModifications.BiomeContext> gensInUndergarden() {
+        // Check if dimesion has biomes
+        if (!undergardenBiomes.isEmpty()) {
+            // If it does set predicate from first biome
+            Predicate<BiomeModifications.BiomeContext> predicate = gensInBiome(undergardenBiomes.get(0));
+            // Then or  the rest together to check if biome is in dimension
+            for (String biomeID : undergardenBiomes.subList(1, undergardenBiomes.size())) {
+                predicate = predicate.or(gensInBiome(biomeID));
+            }
+            return predicate;
+        } 
+        // Else always return false
+        return ctx -> false; 
+    } 
+} 

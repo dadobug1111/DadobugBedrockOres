@@ -9,6 +9,9 @@ import static no.dadobug.BiomeSelectors.gensInSource;
 
 public class BiomeSelectorsImpl {
 
+    public static Predicate<BiomeModifications.BiomeContext> gensInBiome(String identifier) {
+        return gensInBiome(identifier);
+    }
 
     public static Predicate<BiomeModifications.BiomeContext> gensInOverworld() {
         return gensInSource(BiomeSelectors.overworld);
@@ -23,7 +26,5 @@ public class BiomeSelectorsImpl {
     public static Predicate<BiomeModifications.BiomeContext> gensInEnd() {
         return gensInSource(BiomeSelectors.end);
     }
-
-
 
 }
