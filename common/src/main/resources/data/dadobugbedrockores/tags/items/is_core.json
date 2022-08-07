@@ -94,6 +94,11 @@
 
 
     "dadobugbedrockores:regenerative_mk_osmium",
-    "dadobugbedrockores:regenerative_mk_fluorite"
+    "dadobugbedrockores:regenerative_mk_fluorite",
+
+    
+    "dadobugbedrockores:regenerative_ug_cloggrum",
+    "dadobugbedrockores:regenerative_ug_froststeel",
+    "dadobugbedrockores:regenerative_ug_utherium"
   ]
 }

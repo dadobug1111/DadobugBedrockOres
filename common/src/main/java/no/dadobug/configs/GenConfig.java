@@ -257,4 +257,28 @@ public class GenConfig implements ConfigData {
     @ConfigEntry.Category("mekanism_overworld")
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_MK_FLUORITE_BEDROCK_OVERWORLD = new OreConfig(true, 8, 12);
+
+
+    @ConfigEntry.Category("vanilla_undergarden")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_COAL_BEDROCK_UNDERGARDEN = new OreConfig(true, 20, 3);
+    @ConfigEntry.Category("vanilla_undergarden")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_IRON_BEDROCK_UNDERGARDEN = new OreConfig(true, 9, 5);
+    @ConfigEntry.Category("vanilla_undergarden")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_GOLD_BEDROCK_UNDERGARDEN = new OreConfig(true, 9, 7);
+    @ConfigEntry.Category("vanilla_undergarden")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_DIAMOND_BEDROCK_UNDERGARDEN = new OreConfig(true, 8, 12);
+
+    @ConfigEntry.Category("undergarden_undergarden") //No idea what the spawn chance and size should
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_CLOGGRUM_BEDROCK_UNDERGARDEN  = new OreConfig(true, 9, 5);
+    @ConfigEntry.Category("undergarden_undergarden")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_FROSTSTEEL_BEDROCK_UNDERGARDEN = new OreConfig(true, 9, 7);
+    @ConfigEntry.Category("undergarden_undergarden")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_UTHERIUM_BEDROCK_UNDERGARDEN = new OreConfig(true, 8, 12);
 }

@@ -75,6 +75,7 @@ public class EntryModule {
     public static final BlockConfigLambda<Item.Settings> mythicmetalsItemSettings = (cfg) -> {if(Platform.isModLoaded("mythicmetals") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
     public static final BlockConfigLambda<Item.Settings> createItemSettings = (cfg) -> {if(Platform.isModLoaded("create") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
     public static final BlockConfigLambda<Item.Settings> mekanismItemSettings = (cfg) -> {if(Platform.isModLoaded("mekanism") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
+    public static final BlockConfigLambda<Item.Settings> undergardenItemSettings = (cfg) -> {if(Platform.isModLoaded("undergarden") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
     
 
 
@@ -240,6 +241,12 @@ public class EntryModule {
     //mekanism
     public static final BedrockStack BEDROCK_MK_OSMIUM_ORE = BedrockStack.BedrockStackStandardOre("mk_osmium", CONFIG.BEDROCK_MK_OSMIUM_ORE, mekanismItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
     public static final BedrockStack BEDROCK_MK_FLUORITE_ORE = BedrockStack.BedrockStackStandardOre("mk_fluorite", CONFIG.BEDROCK_MK_FLUORITE_ORE, mekanismItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+
+
+    //undergarden
+    public static final BedrockStack BEDROCK_UG_CLOGGRUM_ORE = BedrockStack.BedrockStackStandardOre("ug_cloggrum", CONFIG.BEDROCK_UG_CLOGGRUM_ORE, undergardenItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_UG_FROSTSTEEL_ORE = BedrockStack.BedrockStackStandardOre("ug_froststeel", CONFIG.BEDROCK_UG_FROSTSTEEL_ORE, undergardenItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_UG_UTHERIUM_ORE = BedrockStack.BedrockStackStandardOre("ug_utherium", CONFIG.BEDROCK_UG_UTHERIUM_ORE, undergardenItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
 
 
     public static void init() {

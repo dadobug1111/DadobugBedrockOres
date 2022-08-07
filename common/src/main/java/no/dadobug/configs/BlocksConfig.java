@@ -235,4 +235,15 @@ public class BlocksConfig implements ConfigData {
     @ConfigEntry.Category("mekanism")
     @ConfigEntry.Gui.CollapsibleObject()
     public BlockConfig BEDROCK_MK_FLUORITE_ORE = new BlockConfig(true, 50f, 0.5f, 0, 1, 4);
+
+
+    @ConfigEntry.Category("undergarden")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_UG_CLOGGRUM_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+    @ConfigEntry.Category("undergarden")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_UG_FROSTSTEEL_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+    @ConfigEntry.Category("undergarden")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_UG_UTHERIUM_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
 }

@@ -95,7 +95,12 @@
 
 
     "dadobugbedrockores:bedrock_mk_osmium_ore",
-    "dadobugbedrockores:bedrock_mk_fluorite_ore"
+    "dadobugbedrockores:bedrock_mk_fluorite_ore",
+
+
+    "dadobugbedrockores:bedrock_ug_cloggrum_ore",
+    "dadobugbedrockores:bedrock_ug_froststeel_ore",
+    "dadobugbedrockores:bedrock_ug_utherium_ore"
 
   ]
 }

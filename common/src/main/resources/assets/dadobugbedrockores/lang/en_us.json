@@ -200,5 +200,14 @@
   "block.dadobugbedrockores.bedrock_mk_fluorite_ore": "Bedrock Fluorite Ore",
 
   "item.dadobugbedrockores.regenerative_mk_osmium": "Regenerative Osmium Cluster",
-  "item.dadobugbedrockores.regenerative_mk_fluorite": "Regenerative Fluorite Cluster"
+  "item.dadobugbedrockores.regenerative_mk_fluorite": "Regenerative Fluorite Cluster",
+
+  
+  "block.dadobugbedrockores.bedrock_ug_cloggrum_ore": "Bedrock Cloggrum Ore",
+  "block.dadobugbedrockores.bedrock_ug_froststeel_ore": "Bedrock Froststeel Ore",
+  "block.dadobugbedrockores.bedrock_ug_utherium_ore": "Bedrock Utherium Ore",
+
+  "item.dadobugbedrockores.regenerative_ug_cloggrum": "Regenerative Cloggrum Cluster",
+  "item.dadobugbedrockores.regenerative_ug_froststeel": "Regenerative Froststeel Cluster",
+  "item.dadobugbedrockores.regenerative_ug_utherium": "Regenerative Utherium Cluster"
 }

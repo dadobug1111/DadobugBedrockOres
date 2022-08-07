@@ -173,6 +173,18 @@ public class OreGenConfig {
     public static OreGen ORE_MK_FLUORITE_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_MK_FLUORITE_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_MK_FLUORITE_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_MK_FLUORITE_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_mk_fluorite_bedrock_overworld");
 
 
+
+    //vanilla undergarden
+    public static OreGen ORE_COAL_BEDROCK_UNDERGARDEN = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_COAL_BEDROCK_UNDERGARDEN.oreSize, CONFIG.ORE_COAL_BEDROCK_UNDERGARDEN.oreChance, EntryModule.BEDROCK_COAL_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_coal_bedrock_overworld");
+    public static OreGen ORE_IRON_BEDROCK_UNDERGARDEN = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_IRON_BEDROCK_UNDERGARDEN.oreSize, CONFIG.ORE_IRON_BEDROCK_UNDERGARDEN.oreChance, EntryModule.BEDROCK_IRON_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_iron_bedrock_overworld");
+    public static OreGen ORE_GOLD_BEDROCK_UNDERGARDEN = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_GOLD_BEDROCK_UNDERGARDEN.oreSize, CONFIG.ORE_GOLD_BEDROCK_UNDERGARDEN.oreChance, EntryModule.BEDROCK_GOLD_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_gold_bedrock_overworld");
+    public static OreGen ORE_DIAMOND_BEDROCK_UNDERGARDEN = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_DIAMOND_BEDROCK_UNDERGARDEN.oreSize, CONFIG.ORE_DIAMOND_BEDROCK_UNDERGARDEN.oreChance, EntryModule.BEDROCK_DIAMOND_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_diamond_bedrock_overworld");
+
+    //undergarden undergarden
+    public static OreGen ORE_CLOGGRUM_BEDROCK_UNDERGARDEN = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_CLOGGRUM_BEDROCK_UNDERGARDEN.oreSize, CONFIG.ORE_CLOGGRUM_BEDROCK_UNDERGARDEN.oreChance, EntryModule.BEDROCK_UG_CLOGGRUM_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_iron_bedrock_overworld");
+    public static OreGen ORE_FROSTSTEEL_BEDROCK_UNDERGARDEN = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_FROSTSTEEL_BEDROCK_UNDERGARDEN.oreSize, CONFIG.ORE_FROSTSTEEL_BEDROCK_UNDERGARDEN.oreChance, EntryModule.BEDROCK_UG_FROSTSTEEL_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_gold_bedrock_overworld");
+    public static OreGen ORE_UTHERIUM_BEDROCK_UNDERGARDEN = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_UTHERIUM_BEDROCK_UNDERGARDEN.oreSize, CONFIG.ORE_UTHERIUM_BEDROCK_UNDERGARDEN.oreChance, EntryModule.BEDROCK_UG_UTHERIUM_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_diamond_bedrock_overworld");
+
     public static void init(){
         ORE_COAL_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_COAL_BEDROCK_OVERWORLD.genOre);
         ORE_IRON_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_IRON_BEDROCK_OVERWORLD.genOre);
@@ -295,6 +307,13 @@ public class OreGenConfig {
         if (Platform.isModLoaded("mekanism")) {
             ORE_MK_OSMIUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MK_OSMIUM_BEDROCK_OVERWORLD.genOre);
             ORE_MK_FLUORITE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MK_FLUORITE_BEDROCK_OVERWORLD.genOre);
+        }
+
+        if (Platform.isModLoaded("undergarden")) {
+            ORE_COAL_BEDROCK_UNDERGARDEN.addOreToGen(BiomeSelectors.gensInUndergarden(), CONFIG.ORE_COAL_BEDROCK_UNDERGARDEN.genOre);
+            ORE_IRON_BEDROCK_UNDERGARDEN.addOreToGen(BiomeSelectors.gensInUndergarden(), CONFIG.ORE_IRON_BEDROCK_UNDERGARDEN.genOre);
+            ORE_GOLD_BEDROCK_UNDERGARDEN.addOreToGen(BiomeSelectors.gensInUndergarden(), CONFIG.ORE_GOLD_BEDROCK_UNDERGARDEN.genOre);
+            ORE_DIAMOND_BEDROCK_UNDERGARDEN.addOreToGen(BiomeSelectors.gensInUndergarden(), CONFIG.ORE_DIAMOND_BEDROCK_UNDERGARDEN.genOre);
         }
     }
 
