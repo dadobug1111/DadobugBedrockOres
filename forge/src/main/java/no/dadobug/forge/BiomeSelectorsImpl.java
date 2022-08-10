@@ -9,6 +9,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.registries.ForgeRegistries;
 import no.dadobug.BiomeSelectors;
+import no.dadobug.EntryModule;
 
 import java.util.function.Predicate;
 
@@ -26,8 +27,7 @@ public class BiomeSelectorsImpl {
         return  biomeContext -> BiomeDictionary.hasType(RegistryKey.of(Registry.BIOME_KEY, biomeContext.getKey()), BiomeDictionary.Type.END) || BiomeSelectors.gensInSource(BiomeSelectors.end).test(biomeContext);
     }
 
-    public static Predicate<BiomeModifications.BiomeContext> gensInBiome(String identifier) {
-        Biome biome = ForgeRegistries.BIOMES.getValue(new Identifier(identifier));
-        return context -> biome.equals(ForgeRegistries.BIOMES.getValue(context.getKey()));
+    public static Predicate<BiomeModifications.BiomeContext> gensInBiome(Identifier identifier) {
+        return context -> context.getKey().equals(identifier);
     }
 }
