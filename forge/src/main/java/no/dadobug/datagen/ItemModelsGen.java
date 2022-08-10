@@ -3,6 +3,7 @@ package no.dadobug.datagen;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import no.dadobug.EntryModule;
@@ -29,6 +30,7 @@ public class ItemModelsGen extends CustomItemModelProvider{
         registerBlockItem(EntryModule.BEDROCK_LAPIS_ORE.oreItem());
         registerBlockItem(EntryModule.BEDROCK_EMERALD_ORE.oreItem());
         registerBlockItem(EntryModule.BEDROCK_WATER_ORE.oreItem());
+        // withExistingParent(EntryModule.BEDROCK_WATER_ORE.oreItem().getId().getPath(), modLoc("block/bedrock_fluid_general_ore"));
         registerBlockItem(EntryModule.BEDROCK_LAVA_ORE.oreItem());
         registerBlockItem(EntryModule.BEDROCK_NETHER_GOLD.oreItem());
         registerBlockItem(EntryModule.BEDROCK_NETHER_QUARTZ.oreItem());
@@ -59,7 +61,7 @@ public class ItemModelsGen extends CustomItemModelProvider{
         registerBlockItem(EntryModule.BEDROCK_TC_COBALT_ORE.oreItem());
 
         // AE2
-        registerBlockItem(EntryModule.BEDROCK_AE_CERTUS_QUARTZ_ORE.oreItem());
+        // registerBlockItem(EntryModule.BEDROCK_AE_CERTUS_QUARTZ_ORE.oreItem());
 
         // Big reactors
         registerBlockItem(EntryModule.BEDROCK_ER_YELLORITE_ORE.oreItem());
@@ -112,34 +114,33 @@ public class ItemModelsGen extends CustomItemModelProvider{
         registerBlockItem(EntryModule.BEDROCK_UG_FROSTSTEEL_ORE.oreItem());
         registerBlockItem(EntryModule.BEDROCK_UG_UTHERIUM_ORE.oreItem());
 
-        registerBlockItem(EntryModule.BEDROCK_UG_CLOGGRUM_ORE.oreItem());
-        registerBlockItem(EntryModule.BEDROCK_UG_FROSTSTEEL_ORE.oreItem());
-        registerBlockItem(EntryModule.BEDROCK_UG_UTHERIUM_ORE.oreItem());
-
-        registerBlockItem(EntryModule.BEDROCK_UG_CLOGGRUM_ORE.oreItem());
-        registerBlockItem(EntryModule.BEDROCK_UG_FROSTSTEEL_ORE.oreItem());
-        registerBlockItem(EntryModule.BEDROCK_UG_UTHERIUM_ORE.oreItem());
+        // Beyond Earth
+        registerBlockItem(EntryModule.BEDROCK_BE_DESH_ORE.oreItem());
+        registerBlockItem(EntryModule.BEDROCK_BE_CHEESE_ORE.oreItem());
+        registerBlockItem(EntryModule.BEDROCK_BE_ICE_SHARD_ORE.oreItem());
+        registerBlockItem(EntryModule.BEDROCK_BE_OSTRUM_ORE.oreItem());
+        registerBlockItem(EntryModule.BEDROCK_BE_CALORITE_ORE.oreItem());
 
         // Vanilla
         registerSimpleItem(EntryModule.BEDROCK_FRACTURED.core(), getItemTextureName(EntryModule.BEDROCK_FRACTURED.core().getId()));
         registerSimpleItem(EntryModule.XP_LEAK.core(), getItemTextureName(EntryModule.XP_LEAK.core().getId()));
-        registerSimpleItem(EntryModule.BEDROCK_COAL_ORE.core(), getItemTextureName(EntryModule.BEDROCK_COAL_ORE.core().getId()));
-        registerSimpleItem(EntryModule.BEDROCK_IRON_ORE.core(), getItemTextureName(EntryModule.BEDROCK_IRON_ORE.core().getId()));
-        registerSimpleItem(EntryModule.BEDROCK_GOLD_ORE.core(), getItemTextureName(EntryModule.BEDROCK_GOLD_ORE.core().getId()));
-        registerSimpleItem(EntryModule.BEDROCK_DIAMOND_ORE.core(), getItemTextureName(EntryModule.BEDROCK_DIAMOND_ORE.core().getId()));
-        registerSimpleItem(EntryModule.BEDROCK_REDSTONE_ORE.core(), getItemTextureName(EntryModule.BEDROCK_REDSTONE_ORE.core().getId()));
-        registerSimpleItem(EntryModule.BEDROCK_COPPER_ORE.core(), getItemTextureName(EntryModule.BEDROCK_COPPER_ORE.core().getId()));
-        registerSimpleItem(EntryModule.BEDROCK_LAPIS_ORE.core(), getItemTextureName(EntryModule.BEDROCK_LAPIS_ORE.core().getId()));
-        registerSimpleItem(EntryModule.BEDROCK_EMERALD_ORE.core(), getItemTextureName(EntryModule.BEDROCK_EMERALD_ORE.core().getId()));
-        registerSimpleItem(EntryModule.BEDROCK_WATER_ORE.core(), getItemTextureName(EntryModule.BEDROCK_WATER_ORE.core().getId()));
-        registerSimpleItem(EntryModule.BEDROCK_LAVA_ORE.core(), getItemTextureName(EntryModule.BEDROCK_LAVA_ORE.core().getId()));
-        registerSimpleItem(EntryModule.BEDROCK_NETHER_GOLD.core(), getItemTextureName(EntryModule.BEDROCK_NETHER_GOLD.core().getId()));
-        registerSimpleItem(EntryModule.BEDROCK_NETHER_QUARTZ.core(), getItemTextureName(EntryModule.BEDROCK_NETHER_QUARTZ.core().getId()));
-        registerSimpleItem(EntryModule.BEDROCK_ANCIENT_DEBRIS.core(), getItemTextureName(EntryModule.BEDROCK_ANCIENT_DEBRIS.core().getId()));
+        registerSimpleItem(EntryModule.BEDROCK_COAL_ORE.core(), getItemTextureName(Items.COAL.getRegistryName()));
+        registerSimpleItem(EntryModule.BEDROCK_IRON_ORE.core(), getItemTextureName(Items.RAW_IRON.getRegistryName()));
+        registerSimpleItem(EntryModule.BEDROCK_GOLD_ORE.core(), getItemTextureName(Items.RAW_GOLD.getRegistryName()));
+        registerSimpleItem(EntryModule.BEDROCK_DIAMOND_ORE.core(), getItemTextureName(Items.DIAMOND.getRegistryName()));
+        registerSimpleItem(EntryModule.BEDROCK_REDSTONE_ORE.core(), getItemTextureName(Items.REDSTONE.getRegistryName()));
+        registerSimpleItem(EntryModule.BEDROCK_COPPER_ORE.core(), getItemTextureName(Items.RAW_COPPER.getRegistryName()));
+        registerSimpleItem(EntryModule.BEDROCK_LAPIS_ORE.core(), getItemTextureName(Items.LAPIS_LAZULI.getRegistryName()));
+        registerSimpleItem(EntryModule.BEDROCK_EMERALD_ORE.core(), getItemTextureName(Items.EMERALD.getRegistryName()));
+        registerSimpleItem(EntryModule.BEDROCK_WATER_ORE.core(), getItemTextureName(Items.WATER_BUCKET.getRegistryName()));
+        registerSimpleItem(EntryModule.BEDROCK_LAVA_ORE.core(), getItemTextureName(Items.LAVA_BUCKET.getRegistryName()));
+        registerSimpleItem(EntryModule.BEDROCK_NETHER_GOLD.core(), getItemTextureName(Items.GOLD_NUGGET.getRegistryName()));
+        registerSimpleItem(EntryModule.BEDROCK_NETHER_QUARTZ.core(), getItemTextureName(Items.QUARTZ.getRegistryName()));
+        registerSimpleItem(EntryModule.BEDROCK_ANCIENT_DEBRIS.core(), getItemTextureName(Items.NETHERITE_SCRAP.getRegistryName()));
 
         // Vanilla funny
-        registerSimpleItem(EntryModule.BEDROCK_MILK_ORE.core(), getItemTextureName(EntryModule.BEDROCK_MILK_ORE.core().getId()));
-        registerSimpleItem(EntryModule.BEDROCK_COOKIE_ORE.core(), getItemTextureName(EntryModule.BEDROCK_COOKIE_ORE.core().getId()));
+        registerSimpleItem(EntryModule.BEDROCK_MILK_ORE.core(), getItemTextureName(Items.MILK_BUCKET.getRegistryName()));
+        registerSimpleItem(EntryModule.BEDROCK_COOKIE_ORE.core(), getItemTextureName(Items.COOKIE.getRegistryName()));
 
         // Techreborn
         registerSimpleItem(EntryModule.BEDROCK_BAUXITE_ORE.core(), getItemTextureName("techreborn", "dust/aluminum_dust"));
@@ -214,6 +215,13 @@ public class ItemModelsGen extends CustomItemModelProvider{
         registerSimpleItem(EntryModule.BEDROCK_UG_CLOGGRUM_ORE.core(), getItemTextureName("undergarden", "raw_cloggrum"));
         registerSimpleItem(EntryModule.BEDROCK_UG_FROSTSTEEL_ORE.core(), getItemTextureName("undergarden", "raw_froststeel"));
         registerSimpleItem(EntryModule.BEDROCK_UG_UTHERIUM_ORE.core(), getItemTextureName("undergarden", "utherium_crystal"));
+
+        // Beyond Earth
+        registerSimpleItem(EntryModule.BEDROCK_BE_DESH_ORE.core(), getItemTextureName("beyond_earth", "items/", "raw_desh"));
+        registerSimpleItem(EntryModule.BEDROCK_BE_CHEESE_ORE.core(), getItemTextureName("beyond_earth","items/", "item_cheese"));
+        registerSimpleItem(EntryModule.BEDROCK_BE_ICE_SHARD_ORE.core(), getItemTextureName("beyond_earth","items/", "ice_shard"));
+        registerSimpleItem(EntryModule.BEDROCK_BE_OSTRUM_ORE.core(), getItemTextureName("beyond_earth","items/", "raw_ostrum"));
+        registerSimpleItem(EntryModule.BEDROCK_BE_CALORITE_ORE.core(), getItemTextureName("beyond_earth","items/", "raw_calorite"));
     }
 
     private void registerBlockItem(RegistrySupplier<Item> itemSupplier) {
@@ -228,11 +236,15 @@ public class ItemModelsGen extends CustomItemModelProvider{
     }
 
     private String getItemTextureName(String modID, String itemName) {
-        return modID + ":item/" + itemName;
+        return getItemTextureName(modID, "item/", itemName);
     }
 
     private String getItemTextureName(Identifier identifier) {
-        return identifier.getNamespace() + ":item/" + identifier.getPath();
+        return getItemTextureName(identifier.getNamespace(), "item/", identifier.getPath());
+    }
+
+    private String getItemTextureName(String modID,  String subPath, String itemName) {
+        return modID + ":" + subPath + itemName;
     }
     
 }

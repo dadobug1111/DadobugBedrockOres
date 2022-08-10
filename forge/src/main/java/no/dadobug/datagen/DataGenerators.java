@@ -21,7 +21,7 @@ public class DataGenerators {
         }
         if (event.includeServer()) {
             EntryModule.LOGGER.info("Started server data generation");
-            // Provide loot tables
+            generator.addProvider(new LootTableGen(generator));
             BlockTagsGen blockTagsGen = new BlockTagsGen(generator, event.getExistingFileHelper());
             generator.addProvider(blockTagsGen);
             generator.addProvider(new ItemTagsGen(generator, blockTagsGen, event.getExistingFileHelper()));

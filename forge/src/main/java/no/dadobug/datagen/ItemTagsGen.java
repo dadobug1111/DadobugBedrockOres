@@ -108,7 +108,14 @@ public class ItemTagsGen extends ItemTagProvider{
             // Undergarden
             .add(EntryModule.BEDROCK_UG_CLOGGRUM_ORE.core().get())
             .add(EntryModule.BEDROCK_UG_FROSTSTEEL_ORE.core().get())
-            .add(EntryModule.BEDROCK_UG_UTHERIUM_ORE.core().get());
+            .add(EntryModule.BEDROCK_UG_UTHERIUM_ORE.core().get())
+
+            // Beyond Earth
+            .add(EntryModule.BEDROCK_BE_DESH_ORE.core().get())
+            .add(EntryModule.BEDROCK_BE_CHEESE_ORE.core().get())
+            .add(EntryModule.BEDROCK_BE_ICE_SHARD_ORE.core().get())
+            .add(EntryModule.BEDROCK_BE_OSTRUM_ORE.core().get())
+            .add(EntryModule.BEDROCK_BE_CALORITE_ORE.core().get());
     }
 
     @Override

@@ -25,7 +25,7 @@ public class BlockStateGen extends BlockStateProvider{
         simpleBlock(EntryModule.BEDROCK_COPPER_ORE.ore().get());
         simpleBlock(EntryModule.BEDROCK_LAPIS_ORE.ore().get());
         simpleBlock(EntryModule.BEDROCK_EMERALD_ORE.ore().get());
-        simpleBlock(EntryModule.BEDROCK_WATER_ORE.ore().get());
+        // simpleBlock(EntryModule.BEDROCK_WATER_ORE.ore().get());
         simpleBlock(EntryModule.BEDROCK_LAVA_ORE.ore().get());
         simpleBlock(EntryModule.BEDROCK_NETHER_GOLD.ore().get());
         simpleBlock(EntryModule.BEDROCK_NETHER_QUARTZ.ore().get());
@@ -56,7 +56,7 @@ public class BlockStateGen extends BlockStateProvider{
         simpleBlock(EntryModule.BEDROCK_TC_COBALT_ORE.ore().get());
 
         // AE2
-        simpleBlock(EntryModule.BEDROCK_AE_CERTUS_QUARTZ_ORE.ore().get());
+        // simpleBlock(EntryModule.BEDROCK_AE_CERTUS_QUARTZ_ORE.ore().get());
 
         // Big reactors
         simpleBlock(EntryModule.BEDROCK_ER_YELLORITE_ORE.ore().get());
@@ -108,6 +108,13 @@ public class BlockStateGen extends BlockStateProvider{
         simpleBlock(EntryModule.BEDROCK_UG_CLOGGRUM_ORE.ore().get());
         simpleBlock(EntryModule.BEDROCK_UG_FROSTSTEEL_ORE.ore().get());
         simpleBlock(EntryModule.BEDROCK_UG_UTHERIUM_ORE.ore().get());
+
+        // Beyond Earth
+        simpleBlock(EntryModule.BEDROCK_BE_DESH_ORE.ore().get());
+        simpleBlock(EntryModule.BEDROCK_BE_CHEESE_ORE.ore().get());
+        simpleBlock(EntryModule.BEDROCK_BE_ICE_SHARD_ORE.ore().get());
+        simpleBlock(EntryModule.BEDROCK_BE_OSTRUM_ORE.ore().get());
+        simpleBlock(EntryModule.BEDROCK_BE_CALORITE_ORE.ore().get());
     }
     
 }
