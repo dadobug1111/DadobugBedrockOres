@@ -175,15 +175,51 @@ public class OreGenConfig {
 
 
     //vanilla undergarden
-    public static OreGen ORE_COAL_BEDROCK_UNDERGARDEN = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_COAL_BEDROCK_UNDERGARDEN.oreSize, CONFIG.ORE_COAL_BEDROCK_UNDERGARDEN.oreChance, EntryModule.BEDROCK_COAL_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_coal_bedrock_overworld");
-    public static OreGen ORE_IRON_BEDROCK_UNDERGARDEN = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_IRON_BEDROCK_UNDERGARDEN.oreSize, CONFIG.ORE_IRON_BEDROCK_UNDERGARDEN.oreChance, EntryModule.BEDROCK_IRON_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_iron_bedrock_overworld");
-    public static OreGen ORE_GOLD_BEDROCK_UNDERGARDEN = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_GOLD_BEDROCK_UNDERGARDEN.oreSize, CONFIG.ORE_GOLD_BEDROCK_UNDERGARDEN.oreChance, EntryModule.BEDROCK_GOLD_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_gold_bedrock_overworld");
-    public static OreGen ORE_DIAMOND_BEDROCK_UNDERGARDEN = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_DIAMOND_BEDROCK_UNDERGARDEN.oreSize, CONFIG.ORE_DIAMOND_BEDROCK_UNDERGARDEN.oreChance, EntryModule.BEDROCK_DIAMOND_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_diamond_bedrock_overworld");
+    public static OreGen ORE_UG_COAL_BEDROCK_UNDERGARDEN = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_COAL_BEDROCK_UNDERGARDEN.oreSize, CONFIG.ORE_COAL_BEDROCK_UNDERGARDEN.oreChance, EntryModule.BEDROCK_COAL_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_coal_bedrock_undergarden");
+    public static OreGen ORE_UG_IRON_BEDROCK_UNDERGARDEN = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_IRON_BEDROCK_UNDERGARDEN.oreSize, CONFIG.ORE_IRON_BEDROCK_UNDERGARDEN.oreChance, EntryModule.BEDROCK_IRON_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_iron_bedrock_undergarden");
+    public static OreGen ORE_UG_GOLD_BEDROCK_UNDERGARDEN = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_GOLD_BEDROCK_UNDERGARDEN.oreSize, CONFIG.ORE_GOLD_BEDROCK_UNDERGARDEN.oreChance, EntryModule.BEDROCK_GOLD_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_gold_bedrock_undergarden");
+    public static OreGen ORE_UG_DIAMOND_BEDROCK_UNDERGARDEN = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_DIAMOND_BEDROCK_UNDERGARDEN.oreSize, CONFIG.ORE_DIAMOND_BEDROCK_UNDERGARDEN.oreChance, EntryModule.BEDROCK_DIAMOND_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_diamond_bedrock_undergarden");
 
     //undergarden undergarden
-    public static OreGen ORE_CLOGGRUM_BEDROCK_UNDERGARDEN = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_CLOGGRUM_BEDROCK_UNDERGARDEN.oreSize, CONFIG.ORE_CLOGGRUM_BEDROCK_UNDERGARDEN.oreChance, EntryModule.BEDROCK_UG_CLOGGRUM_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_iron_bedrock_overworld");
-    public static OreGen ORE_FROSTSTEEL_BEDROCK_UNDERGARDEN = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_FROSTSTEEL_BEDROCK_UNDERGARDEN.oreSize, CONFIG.ORE_FROSTSTEEL_BEDROCK_UNDERGARDEN.oreChance, EntryModule.BEDROCK_UG_FROSTSTEEL_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_gold_bedrock_overworld");
-    public static OreGen ORE_UTHERIUM_BEDROCK_UNDERGARDEN = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_UTHERIUM_BEDROCK_UNDERGARDEN.oreSize, CONFIG.ORE_UTHERIUM_BEDROCK_UNDERGARDEN.oreChance, EntryModule.BEDROCK_UG_UTHERIUM_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_diamond_bedrock_overworld");
+    public static OreGen ORE_UG_CLOGGRUM_BEDROCK_UNDERGARDEN = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_UG_CLOGGRUM_BEDROCK_UNDERGARDEN.oreSize, CONFIG.ORE_UG_CLOGGRUM_BEDROCK_UNDERGARDEN.oreChance, EntryModule.BEDROCK_UG_CLOGGRUM_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_cloggrum_bedrock_undergarden");
+    public static OreGen ORE_UG_FROSTSTEEL_BEDROCK_UNDERGARDEN = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_UG_FROSTSTEEL_BEDROCK_UNDERGARDEN.oreSize, CONFIG.ORE_UG_FROSTSTEEL_BEDROCK_UNDERGARDEN.oreChance, EntryModule.BEDROCK_UG_FROSTSTEEL_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_froststeel_bedrock_undergarden");
+    public static OreGen ORE_UG_UTHERIUM_BEDROCK_UNDERGARDEN = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_UG_UTHERIUM_BEDROCK_UNDERGARDEN.oreSize, CONFIG.ORE_UG_UTHERIUM_BEDROCK_UNDERGARDEN.oreChance, EntryModule.BEDROCK_UG_UTHERIUM_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_utherium_bedrock_undergarden");
+
+
+
+    //vanilla moon
+    public static OreGen ORE_BE_IRON_BEDROCK_MOON = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_BE_IRON_BEDROCK_MOON.oreSize, CONFIG.ORE_BE_IRON_BEDROCK_MOON.oreChance, EntryModule.BEDROCK_IRON_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_iron_bedrock_moon");
+
+    //beyond earth moon
+    public static OreGen ORE_BE_DESH_BEDROCK_MOON = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_BE_DESH_BEDROCK_MOON.oreSize, CONFIG.ORE_BE_DESH_BEDROCK_MOON.oreChance, EntryModule.BEDROCK_BE_DESH_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_desh_bedrock_moon");
+    public static OreGen ORE_BE_ICE_SHARD_BEDROCK_MOON = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_BE_ICE_SHARD_BEDROCK_MOON.oreSize, CONFIG.ORE_BE_ICE_SHARD_BEDROCK_MOON.oreChance, EntryModule.BEDROCK_BE_ICE_SHARD_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_ice_shard_bedrock_moon");
+    public static OreGen ORE_BE_CHEESE_BEDROCK_MOON = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_BE_CHEESE_BEDROCK_MOON.oreSize, CONFIG.ORE_BE_CHEESE_BEDROCK_MOON.oreChance, EntryModule.BEDROCK_BE_CHEESE_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_cheese_bedrock_moon");
+
+    //vanilla mars
+    public static OreGen ORE_BE_IRON_BEDROCK_MARS = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_BE_IRON_BEDROCK_MARS.oreSize, CONFIG.ORE_BE_IRON_BEDROCK_MARS.oreChance, EntryModule.BEDROCK_IRON_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_iron_bedrock_mars");
+    public static OreGen ORE_BE_DIAMOND_BEDROCK_MARS = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_BE_DIAMOND_BEDROCK_MARS.oreSize, CONFIG.ORE_BE_DIAMOND_BEDROCK_MARS.oreChance, EntryModule.BEDROCK_DIAMOND_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_diamond_bedrock_mars");
+
+    //beyond earth mars
+    public static OreGen ORE_BE_OSTRUM_BEDROCK_MARS = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_BE_OSTRUM_BEDROCK_MARS.oreSize, CONFIG.ORE_BE_OSTRUM_BEDROCK_MARS.oreChance, EntryModule.BEDROCK_BE_OSTRUM_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_ostrum_bedrock_moon");
+    public static OreGen ORE_BE_ICE_SHARD_BEDROCK_MARS = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_BE_ICE_SHARD_BEDROCK_MARS.oreSize, CONFIG.ORE_BE_ICE_SHARD_BEDROCK_MARS.oreChance, EntryModule.BEDROCK_BE_ICE_SHARD_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_ice_shard_bedrock_mars");
+
+    //vanilla venus
+    public static OreGen ORE_BE_COAL_BEDROCK_VENUS = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_BE_COAL_BEDROCK_VENUS.oreSize, CONFIG.ORE_BE_COAL_BEDROCK_VENUS.oreChance, EntryModule.BEDROCK_COAL_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_coal_bedrock_venus");
+    public static OreGen ORE_BE_DIAMOND_BEDROCK_VENUS = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_BE_DIAMOND_BEDROCK_VENUS.oreSize, CONFIG.ORE_BE_DIAMOND_BEDROCK_VENUS.oreChance, EntryModule.BEDROCK_DIAMOND_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_diamond_bedrock_venus");
+    public static OreGen ORE_BE_GOLD_BEDROCK_VENUS = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_BE_GOLD_BEDROCK_VENUS.oreSize, CONFIG.ORE_BE_GOLD_BEDROCK_VENUS.oreChance, EntryModule.BEDROCK_GOLD_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_gold_bedrock_venus");
+
+    //beyond earth venus
+    public static OreGen ORE_BE_CALORITE_BEDROCK_VENUS = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_BE_CALORITE_BEDROCK_VENUS.oreSize, CONFIG.ORE_BE_CALORITE_BEDROCK_VENUS.oreChance, EntryModule.BEDROCK_BE_CALORITE_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_calorite_bedrock_venus");
+
+    //vanilla glacio
+    public static OreGen ORE_BE_COAL_BEDROCK_GLACIO = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_BE_COAL_BEDROCK_GLACIO.oreSize, CONFIG.ORE_BE_COAL_BEDROCK_GLACIO.oreChance, EntryModule.BEDROCK_COAL_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_coal_bedrock_glacio");
+    public static OreGen ORE_BE_COPPER_BEDROCK_GLACIO = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_BE_COPPER_BEDROCK_GLACIO.oreSize, CONFIG.ORE_BE_COPPER_BEDROCK_GLACIO.oreChance, EntryModule.BEDROCK_COPPER_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_copper_bedrock_glacio");
+    public static OreGen ORE_BE_IRON_BEDROCK_GLACIO = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_BE_IRON_BEDROCK_GLACIO.oreSize, CONFIG.ORE_BE_IRON_BEDROCK_GLACIO.oreChance, EntryModule.BEDROCK_IRON_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_iron_bedrock_glacio");
+    public static OreGen ORE_BE_LAPIS_BEDROCK_GLACIO = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_BE_LAPIS_BEDROCK_GLACIO.oreSize, CONFIG.ORE_BE_LAPIS_BEDROCK_GLACIO.oreChance, EntryModule.BEDROCK_LAPIS_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_lapis_bedrock_glacio");
+
+    //beyond earth glacio
+    public static OreGen ORE_BE_ICE_SHARD_BEDROCK_GLACIO = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_BE_ICE_SHARD_BEDROCK_GLACIO.oreSize, CONFIG.ORE_BE_ICE_SHARD_BEDROCK_GLACIO.oreChance, EntryModule.BEDROCK_BE_ICE_SHARD_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_ice_shard_bedrock_glacio");
+
 
     public static void init(){
         ORE_COAL_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_COAL_BEDROCK_OVERWORLD.genOre);
@@ -303,17 +339,41 @@ public class OreGenConfig {
         if(Platform.isModLoaded("create")) {
             ORE_CR_ZINC_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_CR_ZINC_BEDROCK_OVERWORLD.genOre);
         }
-
-        if (Platform.isModLoaded("mekanism")) {
+        if(Platform.isModLoaded("mekanism")) {
             ORE_MK_OSMIUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MK_OSMIUM_BEDROCK_OVERWORLD.genOre);
             ORE_MK_FLUORITE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MK_FLUORITE_BEDROCK_OVERWORLD.genOre);
         }
+        if(Platform.isModLoaded("undergarden")) {
+            ORE_UG_COAL_BEDROCK_UNDERGARDEN.addOreToGen(BiomeSelectors.gensInUndergarden(), CONFIG.ORE_COAL_BEDROCK_UNDERGARDEN.genOre);
+            ORE_UG_IRON_BEDROCK_UNDERGARDEN.addOreToGen(BiomeSelectors.gensInUndergarden(), CONFIG.ORE_IRON_BEDROCK_UNDERGARDEN.genOre);
+            ORE_UG_GOLD_BEDROCK_UNDERGARDEN.addOreToGen(BiomeSelectors.gensInUndergarden(), CONFIG.ORE_GOLD_BEDROCK_UNDERGARDEN.genOre);
+            ORE_UG_DIAMOND_BEDROCK_UNDERGARDEN.addOreToGen(BiomeSelectors.gensInUndergarden(), CONFIG.ORE_DIAMOND_BEDROCK_UNDERGARDEN.genOre);
 
-        if (Platform.isModLoaded("undergarden")) {
-            ORE_COAL_BEDROCK_UNDERGARDEN.addOreToGen(BiomeSelectors.gensInUndergarden(), CONFIG.ORE_COAL_BEDROCK_UNDERGARDEN.genOre);
-            ORE_IRON_BEDROCK_UNDERGARDEN.addOreToGen(BiomeSelectors.gensInUndergarden(), CONFIG.ORE_IRON_BEDROCK_UNDERGARDEN.genOre);
-            ORE_GOLD_BEDROCK_UNDERGARDEN.addOreToGen(BiomeSelectors.gensInUndergarden(), CONFIG.ORE_GOLD_BEDROCK_UNDERGARDEN.genOre);
-            ORE_DIAMOND_BEDROCK_UNDERGARDEN.addOreToGen(BiomeSelectors.gensInUndergarden(), CONFIG.ORE_DIAMOND_BEDROCK_UNDERGARDEN.genOre);
+            ORE_UG_CLOGGRUM_BEDROCK_UNDERGARDEN.addOreToGen(BiomeSelectors.gensInUndergarden(), CONFIG.ORE_UG_CLOGGRUM_BEDROCK_UNDERGARDEN.genOre);
+            ORE_UG_FROSTSTEEL_BEDROCK_UNDERGARDEN.addOreToGen(BiomeSelectors.gensInUndergarden(), CONFIG.ORE_UG_FROSTSTEEL_BEDROCK_UNDERGARDEN.genOre);
+            ORE_UG_UTHERIUM_BEDROCK_UNDERGARDEN.addOreToGen(BiomeSelectors.gensInUndergarden(), CONFIG.ORE_UG_UTHERIUM_BEDROCK_UNDERGARDEN.genOre);            
+        }
+        if(Platform.isModLoaded("beyond_earth")) {
+            ORE_BE_IRON_BEDROCK_MOON.addOreToGen(BiomeSelectors.gensInBeyondEarthMoon(), CONFIG.ORE_BE_IRON_BEDROCK_MOON.genOre);
+            ORE_BE_DESH_BEDROCK_MOON.addOreToGen(BiomeSelectors.gensInBeyondEarthMoon(), CONFIG.ORE_BE_DESH_BEDROCK_MOON.genOre);
+            ORE_BE_ICE_SHARD_BEDROCK_MOON.addOreToGen(BiomeSelectors.gensInBeyondEarthMoon(), CONFIG.ORE_BE_ICE_SHARD_BEDROCK_MOON.genOre);
+            ORE_BE_CHEESE_BEDROCK_MOON.addOreToGen(BiomeSelectors.gensInBeyondEarthMoon(), CONFIG.ORE_BE_CHEESE_BEDROCK_MOON.genOre);
+
+            ORE_BE_IRON_BEDROCK_MARS.addOreToGen(BiomeSelectors.gensInBeyondEarthMars(), CONFIG.ORE_BE_IRON_BEDROCK_MARS.genOre);
+            ORE_BE_DIAMOND_BEDROCK_MARS.addOreToGen(BiomeSelectors.gensInBeyondEarthMars(), CONFIG.ORE_BE_DIAMOND_BEDROCK_MARS.genOre);
+            ORE_BE_OSTRUM_BEDROCK_MARS.addOreToGen(BiomeSelectors.gensInBeyondEarthMars(), CONFIG.ORE_BE_OSTRUM_BEDROCK_MARS.genOre);
+            ORE_BE_ICE_SHARD_BEDROCK_MARS.addOreToGen(BiomeSelectors.gensInBeyondEarthMars(), CONFIG.ORE_BE_ICE_SHARD_BEDROCK_MARS.genOre);
+
+            ORE_BE_COAL_BEDROCK_VENUS.addOreToGen(BiomeSelectors.gensInBeyondEarthVenus(), CONFIG.ORE_BE_COAL_BEDROCK_VENUS.genOre);
+            ORE_BE_DIAMOND_BEDROCK_VENUS.addOreToGen(BiomeSelectors.gensInBeyondEarthVenus(), CONFIG.ORE_BE_DIAMOND_BEDROCK_VENUS.genOre);
+            ORE_BE_GOLD_BEDROCK_VENUS.addOreToGen(BiomeSelectors.gensInBeyondEarthVenus(), CONFIG.ORE_BE_GOLD_BEDROCK_VENUS.genOre);
+            ORE_BE_CALORITE_BEDROCK_VENUS.addOreToGen(BiomeSelectors.gensInBeyondEarthVenus(), CONFIG.ORE_BE_CALORITE_BEDROCK_VENUS.genOre);
+
+            ORE_BE_COAL_BEDROCK_GLACIO.addOreToGen(BiomeSelectors.gensInBeyondEarthGlacio(), CONFIG.ORE_BE_COAL_BEDROCK_GLACIO.genOre);
+            ORE_BE_COPPER_BEDROCK_GLACIO.addOreToGen(BiomeSelectors.gensInBeyondEarthGlacio(), CONFIG.ORE_BE_COPPER_BEDROCK_GLACIO.genOre);
+            ORE_BE_IRON_BEDROCK_GLACIO.addOreToGen(BiomeSelectors.gensInBeyondEarthGlacio(), CONFIG.ORE_BE_IRON_BEDROCK_GLACIO.genOre);
+            ORE_BE_LAPIS_BEDROCK_GLACIO.addOreToGen(BiomeSelectors.gensInBeyondEarthGlacio(), CONFIG.ORE_BE_LAPIS_BEDROCK_GLACIO.genOre);
+            ORE_BE_ICE_SHARD_BEDROCK_GLACIO.addOreToGen(BiomeSelectors.gensInBeyondEarthGlacio(), CONFIG.ORE_BE_ICE_SHARD_BEDROCK_GLACIO.genOre);
         }
     }
 

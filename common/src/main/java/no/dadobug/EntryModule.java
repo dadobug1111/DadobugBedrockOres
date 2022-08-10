@@ -76,7 +76,7 @@ public class EntryModule {
     public static final BlockConfigLambda<Item.Settings> createItemSettings = (cfg) -> {if(Platform.isModLoaded("create") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
     public static final BlockConfigLambda<Item.Settings> mekanismItemSettings = (cfg) -> {if(Platform.isModLoaded("mekanism") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
     public static final BlockConfigLambda<Item.Settings> undergardenItemSettings = (cfg) -> {if(Platform.isModLoaded("undergarden") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
-    
+    public static final BlockConfigLambda<Item.Settings> beyondEarthItemSettings = (cfg) -> {if(Platform.isModLoaded("beyond_earth") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
 
 
 
@@ -247,6 +247,14 @@ public class EntryModule {
     public static final BedrockStack BEDROCK_UG_CLOGGRUM_ORE = BedrockStack.BedrockStackStandardOre("ug_cloggrum", CONFIG.BEDROCK_UG_CLOGGRUM_ORE, undergardenItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
     public static final BedrockStack BEDROCK_UG_FROSTSTEEL_ORE = BedrockStack.BedrockStackStandardOre("ug_froststeel", CONFIG.BEDROCK_UG_FROSTSTEEL_ORE, undergardenItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
     public static final BedrockStack BEDROCK_UG_UTHERIUM_ORE = BedrockStack.BedrockStackStandardOre("ug_utherium", CONFIG.BEDROCK_UG_UTHERIUM_ORE, undergardenItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+
+
+    //beyond earth
+    public static final BedrockStack BEDROCK_BE_DESH_ORE = BedrockStack.BedrockStackStandardOre("be_desh", CONFIG.BEDROCK_BE_DESH_ORE, beyondEarthItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_BE_CHEESE_ORE = BedrockStack.BedrockStackStandardOre("be_cheese", CONFIG.BEDROCK_BE_CHEESE_ORE, beyondEarthItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_BE_ICE_SHARD_ORE = BedrockStack.BedrockStackStandardOre("be_ice_shard", CONFIG.BEDROCK_BE_ICE_SHARD_ORE, beyondEarthItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_BE_OSTRUM_ORE = BedrockStack.BedrockStackStandardOre("be_ostrum", CONFIG.BEDROCK_BE_OSTRUM_ORE, beyondEarthItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_BE_CALORITE_ORE = BedrockStack.BedrockStackStandardOre("be_calorite", CONFIG.BEDROCK_BE_CALORITE_ORE, beyondEarthItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
 
 
     public static void init() {

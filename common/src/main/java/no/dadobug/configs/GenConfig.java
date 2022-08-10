@@ -274,11 +274,72 @@ public class GenConfig implements ConfigData {
 
     @ConfigEntry.Category("undergarden_undergarden") //No idea what the spawn chance and size should
     @ConfigEntry.Gui.CollapsibleObject()
-    public OreConfig ORE_CLOGGRUM_BEDROCK_UNDERGARDEN  = new OreConfig(true, 9, 5);
+    public OreConfig ORE_UG_CLOGGRUM_BEDROCK_UNDERGARDEN  = new OreConfig(true, 9, 5);
     @ConfigEntry.Category("undergarden_undergarden")
     @ConfigEntry.Gui.CollapsibleObject()
-    public OreConfig ORE_FROSTSTEEL_BEDROCK_UNDERGARDEN = new OreConfig(true, 9, 7);
+    public OreConfig ORE_UG_FROSTSTEEL_BEDROCK_UNDERGARDEN = new OreConfig(true, 9, 7);
     @ConfigEntry.Category("undergarden_undergarden")
     @ConfigEntry.Gui.CollapsibleObject()
-    public OreConfig ORE_UTHERIUM_BEDROCK_UNDERGARDEN = new OreConfig(true, 8, 12);
+    public OreConfig ORE_UG_UTHERIUM_BEDROCK_UNDERGARDEN = new OreConfig(true, 8, 12);
+
+
+    @ConfigEntry.Category("vanilla_moon")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_BE_IRON_BEDROCK_MOON = new OreConfig(true, 11, 8);
+
+    @ConfigEntry.Category("beyond_earth_moon")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_BE_DESH_BEDROCK_MOON = new OreConfig(true, 9, 14);
+    @ConfigEntry.Category("beyond_earth_moon")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_BE_ICE_SHARD_BEDROCK_MOON = new OreConfig(true, 10, 10);
+    @ConfigEntry.Category("beyond_earth_moon")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_BE_CHEESE_BEDROCK_MOON = new OreConfig(true, 10, 7);
+
+    @ConfigEntry.Category("vanilla_mars")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_BE_IRON_BEDROCK_MARS = new OreConfig(true, 11, 8);
+    @ConfigEntry.Category("vanilla_mars")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_BE_DIAMOND_BEDROCK_MARS = new OreConfig(true, 7, 10);
+
+    @ConfigEntry.Category("beyond_earth_mars")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_BE_OSTRUM_BEDROCK_MARS = new OreConfig(true, 8, 10);
+    @ConfigEntry.Category("beyond_earth_mars")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_BE_ICE_SHARD_BEDROCK_MARS = new OreConfig(true, 10, 7);
+
+    @ConfigEntry.Category("vanilla_venus")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_BE_COAL_BEDROCK_VENUS = new OreConfig(true, 20, 3);
+    @ConfigEntry.Category("vanilla_venus")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_BE_DIAMOND_BEDROCK_VENUS = new OreConfig(true, 7, 10);
+    @ConfigEntry.Category("vanilla_venus")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_BE_GOLD_BEDROCK_VENUS = new OreConfig(true, 9, 7);
+
+    @ConfigEntry.Category("beyond_earth_venus")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_BE_CALORITE_BEDROCK_VENUS = new OreConfig(true, 8, 16);
+
+    @ConfigEntry.Category("vanilla_glacio")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_BE_COAL_BEDROCK_GLACIO = new OreConfig(true, 20, 3);
+    @ConfigEntry.Category("vanilla_glacio")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_BE_COPPER_BEDROCK_GLACIO = new OreConfig(true, 13, 3);
+    @ConfigEntry.Category("vanilla_glacio")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_BE_IRON_BEDROCK_GLACIO = new OreConfig(true, 11, 8);
+    @ConfigEntry.Category("vanilla_glacio")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_BE_LAPIS_BEDROCK_GLACIO = new OreConfig(true, 9, 9);
+
+    @ConfigEntry.Category("beyond_earth_glacio")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_BE_ICE_SHARD_BEDROCK_GLACIO = new OreConfig(true, 12, 5);
+
 }
