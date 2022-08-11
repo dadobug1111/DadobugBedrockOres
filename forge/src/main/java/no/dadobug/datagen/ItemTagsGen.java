@@ -115,7 +115,13 @@ public class ItemTagsGen extends ItemTagProvider{
             .add(EntryModule.BEDROCK_BE_CHEESE_ORE.core().get())
             .add(EntryModule.BEDROCK_BE_ICE_SHARD_ORE.core().get())
             .add(EntryModule.BEDROCK_BE_OSTRUM_ORE.core().get())
-            .add(EntryModule.BEDROCK_BE_CALORITE_ORE.core().get());
+            .add(EntryModule.BEDROCK_BE_CALORITE_ORE.core().get())
+
+            // FTB IC
+            .add(EntryModule.BEDROCK_IC_TIN_ORE.core().get())
+            .add(EntryModule.BEDROCK_IC_LEAD_ORE.core().get())
+            .add(EntryModule.BEDROCK_IC_ALUMINUM_ORE.core().get())
+            .add(EntryModule.BEDROCK_IC_IRIDIUM_ORE.core().get());
     }
 
     @Override

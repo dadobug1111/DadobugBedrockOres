@@ -76,6 +76,10 @@
     "dadobugbedrockores:regenerative_be_cheese",
     "dadobugbedrockores:regenerative_be_ice_shard",
     "dadobugbedrockores:regenerative_be_ostrum",
-    "dadobugbedrockores:regenerative_be_calorite"
+    "dadobugbedrockores:regenerative_be_calorite",
+    "dadobugbedrockores:regenerative_ic_tin",
+    "dadobugbedrockores:regenerative_ic_lead",
+    "dadobugbedrockores:regenerative_ic_aluminum",
+    "dadobugbedrockores:regenerative_ic_iridium"
   ]
 }

@@ -117,5 +117,10 @@ public class LootTableGen extends BaseBedrockLootTableGen{
         createBedrockOreTable("bedrock_be_ice_shard_ore", new Identifier("beyond_earth", "blocks/moon_ice_shard_ore"), EntryModule.BEDROCK_BE_ICE_SHARD_ORE);
         createBedrockOreTable("bedrock_be_ostrum_ore", new Identifier("beyond_earth", "blocks/mars_ostrum_ore"), EntryModule.BEDROCK_BE_OSTRUM_ORE);
         createBedrockOreTable("bedrock_be_calorite_ore", new Identifier("beyond_earth", "blocks/venus_calorite_ore"), EntryModule.BEDROCK_BE_CALORITE_ORE);
+
+        createBedrockOreTable("bedrock_ic_tin_ore", new Identifier("ftbic", "blocks/tin_ore"), EntryModule.BEDROCK_IC_TIN_ORE);
+        createBedrockOreTable("bedrock_ic_lead_ore", new Identifier("ftbic", "blocks/lead_ore"), EntryModule.BEDROCK_IC_LEAD_ORE);
+        createBedrockOreTable("bedrock_ic_aluminum_ore", new Identifier("ftbic", "blocks/aluminum_ore"), EntryModule.BEDROCK_IC_ALUMINUM_ORE);
+        createBedrockOreTable("bedrock_ic_iridium_ore", new Identifier("ftbic", "blocks/iridium_ore"), EntryModule.BEDROCK_IC_IRIDIUM_ORE);
     }
 }

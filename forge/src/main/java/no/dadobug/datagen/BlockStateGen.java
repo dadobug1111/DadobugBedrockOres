@@ -115,6 +115,12 @@ public class BlockStateGen extends BlockStateProvider{
         simpleBlock(EntryModule.BEDROCK_BE_ICE_SHARD_ORE.ore().get());
         simpleBlock(EntryModule.BEDROCK_BE_OSTRUM_ORE.ore().get());
         simpleBlock(EntryModule.BEDROCK_BE_CALORITE_ORE.ore().get());
+
+        // FTB IC
+        simpleBlock(EntryModule.BEDROCK_IC_TIN_ORE.ore().get());
+        simpleBlock(EntryModule.BEDROCK_IC_LEAD_ORE.ore().get());
+        simpleBlock(EntryModule.BEDROCK_IC_ALUMINUM_ORE.ore().get());
+        simpleBlock(EntryModule.BEDROCK_IC_IRIDIUM_ORE.ore().get());
     }
     
 }

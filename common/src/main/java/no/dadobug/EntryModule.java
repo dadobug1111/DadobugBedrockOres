@@ -77,6 +77,7 @@ public class EntryModule {
     public static final BlockConfigLambda<Item.Settings> mekanismItemSettings = (cfg) -> {if(Platform.isModLoaded("mekanism") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
     public static final BlockConfigLambda<Item.Settings> undergardenItemSettings = (cfg) -> {if(Platform.isModLoaded("undergarden") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
     public static final BlockConfigLambda<Item.Settings> beyondEarthItemSettings = (cfg) -> {if(Platform.isModLoaded("beyond_earth") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
+    public static final BlockConfigLambda<Item.Settings> ftbIndustrialContraptionsItemSettings = (cfg) -> {if(Platform.isModLoaded("ftbic") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
 
 
 
@@ -255,6 +256,12 @@ public class EntryModule {
     public static final BedrockStack BEDROCK_BE_ICE_SHARD_ORE = BedrockStack.BedrockStackStandardOre("be_ice_shard", CONFIG.BEDROCK_BE_ICE_SHARD_ORE, beyondEarthItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
     public static final BedrockStack BEDROCK_BE_OSTRUM_ORE = BedrockStack.BedrockStackStandardOre("be_ostrum", CONFIG.BEDROCK_BE_OSTRUM_ORE, beyondEarthItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
     public static final BedrockStack BEDROCK_BE_CALORITE_ORE = BedrockStack.BedrockStackStandardOre("be_calorite", CONFIG.BEDROCK_BE_CALORITE_ORE, beyondEarthItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+
+    //ftb industrial contraptions
+    public static final BedrockStack BEDROCK_IC_TIN_ORE = BedrockStack.BedrockStackStandardOre("ic_tin", CONFIG.BEDROCK_TIN_ORE, ftbIndustrialContraptionsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_IC_LEAD_ORE = BedrockStack.BedrockStackStandardOre("ic_lead", CONFIG.BEDROCK_LEAD_ORE, ftbIndustrialContraptionsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_IC_ALUMINUM_ORE = BedrockStack.BedrockStackStandardOre("ic_aluminum", CONFIG.BEDROCK_BAUXITE_ORE, ftbIndustrialContraptionsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_IC_IRIDIUM_ORE = BedrockStack.BedrockStackStandardOre("ic_iridium", CONFIG.BEDROCK_IRIDIUM_ORE, ftbIndustrialContraptionsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
 
 
     public static void init() {

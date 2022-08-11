@@ -123,6 +123,12 @@ public class LanguageGen extends LanguageProvider{
         addBlock(EntryModule.BEDROCK_BE_ICE_SHARD_ORE.ore(), "Bedrock Ice Shard Ore");
         addBlock(EntryModule.BEDROCK_BE_OSTRUM_ORE.ore(), "Bedrock Ostrum Ore");
         addBlock(EntryModule.BEDROCK_BE_CALORITE_ORE.ore(), "Bedrock Calorite Ore");
+
+        // FTB IC
+        addBlock(EntryModule.BEDROCK_IC_TIN_ORE.ore(), "Bedrock Tin Ore");
+        addBlock(EntryModule.BEDROCK_IC_LEAD_ORE.ore(), "Bedrock Lead Ore");
+        addBlock(EntryModule.BEDROCK_IC_ALUMINUM_ORE.ore(), "Bedrock Aluminum Ore");
+        addBlock(EntryModule.BEDROCK_IC_IRIDIUM_ORE.ore(), "Bedrock Iridium Ore");
     }
 
     private void addBlockItemTranslations() {
@@ -227,6 +233,12 @@ public class LanguageGen extends LanguageProvider{
         addItem(EntryModule.BEDROCK_BE_ICE_SHARD_ORE.core(), "Regenerative Ice Shard Cluster");
         addItem(EntryModule.BEDROCK_BE_OSTRUM_ORE.core(), "Regenerative Ostrum Cluster");
         addItem(EntryModule.BEDROCK_BE_CALORITE_ORE.core(), "Regenerative Calorite Cluster");
+
+        // FTB IC
+        addItem(EntryModule.BEDROCK_IC_TIN_ORE.core(), "Regenerative Tin Cluster");
+        addItem(EntryModule.BEDROCK_IC_LEAD_ORE.core(), "Regenerative Lead Cluster");
+        addItem(EntryModule.BEDROCK_IC_ALUMINUM_ORE.core(), "Regenerative Aluminum Cluster");
+        addItem(EntryModule.BEDROCK_IC_IRIDIUM_ORE.core(), "Regenerative Iridium Cluster");
     }
 
     private void addTooltipTranslations() {

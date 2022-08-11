@@ -121,6 +121,12 @@ public class ItemModelsGen extends CustomItemModelProvider{
         registerBlockItem(EntryModule.BEDROCK_BE_OSTRUM_ORE.oreItem());
         registerBlockItem(EntryModule.BEDROCK_BE_CALORITE_ORE.oreItem());
 
+        // FTB IC
+        registerBlockItem(EntryModule.BEDROCK_IC_TIN_ORE.oreItem());
+        registerBlockItem(EntryModule.BEDROCK_IC_LEAD_ORE.oreItem());
+        registerBlockItem(EntryModule.BEDROCK_IC_ALUMINUM_ORE.oreItem());
+        registerBlockItem(EntryModule.BEDROCK_IC_IRIDIUM_ORE.oreItem());
+
         // Vanilla
         registerSimpleItem(EntryModule.BEDROCK_FRACTURED.core(), getItemTextureName(EntryModule.BEDROCK_FRACTURED.core().getId()));
         registerSimpleItem(EntryModule.XP_LEAK.core(), getItemTextureName(EntryModule.XP_LEAK.core().getId()));
@@ -222,6 +228,12 @@ public class ItemModelsGen extends CustomItemModelProvider{
         registerSimpleItem(EntryModule.BEDROCK_BE_ICE_SHARD_ORE.core(), getItemTextureName("beyond_earth","items/", "ice_shard"));
         registerSimpleItem(EntryModule.BEDROCK_BE_OSTRUM_ORE.core(), getItemTextureName("beyond_earth","items/", "raw_ostrum"));
         registerSimpleItem(EntryModule.BEDROCK_BE_CALORITE_ORE.core(), getItemTextureName("beyond_earth","items/", "raw_calorite"));
+    
+        // FTB IC
+        registerSimpleItem(EntryModule.BEDROCK_IC_TIN_ORE.core(), getItemTextureName("ftbic", "tin_chunk"));
+        registerSimpleItem(EntryModule.BEDROCK_IC_LEAD_ORE.core(), getItemTextureName("ftbic", "lead_chunk"));
+        registerSimpleItem(EntryModule.BEDROCK_IC_ALUMINUM_ORE.core(), getItemTextureName("ftbic", "aluminum_chunk"));
+        registerSimpleItem(EntryModule.BEDROCK_IC_IRIDIUM_ORE.core(), getItemTextureName("ftbic", "iridium_chunk"));
     }
 
     private void registerBlockItem(RegistrySupplier<Item> itemSupplier) {
