@@ -16,7 +16,7 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.feature.PlacedFeature;
 import net.minecraft.world.gen.placementmodifier.*;
-import no.dadobug.configs.DimensionTypes;
+import no.dadobug.configs.DimensionType;
 import no.dadobug.configs.OreGenConfig;
 import no.dadobug.configs.OreType;
 
@@ -85,7 +85,7 @@ public class OreGen {
         return this.Ore;
     }
 
-    public void addOreToGen(Predicate<BiomeModifications.BiomeContext> where, boolean doIt, DimensionTypes dimension, OreType ore){
+    public void addOreToGen(Predicate<BiomeModifications.BiomeContext> where, boolean doIt, DimensionType dimension, OreType ore){
         if (doIt) {
             // If the dimension has no ores or if the dimension doesn't have this ore yet then generate it
             if (OreGenConfig.GENERATED_ORES.get(dimension) == null || !OreGenConfig.GENERATED_ORES.get(dimension).contains(ore)) {
