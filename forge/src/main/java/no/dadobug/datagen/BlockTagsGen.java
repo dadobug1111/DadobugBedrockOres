@@ -142,7 +142,12 @@ public class BlockTagsGen extends BlockTagProvider {
         .add(EntryModule.BEDROCK_IC_TIN_ORE.ore().get())
         .add(EntryModule.BEDROCK_IC_LEAD_ORE.ore().get())
         .add(EntryModule.BEDROCK_IC_ALUMINUM_ORE.ore().get())
-        .add(EntryModule.BEDROCK_IC_IRIDIUM_ORE.ore().get());
+        .add(EntryModule.BEDROCK_IC_IRIDIUM_ORE.ore().get())
+
+        // Malum
+        .add(EntryModule.BEDROCK_MA_SOULSTONE_ORE.ore().get())
+        .add(EntryModule.BEDROCK_MA_BRILLIANCE_ORE.ore().get())
+        .add(EntryModule.BEDROCK_MA_BLAZING_QUARTZ_ORE.ore().get());
     }
 
     @Override

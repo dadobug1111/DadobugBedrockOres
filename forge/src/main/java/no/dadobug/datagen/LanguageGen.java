@@ -15,6 +15,7 @@ public class LanguageGen extends LanguageProvider{
         addBlockTranslations();
         addBlockItemTranslations();
         addTooltipTranslations();
+        addEnchantmentTranslations();
 
         // Add Creative item group
         add("itemGroup.dadobugbedrockores.item_group", "Bedrock Ores");
@@ -129,6 +130,11 @@ public class LanguageGen extends LanguageProvider{
         addBlock(EntryModule.BEDROCK_IC_LEAD_ORE.ore(), "Bedrock Lead Ore");
         addBlock(EntryModule.BEDROCK_IC_ALUMINUM_ORE.ore(), "Bedrock Aluminum Ore");
         addBlock(EntryModule.BEDROCK_IC_IRIDIUM_ORE.ore(), "Bedrock Iridium Ore");
+
+        // Malum
+        addBlock(EntryModule.BEDROCK_MA_SOULSTONE_ORE.ore(), "Bedrock Soulstone Ore");
+        addBlock(EntryModule.BEDROCK_MA_BRILLIANCE_ORE.ore(), "Bedrock Brilliance Ore");
+        addBlock(EntryModule.BEDROCK_MA_BLAZING_QUARTZ_ORE.ore(), "Bedrock Blazin Quartz Ore");
     }
 
     private void addBlockItemTranslations() {
@@ -239,6 +245,11 @@ public class LanguageGen extends LanguageProvider{
         addItem(EntryModule.BEDROCK_IC_LEAD_ORE.core(), "Regenerative Lead Cluster");
         addItem(EntryModule.BEDROCK_IC_ALUMINUM_ORE.core(), "Regenerative Aluminum Cluster");
         addItem(EntryModule.BEDROCK_IC_IRIDIUM_ORE.core(), "Regenerative Iridium Cluster");
+
+        // Malum
+        addItem(EntryModule.BEDROCK_MA_SOULSTONE_ORE.core(), "Regenerative Soulstone Cluster");
+        addItem(EntryModule.BEDROCK_MA_BRILLIANCE_ORE.core(), "Regenerative Brilliance Cluster");
+        addItem(EntryModule.BEDROCK_MA_BLAZING_QUARTZ_ORE.core(), "Regenerative Blazin Quartz Cluster");
     }
 
     private void addTooltipTranslations() {
@@ -252,4 +263,12 @@ public class LanguageGen extends LanguageProvider{
         add("item.dadobugbedrockores.durability.tooltip", "Remaining ore durability: ");
     }
     
+    private void addEnchantmentTranslations() {
+        add("enchantment.dadobugbedrockores.shattering", "Shattering");
+        add("enchantment.dadobugbedrockores.curse_of_fracturing", "Curse of Fracturing");
+        add("enchantment.dadobugbedrockores.extraction", "Extraction");
+        add("enchantment.dadobugbedrockores.gentle_mining", "Gentle Mining");
+        add("enchantment.dadobugbedrockores.curse_of_shattering", "Curse of Shattering");
+        add("enchantment.dadobugbedrockores.arcane_extraction", "Arcane Extraction");
+    }
 }

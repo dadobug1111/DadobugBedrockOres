@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "name": "minecraft:nether_quartz_ore"
+          "name": "minecraft:blocks/nether_quartz_ore"
         }
       ],
       "conditions": [

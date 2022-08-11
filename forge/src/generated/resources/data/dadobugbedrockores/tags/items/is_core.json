@@ -80,6 +80,9 @@
     "dadobugbedrockores:regenerative_ic_tin",
     "dadobugbedrockores:regenerative_ic_lead",
     "dadobugbedrockores:regenerative_ic_aluminum",
-    "dadobugbedrockores:regenerative_ic_iridium"
+    "dadobugbedrockores:regenerative_ic_iridium",
+    "dadobugbedrockores:regenerative_ma_soulstone",
+    "dadobugbedrockores:regenerative_ma_brilliance",
+    "dadobugbedrockores:regenerative_ma_blazing_quartz"
   ]
 }

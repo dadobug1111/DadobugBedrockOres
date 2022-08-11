@@ -232,6 +232,14 @@ public class OreGenConfig {
     public static OreGen ORE_IC_IRIDIUM_BEDROCK_FTB_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_IC_IRIDIUM_BEDROCK_FTB_OVERWORLD.oreSize, CONFIG.ORE_IC_IRIDIUM_BEDROCK_FTB_OVERWORLD.oreChance, EntryModule.BEDROCK_IC_IRIDIUM_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_ic_iridium_bedrock_overworld");
 
 
+    //malum
+    public static OreGen ORE_MA_SOULSTONE_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_MA_SOULSTONE_OVERWORLD.oreSize, CONFIG.ORE_MA_SOULSTONE_OVERWORLD.oreChance, EntryModule.BEDROCK_MA_SOULSTONE_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_ma_soulstone_bedrock_overworld");
+    public static OreGen ORE_MA_BRILLIANCE_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_MA_BRILLIANCE_OVERWORLD.oreSize, CONFIG.ORE_MA_BRILLIANCE_OVERWORLD.oreChance, EntryModule.BEDROCK_MA_BRILLIANCE_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_ma_brilliance_bedrock_overworld");
+    
+    public static OreGen ORE_MA_BLAZING_QUARTZ_NETHER = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_IC_ALUMINUM_BEDROCK_FTB_OVERWORLD.oreSize, CONFIG.ORE_IC_ALUMINUM_BEDROCK_FTB_OVERWORLD.oreChance, EntryModule.BEDROCK_MA_BLAZING_QUARTZ_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_ma_blazing_quartz_bedrock_nether");
+    public static OreGen ORE_MA_BLAZING_QUARTZ_NETHER_TOP = new OreGen().GenTop(CONFIG.ORE_IC_ALUMINUM_BEDROCK_FTB_OVERWORLD.oreChance, ORE_MA_BLAZING_QUARTZ_NETHER.getOre(), "ore_ma_blazing_quartz_bedrock_nether_top");
+
+
     public static void init(){
         ORE_COAL_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_COAL_BEDROCK_OVERWORLD.genOre, DimensionType.OVERWORLD, OreType.COAL);
         ORE_IRON_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_IRON_BEDROCK_OVERWORLD.genOre, DimensionType.OVERWORLD, OreType.IRON);
@@ -393,6 +401,13 @@ public class OreGenConfig {
             ORE_IC_LEAD_BEDROCK_FTB_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_IC_LEAD_BEDROCK_FTB_OVERWORLD.genOre, DimensionType.OVERWORLD, OreType.LEAD);
             ORE_IC_ALUMINUM_BEDROCK_FTB_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_IC_ALUMINUM_BEDROCK_FTB_OVERWORLD.genOre, DimensionType.OVERWORLD, OreType.ALUMINUM);
             ORE_IC_IRIDIUM_BEDROCK_FTB_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_IC_IRIDIUM_BEDROCK_FTB_OVERWORLD.genOre, DimensionType.OVERWORLD, OreType.IRIDIUM);
+        }
+        if (Platform.isModLoaded("malum")) {
+            ORE_MA_SOULSTONE_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MA_SOULSTONE_OVERWORLD.genOre, DimensionType.OVERWORLD, OreType.SOULSTONE);
+            ORE_MA_BRILLIANCE_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MA_BRILLIANCE_OVERWORLD.genOre, DimensionType.OVERWORLD, OreType.BRILLIANCE);
+            
+            ORE_MA_BLAZING_QUARTZ_NETHER.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_MA_BLAZING_QUARTZ_NETHER.genOre, DimensionType.NETHER_BOTTOM, OreType.BLAZING_QUARTZ);
+            ORE_MA_BLAZING_QUARTZ_NETHER_TOP.addOreToGen(BiomeSelectors.gensInNether(), CONFIG.ORE_MA_BLAZING_QUARTZ_NETHER.genOre, DimensionType.NETHER_TOP, OreType.BLAZING_QUARTZ);
         }
     }
 

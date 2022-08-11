@@ -19,18 +19,18 @@ public class LootTableGen extends BaseBedrockLootTableGen{
         // Vanilla
         createFracturedBedrockTable("bedrock_fractured", EntryModule.BEDROCK_FRACTURED);
         createHollowBedrockTable("bedrock_hollow", EntryModule.BEDROCK_HOLLOW.get(), EntryModule.BEDROCK_HOLLOW_ITEM.get());
-        createBedrockOreTable("bedrock_coal_ore", Blocks.COAL_ORE.getRegistryName(), EntryModule.BEDROCK_COAL_ORE);
-        createBedrockOreTable("bedrock_iron_ore", Blocks.IRON_ORE.getRegistryName(), EntryModule.BEDROCK_IRON_ORE);
-        createBedrockOreTable("bedrock_gold_ore", Blocks.GOLD_ORE.getRegistryName(), EntryModule.BEDROCK_GOLD_ORE);
-        createBedrockOreTable("bedrock_diamond_ore", Blocks.DIAMOND_ORE.getRegistryName(), EntryModule.BEDROCK_DIAMOND_ORE);
-        createBedrockOreTable("bedrock_redstone_ore", Blocks.REDSTONE_ORE.getRegistryName(), EntryModule.BEDROCK_REDSTONE_ORE);
-        createBedrockOreTable("bedrock_copper_ore", Blocks.COPPER_ORE.getRegistryName(), EntryModule.BEDROCK_COPPER_ORE);
-        createBedrockOreTable("bedrock_lapis_ore", Blocks.LAPIS_ORE.getRegistryName(), EntryModule.BEDROCK_LAPIS_ORE);
-        createBedrockOreTable("bedrock_emerald_ore", Blocks.EMERALD_ORE.getRegistryName(), EntryModule.BEDROCK_EMERALD_ORE);
+        createBedrockOreTable("bedrock_coal_ore", Blocks.COAL_ORE.getLootTableId(), EntryModule.BEDROCK_COAL_ORE);
+        createBedrockOreTable("bedrock_iron_ore", Blocks.IRON_ORE.getLootTableId(), EntryModule.BEDROCK_IRON_ORE);
+        createBedrockOreTable("bedrock_gold_ore", Blocks.GOLD_ORE.getLootTableId(), EntryModule.BEDROCK_GOLD_ORE);
+        createBedrockOreTable("bedrock_diamond_ore", Blocks.DIAMOND_ORE.getLootTableId(), EntryModule.BEDROCK_DIAMOND_ORE);
+        createBedrockOreTable("bedrock_redstone_ore", Blocks.REDSTONE_ORE.getLootTableId(), EntryModule.BEDROCK_REDSTONE_ORE);
+        createBedrockOreTable("bedrock_copper_ore", Blocks.COPPER_ORE.getLootTableId(), EntryModule.BEDROCK_COPPER_ORE);
+        createBedrockOreTable("bedrock_lapis_ore", Blocks.LAPIS_ORE.getLootTableId(), EntryModule.BEDROCK_LAPIS_ORE);
+        createBedrockOreTable("bedrock_emerald_ore", Blocks.EMERALD_ORE.getLootTableId(), EntryModule.BEDROCK_EMERALD_ORE);
 
-        createBedrockOreTable("bedrock_nether_gold_ore", Blocks.NETHER_GOLD_ORE.getRegistryName(), EntryModule.BEDROCK_NETHER_GOLD);
-        createBedrockOreTable("bedrock_nether_quartz_ore", Blocks.NETHER_QUARTZ_ORE.getRegistryName(), EntryModule.BEDROCK_NETHER_QUARTZ);
-        createBedrockOreTable("bedrock_ancient_debris_ore", Blocks.ANCIENT_DEBRIS.getRegistryName(), EntryModule.BEDROCK_ANCIENT_DEBRIS);
+        createBedrockOreTable("bedrock_nether_gold_ore", Blocks.NETHER_GOLD_ORE.getLootTableId(), EntryModule.BEDROCK_NETHER_GOLD);
+        createBedrockOreTable("bedrock_nether_quartz_ore", Blocks.NETHER_QUARTZ_ORE.getLootTableId(), EntryModule.BEDROCK_NETHER_QUARTZ);
+        createBedrockOreTable("bedrock_ancient_debris_ore", Blocks.ANCIENT_DEBRIS.getLootTableId(), EntryModule.BEDROCK_ANCIENT_DEBRIS);
 
         createBedrockLiquidTable("bedrock_milk_ore", EntryModule.BEDROCK_MILK_ORE);
         createBedrockLiquidTable("bedrock_water_ore", EntryModule.BEDROCK_WATER_ORE);
@@ -121,9 +121,15 @@ public class LootTableGen extends BaseBedrockLootTableGen{
         createBedrockOreTable("bedrock_be_ostrum_ore", new Identifier("beyond_earth", "blocks/mars_ostrum_ore"), EntryModule.BEDROCK_BE_OSTRUM_ORE);
         createBedrockOreTable("bedrock_be_calorite_ore", new Identifier("beyond_earth", "blocks/venus_calorite_ore"), EntryModule.BEDROCK_BE_CALORITE_ORE);
 
+
         createBedrockOreTable("bedrock_ic_tin_ore", new Identifier("ftbic", "blocks/tin_ore"), EntryModule.BEDROCK_IC_TIN_ORE);
         createBedrockOreTable("bedrock_ic_lead_ore", new Identifier("ftbic", "blocks/lead_ore"), EntryModule.BEDROCK_IC_LEAD_ORE);
         createBedrockOreTable("bedrock_ic_aluminum_ore", new Identifier("ftbic", "blocks/aluminum_ore"), EntryModule.BEDROCK_IC_ALUMINUM_ORE);
         createBedrockOreTable("bedrock_ic_iridium_ore", new Identifier("ftbic", "blocks/iridium_ore"), EntryModule.BEDROCK_IC_IRIDIUM_ORE);
+
+
+        createBedrockOreTable("bedrock_ma_soulstone_ore", new Identifier("malum", "blocks/soulstone_ore"), EntryModule.BEDROCK_MA_SOULSTONE_ORE);
+        createBedrockOreTable("bedrock_ma_brilliance_ore", new Identifier("malum", "blocks/brilliant_stone"), EntryModule.BEDROCK_MA_BRILLIANCE_ORE);
+        createBedrockOreTable("bedrock_ma_blazing_quartz_ore", new Identifier("malum", "blocks/blazing_quartz_ore"), EntryModule.BEDROCK_MA_BLAZING_QUARTZ_ORE);
     }
 }

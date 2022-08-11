@@ -263,4 +263,15 @@ public class BlocksConfig implements ConfigData {
     @ConfigEntry.Category("beyond_earth")
     @ConfigEntry.Gui.CollapsibleObject()
     public BlockConfig BEDROCK_BE_CALORITE_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+
+
+    @ConfigEntry.Category("malum")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_MA_SOULSTONE_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+    @ConfigEntry.Category("malum")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_MA_BRILLIANCE_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+    @ConfigEntry.Category("malum")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_MA_BLAZING_QUARTZ_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
 }

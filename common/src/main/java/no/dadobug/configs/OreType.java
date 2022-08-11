@@ -90,7 +90,12 @@ public enum OreType {
     CHEESE("Cheese"),
     ICE_SHARD("Ice Shard"),
     OSTRUM("Ostrum"),
-    CALORITE("Calorite");
+    CALORITE("Calorite"),
+
+    // Malum
+    SOULSTONE("Soulstone"),
+    BLAZING_QUARTZ("Blazing Quartz"),
+    BRILLIANCE("Brilliance");
 
     // Copied this from Mekanism ores but don't actually use it
     public final String key;

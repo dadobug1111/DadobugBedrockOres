@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "name": "minecraft:gold_ore"
+          "name": "minecraft:blocks/gold_ore"
         }
       ],
       "conditions": [

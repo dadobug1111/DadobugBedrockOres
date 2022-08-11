@@ -1,13 +1,13 @@
 {
   "pools": [
     {
-      "name": "bedrock_coal_ore",
+      "name": "bedrock_ma_blazing_quartz_ore",
       "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "name": "minecraft:blocks/coal_ore"
+          "name": "malum:blocks/blazing_quartz_ore"
         }
       ],
       "conditions": [
@@ -78,7 +78,7 @@
       ]
     },
     {
-      "name": "bedrock_coal_ore",
+      "name": "bedrock_ma_blazing_quartz_ore",
       "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
@@ -97,7 +97,7 @@
               ]
             }
           ],
-          "name": "dadobugbedrockores:regenerative_coal"
+          "name": "dadobugbedrockores:regenerative_ma_blazing_quartz"
         }
       ],
       "conditions": [
@@ -117,7 +117,7 @@
       ]
     },
     {
-      "name": "bedrock_coal_ore",
+      "name": "bedrock_ma_blazing_quartz_ore",
       "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
@@ -136,7 +136,7 @@
               ]
             }
           ],
-          "name": "dadobugbedrockores:bedrock_coal_ore"
+          "name": "dadobugbedrockores:bedrock_ma_blazing_quartz_ore"
         }
       ],
       "conditions": [

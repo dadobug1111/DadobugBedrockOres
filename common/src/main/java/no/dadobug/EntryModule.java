@@ -78,7 +78,7 @@ public class EntryModule {
     public static final BlockConfigLambda<Item.Settings> undergardenItemSettings = (cfg) -> {if(Platform.isModLoaded("undergarden") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
     public static final BlockConfigLambda<Item.Settings> beyondEarthItemSettings = (cfg) -> {if(Platform.isModLoaded("beyond_earth") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
     public static final BlockConfigLambda<Item.Settings> ftbIndustrialContraptionsItemSettings = (cfg) -> {if(Platform.isModLoaded("ftbic") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
-
+    public static final BlockConfigLambda<Item.Settings> malumItemSettings = (cfg) -> {if(Platform.isModLoaded("malum") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
 
 
     public static TagKey<Block> REGEN_TAG = TagKey.of(Registry.BLOCK_KEY, new Identifier("dadobugbedrockores", "regenerative_block"));
@@ -262,6 +262,11 @@ public class EntryModule {
     public static final BedrockStack BEDROCK_IC_LEAD_ORE = BedrockStack.BedrockStackStandardOre("ic_lead", CONFIG.BEDROCK_LEAD_ORE, ftbIndustrialContraptionsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
     public static final BedrockStack BEDROCK_IC_ALUMINUM_ORE = BedrockStack.BedrockStackStandardOre("ic_aluminum", CONFIG.BEDROCK_BAUXITE_ORE, ftbIndustrialContraptionsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
     public static final BedrockStack BEDROCK_IC_IRIDIUM_ORE = BedrockStack.BedrockStackStandardOre("ic_iridium", CONFIG.BEDROCK_IRIDIUM_ORE, ftbIndustrialContraptionsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+
+    //malum
+    public static final BedrockStack BEDROCK_MA_SOULSTONE_ORE = BedrockStack.BedrockStackStandardOre("ma_soulstone", CONFIG.BEDROCK_MA_SOULSTONE_ORE, malumItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MA_BRILLIANCE_ORE = BedrockStack.BedrockStackStandardOre("ma_brilliance", CONFIG.BEDROCK_MA_BRILLIANCE_ORE, malumItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MA_BLAZING_QUARTZ_ORE = BedrockStack.BedrockStackStandardOre("ma_blazing_quartz", CONFIG.BEDROCK_MA_BLAZING_QUARTZ_ORE, malumItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
 
 
     public static void init() {

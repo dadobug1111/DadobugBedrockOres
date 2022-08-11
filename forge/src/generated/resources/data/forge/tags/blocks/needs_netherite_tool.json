@@ -81,6 +81,9 @@
     "dadobugbedrockores:bedrock_ic_tin_ore",
     "dadobugbedrockores:bedrock_ic_lead_ore",
     "dadobugbedrockores:bedrock_ic_aluminum_ore",
-    "dadobugbedrockores:bedrock_ic_iridium_ore"
+    "dadobugbedrockores:bedrock_ic_iridium_ore",
+    "dadobugbedrockores:bedrock_ma_soulstone_ore",
+    "dadobugbedrockores:bedrock_ma_brilliance_ore",
+    "dadobugbedrockores:bedrock_ma_blazing_quartz_ore"
   ]
 }

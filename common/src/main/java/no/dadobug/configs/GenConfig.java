@@ -342,17 +342,28 @@ public class GenConfig implements ConfigData {
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_BE_ICE_SHARD_BEDROCK_GLACIO = new OreConfig(true, 12, 5);
 
-    @ConfigEntry.Category("ftb_industrial_contraptions")
+    
+    @ConfigEntry.Category("ftb_industrial_contraptions_overworld")
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_IC_TIN_BEDROCK_FTB_OVERWORLD = new OreConfig(true, 8, 2);
-    @ConfigEntry.Category("ftb_industrial_contraptions")
+    @ConfigEntry.Category("ftb_industrial_contraptions_overworld")
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_IC_LEAD_BEDROCK_FTB_OVERWORLD = new OreConfig(true, 8, 5);
-    @ConfigEntry.Category("ftb_industrial_contraptions")
+    @ConfigEntry.Category("ftb_industrial_contraptions_overworld")
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_IC_ALUMINUM_BEDROCK_FTB_OVERWORLD = new OreConfig(true, 6, 3);
-    @ConfigEntry.Category("ftb_industrial_contraptions")
+    @ConfigEntry.Category("ftb_industrial_contraptions_overworld")
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_IC_IRIDIUM_BEDROCK_FTB_OVERWORLD = new OreConfig(true, 3, 12);
 
+
+    @ConfigEntry.Category("malum_overworld")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_MA_SOULSTONE_OVERWORLD = new OreConfig(true, 9, 7);
+    @ConfigEntry.Category("malum_overworld")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_MA_BRILLIANCE_OVERWORLD = new OreConfig(true, 6, 15);
+    @ConfigEntry.Category("malum_nether")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_MA_BLAZING_QUARTZ_NETHER = new OreConfig(true, 8, 2);
 }

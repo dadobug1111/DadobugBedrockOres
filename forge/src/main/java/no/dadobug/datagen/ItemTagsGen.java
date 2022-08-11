@@ -121,8 +121,13 @@ public class ItemTagsGen extends ItemTagProvider{
             .add(EntryModule.BEDROCK_IC_TIN_ORE.core().get())
             .add(EntryModule.BEDROCK_IC_LEAD_ORE.core().get())
             .add(EntryModule.BEDROCK_IC_ALUMINUM_ORE.core().get())
-            .add(EntryModule.BEDROCK_IC_IRIDIUM_ORE.core().get());
-    }
+            .add(EntryModule.BEDROCK_IC_IRIDIUM_ORE.core().get())
+
+            // Malum
+            .add(EntryModule.BEDROCK_MA_SOULSTONE_ORE.core().get())
+            .add(EntryModule.BEDROCK_MA_BRILLIANCE_ORE.core().get())
+            .add(EntryModule.BEDROCK_MA_BLAZING_QUARTZ_ORE.core().get());
+        }
 
     @Override
     public String getName() {

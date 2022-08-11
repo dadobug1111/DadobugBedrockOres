@@ -130,6 +130,11 @@ public class BlockStateGen extends BlockStateProvider{
         simpleBlock(EntryModule.BEDROCK_IC_LEAD_ORE.ore().get());
         simpleBlock(EntryModule.BEDROCK_IC_ALUMINUM_ORE.ore().get());
         simpleBlock(EntryModule.BEDROCK_IC_IRIDIUM_ORE.ore().get());
+
+        // Malum
+        simpleBlock(EntryModule.BEDROCK_MA_SOULSTONE_ORE.ore().get());
+        simpleBlock(EntryModule.BEDROCK_MA_BRILLIANCE_ORE.ore().get());
+        simpleBlock(EntryModule.BEDROCK_MA_BLAZING_QUARTZ_ORE.ore().get());
     }
     
 }

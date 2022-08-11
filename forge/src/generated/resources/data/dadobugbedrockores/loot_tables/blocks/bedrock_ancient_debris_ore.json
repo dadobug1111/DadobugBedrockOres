@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "name": "minecraft:ancient_debris"
+          "name": "minecraft:blocks/ancient_debris"
         }
       ],
       "conditions": [
