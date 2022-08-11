@@ -15,6 +15,10 @@ public class CustomItemModelBuilder extends ModelBuilder<CustomItemModelBuilder>
         return (CustomItemModelBuilder)this;
     }
 
+    /*
+     * As the regular ItemBuilder checks whether a texture exists when creating the model
+     * this was required to set the textures of the regen cores
+     */
     public CustomItemModelBuilder uncheckedTexture(String key, String texture) {
         Preconditions.checkNotNull(key, "Key must not be null");
         Preconditions.checkNotNull(texture, "Texture must not be null");

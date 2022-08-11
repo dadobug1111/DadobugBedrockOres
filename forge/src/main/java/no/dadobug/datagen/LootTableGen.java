@@ -5,6 +5,9 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.util.Identifier;
 import no.dadobug.EntryModule;
 
+/*
+ * Uses BaseBedrockLootTableGen to create the loot tables for every bedrock ore
+ */
 public class LootTableGen extends BaseBedrockLootTableGen{
 
     public LootTableGen(DataGenerator generator) {

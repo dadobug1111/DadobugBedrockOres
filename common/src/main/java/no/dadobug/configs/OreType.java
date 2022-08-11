@@ -1,5 +1,6 @@
 package no.dadobug.configs;
 
+// Enum for the different ore types that can spawn as bedrock ores
 public enum OreType {
     // Vanilla
     IRON("Iron"),
@@ -91,6 +92,7 @@ public enum OreType {
     OSTRUM("Ostrum"),
     CALORITE("Calorite");
 
+    // Copied this from Mekanism ores but don't actually use it
     public final String key;
 
     OreType(String key) {

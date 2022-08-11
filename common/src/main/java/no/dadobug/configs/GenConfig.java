@@ -272,7 +272,7 @@ public class GenConfig implements ConfigData {
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_DIAMOND_BEDROCK_UNDERGARDEN = new OreConfig(true, 8, 12);
 
-    @ConfigEntry.Category("undergarden_undergarden") //No idea what the spawn chance and size should
+    @ConfigEntry.Category("undergarden_undergarden") //No idea what the spawn chance and sizes should
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_UG_CLOGGRUM_BEDROCK_UNDERGARDEN  = new OreConfig(true, 9, 5);
     @ConfigEntry.Category("undergarden_undergarden")
@@ -283,7 +283,7 @@ public class GenConfig implements ConfigData {
     public OreConfig ORE_UG_UTHERIUM_BEDROCK_UNDERGARDEN = new OreConfig(true, 8, 12);
 
 
-    @ConfigEntry.Category("vanilla_moon")
+    @ConfigEntry.Category("vanilla_moon") // Roughly the same spawn rate as their respective ore
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_BE_IRON_BEDROCK_MOON = new OreConfig(true, 11, 8);
 

@@ -5,6 +5,9 @@ import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import no.dadobug.EntryModule;
 
+/*
+ * Class that generates block state json files for this mod's blocks
+ */
 public class BlockStateGen extends BlockStateProvider{
 
     public BlockStateGen(DataGenerator gen, ExistingFileHelper exFileHelper) {
@@ -25,7 +28,12 @@ public class BlockStateGen extends BlockStateProvider{
         simpleBlock(EntryModule.BEDROCK_COPPER_ORE.ore().get());
         simpleBlock(EntryModule.BEDROCK_LAPIS_ORE.ore().get());
         simpleBlock(EntryModule.BEDROCK_EMERALD_ORE.ore().get());
+        // Doesn't work as the block's texture isn't the same as its name
+        // Could code an exception but as it's the only block like this
+        // I just skipped it and use the existing block state
+
         // simpleBlock(EntryModule.BEDROCK_WATER_ORE.ore().get());
+
         simpleBlock(EntryModule.BEDROCK_LAVA_ORE.ore().get());
         simpleBlock(EntryModule.BEDROCK_NETHER_GOLD.ore().get());
         simpleBlock(EntryModule.BEDROCK_NETHER_QUARTZ.ore().get());
@@ -56,6 +64,7 @@ public class BlockStateGen extends BlockStateProvider{
         simpleBlock(EntryModule.BEDROCK_TC_COBALT_ORE.ore().get());
 
         // AE2
+        // Similar to the water block but because it has multiple textures
         // simpleBlock(EntryModule.BEDROCK_AE_CERTUS_QUARTZ_ORE.ore().get());
 
         // Big reactors

@@ -6,6 +6,10 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import no.dadobug.EntryModule;
 
+/*
+ * Main dataGen class that subscribes to the gatherData event and 
+ * adds all the providers to the data generator
+ */
 @Mod.EventBusSubscriber(modid = "dadobugbedrockores", bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGenerators {
     

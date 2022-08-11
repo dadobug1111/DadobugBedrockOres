@@ -30,6 +30,7 @@ public class ItemModelsGen extends CustomItemModelProvider{
         registerBlockItem(EntryModule.BEDROCK_LAPIS_ORE.oreItem());
         registerBlockItem(EntryModule.BEDROCK_EMERALD_ORE.oreItem());
         registerBlockItem(EntryModule.BEDROCK_WATER_ORE.oreItem());
+        // Couldn't figure out how to get this to work so just using the existing model
         // withExistingParent(EntryModule.BEDROCK_WATER_ORE.oreItem().getId().getPath(), modLoc("block/bedrock_fluid_general_ore"));
         registerBlockItem(EntryModule.BEDROCK_LAVA_ORE.oreItem());
         registerBlockItem(EntryModule.BEDROCK_NETHER_GOLD.oreItem());
@@ -61,6 +62,7 @@ public class ItemModelsGen extends CustomItemModelProvider{
         registerBlockItem(EntryModule.BEDROCK_TC_COBALT_ORE.oreItem());
 
         // AE2
+        // Same as the water block
         // registerBlockItem(EntryModule.BEDROCK_AE_CERTUS_QUARTZ_ORE.oreItem());
 
         // Big reactors
@@ -128,112 +130,112 @@ public class ItemModelsGen extends CustomItemModelProvider{
         registerBlockItem(EntryModule.BEDROCK_IC_IRIDIUM_ORE.oreItem());
 
         // Vanilla
-        registerSimpleItem(EntryModule.BEDROCK_FRACTURED.core(), getItemTextureName(EntryModule.BEDROCK_FRACTURED.core().getId()));
-        registerSimpleItem(EntryModule.XP_LEAK.core(), getItemTextureName(EntryModule.XP_LEAK.core().getId()));
-        registerSimpleItem(EntryModule.BEDROCK_COAL_ORE.core(), getItemTextureName(Items.COAL.getRegistryName()));
-        registerSimpleItem(EntryModule.BEDROCK_IRON_ORE.core(), getItemTextureName(Items.RAW_IRON.getRegistryName()));
-        registerSimpleItem(EntryModule.BEDROCK_GOLD_ORE.core(), getItemTextureName(Items.RAW_GOLD.getRegistryName()));
-        registerSimpleItem(EntryModule.BEDROCK_DIAMOND_ORE.core(), getItemTextureName(Items.DIAMOND.getRegistryName()));
-        registerSimpleItem(EntryModule.BEDROCK_REDSTONE_ORE.core(), getItemTextureName(Items.REDSTONE.getRegistryName()));
-        registerSimpleItem(EntryModule.BEDROCK_COPPER_ORE.core(), getItemTextureName(Items.RAW_COPPER.getRegistryName()));
-        registerSimpleItem(EntryModule.BEDROCK_LAPIS_ORE.core(), getItemTextureName(Items.LAPIS_LAZULI.getRegistryName()));
-        registerSimpleItem(EntryModule.BEDROCK_EMERALD_ORE.core(), getItemTextureName(Items.EMERALD.getRegistryName()));
-        registerSimpleItem(EntryModule.BEDROCK_WATER_ORE.core(), getItemTextureName(Items.WATER_BUCKET.getRegistryName()));
-        registerSimpleItem(EntryModule.BEDROCK_LAVA_ORE.core(), getItemTextureName(Items.LAVA_BUCKET.getRegistryName()));
-        registerSimpleItem(EntryModule.BEDROCK_NETHER_GOLD.core(), getItemTextureName(Items.GOLD_NUGGET.getRegistryName()));
-        registerSimpleItem(EntryModule.BEDROCK_NETHER_QUARTZ.core(), getItemTextureName(Items.QUARTZ.getRegistryName()));
-        registerSimpleItem(EntryModule.BEDROCK_ANCIENT_DEBRIS.core(), getItemTextureName(Items.NETHERITE_SCRAP.getRegistryName()));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_FRACTURED.core(), getItemTextureName(EntryModule.BEDROCK_FRACTURED.core().getId()));
+        registerItemWithUncheckedTexture(EntryModule.XP_LEAK.core(), getItemTextureName(EntryModule.XP_LEAK.core().getId()));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_COAL_ORE.core(), getItemTextureName(Items.COAL.getRegistryName()));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_IRON_ORE.core(), getItemTextureName(Items.RAW_IRON.getRegistryName()));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_GOLD_ORE.core(), getItemTextureName(Items.RAW_GOLD.getRegistryName()));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_DIAMOND_ORE.core(), getItemTextureName(Items.DIAMOND.getRegistryName()));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_REDSTONE_ORE.core(), getItemTextureName(Items.REDSTONE.getRegistryName()));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_COPPER_ORE.core(), getItemTextureName(Items.RAW_COPPER.getRegistryName()));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_LAPIS_ORE.core(), getItemTextureName(Items.LAPIS_LAZULI.getRegistryName()));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_EMERALD_ORE.core(), getItemTextureName(Items.EMERALD.getRegistryName()));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_WATER_ORE.core(), getItemTextureName(Items.WATER_BUCKET.getRegistryName()));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_LAVA_ORE.core(), getItemTextureName(Items.LAVA_BUCKET.getRegistryName()));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_NETHER_GOLD.core(), getItemTextureName(Items.GOLD_NUGGET.getRegistryName()));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_NETHER_QUARTZ.core(), getItemTextureName(Items.QUARTZ.getRegistryName()));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_ANCIENT_DEBRIS.core(), getItemTextureName(Items.NETHERITE_SCRAP.getRegistryName()));
 
         // Vanilla funny
-        registerSimpleItem(EntryModule.BEDROCK_MILK_ORE.core(), getItemTextureName(Items.MILK_BUCKET.getRegistryName()));
-        registerSimpleItem(EntryModule.BEDROCK_COOKIE_ORE.core(), getItemTextureName(Items.COOKIE.getRegistryName()));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MILK_ORE.core(), getItemTextureName(Items.MILK_BUCKET.getRegistryName()));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_COOKIE_ORE.core(), getItemTextureName(Items.COOKIE.getRegistryName()));
 
         // Techreborn
-        registerSimpleItem(EntryModule.BEDROCK_BAUXITE_ORE.core(), getItemTextureName("techreborn", "dust/aluminum_dust"));
-        registerSimpleItem(EntryModule.BEDROCK_GALENA_ORE.core(), getItemTextureName("techreborn", "dust/galena_dust"));
-        registerSimpleItem(EntryModule.BEDROCK_IRIDIUM_ORE.core(), getItemTextureName("techreborn", "rawmetal/raw_iridium"));
-        registerSimpleItem(EntryModule.BEDROCK_LEAD_ORE.core(), getItemTextureName("techreborn", "rawmetal/raw_lead"));
-        registerSimpleItem(EntryModule.BEDROCK_RUBY_ORE.core(), getItemTextureName("techreborn", "gem/ruby_gem"));
-        registerSimpleItem(EntryModule.BEDROCK_SAPPHIRE_ORE.core(), getItemTextureName("techreborn", "gem/sapphire_gem"));
-        registerSimpleItem(EntryModule.BEDROCK_SILVER_ORE.core(), getItemTextureName("techreborn", "rawmetal/raw_silver"));
-        registerSimpleItem(EntryModule.BEDROCK_TIN_ORE.core(), getItemTextureName("techreborn", "rawmetal/raw_tin"));
-        registerSimpleItem(EntryModule.BEDROCK_CINNABAR_ORE.core(), getItemTextureName("techreborn", "dust/cinnabar_dust"));
-        registerSimpleItem(EntryModule.BEDROCK_PYRITE_ORE.core(), getItemTextureName("techreborn", "dust/pyrite_dust"));
-        registerSimpleItem(EntryModule.BEDROCK_SPHALERITE_ORE.core(), getItemTextureName("techreborn", "dust/sphalerite_dust"));
-        registerSimpleItem(EntryModule.BEDROCK_PERIDOT_ORE.core(), getItemTextureName("techreborn", "gem/peridot_gem"));
-        registerSimpleItem(EntryModule.BEDROCK_SHELDONITE_ORE.core(), getItemTextureName("techreborn", "dust/nickel_dust"));
-        registerSimpleItem(EntryModule.BEDROCK_SODALITE_ORE.core(), getItemTextureName("techreborn", "dust/sodalite_dust"));
-        registerSimpleItem(EntryModule.BEDROCK_TUNGSTEN_ORE.core(), getItemTextureName("techreborn", "rawmetal/raw_tungsten"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_BAUXITE_ORE.core(), getItemTextureName("techreborn", "dust/aluminum_dust"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_GALENA_ORE.core(), getItemTextureName("techreborn", "dust/galena_dust"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_IRIDIUM_ORE.core(), getItemTextureName("techreborn", "rawmetal/raw_iridium"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_LEAD_ORE.core(), getItemTextureName("techreborn", "rawmetal/raw_lead"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_RUBY_ORE.core(), getItemTextureName("techreborn", "gem/ruby_gem"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_SAPPHIRE_ORE.core(), getItemTextureName("techreborn", "gem/sapphire_gem"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_SILVER_ORE.core(), getItemTextureName("techreborn", "rawmetal/raw_silver"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_TIN_ORE.core(), getItemTextureName("techreborn", "rawmetal/raw_tin"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_CINNABAR_ORE.core(), getItemTextureName("techreborn", "dust/cinnabar_dust"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_PYRITE_ORE.core(), getItemTextureName("techreborn", "dust/pyrite_dust"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_SPHALERITE_ORE.core(), getItemTextureName("techreborn", "dust/sphalerite_dust"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_PERIDOT_ORE.core(), getItemTextureName("techreborn", "gem/peridot_gem"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_SHELDONITE_ORE.core(), getItemTextureName("techreborn", "dust/nickel_dust"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_SODALITE_ORE.core(), getItemTextureName("techreborn", "dust/sodalite_dust"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_TUNGSTEN_ORE.core(), getItemTextureName("techreborn", "rawmetal/raw_tungsten"));
 
         // TConstruct
-        registerSimpleItem(EntryModule.BEDROCK_TC_COBALT_ORE.core(), getItemTextureName("tconstruct", "materials/raw_cobalt"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_TC_COBALT_ORE.core(), getItemTextureName("tconstruct", "materials/raw_cobalt"));
 
         // AE2
-        registerSimpleItem(EntryModule.BEDROCK_AE_CERTUS_QUARTZ_ORE.core(), getItemTextureName("ae2", "certus_quartz_crystal"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_AE_CERTUS_QUARTZ_ORE.core(), getItemTextureName("ae2", "certus_quartz_crystal"));
 
         // Big reactors
-        registerSimpleItem(EntryModule.BEDROCK_ER_YELLORITE_ORE.core(), getItemTextureName("bigreactors", "yellorium_ingot"));
-        registerSimpleItem(EntryModule.BEDROCK_ER_ANGLESITE_ORE.core(), getItemTextureName("bigreactors", "anglesite_crystal"));
-        registerSimpleItem(EntryModule.BEDROCK_ER_BENITOITE_ORE.core(), getItemTextureName("bigreactors", "benitoite_crystal"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_ER_YELLORITE_ORE.core(), getItemTextureName("bigreactors", "yellorium_ingot"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_ER_ANGLESITE_ORE.core(), getItemTextureName("bigreactors", "anglesite_crystal"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_ER_BENITOITE_ORE.core(), getItemTextureName("bigreactors", "benitoite_crystal"));
 
         // Bigger reactors
-        registerSimpleItem(EntryModule.BEDROCK_BR_URANIUM_ORE.core(), getItemTextureName("biggerreactors", "uranium_ingot"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_BR_URANIUM_ORE.core(), getItemTextureName("biggerreactors", "uranium_ingot"));
 
         // Immersive Engineering
-        registerSimpleItem(EntryModule.BEDROCK_IE_ALUMINUM_ORE.core(), getItemTextureName("immersiveengineering", "metal_raw_aluminum"));
-        registerSimpleItem(EntryModule.BEDROCK_IE_LEAD_ORE.core(), getItemTextureName("immersiveengineering", "metal_raw_lead"));
-        registerSimpleItem(EntryModule.BEDROCK_IE_SILVER_ORE.core(), getItemTextureName("immersiveengineering", "metal_raw_silver"));
-        registerSimpleItem(EntryModule.BEDROCK_IE_NICKEL_ORE.core(), getItemTextureName("immersiveengineering", "metal_raw_nickel"));
-        registerSimpleItem(EntryModule.BEDROCK_IE_URANIUM_ORE.core(), getItemTextureName("immersiveengineering", "metal_raw_uranium"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_IE_ALUMINUM_ORE.core(), getItemTextureName("immersiveengineering", "metal_raw_aluminum"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_IE_LEAD_ORE.core(), getItemTextureName("immersiveengineering", "metal_raw_lead"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_IE_SILVER_ORE.core(), getItemTextureName("immersiveengineering", "metal_raw_silver"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_IE_NICKEL_ORE.core(), getItemTextureName("immersiveengineering", "metal_raw_nickel"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_IE_URANIUM_ORE.core(), getItemTextureName("immersiveengineering", "metal_raw_uranium"));
 
         // Mythic metals
-        registerSimpleItem(EntryModule.BEDROCK_MM_ADAMANTITE_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_adamantite"));
-        registerSimpleItem(EntryModule.BEDROCK_MM_AQUARIUM_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_aquarium"));
-        registerSimpleItem(EntryModule.BEDROCK_MM_BANGLUM_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_banglum"));
-        registerSimpleItem(EntryModule.BEDROCK_MM_CARMOT_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_carmot"));
-        registerSimpleItem(EntryModule.BEDROCK_MM_KYBER_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_kyber"));
-        registerSimpleItem(EntryModule.BEDROCK_MM_MANGANESE_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_manganese"));
-        registerSimpleItem(EntryModule.BEDROCK_MM_MIDAS_GOLD_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_midas_gold"));
-        registerSimpleItem(EntryModule.BEDROCK_MM_MORKITE_ORE.core(), getItemTextureName("mythicmetals", "morkite"));
-        registerSimpleItem(EntryModule.BEDROCK_MM_MYTHRIL_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_mythril"));
-        registerSimpleItem(EntryModule.BEDROCK_MM_NETHER_BANGLUM_ORE.core(), getItemTextureName("mythicmetals", "banglum_chunk"));
-        registerSimpleItem(EntryModule.BEDROCK_MM_ORICHALCUM_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_orichalcum"));
-        registerSimpleItem(EntryModule.BEDROCK_MM_OSMIUM_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_osmium"));
-        registerSimpleItem(EntryModule.BEDROCK_MM_PALLADIUM_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_palladium"));
-        registerSimpleItem(EntryModule.BEDROCK_MM_PLATINUM_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_platinum"));
-        registerSimpleItem(EntryModule.BEDROCK_MM_PROMETHEUM_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_prometheum"));
-        registerSimpleItem(EntryModule.BEDROCK_MM_QUADRILLUM_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_quadrillum"));
-        registerSimpleItem(EntryModule.BEDROCK_MM_RUNITE_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_runite"));
-        registerSimpleItem(EntryModule.BEDROCK_MM_SILVER_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_silver"));
-        registerSimpleItem(EntryModule.BEDROCK_MM_STARRITE_ORE.core(), getItemTextureName("mythicmetals", "starrite"));
-        registerSimpleItem(EntryModule.BEDROCK_MM_STORMYX_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_stormyx"));
-        registerSimpleItem(EntryModule.BEDROCK_MM_TIN_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_tin"));
-        registerSimpleItem(EntryModule.BEDROCK_MM_UNOBTAINIUM_ORE.core(), getItemTextureName("mythicmetals", "unobtainium"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_ADAMANTITE_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_adamantite"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_AQUARIUM_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_aquarium"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_BANGLUM_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_banglum"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_CARMOT_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_carmot"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_KYBER_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_kyber"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_MANGANESE_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_manganese"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_MIDAS_GOLD_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_midas_gold"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_MORKITE_ORE.core(), getItemTextureName("mythicmetals", "morkite"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_MYTHRIL_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_mythril"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_NETHER_BANGLUM_ORE.core(), getItemTextureName("mythicmetals", "banglum_chunk"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_ORICHALCUM_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_orichalcum"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_OSMIUM_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_osmium"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_PALLADIUM_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_palladium"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_PLATINUM_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_platinum"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_PROMETHEUM_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_prometheum"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_QUADRILLUM_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_quadrillum"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_RUNITE_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_runite"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_SILVER_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_silver"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_STARRITE_ORE.core(), getItemTextureName("mythicmetals", "starrite"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_STORMYX_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_stormyx"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_TIN_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_tin"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_UNOBTAINIUM_ORE.core(), getItemTextureName("mythicmetals", "unobtainium"));
 
         // Create
-        registerSimpleItem(EntryModule.BEDROCK_CR_ZINC_ORE.core(), getItemTextureName("create", "raw_zinc"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_CR_ZINC_ORE.core(), getItemTextureName("create", "raw_zinc"));
 
         // Mekanism
-        registerSimpleItem(EntryModule.BEDROCK_MK_FLUORITE_ORE.core(), getItemTextureName("mekanism", "fluorite_gem"));
-        registerSimpleItem(EntryModule.BEDROCK_MK_OSMIUM_ORE.core(), getItemTextureName("mekanism", "raw_osmium"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MK_FLUORITE_ORE.core(), getItemTextureName("mekanism", "fluorite_gem"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MK_OSMIUM_ORE.core(), getItemTextureName("mekanism", "raw_osmium"));
 
         // Undergarden      
-        registerSimpleItem(EntryModule.BEDROCK_UG_CLOGGRUM_ORE.core(), getItemTextureName("undergarden", "raw_cloggrum"));
-        registerSimpleItem(EntryModule.BEDROCK_UG_FROSTSTEEL_ORE.core(), getItemTextureName("undergarden", "raw_froststeel"));
-        registerSimpleItem(EntryModule.BEDROCK_UG_UTHERIUM_ORE.core(), getItemTextureName("undergarden", "utherium_crystal"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_UG_CLOGGRUM_ORE.core(), getItemTextureName("undergarden", "raw_cloggrum"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_UG_FROSTSTEEL_ORE.core(), getItemTextureName("undergarden", "raw_froststeel"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_UG_UTHERIUM_ORE.core(), getItemTextureName("undergarden", "utherium_crystal"));
 
         // Beyond Earth
-        registerSimpleItem(EntryModule.BEDROCK_BE_DESH_ORE.core(), getItemTextureName("beyond_earth", "items/", "raw_desh"));
-        registerSimpleItem(EntryModule.BEDROCK_BE_CHEESE_ORE.core(), getItemTextureName("beyond_earth","items/", "item_cheese"));
-        registerSimpleItem(EntryModule.BEDROCK_BE_ICE_SHARD_ORE.core(), getItemTextureName("beyond_earth","items/", "ice_shard"));
-        registerSimpleItem(EntryModule.BEDROCK_BE_OSTRUM_ORE.core(), getItemTextureName("beyond_earth","items/", "raw_ostrum"));
-        registerSimpleItem(EntryModule.BEDROCK_BE_CALORITE_ORE.core(), getItemTextureName("beyond_earth","items/", "raw_calorite"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_BE_DESH_ORE.core(), getItemTextureName("beyond_earth", "items/", "raw_desh"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_BE_CHEESE_ORE.core(), getItemTextureName("beyond_earth","items/", "item_cheese"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_BE_ICE_SHARD_ORE.core(), getItemTextureName("beyond_earth","items/", "ice_shard"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_BE_OSTRUM_ORE.core(), getItemTextureName("beyond_earth","items/", "raw_ostrum"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_BE_CALORITE_ORE.core(), getItemTextureName("beyond_earth","items/", "raw_calorite"));
     
         // FTB IC
-        registerSimpleItem(EntryModule.BEDROCK_IC_TIN_ORE.core(), getItemTextureName("ftbic", "tin_chunk"));
-        registerSimpleItem(EntryModule.BEDROCK_IC_LEAD_ORE.core(), getItemTextureName("ftbic", "lead_chunk"));
-        registerSimpleItem(EntryModule.BEDROCK_IC_ALUMINUM_ORE.core(), getItemTextureName("ftbic", "aluminum_chunk"));
-        registerSimpleItem(EntryModule.BEDROCK_IC_IRIDIUM_ORE.core(), getItemTextureName("ftbic", "iridium_chunk"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_IC_TIN_ORE.core(), getItemTextureName("ftbic", "tin_chunk"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_IC_LEAD_ORE.core(), getItemTextureName("ftbic", "lead_chunk"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_IC_ALUMINUM_ORE.core(), getItemTextureName("ftbic", "aluminum_chunk"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_IC_IRIDIUM_ORE.core(), getItemTextureName("ftbic", "iridium_chunk"));
     }
 
     private void registerBlockItem(RegistrySupplier<Item> itemSupplier) {
@@ -241,7 +243,7 @@ public class ItemModelsGen extends CustomItemModelProvider{
         withExistingParent(itemName, modLoc("block/" + itemName));
     }
 
-    private void registerSimpleItem(RegistrySupplier<Item> itemSupplier, String texture) {
+    private void registerItemWithUncheckedTexture(RegistrySupplier<Item> itemSupplier, String texture) {
         String itemName = itemSupplier.getId().getPath();
         withExistingParent(itemName, "item/generated")
             .uncheckedTexture("layer0", texture);

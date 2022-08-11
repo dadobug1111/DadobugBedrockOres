@@ -23,12 +23,16 @@ public class BlockTagsGen extends BlockTagProvider {
         addBedrockOres(this.getOrCreateTagBuilder(EntryModule.FRACTURE_TAG));
         addBedrockOres(this.getOrCreateTagBuilder(EntryModule.REGEN_TAG));
         addBedrockOres(this.getOrCreateTagBuilder(Tags.Blocks.NEEDS_NETHERITE_TOOL));
+        // As forge doesn't have access to fabric tags I manually added the required tag
         addBedrockOres(this.getOrCreateTagBuilder(BlockTags.create(new Identifier("fabric", "needs_tool_level_4"))));
 
-        this.getOrCreateTagBuilder(EntryModule.REGEN_TAG).add(EntryModule.BEDROCK_HOLLOW.get());
+        // Add only hollow bedrock to the hollow tag
+        this.getOrCreateTagBuilder(EntryModule.HOLLOW_TAG).add(EntryModule.BEDROCK_HOLLOW.get());
 
     }
-
+    /*
+     * Used to avoid repeating the same code for each tag
+     */
     private void addBedrockOres(ObjectBuilder<Block> tagBuilder) {
         tagBuilder
         // Vanilla

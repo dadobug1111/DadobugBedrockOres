@@ -28,6 +28,7 @@ public class BiomeSelectors {
     public static BiomeSource nether = MultiNoiseBiomeSource.Preset.NETHER.getBiomeSource(BuiltinRegistries.BIOME);
     public static BiomeSource end = new TheEndBiomeSource(BuiltinRegistries.BIOME, 0);
     // Modded Biomes
+    // There is probably a better way of doing this but till someone figures it out this hack works
     public static String[] undergardenBiomesIds = new String[]{"undergarden:forgotten_field", "undergarden:ancient_sea", "undergarden:frostfields", "undergarden:icy_sea", "undergarden:smogstem_forest", "undergarden:wigglewood_forest", "undergarden:dense_forest", "undergarden:gronglegrowth", "undergarden:barren_abyss", "undergarden:dead_sea", "undergarden:smog_spires", "undergarden:mushroom_bog"};
     public static ArrayList<String> undergardenBiomes = new ArrayList<>(Arrays.asList(undergardenBiomesIds));
     public static String[] beyondEarthMoonBiomesIds = new String[]{"beyond_earth:moon_desert"};
@@ -82,12 +83,15 @@ public class BiomeSelectors {
         return context -> BuiltinRegistries.BIOME.get(identifier).equals(BuiltinRegistries.BIOME.get(context.getKey()));
     }
 
+    // Returns a BiomeContext Predicate to check if the context is in a list of Biomes
     public static Predicate<BiomeModifications.BiomeContext> gensInBiomeList(ArrayList<String> identifiers) {
         // Check if dimesion has biomes
         if (identifiers.isEmpty()) return ctx -> false;
+
         // If it does set predicate from first biome
         Predicate<BiomeModifications.BiomeContext> predicate = gensInBiome(new Identifier(identifiers.get(0)));
-        // Then or  the rest together to check if biome is in dimension
+
+        // Then OR the rest together to check if the context is in dimension
         for (String biomeID : identifiers.subList(1, identifiers.size())) {
             predicate = predicate.or(gensInBiome(new Identifier(biomeID)));
         }
@@ -109,22 +113,27 @@ public class BiomeSelectors {
         return gensInSource(end);
     }
 
+    // Checks if a BiomeContext is in the Undergarden dimension
     public static Predicate<BiomeModifications.BiomeContext> gensInUndergarden() {
         return gensInBiomeList(undergardenBiomes);
     }
 
+    // Checks if a BiomeContext is in the Beyond Earth's Moon dimension
     public static Predicate<BiomeModifications.BiomeContext> gensInBeyondEarthMoon() {
         return gensInBiomeList(beyondEarthMoonBiomes);
     } 
 
+    // Checks if a BiomeContext is in the Beyond Earth's Mars dimension
     public static Predicate<BiomeModifications.BiomeContext> gensInBeyondEarthMars() {
         return gensInBiomeList(beyondEarthMarsBiomes);
     } 
 
+    // Checks if a BiomeContext is in the Beyond Earth's Venus dimension
     public static Predicate<BiomeModifications.BiomeContext> gensInBeyondEarthVenus() {
         return gensInBiomeList(beyondEarthVenusBiomes);
     } 
 
+    // Checks if a BiomeContext is in the Beyond Earth's Glacio dimension
     public static Predicate<BiomeModifications.BiomeContext> gensInBeyondEarthGlacio() {
         return gensInBiomeList(beyondEarthGlacioBiomes);
     } 

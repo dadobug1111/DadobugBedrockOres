@@ -2,14 +2,10 @@ package no.dadobug.forge;
 
 import dev.architectury.registry.level.biome.BiomeModifications;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
-import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
-import net.minecraftforge.registries.ForgeRegistries;
 import no.dadobug.BiomeSelectors;
-import no.dadobug.EntryModule;
 
 import java.util.function.Predicate;
 

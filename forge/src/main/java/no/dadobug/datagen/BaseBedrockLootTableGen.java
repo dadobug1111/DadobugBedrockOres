@@ -33,6 +33,10 @@ import no.dadobug.BedrockStack;
 import no.dadobug.EntryModule;
 import net.minecraft.loot.*;
 
+/*
+ * A base loot table generator that provides helpful methods to create
+ * the required bedrock ore loot tables
+ */
 public abstract class BaseBedrockLootTableGen extends LootTableProvider{
 
     private static final Logger LOGGER = LogManager.getLogger();
@@ -48,13 +52,10 @@ public abstract class BaseBedrockLootTableGen extends LootTableProvider{
 
     protected abstract void addTables();
 
-    protected LootTable.Builder createSimpleTable(String name, Block block) {
-        LootPool.Builder builder = LootPool.builder()
-                .name(name)
-                .with(LootTableEntry.builder(block.getRegistryName()));
-        return LootTable.builder().pool(builder);
-    }
-
+    /*
+     * Creates a loot pool that drops the same items as the given block
+     * after checking that the tool doesn't have several enchantments
+     */
     private LootPool.Builder bedrockOreRegularLootPool(String tableName, Identifier blockDropTable) {
         return LootPool.builder()
             .name(tableName)
@@ -82,6 +83,10 @@ public abstract class BaseBedrockLootTableGen extends LootTableProvider{
                 LootTableEntry.builder(blockDropTable));
     }
 
+    /*
+     * Creates a loot pool that drops the given item
+     * after checking that the tool has the Extraction enchantment
+     */
     private LootPool.Builder bedrockOreExtractionLootPool(String tableName, Item core) {
         return LootPool.builder()
             .name(tableName)
@@ -95,6 +100,10 @@ public abstract class BaseBedrockLootTableGen extends LootTableProvider{
                         .withOperation("durability", "BlockEntityTag.durability")));
     }
 
+    /*
+     * Creates a loot pool that drops the given item
+     * after checking that the tool has the Arcane Extraction enchantment
+     */
     private LootPool.Builder bedrockOreArcaneExtractionLootPool(String tableName, Item oreItem) {
         return LootPool.builder()
             .name(tableName)
@@ -108,6 +117,13 @@ public abstract class BaseBedrockLootTableGen extends LootTableProvider{
                         .withOperation("durability", "BlockEntityTag.durability")));
     }
 
+    /*
+     * Creates and stores a loot table for the drops of a regular bedrock ore.
+     * 
+     * The blockDropTable should either be the identifier of the loot table you
+     * want called or a new identifier with format ("modID", "pathToLootTable")
+     * where pathToLootTable is from data/modID/loot_tables.
+     */
     protected void createBedrockOreTable(String tableName, Identifier blockDropTable, BedrockStack bedrock) {
         lootTables.put(bedrock.ore().get(), createBedrockOreTableHelper(tableName, blockDropTable, bedrock.core().get(), bedrock.oreItem().get()));
     }
@@ -122,6 +138,9 @@ public abstract class BaseBedrockLootTableGen extends LootTableProvider{
         return LootTable.builder().pool(regularLoot).pool(extractionLoot).pool(arcaneExtractionLoot);
     }
 
+    /*
+     * Creates and stores a loot table for the drops of a liquid bedrock ore
+     */
     protected void createBedrockLiquidTable(String tableName, BedrockStack bedrock) {
         lootTables.put(bedrock.ore().get(), createBedrockLiquidTableHelper(tableName, bedrock.core().get(), bedrock.oreItem().get()));
     }
@@ -134,10 +153,16 @@ public abstract class BaseBedrockLootTableGen extends LootTableProvider{
         return LootTable.builder().pool(extractionLoot).pool(arcaneExtractionLoot);
     }
 
+    /*
+     * Creates and stores a loot table for the drops of the fractured bedrock block
+     */
     protected void createFracturedBedrockTable(String tableName, BedrockStack bedrock) {
         lootTables.put(bedrock.ore().get(), LootTable.builder().pool(bedrockOreExtractionLootPool(tableName, bedrock.core().get())));
     }
 
+    /*
+     * Creates and stores a loot table for the drops of the hollow bedrock block
+     */
     protected void createHollowBedrockTable(String tableName, Block hollowBedrock, Item hollowBedrockItem) {
         lootTables.put(hollowBedrock, LootTable.builder().pool(bedrockOreArcaneExtractionLootPool(tableName, hollowBedrockItem)));
     }
