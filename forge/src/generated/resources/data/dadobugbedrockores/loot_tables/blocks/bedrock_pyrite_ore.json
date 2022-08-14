@@ -1,0 +1,159 @@
+{
+  "pools": [
+    {
+      "name": "bedrock_pyrite_ore",
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "techreborn:blocks/pyrite_ore"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "enchantments": [
+                {
+                  "enchantment": "dadobugbedrockores:curse_of_fracturing",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "enchantments": [
+                {
+                  "enchantment": "dadobugbedrockores:extraction",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "enchantments": [
+                {
+                  "enchantment": "dadobugbedrockores:curse_of_shattering",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "enchantments": [
+                {
+                  "enchantment": "dadobugbedrockores:arcane_extraction",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "bedrock_pyrite_ore",
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:copy_nbt",
+              "source": "block_entity",
+              "ops": [
+                {
+                  "source": "durability",
+                  "target": "BlockEntityTag.durability",
+                  "op": "replace"
+                }
+              ]
+            }
+          ],
+          "name": "dadobugbedrockores:regenerative_pyrite"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "enchantments": [
+              {
+                "enchantment": "dadobugbedrockores:extraction",
+                "levels": {
+                  "min": 1
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "bedrock_pyrite_ore",
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:copy_nbt",
+              "source": "block_entity",
+              "ops": [
+                {
+                  "source": "durability",
+                  "target": "BlockEntityTag.durability",
+                  "op": "replace"
+                }
+              ]
+            }
+          ],
+          "name": "dadobugbedrockores:bedrock_pyrite_ore"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "enchantments": [
+              {
+                "enchantment": "dadobugbedrockores:arcane_extraction",
+                "levels": {
+                  "min": 1
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

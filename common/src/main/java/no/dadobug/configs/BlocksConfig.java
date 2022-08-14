@@ -227,4 +227,51 @@ public class BlocksConfig implements ConfigData {
     @ConfigEntry.Category("create")
     @ConfigEntry.Gui.CollapsibleObject()
     public BlockConfig BEDROCK_CR_ZINC_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+
+
+    @ConfigEntry.Category("mekanism")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_MK_OSMIUM_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+    @ConfigEntry.Category("mekanism")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_MK_FLUORITE_ORE = new BlockConfig(true, 50f, 0.5f, 0, 1, 4);
+
+
+    @ConfigEntry.Category("undergarden")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_UG_CLOGGRUM_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+    @ConfigEntry.Category("undergarden")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_UG_FROSTSTEEL_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+    @ConfigEntry.Category("undergarden")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_UG_UTHERIUM_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+
+
+    @ConfigEntry.Category("beyond_earth")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_BE_DESH_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+    @ConfigEntry.Category("beyond_earth")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_BE_CHEESE_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+    @ConfigEntry.Category("beyond_earth")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_BE_ICE_SHARD_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+    @ConfigEntry.Category("beyond_earth")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_BE_OSTRUM_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+    @ConfigEntry.Category("beyond_earth")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_BE_CALORITE_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+
+
+    @ConfigEntry.Category("malum")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_MA_SOULSTONE_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+    @ConfigEntry.Category("malum")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_MA_BRILLIANCE_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+    @ConfigEntry.Category("malum")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_MA_BLAZING_QUARTZ_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
 }
