@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "dadobugbedrockores:block/bedrock_mm_kyber_ore"
-  }
-}

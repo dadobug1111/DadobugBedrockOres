@@ -288,8 +288,7 @@ public class EntryModule {
                 return BiomeColors.getWaterColor(world, pos);
             }, BEDROCK_WATER_ORE.ore().get());
             ColorHandlerRegistry.registerItemColors((state, tintIndex) -> 0x3f76e4, BEDROCK_WATER_ORE.ore().get());
-            RenderTypeRegistry.register(RenderLayer.getCutout(), BEDROCK_WATER_ORE.ore().get());
-            RenderTypeRegistry.register(RenderLayer.getCutout(), BEDROCK_MILK_ORE.ore().get());
+            RenderTypeRegistry.register(RenderLayer.getTranslucent(), BEDROCK_WATER_ORE.ore().get());
         }
     }
 

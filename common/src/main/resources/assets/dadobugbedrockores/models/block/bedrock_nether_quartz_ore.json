@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "dadobugbedrockores:block/bedrock_nether_quartz_ore"
-  }
-}

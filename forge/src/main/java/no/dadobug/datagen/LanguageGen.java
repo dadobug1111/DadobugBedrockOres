@@ -256,7 +256,7 @@ public class LanguageGen extends LanguageProvider{
         add("item.dadobugbedrockores.regen_broken.tooltip", "It hums with uncontained power, and lightly burns to the touch");
         add("item.dadobugbedrockores.regen_power.tooltip", "It hums with great power");
         add("item.dadobugbedrockores.regen_need_host.tooltip", "Place in Hollow Bedrock to activate");
-        add("item.dadobugbedrockores.regen_fluid.tooltip", "It hums with great power); slowly dripping");
+        add("item.dadobugbedrockores.regen_fluid.tooltip", "It hums with great power, slowly dripping");
         add("item.dadobugbedrockores.regen_joke_fluid_one.tooltip", "If only you had some cookies to go with this...");
         add("item.dadobugbedrockores.regen_joke_item_one.tooltip", "If only you had some milk to go with this...");
         add("item.dadobugbedrockores.regen_xp.tooltip", "It hums with great magical potential");

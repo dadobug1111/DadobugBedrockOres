@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "dadobugbedrockores:item/regenerative_xp_leak"
-  }
-}
