@@ -17,14 +17,15 @@ public class BlockTagsGen extends BlockTagProvider {
 
     @Override
     protected void configure() {
-        addBedrockOres(this.getOrCreateTagBuilder(BlockTags.DRAGON_IMMUNE));
-        addBedrockOres(this.getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE));
-        addBedrockOres(this.getOrCreateTagBuilder(EntryModule.CORE_TAG));
-        addBedrockOres(this.getOrCreateTagBuilder(EntryModule.FRACTURE_TAG));
-        addBedrockOres(this.getOrCreateTagBuilder(EntryModule.REGEN_TAG));
-        addBedrockOres(this.getOrCreateTagBuilder(Tags.Blocks.NEEDS_NETHERITE_TOOL));
+        addAllBedrockOres(this.getOrCreateTagBuilder(BlockTags.DRAGON_IMMUNE));
+        addAllBedrockOres(this.getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE));
+        addAllBedrockOres(this.getOrCreateTagBuilder(EntryModule.REGEN_TAG));
+        addAllBedrockOres(this.getOrCreateTagBuilder(Tags.Blocks.NEEDS_NETHERITE_TOOL));
+        //special handling - hollow/fractured bedrock
+        addNotHollowBedrockOres(this.getOrCreateTagBuilder(EntryModule.CORE_TAG));
+        addNotFracturedBedrockOres(this.getOrCreateTagBuilder(EntryModule.FRACTURE_TAG));
         // As forge doesn't have access to fabric tags I manually added the required tag
-        addBedrockOres(this.getOrCreateTagBuilder(BlockTags.create(new Identifier("fabric", "needs_tool_level_4"))));
+        addAllBedrockOres(this.getOrCreateTagBuilder(BlockTags.create(new Identifier("fabric", "needs_tool_level_4"))));
 
         // Add only hollow bedrock to the hollow tag
         this.getOrCreateTagBuilder(EntryModule.HOLLOW_TAG).add(EntryModule.BEDROCK_HOLLOW.get());
@@ -33,11 +34,25 @@ public class BlockTagsGen extends BlockTagProvider {
     /*
      * Used to avoid repeating the same code for each tag
      */
-    private void addBedrockOres(ObjectBuilder<Block> tagBuilder) {
+    private void addAllBedrockOres(ObjectBuilder<Block> tagBuilder){
+        tagBuilder
+        .add(EntryModule.BEDROCK_FRACTURED.ore().get())
+        .add(EntryModule.BEDROCK_HOLLOW.get());
+        addBaseBedrockOres(tagBuilder);
+    }
+    private void addNotHollowBedrockOres(ObjectBuilder<Block> tagBuilder){
+        tagBuilder.add(EntryModule.BEDROCK_FRACTURED.ore().get());
+        addBaseBedrockOres(tagBuilder);
+    }
+
+    private void addNotFracturedBedrockOres(ObjectBuilder<Block> tagBuilder){
+        tagBuilder.add(EntryModule.BEDROCK_HOLLOW.get());
+        addBaseBedrockOres(tagBuilder);
+    }
+
+    private void addBaseBedrockOres(ObjectBuilder<Block> tagBuilder) {
         tagBuilder
         // Vanilla
-        .add(EntryModule.BEDROCK_FRACTURED.ore().get())
-        .add(EntryModule.BEDROCK_HOLLOW.get())
         .add(EntryModule.XP_LEAK.ore().get())
         .add(EntryModule.BEDROCK_COAL_ORE.ore().get())
         .add(EntryModule.BEDROCK_IRON_ORE.ore().get())
