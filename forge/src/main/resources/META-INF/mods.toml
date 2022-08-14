@@ -7,7 +7,10 @@ license = "MIT License"
 modId = "dadobugbedrockores"
 version = "${version}"
 displayName = "Dadobug1111's Bedrock Ores"
-authors = "Dadobug1111"
+authors = [
+    "Dadobug1111 - Owner/Creator",
+    "Ironcanon - Contributor"
+]
 description = "Adds Bedrock ores into the game, giving slow, but unlimited resources."
 logoFile = "bedrock_diamond_ore_big.png"
 
