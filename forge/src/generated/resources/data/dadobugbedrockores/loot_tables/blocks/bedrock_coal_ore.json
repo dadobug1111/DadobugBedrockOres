@@ -8,6 +8,50 @@
         {
           "type": "minecraft:loot_table",
           "name": "minecraft:blocks/coal_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "minecraft:blocks/deepslate_coal_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "undergarden"
+            }
+          ],
+          "name": "undergarden:blocks/depthrock_coal_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "undergarden"
+            }
+          ],
+          "name": "undergarden:blocks/shiverstone_coal_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "undergarden"
+            }
+          ],
+          "name": "undergarden:blocks/venus_coal_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "undergarden"
+            }
+          ],
+          "name": "undergarden:blocks/venus_coal_ore"
         }
       ],
       "conditions": [

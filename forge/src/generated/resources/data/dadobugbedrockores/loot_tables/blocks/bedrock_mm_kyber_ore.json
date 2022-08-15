@@ -7,7 +7,23 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "mythicmetals"
+            }
+          ],
           "name": "mythicmetals:blocks/kyber_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "mythicmetals"
+            }
+          ],
+          "name": "mythicmetals:blocks/calcite_kyber_ore"
         }
       ],
       "conditions": [

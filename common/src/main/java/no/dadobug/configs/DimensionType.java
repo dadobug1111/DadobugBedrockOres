@@ -10,5 +10,7 @@ public enum DimensionType {
     MOON,
     MARS,
     VENUS,
-    GLACIO;
+    GLACIO,
+
+    MERCURY
 }

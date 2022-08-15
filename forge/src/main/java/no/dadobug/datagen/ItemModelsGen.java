@@ -110,11 +110,15 @@ public class ItemModelsGen extends CustomItemModelProvider{
         // Mekanism
         registerBlockItem(EntryModule.BEDROCK_MK_OSMIUM_ORE.oreItem());
         registerBlockItem(EntryModule.BEDROCK_MK_FLUORITE_ORE.oreItem());
+        registerBlockItem(EntryModule.BEDROCK_MK_LEAD_ORE.oreItem());
+        registerBlockItem(EntryModule.BEDROCK_MK_TIN_ORE.oreItem());
+        registerBlockItem(EntryModule.BEDROCK_MK_URANIUM_ORE.oreItem());
 
         // Undergarden
         registerBlockItem(EntryModule.BEDROCK_UG_CLOGGRUM_ORE.oreItem());
         registerBlockItem(EntryModule.BEDROCK_UG_FROSTSTEEL_ORE.oreItem());
         registerBlockItem(EntryModule.BEDROCK_UG_UTHERIUM_ORE.oreItem());
+        registerBlockItem(EntryModule.BEDROCK_UG_REGALIUM_ORE.oreItem());
 
         // Beyond Earth
         registerBlockItem(EntryModule.BEDROCK_BE_DESH_ORE.oreItem());
@@ -128,6 +132,7 @@ public class ItemModelsGen extends CustomItemModelProvider{
         registerBlockItem(EntryModule.BEDROCK_IC_LEAD_ORE.oreItem());
         registerBlockItem(EntryModule.BEDROCK_IC_ALUMINUM_ORE.oreItem());
         registerBlockItem(EntryModule.BEDROCK_IC_IRIDIUM_ORE.oreItem());
+        registerBlockItem(EntryModule.BEDROCK_IC_URANIUM_ORE.oreItem());
 
         // Malum
         registerBlockItem(EntryModule.BEDROCK_MA_SOULSTONE_ORE.oreItem());
@@ -223,11 +228,15 @@ public class ItemModelsGen extends CustomItemModelProvider{
         // Mekanism
         registerItemWithUncheckedTexture(EntryModule.BEDROCK_MK_FLUORITE_ORE.core(), getItemTextureName("mekanism", "fluorite_gem"));
         registerItemWithUncheckedTexture(EntryModule.BEDROCK_MK_OSMIUM_ORE.core(), getItemTextureName("mekanism", "raw_osmium"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MK_LEAD_ORE.core(), getItemTextureName("mekanism", "raw_lead"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MK_TIN_ORE.core(), getItemTextureName("mekanism", "raw_tin"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MK_URANIUM_ORE.core(), getItemTextureName("mekanism", "raw_uranium"));
 
         // Undergarden      
         registerItemWithUncheckedTexture(EntryModule.BEDROCK_UG_CLOGGRUM_ORE.core(), getItemTextureName("undergarden", "raw_cloggrum"));
         registerItemWithUncheckedTexture(EntryModule.BEDROCK_UG_FROSTSTEEL_ORE.core(), getItemTextureName("undergarden", "raw_froststeel"));
         registerItemWithUncheckedTexture(EntryModule.BEDROCK_UG_UTHERIUM_ORE.core(), getItemTextureName("undergarden", "utherium_crystal"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_UG_REGALIUM_ORE.core(), getItemTextureName("undergarden", "regalium_crystal"));
 
         // Beyond Earth
         registerItemWithUncheckedTexture(EntryModule.BEDROCK_BE_DESH_ORE.core(), getItemTextureName("beyond_earth", "items/", "raw_desh"));
@@ -241,6 +250,7 @@ public class ItemModelsGen extends CustomItemModelProvider{
         registerItemWithUncheckedTexture(EntryModule.BEDROCK_IC_LEAD_ORE.core(), getItemTextureName("ftbic", "lead_chunk"));
         registerItemWithUncheckedTexture(EntryModule.BEDROCK_IC_ALUMINUM_ORE.core(), getItemTextureName("ftbic", "aluminum_chunk"));
         registerItemWithUncheckedTexture(EntryModule.BEDROCK_IC_IRIDIUM_ORE.core(), getItemTextureName("ftbic", "iridium_chunk"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_IC_URANIUM_ORE.core(), getItemTextureName("ftbic", "uranium_chunk"));
 
         // Malum
         registerItemWithUncheckedTexture(EntryModule.BEDROCK_MA_SOULSTONE_ORE.core(), getItemTextureName("malum", "raw_soulstone"));

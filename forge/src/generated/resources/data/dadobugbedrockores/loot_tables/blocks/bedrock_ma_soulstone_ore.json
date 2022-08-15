@@ -7,7 +7,23 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "malum"
+            }
+          ],
           "name": "malum:blocks/soulstone_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "malum"
+            }
+          ],
+          "name": "malum:blocks/deepslate_soulstone_ore"
         }
       ],
       "conditions": [

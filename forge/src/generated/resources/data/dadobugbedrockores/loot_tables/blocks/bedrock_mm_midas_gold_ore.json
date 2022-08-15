@@ -7,6 +7,12 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "mythicmetals"
+            }
+          ],
           "name": "mythicmetals:blocks/midas_gold_ore"
         }
       ],

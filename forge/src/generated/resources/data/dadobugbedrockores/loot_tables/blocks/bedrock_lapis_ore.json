@@ -8,6 +8,20 @@
         {
           "type": "minecraft:loot_table",
           "name": "minecraft:blocks/lapis_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "minecraft:blocks/deepslate_lapis_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "undergarden"
+            }
+          ],
+          "name": "undergarden:blocks/glacio_lapis_ore"
         }
       ],
       "conditions": [

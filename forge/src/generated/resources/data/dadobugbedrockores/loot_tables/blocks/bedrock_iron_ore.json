@@ -8,6 +8,70 @@
         {
           "type": "minecraft:loot_table",
           "name": "minecraft:blocks/iron_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "minecraft:blocks/deepslate_iron_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "undergarden"
+            }
+          ],
+          "name": "undergarden:blocks/depthrock_iron_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "undergarden"
+            }
+          ],
+          "name": "undergarden:blocks/shiverstone_iron_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "undergarden"
+            }
+          ],
+          "name": "undergarden:blocks/moon_iron_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "undergarden"
+            }
+          ],
+          "name": "undergarden:blocks/mars_iron_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "undergarden"
+            }
+          ],
+          "name": "undergarden:blocks/mercury_iron_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "undergarden"
+            }
+          ],
+          "name": "undergarden:blocks/glacio_iron_ore"
         }
       ],
       "conditions": [

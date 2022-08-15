@@ -84,6 +84,7 @@ public enum OreType {
     CLOGGRUM("Cloggrum"),
     FROSTSTEEL("Froststeel"),
     UTHERIUM("Utherium"),
+    REGALIUM("Regalium"),
 
     // Beyond Earth
     DESH("Desh"),

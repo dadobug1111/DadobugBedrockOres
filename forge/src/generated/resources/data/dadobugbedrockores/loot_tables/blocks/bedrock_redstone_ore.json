@@ -8,6 +8,10 @@
         {
           "type": "minecraft:loot_table",
           "name": "minecraft:blocks/redstone_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "minecraft:blocks/deepslate_redstone_ore"
         }
       ],
       "conditions": [

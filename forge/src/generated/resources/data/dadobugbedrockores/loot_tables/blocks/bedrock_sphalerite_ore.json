@@ -7,6 +7,12 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "techreborn"
+            }
+          ],
           "name": "techreborn:blocks/sphalerite_ore"
         }
       ],

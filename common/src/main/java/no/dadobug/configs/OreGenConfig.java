@@ -175,6 +175,9 @@ public class OreGenConfig {
     //mekanism overworld
     public static OreGen ORE_MK_OSMIUM_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_MK_OSMIUM_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_MK_OSMIUM_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_MK_OSMIUM_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_mk_osmium_bedrock_overworld");
     public static OreGen ORE_MK_FLUORITE_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_MK_FLUORITE_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_MK_FLUORITE_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_MK_FLUORITE_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_mk_fluorite_bedrock_overworld");
+    public static OreGen ORE_MK_LEAD_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_MK_LEAD_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_MK_LEAD_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_MK_LEAD_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_mk_lead_bedrock_overworld");
+    public static OreGen ORE_MK_TIN_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_MK_TIN_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_MK_TIN_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_MK_TIN_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_mk_tin_bedrock_overworld");
+    public static OreGen ORE_MK_URANIUM_BEDROCK_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_MK_URANIUM_BEDROCK_OVERWORLD.oreSize, CONFIG.ORE_MK_URANIUM_BEDROCK_OVERWORLD.oreChance, EntryModule.BEDROCK_MK_URANIUM_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_mk_uranium_bedrock_overworld");
 
 
 
@@ -188,6 +191,7 @@ public class OreGenConfig {
     public static OreGen ORE_UG_CLOGGRUM_BEDROCK_UNDERGARDEN = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_UG_CLOGGRUM_BEDROCK_UNDERGARDEN.oreSize, CONFIG.ORE_UG_CLOGGRUM_BEDROCK_UNDERGARDEN.oreChance, EntryModule.BEDROCK_UG_CLOGGRUM_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_cloggrum_bedrock_undergarden");
     public static OreGen ORE_UG_FROSTSTEEL_BEDROCK_UNDERGARDEN = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_UG_FROSTSTEEL_BEDROCK_UNDERGARDEN.oreSize, CONFIG.ORE_UG_FROSTSTEEL_BEDROCK_UNDERGARDEN.oreChance, EntryModule.BEDROCK_UG_FROSTSTEEL_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_froststeel_bedrock_undergarden");
     public static OreGen ORE_UG_UTHERIUM_BEDROCK_UNDERGARDEN = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_UG_UTHERIUM_BEDROCK_UNDERGARDEN.oreSize, CONFIG.ORE_UG_UTHERIUM_BEDROCK_UNDERGARDEN.oreChance, EntryModule.BEDROCK_UG_UTHERIUM_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_utherium_bedrock_undergarden");
+    public static OreGen ORE_UG_REGALIUM_BEDROCK_UNDERGARDEN = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_UG_REGALIUM_BEDROCK_UNDERGARDEN.oreSize, CONFIG.ORE_UG_REGALIUM_BEDROCK_UNDERGARDEN.oreChance, EntryModule.BEDROCK_UG_REGALIUM_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_regalium_bedrock_undergarden");
 
 
 
@@ -224,12 +228,16 @@ public class OreGenConfig {
     //beyond earth glacio
     public static OreGen ORE_BE_ICE_SHARD_BEDROCK_GLACIO = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_BE_ICE_SHARD_BEDROCK_GLACIO.oreSize, CONFIG.ORE_BE_ICE_SHARD_BEDROCK_GLACIO.oreChance, EntryModule.BEDROCK_BE_ICE_SHARD_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_ice_shard_bedrock_glacio");
 
+    //beyond earth mercury
+    public static OreGen ORE_BE_IRON_BEDROCK_MERCURY = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_BE_IRON_BEDROCK_MERCURY.oreSize, CONFIG.ORE_BE_IRON_BEDROCK_MERCURY.oreChance, EntryModule.BEDROCK_IRON_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_iron_bedrock_mercury");
+
 
     //ftb industrial contraptions
     public static OreGen ORE_IC_TIN_BEDROCK_FTB_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_IC_TIN_BEDROCK_FTB_OVERWORLD.oreSize, CONFIG.ORE_IC_TIN_BEDROCK_FTB_OVERWORLD.oreChance, EntryModule.BEDROCK_IC_TIN_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_ic_tin_bedrock_overworld");
     public static OreGen ORE_IC_LEAD_BEDROCK_FTB_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_IC_LEAD_BEDROCK_FTB_OVERWORLD.oreSize, CONFIG.ORE_IC_LEAD_BEDROCK_FTB_OVERWORLD.oreChance, EntryModule.BEDROCK_IC_LEAD_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_ic_lead_bedrock_overworld");
     public static OreGen ORE_IC_ALUMINUM_BEDROCK_FTB_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_IC_ALUMINUM_BEDROCK_FTB_OVERWORLD.oreSize, CONFIG.ORE_IC_ALUMINUM_BEDROCK_FTB_OVERWORLD.oreChance, EntryModule.BEDROCK_IC_ALUMINUM_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_ic_aluminum_bedrock_overworld");
     public static OreGen ORE_IC_IRIDIUM_BEDROCK_FTB_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_IC_IRIDIUM_BEDROCK_FTB_OVERWORLD.oreSize, CONFIG.ORE_IC_IRIDIUM_BEDROCK_FTB_OVERWORLD.oreChance, EntryModule.BEDROCK_IC_IRIDIUM_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_ic_iridium_bedrock_overworld");
+    public static OreGen ORE_IC_URANIUM_BEDROCK_FTB_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_IC_URANIUM_BEDROCK_FTB_OVERWORLD.oreSize, CONFIG.ORE_IC_URANIUM_BEDROCK_FTB_OVERWORLD.oreChance, EntryModule.BEDROCK_IC_URANIUM_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_ic_uranium_bedrock_overworld");
 
 
     //malum
@@ -363,6 +371,9 @@ public class OreGenConfig {
         if(Platform.isModLoaded("mekanism")) {
             ORE_MK_OSMIUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MK_OSMIUM_BEDROCK_OVERWORLD.genOre, DimensionType.OVERWORLD, OreType.OSMIUM);
             ORE_MK_FLUORITE_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MK_FLUORITE_BEDROCK_OVERWORLD.genOre, DimensionType.OVERWORLD, OreType.FLUORITE);
+            ORE_MK_LEAD_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MK_LEAD_BEDROCK_OVERWORLD.genOre, DimensionType.OVERWORLD, OreType.LEAD);
+            ORE_MK_TIN_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MK_TIN_BEDROCK_OVERWORLD.genOre, DimensionType.OVERWORLD, OreType.TIN);
+            ORE_MK_URANIUM_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MK_URANIUM_BEDROCK_OVERWORLD.genOre, DimensionType.OVERWORLD, OreType.URANIUM);
         }
         if(Platform.isModLoaded("undergarden")) {
             ORE_UG_COAL_BEDROCK_UNDERGARDEN.addOreToGen(BiomeSelectors.gensInUndergarden(), CONFIG.ORE_COAL_BEDROCK_UNDERGARDEN.genOre, DimensionType.UNDERGARDEN, OreType.COAL);
@@ -372,7 +383,8 @@ public class OreGenConfig {
 
             ORE_UG_CLOGGRUM_BEDROCK_UNDERGARDEN.addOreToGen(BiomeSelectors.gensInUndergarden(), CONFIG.ORE_UG_CLOGGRUM_BEDROCK_UNDERGARDEN.genOre, DimensionType.UNDERGARDEN, OreType.CLOGGRUM);
             ORE_UG_FROSTSTEEL_BEDROCK_UNDERGARDEN.addOreToGen(BiomeSelectors.gensInUndergarden(), CONFIG.ORE_UG_FROSTSTEEL_BEDROCK_UNDERGARDEN.genOre, DimensionType.UNDERGARDEN, OreType.FROSTSTEEL);
-            ORE_UG_UTHERIUM_BEDROCK_UNDERGARDEN.addOreToGen(BiomeSelectors.gensInUndergarden(), CONFIG.ORE_UG_UTHERIUM_BEDROCK_UNDERGARDEN.genOre, DimensionType.UNDERGARDEN, OreType.UTHERIUM);            
+            ORE_UG_UTHERIUM_BEDROCK_UNDERGARDEN.addOreToGen(BiomeSelectors.gensInUndergarden(), CONFIG.ORE_UG_UTHERIUM_BEDROCK_UNDERGARDEN.genOre, DimensionType.UNDERGARDEN, OreType.UTHERIUM);
+            ORE_UG_REGALIUM_BEDROCK_UNDERGARDEN.addOreToGen(BiomeSelectors.gensInUndergarden(), CONFIG.ORE_UG_REGALIUM_BEDROCK_UNDERGARDEN.genOre, DimensionType.UNDERGARDEN, OreType.REGALIUM);
         }
         if(Platform.isModLoaded("beyond_earth")) {
             ORE_BE_IRON_BEDROCK_MOON.addOreToGen(BiomeSelectors.gensInBeyondEarthMoon(), CONFIG.ORE_BE_IRON_BEDROCK_MOON.genOre, DimensionType.MOON, OreType.IRON);
@@ -395,12 +407,15 @@ public class OreGenConfig {
             ORE_BE_IRON_BEDROCK_GLACIO.addOreToGen(BiomeSelectors.gensInBeyondEarthGlacio(), CONFIG.ORE_BE_IRON_BEDROCK_GLACIO.genOre, DimensionType.GLACIO, OreType.IRON);
             ORE_BE_LAPIS_BEDROCK_GLACIO.addOreToGen(BiomeSelectors.gensInBeyondEarthGlacio(), CONFIG.ORE_BE_LAPIS_BEDROCK_GLACIO.genOre, DimensionType.GLACIO, OreType.LAPIS);
             ORE_BE_ICE_SHARD_BEDROCK_GLACIO.addOreToGen(BiomeSelectors.gensInBeyondEarthGlacio(), CONFIG.ORE_BE_ICE_SHARD_BEDROCK_GLACIO.genOre, DimensionType.GLACIO, OreType.ICE_SHARD);
+
+            ORE_BE_IRON_BEDROCK_MERCURY.addOreToGen(BiomeSelectors.gensInBeyondEarthMercury(), CONFIG.ORE_BE_IRON_BEDROCK_MERCURY.genOre, DimensionType.MERCURY, OreType.IRON);
         }
         if (Platform.isModLoaded("ftbic")) {
             ORE_IC_TIN_BEDROCK_FTB_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_IC_TIN_BEDROCK_FTB_OVERWORLD.genOre, DimensionType.OVERWORLD, OreType.TIN);
             ORE_IC_LEAD_BEDROCK_FTB_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_IC_LEAD_BEDROCK_FTB_OVERWORLD.genOre, DimensionType.OVERWORLD, OreType.LEAD);
             ORE_IC_ALUMINUM_BEDROCK_FTB_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_IC_ALUMINUM_BEDROCK_FTB_OVERWORLD.genOre, DimensionType.OVERWORLD, OreType.ALUMINUM);
             ORE_IC_IRIDIUM_BEDROCK_FTB_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_IC_IRIDIUM_BEDROCK_FTB_OVERWORLD.genOre, DimensionType.OVERWORLD, OreType.IRIDIUM);
+            ORE_IC_URANIUM_BEDROCK_FTB_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_IC_URANIUM_BEDROCK_FTB_OVERWORLD.genOre, DimensionType.OVERWORLD, OreType.URANIUM);
         }
         if (Platform.isModLoaded("malum")) {
             ORE_MA_SOULSTONE_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_MA_SOULSTONE_OVERWORLD.genOre, DimensionType.OVERWORLD, OreType.SOULSTONE);

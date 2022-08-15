@@ -7,7 +7,23 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "ae2"
+            }
+          ],
           "name": "ae2:blocks/quartz_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "ae2"
+            }
+          ],
+          "name": "ae2:blocks/deepslate_quartz_ore"
         }
       ],
       "conditions": [

@@ -7,7 +7,23 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "immersiveengineering"
+            }
+          ],
           "name": "immersiveengineering:blocks/ore_uranium"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "immersiveengineering"
+            }
+          ],
+          "name": "immersiveengineering:blocks/deepslate_ore_uranium"
         }
       ],
       "conditions": [

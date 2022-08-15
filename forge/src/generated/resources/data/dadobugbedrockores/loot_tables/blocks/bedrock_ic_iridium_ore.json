@@ -7,7 +7,23 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "ftbic"
+            }
+          ],
           "name": "ftbic:blocks/iridium_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "ftbic"
+            }
+          ],
+          "name": "ftbic:blocks/deepslate_iridium_ore"
         }
       ],
       "conditions": [

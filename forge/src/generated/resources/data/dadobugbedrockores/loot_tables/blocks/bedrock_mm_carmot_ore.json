@@ -7,7 +7,23 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "mythicmetals"
+            }
+          ],
           "name": "mythicmetals:blocks/carmot_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "mythicmetals"
+            }
+          ],
+          "name": "mythicmetals:blocks/deepslate_carmot_ore"
         }
       ],
       "conditions": [

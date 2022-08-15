@@ -7,6 +7,12 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "malum"
+            }
+          ],
           "name": "malum:blocks/blazing_quartz_ore"
         }
       ],

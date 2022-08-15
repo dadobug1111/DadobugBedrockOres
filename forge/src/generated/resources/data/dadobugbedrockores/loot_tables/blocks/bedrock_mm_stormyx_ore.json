@@ -7,7 +7,23 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "mythicmetals"
+            }
+          ],
           "name": "mythicmetals:blocks/stormyx_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "mythicmetals"
+            }
+          ],
+          "name": "mythicmetals:blocks/blackstone_stormyx_ore"
         }
       ],
       "conditions": [

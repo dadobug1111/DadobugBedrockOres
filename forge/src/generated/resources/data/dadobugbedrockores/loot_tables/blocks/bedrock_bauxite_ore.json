@@ -7,7 +7,23 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "techreborn"
+            }
+          ],
           "name": "techreborn:blocks/bauxite_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "techreborn"
+            }
+          ],
+          "name": "techreborn:blocks/deepslate_bauxite_ore"
         }
       ],
       "conditions": [

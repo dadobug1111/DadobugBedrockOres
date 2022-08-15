@@ -7,6 +7,22 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "create"
+            }
+          ],
+          "name": "create:blocks/zinc_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "create"
+            }
+          ],
           "name": "create:blocks/deepslate_zinc_ore"
         }
       ],

@@ -8,6 +8,30 @@
         {
           "type": "minecraft:loot_table",
           "name": "minecraft:blocks/gold_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "minecraft:blocks/deepslate_gold_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "undergarden"
+            }
+          ],
+          "name": "undergarden:blocks/depthrock_gold_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "undergarden"
+            }
+          ],
+          "name": "undergarden:blocks/venus_gold_ore"
         }
       ],
       "conditions": [

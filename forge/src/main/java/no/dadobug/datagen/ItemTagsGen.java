@@ -104,11 +104,15 @@ public class ItemTagsGen extends ItemTagProvider{
             // Mekanism
             .add(EntryModule.BEDROCK_MK_OSMIUM_ORE.core().get())
             .add(EntryModule.BEDROCK_MK_FLUORITE_ORE.core().get())
+            .add(EntryModule.BEDROCK_MK_LEAD_ORE.core().get())
+            .add(EntryModule.BEDROCK_MK_TIN_ORE.core().get())
+            .add(EntryModule.BEDROCK_MK_URANIUM_ORE.core().get())
 
             // Undergarden
             .add(EntryModule.BEDROCK_UG_CLOGGRUM_ORE.core().get())
             .add(EntryModule.BEDROCK_UG_FROSTSTEEL_ORE.core().get())
             .add(EntryModule.BEDROCK_UG_UTHERIUM_ORE.core().get())
+            .add(EntryModule.BEDROCK_UG_REGALIUM_ORE.core().get())
 
             // Beyond Earth
             .add(EntryModule.BEDROCK_BE_DESH_ORE.core().get())
@@ -122,6 +126,7 @@ public class ItemTagsGen extends ItemTagProvider{
             .add(EntryModule.BEDROCK_IC_LEAD_ORE.core().get())
             .add(EntryModule.BEDROCK_IC_ALUMINUM_ORE.core().get())
             .add(EntryModule.BEDROCK_IC_IRIDIUM_ORE.core().get())
+            .add(EntryModule.BEDROCK_IC_URANIUM_ORE.core().get())
 
             // Malum
             .add(EntryModule.BEDROCK_MA_SOULSTONE_ORE.core().get())

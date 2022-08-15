@@ -7,7 +7,23 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "techreborn"
+            }
+          ],
           "name": "techreborn:blocks/lead_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "techreborn"
+            }
+          ],
+          "name": "techreborn:blocks/deepslate_lead_ore"
         }
       ],
       "conditions": [

@@ -7,6 +7,12 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "beyond_earth"
+            }
+          ],
           "name": "beyond_earth:blocks/venus_calorite_ore"
         }
       ],

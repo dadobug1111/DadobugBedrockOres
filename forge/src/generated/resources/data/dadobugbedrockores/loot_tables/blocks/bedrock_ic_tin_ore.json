@@ -7,7 +7,23 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "ftbic"
+            }
+          ],
           "name": "ftbic:blocks/tin_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "ftbic"
+            }
+          ],
+          "name": "ftbic:blocks/deepslate_tin_ore"
         }
       ],
       "conditions": [

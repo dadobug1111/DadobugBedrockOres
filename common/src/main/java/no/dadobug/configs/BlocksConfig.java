@@ -235,6 +235,15 @@ public class BlocksConfig implements ConfigData {
     @ConfigEntry.Category("mekanism")
     @ConfigEntry.Gui.CollapsibleObject()
     public BlockConfig BEDROCK_MK_FLUORITE_ORE = new BlockConfig(true, 50f, 0.5f, 0, 1, 4);
+    @ConfigEntry.Category("mekanism")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_MK_LEAD_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+    @ConfigEntry.Category("mekanism")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_MK_TIN_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+    @ConfigEntry.Category("mekanism")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_MK_URANIUM_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
 
 
     @ConfigEntry.Category("undergarden")
@@ -246,6 +255,9 @@ public class BlocksConfig implements ConfigData {
     @ConfigEntry.Category("undergarden")
     @ConfigEntry.Gui.CollapsibleObject()
     public BlockConfig BEDROCK_UG_UTHERIUM_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+    @ConfigEntry.Category("undergarden")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_UG_REGALIUM_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
 
 
     @ConfigEntry.Category("beyond_earth")
@@ -263,6 +275,23 @@ public class BlocksConfig implements ConfigData {
     @ConfigEntry.Category("beyond_earth")
     @ConfigEntry.Gui.CollapsibleObject()
     public BlockConfig BEDROCK_BE_CALORITE_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+
+
+    @ConfigEntry.Category("ftbic")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_IC_TIN_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+    @ConfigEntry.Category("ftbic")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_IC_LEAD_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+    @ConfigEntry.Category("ftbic")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_IC_BAUXITE_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+    @ConfigEntry.Category("ftbic")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_IC_IRIDIUM_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+    @ConfigEntry.Category("ftbic")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_IC_URANIUM_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
 
 
     @ConfigEntry.Category("malum")

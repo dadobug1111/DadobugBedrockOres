@@ -7,7 +7,33 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "beyond_earth"
+            }
+          ],
           "name": "beyond_earth:blocks/moon_ice_shard_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "beyond_earth"
+            }
+          ],
+          "name": "beyond_earth:blocks/mars_ice_shard_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "beyond_earth"
+            }
+          ],
+          "name": "beyond_earth:blocks/glacio_ice_shard_ore"
         }
       ],
       "conditions": [

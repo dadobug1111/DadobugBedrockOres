@@ -7,7 +7,23 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "malum"
+            }
+          ],
           "name": "malum:blocks/brilliant_stone"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "malum"
+            }
+          ],
+          "name": "malum:blocks/brilliant_deepslate"
         }
       ],
       "conditions": [

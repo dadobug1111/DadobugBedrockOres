@@ -7,7 +7,23 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "mekanism"
+            }
+          ],
           "name": "mekanism:blocks/osmium_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "mekanism"
+            }
+          ],
+          "name": "mekanism:blocks/deepslate_osmium_ore"
         }
       ],
       "conditions": [

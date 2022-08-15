@@ -257,6 +257,15 @@ public class GenConfig implements ConfigData {
     @ConfigEntry.Category("mekanism_overworld")
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_MK_FLUORITE_BEDROCK_OVERWORLD = new OreConfig(true, 8, 12);
+    @ConfigEntry.Category("mekanism_overworld")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_MK_LEAD_BEDROCK_OVERWORLD = new OreConfig(true, 8, 4);
+    @ConfigEntry.Category("mekanism_overworld")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_MK_TIN_BEDROCK_OVERWORLD = new OreConfig(true, 10, 4);
+    @ConfigEntry.Category("mekanism_overworld")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_MK_URANIUM_BEDROCK_OVERWORLD = new OreConfig(true, 8, 10);
 
 
     @ConfigEntry.Category("vanilla_undergarden")
@@ -281,6 +290,9 @@ public class GenConfig implements ConfigData {
     @ConfigEntry.Category("undergarden_undergarden")
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_UG_UTHERIUM_BEDROCK_UNDERGARDEN = new OreConfig(true, 8, 12);
+    @ConfigEntry.Category("undergarden_undergarden")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_UG_REGALIUM_BEDROCK_UNDERGARDEN = new OreConfig(true, 7, 13);
 
 
     @ConfigEntry.Category("vanilla_moon") // Roughly the same spawn rate as their respective ore
@@ -342,6 +354,10 @@ public class GenConfig implements ConfigData {
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_BE_ICE_SHARD_BEDROCK_GLACIO = new OreConfig(true, 12, 5);
 
+    @ConfigEntry.Category("vanilla_mercury")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_BE_IRON_BEDROCK_MERCURY = new OreConfig(true, 11, 4);
+
     
     @ConfigEntry.Category("ftb_industrial_contraptions_overworld")
     @ConfigEntry.Gui.CollapsibleObject()
@@ -355,6 +371,9 @@ public class GenConfig implements ConfigData {
     @ConfigEntry.Category("ftb_industrial_contraptions_overworld")
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_IC_IRIDIUM_BEDROCK_FTB_OVERWORLD = new OreConfig(true, 3, 12);
+    @ConfigEntry.Category("ftb_industrial_contraptions_overworld")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_IC_URANIUM_BEDROCK_FTB_OVERWORLD = new OreConfig(true, 3, 10);
 
 
     @ConfigEntry.Category("malum_overworld")

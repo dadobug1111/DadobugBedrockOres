@@ -19,6 +19,7 @@ import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.*;
+import net.minecraft.loot.condition.LootConditionType;
 import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.ShapedRecipe;
@@ -29,6 +30,7 @@ import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DefaultedList;
+import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import no.dadobug.blocks.HollowBedrock;
 import no.dadobug.blocks.RegenerativeBlock;
@@ -242,12 +244,16 @@ public class EntryModule {
     //mekanism
     public static final BedrockStack BEDROCK_MK_OSMIUM_ORE = BedrockStack.BedrockStackStandardOre("mk_osmium", CONFIG.BEDROCK_MK_OSMIUM_ORE, mekanismItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
     public static final BedrockStack BEDROCK_MK_FLUORITE_ORE = BedrockStack.BedrockStackStandardOre("mk_fluorite", CONFIG.BEDROCK_MK_FLUORITE_ORE, mekanismItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MK_LEAD_ORE = BedrockStack.BedrockStackStandardOre("mk_lead", CONFIG.BEDROCK_MK_LEAD_ORE, mekanismItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MK_TIN_ORE = BedrockStack.BedrockStackStandardOre("mk_tin", CONFIG.BEDROCK_MK_TIN_ORE, mekanismItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_MK_URANIUM_ORE = BedrockStack.BedrockStackStandardOre("mk_uranium", CONFIG.BEDROCK_MK_URANIUM_ORE, mekanismItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
 
 
     //undergarden
     public static final BedrockStack BEDROCK_UG_CLOGGRUM_ORE = BedrockStack.BedrockStackStandardOre("ug_cloggrum", CONFIG.BEDROCK_UG_CLOGGRUM_ORE, undergardenItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
     public static final BedrockStack BEDROCK_UG_FROSTSTEEL_ORE = BedrockStack.BedrockStackStandardOre("ug_froststeel", CONFIG.BEDROCK_UG_FROSTSTEEL_ORE, undergardenItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
     public static final BedrockStack BEDROCK_UG_UTHERIUM_ORE = BedrockStack.BedrockStackStandardOre("ug_utherium", CONFIG.BEDROCK_UG_UTHERIUM_ORE, undergardenItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_UG_REGALIUM_ORE = BedrockStack.BedrockStackStandardOre("ug_regalium", CONFIG.BEDROCK_UG_REGALIUM_ORE, undergardenItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
 
 
     //beyond earth
@@ -258,16 +264,17 @@ public class EntryModule {
     public static final BedrockStack BEDROCK_BE_CALORITE_ORE = BedrockStack.BedrockStackStandardOre("be_calorite", CONFIG.BEDROCK_BE_CALORITE_ORE, beyondEarthItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
 
     //ftb industrial contraptions
-    public static final BedrockStack BEDROCK_IC_TIN_ORE = BedrockStack.BedrockStackStandardOre("ic_tin", CONFIG.BEDROCK_TIN_ORE, ftbIndustrialContraptionsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_IC_LEAD_ORE = BedrockStack.BedrockStackStandardOre("ic_lead", CONFIG.BEDROCK_LEAD_ORE, ftbIndustrialContraptionsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_IC_ALUMINUM_ORE = BedrockStack.BedrockStackStandardOre("ic_aluminum", CONFIG.BEDROCK_BAUXITE_ORE, ftbIndustrialContraptionsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
-    public static final BedrockStack BEDROCK_IC_IRIDIUM_ORE = BedrockStack.BedrockStackStandardOre("ic_iridium", CONFIG.BEDROCK_IRIDIUM_ORE, ftbIndustrialContraptionsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_IC_TIN_ORE = BedrockStack.BedrockStackStandardOre("ic_tin", CONFIG.BEDROCK_IC_TIN_ORE, ftbIndustrialContraptionsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_IC_LEAD_ORE = BedrockStack.BedrockStackStandardOre("ic_lead", CONFIG.BEDROCK_IC_LEAD_ORE, ftbIndustrialContraptionsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_IC_ALUMINUM_ORE = BedrockStack.BedrockStackStandardOre("ic_aluminum", CONFIG.BEDROCK_IC_BAUXITE_ORE, ftbIndustrialContraptionsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_IC_IRIDIUM_ORE = BedrockStack.BedrockStackStandardOre("ic_iridium", CONFIG.BEDROCK_IC_IRIDIUM_ORE, ftbIndustrialContraptionsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_IC_URANIUM_ORE = BedrockStack.BedrockStackStandardOre("ic_uranium", CONFIG.BEDROCK_IC_URANIUM_ORE, ftbIndustrialContraptionsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
 
     //malum
     public static final BedrockStack BEDROCK_MA_SOULSTONE_ORE = BedrockStack.BedrockStackStandardOre("ma_soulstone", CONFIG.BEDROCK_MA_SOULSTONE_ORE, malumItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
     public static final BedrockStack BEDROCK_MA_BRILLIANCE_ORE = BedrockStack.BedrockStackStandardOre("ma_brilliance", CONFIG.BEDROCK_MA_BRILLIANCE_ORE, malumItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
     public static final BedrockStack BEDROCK_MA_BLAZING_QUARTZ_ORE = BedrockStack.BedrockStackStandardOre("ma_blazing_quartz", CONFIG.BEDROCK_MA_BLAZING_QUARTZ_ORE, malumItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
-
+    public static LootConditionType MOD_LOOT_CONDITION_TYPE;
 
     public static void init() {
         ENCHANTS.register();
@@ -279,6 +286,7 @@ public class EntryModule {
     public static void initLate(boolean isClient) {
         //ArrayList<JsonObject> object = new ArrayList<>();
         //builder.offerTo((RecipeJsonProviderA) -> object.add(RecipeJsonProviderA.toJson()));
+        EntryModule.MOD_LOOT_CONDITION_TYPE = Registry.register(Registry.LOOT_CONDITION_TYPE, new Identifier(EntryModule.modid, "modloaded"), new LootConditionType(new ModLoadedLootCondition.Serializer()));
         OreGenConfig.init();
         if(isClient) {
             ColorHandlerRegistry.registerBlockColors((state, world, pos, tintIndex) -> {

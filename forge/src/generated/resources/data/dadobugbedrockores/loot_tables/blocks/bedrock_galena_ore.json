@@ -7,7 +7,23 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "techreborn"
+            }
+          ],
           "name": "techreborn:blocks/galena_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "techreborn"
+            }
+          ],
+          "name": "techreborn:blocks/deepslate_galena_ore"
         }
       ],
       "conditions": [

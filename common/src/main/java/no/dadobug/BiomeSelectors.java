@@ -39,6 +39,8 @@ public class BiomeSelectors {
     public static ArrayList<String> beyondEarthVenusBiomes = new ArrayList<>(Arrays.asList(beyondEarthVenusBiomesIds));
     public static String[] beyondEarthGlacioBiomesIds = new String[]{"beyond_earth:glacio", "beyond_earth:glacio_ice_spikes"};
     public static ArrayList<String> beyondEarthGlacioBiomes = new ArrayList<>(Arrays.asList(beyondEarthGlacioBiomesIds));
+    public static String[] beyondEarthMercuryBiomesIds = new String[]{"beyond_earth:mercury"};
+    public static ArrayList<String> beyondEarthMercuryBiomes = new ArrayList<>(Arrays.asList(beyondEarthMercuryBiomesIds));
 
     public static Predicate<BiomeModifications.BiomeContext> gensFeature(RegistryEntry<PlacedFeature> FeatureIn) {
 
@@ -131,10 +133,15 @@ public class BiomeSelectors {
     // Checks if a BiomeContext is in the Beyond Earth's Venus dimension
     public static Predicate<BiomeModifications.BiomeContext> gensInBeyondEarthVenus() {
         return gensInBiomeList(beyondEarthVenusBiomes);
-    } 
+    }
 
     // Checks if a BiomeContext is in the Beyond Earth's Glacio dimension
     public static Predicate<BiomeModifications.BiomeContext> gensInBeyondEarthGlacio() {
         return gensInBiomeList(beyondEarthGlacioBiomes);
-    } 
+    }
+
+    // Checks if a BiomeContext is in the Beyond Earth's Mercury dimension
+    public static Predicate<BiomeModifications.BiomeContext> gensInBeyondEarthMercury() {
+        return gensInBiomeList(beyondEarthMercuryBiomes);
+    }
 } 

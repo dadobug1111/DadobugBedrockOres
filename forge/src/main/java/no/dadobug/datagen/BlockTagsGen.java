@@ -140,11 +140,15 @@ public class BlockTagsGen extends BlockTagProvider {
         // Mekanism
         .add(EntryModule.BEDROCK_MK_OSMIUM_ORE.ore().get())
         .add(EntryModule.BEDROCK_MK_FLUORITE_ORE.ore().get())
+        .add(EntryModule.BEDROCK_MK_LEAD_ORE.ore().get())
+        .add(EntryModule.BEDROCK_MK_TIN_ORE.ore().get())
+        .add(EntryModule.BEDROCK_MK_URANIUM_ORE.ore().get())
 
         // Undergarden
         .add(EntryModule.BEDROCK_UG_CLOGGRUM_ORE.ore().get())
         .add(EntryModule.BEDROCK_UG_FROSTSTEEL_ORE.ore().get())
         .add(EntryModule.BEDROCK_UG_UTHERIUM_ORE.ore().get())
+        .add(EntryModule.BEDROCK_UG_REGALIUM_ORE.ore().get())
 
         // Beyond Earth
         .add(EntryModule.BEDROCK_BE_DESH_ORE.ore().get())
@@ -158,6 +162,7 @@ public class BlockTagsGen extends BlockTagProvider {
         .add(EntryModule.BEDROCK_IC_LEAD_ORE.ore().get())
         .add(EntryModule.BEDROCK_IC_ALUMINUM_ORE.ore().get())
         .add(EntryModule.BEDROCK_IC_IRIDIUM_ORE.ore().get())
+        .add(EntryModule.BEDROCK_IC_URANIUM_ORE.ore().get())
 
         // Malum
         .add(EntryModule.BEDROCK_MA_SOULSTONE_ORE.ore().get())

@@ -112,11 +112,15 @@ public class LanguageGen extends LanguageProvider{
         // Mekanism
         addBlock(EntryModule.BEDROCK_MK_OSMIUM_ORE.ore(), "Bedrock Osmium Ore");
         addBlock(EntryModule.BEDROCK_MK_FLUORITE_ORE.ore(), "Bedrock Fluorite Ore");
+        addBlock(EntryModule.BEDROCK_MK_LEAD_ORE.ore(), "Bedrock Lead Ore");
+        addBlock(EntryModule.BEDROCK_MK_TIN_ORE.ore(), "Bedrock Tin Ore");
+        addBlock(EntryModule.BEDROCK_MK_URANIUM_ORE.ore(), "Bedrock Uranium Ore");
 
         // Undergarden
         addBlock(EntryModule.BEDROCK_UG_CLOGGRUM_ORE.ore(), "Bedrock Cloggrum Ore");
         addBlock(EntryModule.BEDROCK_UG_FROSTSTEEL_ORE.ore(), "Bedrock Froststeel Ore");
         addBlock(EntryModule.BEDROCK_UG_UTHERIUM_ORE.ore(), "Bedrock Utherium Ore");
+        addBlock(EntryModule.BEDROCK_UG_REGALIUM_ORE.ore(), "Bedrock Regalium Ore");
 
         // Beyond Earth
         addBlock(EntryModule.BEDROCK_BE_DESH_ORE.ore(), "Bedrock Desh Ore");
@@ -130,6 +134,7 @@ public class LanguageGen extends LanguageProvider{
         addBlock(EntryModule.BEDROCK_IC_LEAD_ORE.ore(), "Bedrock Lead Ore");
         addBlock(EntryModule.BEDROCK_IC_ALUMINUM_ORE.ore(), "Bedrock Aluminum Ore");
         addBlock(EntryModule.BEDROCK_IC_IRIDIUM_ORE.ore(), "Bedrock Iridium Ore");
+        addBlock(EntryModule.BEDROCK_IC_URANIUM_ORE.ore(), "Bedrock Uranium Ore");
 
         // Malum
         addBlock(EntryModule.BEDROCK_MA_SOULSTONE_ORE.ore(), "Bedrock Soulstone Ore");
@@ -227,11 +232,15 @@ public class LanguageGen extends LanguageProvider{
         // Mekanism
         addItem(EntryModule.BEDROCK_MK_OSMIUM_ORE.core(), "Regenerative Osmium Cluster");
         addItem(EntryModule.BEDROCK_MK_FLUORITE_ORE.core(), "Regenerative Fluorite Cluster");
+        addItem(EntryModule.BEDROCK_MK_LEAD_ORE.core(), "Regenerative Lead Cluster");
+        addItem(EntryModule.BEDROCK_MK_TIN_ORE.core(), "Regenerative Tin Cluster");
+        addItem(EntryModule.BEDROCK_MK_URANIUM_ORE.core(), "Regenerative Uranium Cluster");
 
         // Undergarden
         addItem(EntryModule.BEDROCK_UG_CLOGGRUM_ORE.core(), "Regenerative Cloggrum Cluster");
         addItem(EntryModule.BEDROCK_UG_FROSTSTEEL_ORE.core(), "Regenerative Froststeel Cluster");
         addItem(EntryModule.BEDROCK_UG_UTHERIUM_ORE.core(), "Regenerative Utherium Cluster");
+        addItem(EntryModule.BEDROCK_UG_REGALIUM_ORE.core(), "Regenerative Regalium Cluster");
 
         // Beyond Earth
         addItem(EntryModule.BEDROCK_BE_DESH_ORE.core(), "Regenerative Desh Cluster");
@@ -245,6 +254,7 @@ public class LanguageGen extends LanguageProvider{
         addItem(EntryModule.BEDROCK_IC_LEAD_ORE.core(), "Regenerative Lead Cluster");
         addItem(EntryModule.BEDROCK_IC_ALUMINUM_ORE.core(), "Regenerative Aluminum Cluster");
         addItem(EntryModule.BEDROCK_IC_IRIDIUM_ORE.core(), "Regenerative Iridium Cluster");
+        addItem(EntryModule.BEDROCK_IC_URANIUM_ORE.core(), "Regenerative Uranium Cluster");
 
         // Malum
         addItem(EntryModule.BEDROCK_MA_SOULSTONE_ORE.core(), "Regenerative Soulstone Cluster");

@@ -2,9 +2,12 @@ package no.dadobug.datagen;
 
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
+import no.dadobug.ModLoadedLootCondition;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -37,6 +40,7 @@ import net.minecraft.loot.*;
  * A base loot table generator that provides helpful methods to create
  * the required bedrock ore loot tables
  */
+//blockdrops now conditional on if the host mod is present (Ex: modded coal ores will not drop from bedrock coal ore if said mod is not loaded)
 public abstract class BaseBedrockLootTableGen extends LootTableProvider{
 
     private static final Logger LOGGER = LogManager.getLogger();
@@ -56,8 +60,8 @@ public abstract class BaseBedrockLootTableGen extends LootTableProvider{
      * Creates a loot pool that drops the same items as the given block
      * after checking that the tool doesn't have several enchantments
      */
-    private LootPool.Builder bedrockOreRegularLootPool(String tableName, Identifier blockDropTable) {
-        return LootPool.builder()
+    private LootPool.Builder bedrockOreRegularLootPool(String tableName, Identifier... blockDropTable) {
+        LootPool.Builder builder = LootPool.builder()
             .name(tableName)
             .conditionally(
                 InvertedLootCondition.builder(
@@ -78,9 +82,19 @@ public abstract class BaseBedrockLootTableGen extends LootTableProvider{
                 InvertedLootCondition.builder(
                     MatchToolLootCondition.builder(
                         ItemPredicate.Builder.create().enchantment(
-                            new EnchantmentPredicate(EntryModule.ARCANE_EXTRACTION.get(), IntRange.atLeast(1))))))
-            .with(
-                LootTableEntry.builder(blockDropTable));
+                            new EnchantmentPredicate(EntryModule.ARCANE_EXTRACTION.get(), IntRange.atLeast(1))))));
+        //adds conditions here
+        //also adds multi-ore drops here
+        Arrays.stream(blockDropTable).forEach((id) -> {
+            if(Objects.equals(id.getNamespace(), "minecraft")) {
+                builder.with(LootTableEntry.builder(id));
+            } else {
+                builder.with(LootTableEntry.builder(id)
+                        .conditionally(new ModLoadedLootCondition.Builder().mod_id(id.getNamespace())));
+            }
+        });
+
+        return builder;
     }
 
     /*
@@ -124,17 +138,17 @@ public abstract class BaseBedrockLootTableGen extends LootTableProvider{
      * want called or a new identifier with format ("modID", "pathToLootTable")
      * where pathToLootTable is from data/modID/loot_tables.
      */
-    protected void createBedrockOreTable(String tableName, Identifier blockDropTable, BedrockStack bedrock) {
-        lootTables.put(bedrock.ore().get(), createBedrockOreTableHelper(tableName, blockDropTable, bedrock.core().get(), bedrock.oreItem().get()));
+    //Added Multi-ore drops (regular and deepslate, etc.)
+    protected void createBedrockOreTable(String tableName, BedrockStack bedrock, Identifier... blockDropTable) {
+        lootTables.put(bedrock.ore().get(), createBedrockOreTableHelper(tableName, bedrock.core().get(), bedrock.oreItem().get(), blockDropTable));
     }
-
-    private LootTable.Builder createBedrockOreTableHelper(String tableName, Identifier blockDropTable, Item core, Item oreItem) {
+    private LootTable.Builder createBedrockOreTableHelper(String tableName, Item core, Item oreItem, Identifier... blockDropTable) {
         LootPool.Builder regularLoot = bedrockOreRegularLootPool(tableName, blockDropTable);
-            
+
         LootPool.Builder extractionLoot = bedrockOreExtractionLootPool(tableName, core);
-        
+
         LootPool.Builder arcaneExtractionLoot = bedrockOreArcaneExtractionLootPool(tableName, oreItem);
-                
+
         return LootTable.builder().pool(regularLoot).pool(extractionLoot).pool(arcaneExtractionLoot);
     }
 
