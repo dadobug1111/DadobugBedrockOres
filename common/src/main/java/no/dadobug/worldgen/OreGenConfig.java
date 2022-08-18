@@ -1,4 +1,4 @@
-package no.dadobug.configs;
+package no.dadobug.worldgen;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -13,6 +13,9 @@ import no.dadobug.BiomeSelectors;
 import no.dadobug.EntryModule;
 import no.dadobug.OreGen;
 import no.dadobug.blocks.OresBlockStates;
+import no.dadobug.configs.DimensionType;
+import no.dadobug.configs.GenConfig;
+import no.dadobug.configs.OreType;
 
 public class OreGenConfig {
     public static final RuleTest BEDROCK = new BlockMatchRuleTest(Blocks.BEDROCK);

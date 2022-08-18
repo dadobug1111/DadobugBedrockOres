@@ -199,28 +199,28 @@ public class ItemModelsGen extends CustomItemModelProvider{
         registerItemWithUncheckedTexture(EntryModule.BEDROCK_IE_URANIUM_ORE.core(), getItemTextureName("immersiveengineering", "metal_raw_uranium"));
 
         // Mythic metals
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_ADAMANTITE_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_adamantite"));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_AQUARIUM_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_aquarium"));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_BANGLUM_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_banglum"));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_CARMOT_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_carmot"));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_KYBER_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_kyber"));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_MANGANESE_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_manganese"));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_MIDAS_GOLD_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_midas_gold"));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_MORKITE_ORE.core(), getItemTextureName("mythicmetals", "morkite"));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_MYTHRIL_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_mythril"));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_NETHER_BANGLUM_ORE.core(), getItemTextureName("mythicmetals", "banglum_chunk"));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_ORICHALCUM_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_orichalcum"));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_OSMIUM_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_osmium"));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_PALLADIUM_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_palladium"));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_PLATINUM_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_platinum"));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_PROMETHEUM_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_prometheum"));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_QUADRILLUM_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_quadrillum"));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_RUNITE_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_runite"));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_SILVER_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_silver"));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_STARRITE_ORE.core(), getItemTextureName("mythicmetals", "starrite"));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_STORMYX_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_stormyx"));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_TIN_ORE.core(), getItemTextureName("mythicmetals", "raw_ore/raw_tin"));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_UNOBTAINIUM_ORE.core(), getItemTextureName("mythicmetals", "unobtainium"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_ADAMANTITE_ORE.core(), getItemTextureName("mythicmetals","items/", "raw_ore/raw_adamantite"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_AQUARIUM_ORE.core(), getItemTextureName("mythicmetals","items/", "raw_ore/raw_aquarium"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_BANGLUM_ORE.core(), getItemTextureName("mythicmetals","items/", "raw_ore/raw_banglum"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_CARMOT_ORE.core(), getItemTextureName("mythicmetals","items/", "raw_ore/raw_carmot"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_KYBER_ORE.core(), getItemTextureName("mythicmetals","items/", "raw_ore/raw_kyber"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_MANGANESE_ORE.core(), getItemTextureName("mythicmetals","items/", "raw_ore/raw_manganese"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_MIDAS_GOLD_ORE.core(), getItemTextureName("mythicmetals","items/", "raw_ore/raw_midas_gold"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_MORKITE_ORE.core(), getItemTextureName("mythicmetals","items/", "morkite"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_MYTHRIL_ORE.core(), getItemTextureName("mythicmetals","items/", "raw_ore/raw_mythril"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_NETHER_BANGLUM_ORE.core(), getItemTextureName("mythicmetals","items/", "banglum_chunk"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_ORICHALCUM_ORE.core(), getItemTextureName("mythicmetals","items/", "raw_ore/raw_orichalcum"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_OSMIUM_ORE.core(), getItemTextureName("mythicmetals","items/", "raw_ore/raw_osmium"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_PALLADIUM_ORE.core(), getItemTextureName("mythicmetals","items/", "raw_ore/raw_palladium"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_PLATINUM_ORE.core(), getItemTextureName("mythicmetals","items/", "raw_ore/raw_platinum"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_PROMETHEUM_ORE.core(), getItemTextureName("mythicmetals","items/", "raw_ore/raw_prometheum"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_QUADRILLUM_ORE.core(), getItemTextureName("mythicmetals","items/", "raw_ore/raw_quadrillum"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_RUNITE_ORE.core(), getItemTextureName("mythicmetals","items/", "raw_ore/raw_runite"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_SILVER_ORE.core(), getItemTextureName("mythicmetals","items/", "raw_ore/raw_silver"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_STARRITE_ORE.core(), getItemTextureName("mythicmetals","items/", "starrite"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_STORMYX_ORE.core(), getItemTextureName("mythicmetals","items/", "raw_ore/raw_stormyx"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_TIN_ORE.core(), getItemTextureName("mythicmetals","items/", "raw_ore/raw_tin"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MM_UNOBTAINIUM_ORE.core(), getItemTextureName("mythicmetals","items/", "unobtainium"));
 
         // Create
         registerItemWithUncheckedTexture(EntryModule.BEDROCK_CR_ZINC_ORE.core(), getItemTextureName("create", "raw_zinc"));

@@ -17,7 +17,9 @@ import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.feature.PlacedFeature;
 import net.minecraft.world.gen.placementmodifier.*;
 import no.dadobug.configs.DimensionType;
-import no.dadobug.configs.OreGenConfig;
+import no.dadobug.worldgen.BedrockOreFeatureConfig;
+import no.dadobug.worldgen.BedrockOreGenerator;
+import no.dadobug.worldgen.OreGenConfig;
 import no.dadobug.configs.OreType;
 
 import java.util.HashSet;
@@ -30,7 +32,7 @@ public class OreGen {
     private String id;
 
     public OreGen GenBottom(RuleTest replaced, int size, int chance, BlockState ore, String id){
-        this.Ore = Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(EntryModule.modid, id), new ConfiguredFeature<>(Feature.ORE,new OreFeatureConfig(replaced, ore, size)));
+        this.Ore = Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(EntryModule.modid, id), new ConfiguredFeature<>(EntryModule.BEDROCK_ORE_GENERATOR.get(),new BedrockOreFeatureConfig(replaced, ore, size, 1, true)));
         this.PlacedOre = Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(EntryModule.modid, id), new PlacedFeature(RegistryEntry.of(this.Ore) , List.of(RarityFilterPlacementModifier.of(chance), SquarePlacementModifier.of(), HeightRangePlacementModifier.uniform(YOffset.aboveBottom(0), YOffset.aboveBottom(5)), BiomePlacementModifier.of())));
         this.id = id;
 
@@ -38,7 +40,7 @@ public class OreGen {
     }
 
     public OreGen GenTop(RuleTest replaced, int size, int chance, BlockState ore, String id){
-        this.Ore = Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(EntryModule.modid, id), new ConfiguredFeature<>(Feature.ORE,new OreFeatureConfig(replaced, ore, size)));
+        this.Ore = Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(EntryModule.modid, id), new ConfiguredFeature<>(EntryModule.BEDROCK_ORE_GENERATOR.get(),new BedrockOreFeatureConfig(replaced, ore, size, 1, false)));
         this.PlacedOre = Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(EntryModule.modid, id), new PlacedFeature(RegistryEntry.of(this.Ore) , List.of(RarityFilterPlacementModifier.of(chance), SquarePlacementModifier.of(), HeightRangePlacementModifier.uniform(YOffset.belowTop(0), YOffset.belowTop(5)), BiomePlacementModifier.of())));
         this.id = id;
 

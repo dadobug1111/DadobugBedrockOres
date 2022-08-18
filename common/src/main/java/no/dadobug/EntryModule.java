@@ -1,8 +1,6 @@
 package no.dadobug;
 
 
-import com.google.gson.JsonObject;
-import dev.architectury.core.AbstractRecipeSerializer;
 import dev.architectury.platform.Platform;
 import dev.architectury.registry.CreativeTabRegistry;
 import dev.architectury.registry.client.rendering.ColorHandlerRegistry;
@@ -15,35 +13,32 @@ import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.render.RenderLayer;
-import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.*;
 import net.minecraft.loot.condition.LootConditionType;
-import net.minecraft.recipe.Recipe;
-import net.minecraft.recipe.RecipeSerializer;
-import net.minecraft.recipe.ShapedRecipe;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.tag.TagKey;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.collection.DefaultedList;
-import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.FeatureConfig;
 import no.dadobug.blocks.HollowBedrock;
-import no.dadobug.blocks.RegenerativeBlock;
 import no.dadobug.blocks.RegenerativeBlockEntity;
 import no.dadobug.configs.BlockConfigLambda;
 import no.dadobug.configs.BlocksConfig;
 import no.dadobug.configs.EnchantmentsConfig;
-import no.dadobug.configs.OreGenConfig;
+import no.dadobug.worldgen.BedrockOreFeatureConfig;
+import no.dadobug.worldgen.BedrockOreGenerator;
+import no.dadobug.worldgen.OreGenConfig;
 import no.dadobug.enchantments.*;
-import org.checkerframework.checker.units.qual.A;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 @SuppressWarnings("unused")
@@ -114,6 +109,7 @@ public class EntryModule {
 
 
     public static final DeferredRegister<Block> REGENERATIVE_BLOCKS = DeferredRegister.create(modid, Registry.BLOCK_KEY);
+    public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(modid, Registry.FEATURE_KEY);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(modid, Registry.ITEM_KEY);
     //public static final DeferredRegister<RecipeSerializer<?>> RECIPES = DeferredRegister.create(modid, Registry.RECIPE_SERIALIZER_KEY)
     //public static final ShapedRecipeJsonBuilder builder = new ShapedRecipeJsonBuilder(Items.ACACIA_BOAT, 2);
@@ -131,6 +127,7 @@ public class EntryModule {
     });
 
 
+    public static final RegistrySupplier<Feature<BedrockOreFeatureConfig>> BEDROCK_ORE_GENERATOR = FEATURES.register("bedrock_ore_generator",() -> new BedrockOreGenerator(BedrockOreFeatureConfig.CODEC));
 
 
     public static final BedrockStack BEDROCK_FRACTURED = BedrockStack.BedrockStackAlteredBedrock("fractured", CONFIG.BEDROCK_FRACTURED, vanillaItemSettings, DynamicBlockSettings, false, FRACTURED_TOOLTIP);
@@ -281,6 +278,7 @@ public class EntryModule {
         REGENERATIVE_BLOCKS.register();
         ITEMS.register();
         BLOCK_ENTITY_TYPES.register();
+        FEATURES.register();
     }
 
     public static void initLate(boolean isClient) {
