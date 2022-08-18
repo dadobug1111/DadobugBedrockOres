@@ -33,7 +33,7 @@ public class OreGen {
 
     public OreGen GenBottom(RuleTest replaced, int size, int chance, BlockState ore, String id){
         this.Ore = Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(EntryModule.modid, id), new ConfiguredFeature<>(EntryModule.BEDROCK_ORE_GENERATOR.get(),new BedrockOreFeatureConfig(replaced, ore, size, 1, true)));
-        this.PlacedOre = Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(EntryModule.modid, id), new PlacedFeature(RegistryEntry.of(this.Ore) , List.of(RarityFilterPlacementModifier.of(chance), SquarePlacementModifier.of(), HeightRangePlacementModifier.uniform(YOffset.aboveBottom(0), YOffset.aboveBottom(5)), BiomePlacementModifier.of())));
+        this.PlacedOre = Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(EntryModule.modid, id), new PlacedFeature(RegistryEntry.of(this.Ore) , List.of(RarityFilterPlacementModifier.of(chance), SquarePlacementModifier.of(), HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.getBottom()), BiomePlacementModifier.of())));
         this.id = id;
 
         return this;
@@ -41,7 +41,7 @@ public class OreGen {
 
     public OreGen GenTop(RuleTest replaced, int size, int chance, BlockState ore, String id){
         this.Ore = Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(EntryModule.modid, id), new ConfiguredFeature<>(EntryModule.BEDROCK_ORE_GENERATOR.get(),new BedrockOreFeatureConfig(replaced, ore, size, 1, false)));
-        this.PlacedOre = Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(EntryModule.modid, id), new PlacedFeature(RegistryEntry.of(this.Ore) , List.of(RarityFilterPlacementModifier.of(chance), SquarePlacementModifier.of(), HeightRangePlacementModifier.uniform(YOffset.belowTop(0), YOffset.belowTop(5)), BiomePlacementModifier.of())));
+        this.PlacedOre = Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(EntryModule.modid, id), new PlacedFeature(RegistryEntry.of(this.Ore) , List.of(RarityFilterPlacementModifier.of(chance), SquarePlacementModifier.of(), HeightRangePlacementModifier.uniform(YOffset.getTop(), YOffset.getTop()), BiomePlacementModifier.of())));
         this.id = id;
 
         return this;
