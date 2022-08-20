@@ -148,7 +148,7 @@ public class RegenerativeBlockEntity extends BlockEntity {
                 return false;
             } else if(((RegenerativeBlock) this.keepstate.getBlock()).isSilk_able() && (EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, this.lastItem) > 0)){
                 return false;
-            } else if(newState != this.keepstate && this.durability >0){
+            } else if(newState != this.keepstate && (this.durability >0 || ((RegenerativeBlock) this.keepstate.getBlock()).isInfinite())){
                 EntryModule.LOGGER.debug("put it back");
                 worldIn.setBlockState(this.pos, this.keepstate);
                 if (!this.stacksDropped && !this.regenComplete) {
