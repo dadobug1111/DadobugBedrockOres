@@ -25,7 +25,7 @@ public class Propagator {
         ArrayList<BlockPos> possibleChoices = new ArrayList<>();
         boolean LoopSuccess = false;
         for(byte i = 0; i < 6; i++) {
-            Direction direction = Direction.byId(0);
+            Direction direction = Direction.byId(i);
             if(targets.stream().anyMatch((target) -> target.getLeft().test(world.getBlockState(pos.offset(direction)), random))){
                 possibleChoices.add(pos.offset(direction));
                 LoopSuccess = true;

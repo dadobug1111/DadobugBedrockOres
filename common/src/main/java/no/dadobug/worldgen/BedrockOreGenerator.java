@@ -82,7 +82,7 @@ public class BedrockOreGenerator extends Feature<BedrockOreFeatureConfig> {
         int size = random.nextInt(config.minSize, config.maxSize) - 1;
         byte propagatorsRemaining = 5;
         for(byte i = 0; i < size && propagatorsRemaining > 0;) {
-            for(byte j = 0;j < propagators.length; j++){
+            for(byte j = 0;j < propagators.length && i < size; j++){
                 Propagator p = propagators[j];
                 if(!propsDead[j]) {
                     if (p.propagate((ChunkRegion) world, random, targetsArrayList)) {
