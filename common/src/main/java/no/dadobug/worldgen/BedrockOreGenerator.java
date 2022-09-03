@@ -77,10 +77,14 @@ public class BedrockOreGenerator extends Feature<BedrockOreFeatureConfig> {
 
 
         //propagate through all remaining ores
-        Propagator[] propagators = new Propagator[]{new Propagator(newOrigin), new Propagator(newOrigin), new Propagator(newOrigin), new Propagator(newOrigin), new Propagator(newOrigin)};
-        boolean[] propsDead = new boolean[]{false, false, false, false, false};
+        Propagator[] propagators = new Propagator[config.propagatorCount];
+        boolean[] propsDead = new boolean[config.propagatorCount];
         int size = random.nextInt(config.minSize, config.maxSize) - 1;
-        byte propagatorsRemaining = 5;
+        byte propagatorsRemaining = config.propagatorCount;
+        for(byte i = 0; i < config.propagatorCount; i++){
+            propagators[i] = new Propagator(newOrigin);
+            propsDead[i] = false;
+        }
         for(byte i = 0; i < size && propagatorsRemaining > 0;) {
             for(byte j = 0;j < propagators.length && i < size; j++){
                 Propagator p = propagators[j];

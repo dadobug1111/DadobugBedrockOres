@@ -24,6 +24,8 @@ public class BedrockOreFeatureConfig implements FeatureConfig {
             return config.isBottomOfWorld;
         }), Codec.BYTE.fieldOf("max_distance_from_origin").forGetter((config) -> {
             return config.maxDistanceFromOrigin;
+        }), Codec.BYTE.fieldOf("propagator_count").forGetter((config) -> {
+            return config.propagatorCount;
         })).apply(instance, BedrockOreFeatureConfig::new);
     });
     public final List<BedrockOreFeatureConfig.Target> targets;
@@ -32,30 +34,36 @@ public class BedrockOreFeatureConfig implements FeatureConfig {
     public final float discardOnAirChance;
     public final boolean isBottomOfWorld;
     public final byte maxDistanceFromOrigin;
+    public final byte propagatorCount;
 
-    public BedrockOreFeatureConfig(List<BedrockOreFeatureConfig.Target> targets, int maxSize, int minSize, float discardOnAirChance, boolean isBottomOfWorld, byte maxDistanceFromOrigin) {
+    public BedrockOreFeatureConfig(List<BedrockOreFeatureConfig.Target> targets, int maxSize, int minSize, float discardOnAirChance, boolean isBottomOfWorld, byte maxDistanceFromOrigin, byte propagatorCount) {
         this.maxSize = maxSize;
         this.minSize = minSize;
         this.targets = targets;
         this.discardOnAirChance = discardOnAirChance;
         this.isBottomOfWorld = isBottomOfWorld;
         this.maxDistanceFromOrigin = maxDistanceFromOrigin;
+        this.propagatorCount = propagatorCount;
     }
 
-    public BedrockOreFeatureConfig(List<BedrockOreFeatureConfig.Target> targets, int maxSize, int minSize, boolean isBottomOfWorld, byte maxDistanceFromOrigin) {
-        this(targets, maxSize, minSize, 0.0F, isBottomOfWorld, maxDistanceFromOrigin);
+    public BedrockOreFeatureConfig(List<BedrockOreFeatureConfig.Target> targets, int maxSize, int minSize, boolean isBottomOfWorld, byte maxDistanceFromOrigin, byte propagatorCount) {
+        this(targets, maxSize, minSize, 0.0F, isBottomOfWorld, maxDistanceFromOrigin, propagatorCount);
     }
 
-    public BedrockOreFeatureConfig(RuleTest test, BlockState state, int maxSize, int minSize, float discardOnAirChance, boolean isBottomOfWorld, byte maxDistanceFromOrigin) {
-        this(ImmutableList.of(new BedrockOreFeatureConfig.Target(test, state)), maxSize, minSize, discardOnAirChance, isBottomOfWorld, maxDistanceFromOrigin);
+    public BedrockOreFeatureConfig(RuleTest test, BlockState state, int maxSize, int minSize, float discardOnAirChance, boolean isBottomOfWorld, byte maxDistanceFromOrigin, byte propagatorCount) {
+        this(ImmutableList.of(new BedrockOreFeatureConfig.Target(test, state)), maxSize, minSize, discardOnAirChance, isBottomOfWorld, maxDistanceFromOrigin, propagatorCount);
     }
 
-    public BedrockOreFeatureConfig(RuleTest test, BlockState state, int maxSize, int minSize, boolean isBottomOfWorld, byte maxDistanceFromOrigin) {
-        this(ImmutableList.of(new BedrockOreFeatureConfig.Target(test, state)), maxSize, minSize, 0.0F, isBottomOfWorld, maxDistanceFromOrigin);
+    public BedrockOreFeatureConfig(RuleTest test, BlockState state, int maxSize, int minSize, boolean isBottomOfWorld, byte maxDistanceFromOrigin, byte propagatorCount) {
+        this(ImmutableList.of(new BedrockOreFeatureConfig.Target(test, state)), maxSize, minSize, 0.0F, isBottomOfWorld, maxDistanceFromOrigin, propagatorCount);
+    }
+
+    public BedrockOreFeatureConfig(RuleTest test, BlockState state, int maxSize, int minSize, boolean isBottomOfWorld, byte propagatorCount) {
+        this(ImmutableList.of(new BedrockOreFeatureConfig.Target(test, state)), maxSize, minSize, 0.0F, isBottomOfWorld, (byte)3, propagatorCount);
     }
 
     public BedrockOreFeatureConfig(RuleTest test, BlockState state, int maxSize, int minSize, boolean isBottomOfWorld) {
-        this(ImmutableList.of(new BedrockOreFeatureConfig.Target(test, state)), maxSize, minSize, 0.0F, isBottomOfWorld, (byte)3);
+        this(ImmutableList.of(new BedrockOreFeatureConfig.Target(test, state)), maxSize, minSize, 0.0F, isBottomOfWorld, (byte)3, (byte)5);
     }
 
 
