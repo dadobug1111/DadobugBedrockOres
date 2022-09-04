@@ -139,6 +139,17 @@ public class ItemModelsGen extends CustomItemModelProvider{
         registerBlockItem(EntryModule.BEDROCK_MA_BRILLIANCE_ORE.oreItem());
         registerBlockItem(EntryModule.BEDROCK_MA_BLAZING_QUARTZ_ORE.oreItem());
 
+        // Thermal
+        registerBlockItem(EntryModule.BEDROCK_TH_NITER_ORE.oreItem());
+        registerBlockItem(EntryModule.BEDROCK_TH_SULFUR_ORE.oreItem());
+        registerBlockItem(EntryModule.BEDROCK_TH_TIN_ORE.oreItem());
+        registerBlockItem(EntryModule.BEDROCK_TH_LEAD_ORE.oreItem());
+        registerBlockItem(EntryModule.BEDROCK_TH_SILVER_ORE.oreItem());
+        registerBlockItem(EntryModule.BEDROCK_TH_NICKEL_ORE.oreItem());
+        registerBlockItem(EntryModule.BEDROCK_TH_APATITE_ORE.oreItem());
+        registerBlockItem(EntryModule.BEDROCK_TH_CINNABAR_ORE.oreItem());
+        registerBlockItem(EntryModule.BEDROCK_TH_OIL_ORE.oreItem());
+
         // Vanilla
         registerItemWithUncheckedTexture(EntryModule.BEDROCK_FRACTURED.core(), getItemTextureName(EntryModule.BEDROCK_FRACTURED.core().getId()));
         registerItemWithUncheckedTexture(EntryModule.XP_LEAK.core(), getItemTextureName(EntryModule.XP_LEAK.core().getId()));
@@ -256,6 +267,17 @@ public class ItemModelsGen extends CustomItemModelProvider{
         registerItemWithUncheckedTexture(EntryModule.BEDROCK_MA_SOULSTONE_ORE.core(), getItemTextureName("malum", "raw_soulstone"));
         registerItemWithUncheckedTexture(EntryModule.BEDROCK_MA_BRILLIANCE_ORE.core(), getItemTextureName("malum", "cluster_of_brilliance"));
         registerItemWithUncheckedTexture(EntryModule.BEDROCK_MA_BLAZING_QUARTZ_ORE.core(), getItemTextureName("malum", "blazing_quartz"));
+
+        // Thermal
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_TH_NITER_ORE.core(), getItemTextureName("thermal", "niter"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_TH_SULFUR_ORE.core(), getItemTextureName("thermal", "sulfur"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_TH_TIN_ORE.core(), getItemTextureName("thermal", "raw_tin"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_TH_LEAD_ORE.core(), getItemTextureName("thermal", "raw_lead"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_TH_SILVER_ORE.core(), getItemTextureName("thermal", "raw_silver"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_TH_NICKEL_ORE.core(), getItemTextureName("thermal", "raw_nickel"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_TH_APATITE_ORE.core(), getItemTextureName("thermal", "apatite"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_TH_CINNABAR_ORE.core(), getItemTextureName("thermal", "cinnabar"));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_TH_OIL_ORE.core(), getItemTextureName("thermal", "bitumen"));
     }
 
     private void registerBlockItem(RegistrySupplier<Item> itemSupplier) {

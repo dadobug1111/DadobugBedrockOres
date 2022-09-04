@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "dadobugbedrockores:block/bedrock_th_lead_ore"
+  }
+}

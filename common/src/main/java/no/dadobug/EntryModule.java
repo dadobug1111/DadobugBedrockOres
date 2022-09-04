@@ -48,6 +48,9 @@ public class EntryModule {
     public static final EnchantmentsConfig ENCHANT_CONFIG = AutoConfig.register(EnchantmentsConfig.class, GsonConfigSerializer::new).getConfig();
     public static final Logger LOGGER = LoggerFactory.getLogger(modid);
 
+
+    public static String newLine = System.lineSeparator();
+
     // We can use this if we don't want to use DeferredRegister
     //public static final Supplier<Registries> REGISTRIES = Suppliers.memoize(() -> Registries.get(MOD_ID));
     // Registering a new creative tab
@@ -76,6 +79,7 @@ public class EntryModule {
     public static final BlockConfigLambda<Item.Settings> beyondEarthItemSettings = (cfg) -> {if(Platform.isModLoaded("beyond_earth") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
     public static final BlockConfigLambda<Item.Settings> ftbIndustrialContraptionsItemSettings = (cfg) -> {if(Platform.isModLoaded("ftbic") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
     public static final BlockConfigLambda<Item.Settings> malumItemSettings = (cfg) -> {if(Platform.isModLoaded("malum") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
+    public static final BlockConfigLambda<Item.Settings> thermalItemSettings = (cfg) -> {if(Platform.isModLoaded("thermal") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
 
 
     public static TagKey<Block> REGEN_TAG = TagKey.of(Registry.BLOCK_KEY, new Identifier("dadobugbedrockores", "regenerative_block"));
@@ -260,6 +264,7 @@ public class EntryModule {
     public static final BedrockStack BEDROCK_BE_OSTRUM_ORE = BedrockStack.BedrockStackStandardOre("be_ostrum", CONFIG.BEDROCK_BE_OSTRUM_ORE, beyondEarthItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
     public static final BedrockStack BEDROCK_BE_CALORITE_ORE = BedrockStack.BedrockStackStandardOre("be_calorite", CONFIG.BEDROCK_BE_CALORITE_ORE, beyondEarthItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
 
+
     //ftb industrial contraptions
     public static final BedrockStack BEDROCK_IC_TIN_ORE = BedrockStack.BedrockStackStandardOre("ic_tin", CONFIG.BEDROCK_IC_TIN_ORE, ftbIndustrialContraptionsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
     public static final BedrockStack BEDROCK_IC_LEAD_ORE = BedrockStack.BedrockStackStandardOre("ic_lead", CONFIG.BEDROCK_IC_LEAD_ORE, ftbIndustrialContraptionsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
@@ -267,10 +272,27 @@ public class EntryModule {
     public static final BedrockStack BEDROCK_IC_IRIDIUM_ORE = BedrockStack.BedrockStackStandardOre("ic_iridium", CONFIG.BEDROCK_IC_IRIDIUM_ORE, ftbIndustrialContraptionsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
     public static final BedrockStack BEDROCK_IC_URANIUM_ORE = BedrockStack.BedrockStackStandardOre("ic_uranium", CONFIG.BEDROCK_IC_URANIUM_ORE, ftbIndustrialContraptionsItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
 
+
     //malum
     public static final BedrockStack BEDROCK_MA_SOULSTONE_ORE = BedrockStack.BedrockStackStandardOre("ma_soulstone", CONFIG.BEDROCK_MA_SOULSTONE_ORE, malumItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
     public static final BedrockStack BEDROCK_MA_BRILLIANCE_ORE = BedrockStack.BedrockStackStandardOre("ma_brilliance", CONFIG.BEDROCK_MA_BRILLIANCE_ORE, malumItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
     public static final BedrockStack BEDROCK_MA_BLAZING_QUARTZ_ORE = BedrockStack.BedrockStackStandardOre("ma_blazing_quartz", CONFIG.BEDROCK_MA_BLAZING_QUARTZ_ORE, malumItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+
+
+    //thermal
+    public static final BedrockStack BEDROCK_TH_NITER_ORE = BedrockStack.BedrockStackStandardOre("th_niter", CONFIG.BEDROCK_TH_NITER_ORE, thermalItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_TH_SULFUR_ORE = BedrockStack.BedrockStackStandardOre("th_sulfur", CONFIG.BEDROCK_TH_SULFUR_ORE, thermalItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_TH_TIN_ORE = BedrockStack.BedrockStackStandardOre("th_tin", CONFIG.BEDROCK_TH_TIN_ORE, thermalItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_TH_LEAD_ORE = BedrockStack.BedrockStackStandardOre("th_lead", CONFIG.BEDROCK_TH_LEAD_ORE, thermalItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_TH_SILVER_ORE = BedrockStack.BedrockStackStandardOre("th_silver", CONFIG.BEDROCK_TH_SILVER_ORE, thermalItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_TH_NICKEL_ORE = BedrockStack.BedrockStackStandardOre("th_nickel", CONFIG.BEDROCK_TH_NICKEL_ORE, thermalItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_TH_APATITE_ORE = BedrockStack.BedrockStackStandardOre("th_apatite", CONFIG.BEDROCK_TH_APATITE_ORE, thermalItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_TH_CINNABAR_ORE = BedrockStack.BedrockStackStandardOre("th_cinnabar", CONFIG.BEDROCK_TH_CINNABAR_ORE, thermalItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+    public static final BedrockStack BEDROCK_TH_OIL_ORE = BedrockStack.BedrockStackStandardOre("th_oil", CONFIG.BEDROCK_TH_OIL_ORE, thermalItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+
+
+
+
     public static LootConditionType MOD_LOOT_CONDITION_TYPE;
 
     public static void init() {

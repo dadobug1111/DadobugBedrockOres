@@ -167,7 +167,18 @@ public class BlockTagsGen extends BlockTagProvider {
         // Malum
         .add(EntryModule.BEDROCK_MA_SOULSTONE_ORE.ore().get())
         .add(EntryModule.BEDROCK_MA_BRILLIANCE_ORE.ore().get())
-        .add(EntryModule.BEDROCK_MA_BLAZING_QUARTZ_ORE.ore().get());
+        .add(EntryModule.BEDROCK_MA_BLAZING_QUARTZ_ORE.ore().get())
+
+        // Thermal
+        .add(EntryModule.BEDROCK_TH_NITER_ORE.ore().get())
+        .add(EntryModule.BEDROCK_TH_SULFUR_ORE.ore().get())
+        .add(EntryModule.BEDROCK_TH_TIN_ORE.ore().get())
+        .add(EntryModule.BEDROCK_TH_LEAD_ORE.ore().get())
+        .add(EntryModule.BEDROCK_TH_SILVER_ORE.ore().get())
+        .add(EntryModule.BEDROCK_TH_NICKEL_ORE.ore().get())
+        .add(EntryModule.BEDROCK_TH_APATITE_ORE.ore().get())
+        .add(EntryModule.BEDROCK_TH_CINNABAR_ORE.ore().get())
+        .add(EntryModule.BEDROCK_TH_OIL_ORE.ore().get());
     }
 
     @Override

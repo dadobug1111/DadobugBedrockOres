@@ -96,7 +96,11 @@ public enum OreType {
     // Malum
     SOULSTONE("Soulstone"),
     BLAZING_QUARTZ("Blazing Quartz"),
-    BRILLIANCE("Brilliance");
+    BRILLIANCE("Brilliance"),
+    NITER("Niter"),
+    SULFUR("Sulfur"),
+    APATITE("Apatite"),
+    OIL("Oil");
 
     // Copied this from Mekanism ores but don't actually use it
     public final String key;

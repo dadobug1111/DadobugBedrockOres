@@ -11,7 +11,7 @@ authors = [
     "Dadobug1111 - Owner/Creator",
     "Ironcanon - Contributor"
 ]
-description = "Adds Bedrock ores into the game, giving slow, but unlimited resources."
+description = """Adds Bedrock ores into the game, giving slow, but unlimited resources.\n\nAssets used from the following mods to add associated bedrock ores:\nTech Reborn - Team Reborn\nTinkers Construct - Slime Knights\nApplied Energistics 2 - Team Applied Energistics\nExtreme Reactors - ZeroNoRyouki / Erogenous Beef\nBigger Reactors - BiggerSeries / Erogenous Beef\nImmersive Engineering - BluSunrize\nMythic Metals - Noaaan\nCreate - Creators of Create\nMekanism - Mekanism\nUndergarden - quek04\nBeyond Earth - MrScautHD\nFTB Industrial Contraptions - Feed The Beast\nMalum - SammySemicolon\nThermal Series - TeamCoFH"""
 logoFile = "bedrock_diamond_ore_big.png"
 
 [[dependencies.dadobugbedrockores]]

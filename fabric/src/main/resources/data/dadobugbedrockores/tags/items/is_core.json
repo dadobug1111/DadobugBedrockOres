@@ -88,6 +88,15 @@
     "dadobugbedrockores:regenerative_ic_uranium",
     "dadobugbedrockores:regenerative_ma_soulstone",
     "dadobugbedrockores:regenerative_ma_brilliance",
-    "dadobugbedrockores:regenerative_ma_blazing_quartz"
+    "dadobugbedrockores:regenerative_ma_blazing_quartz",
+    "dadobugbedrockores:regenerative_th_niter",
+    "dadobugbedrockores:regenerative_th_sulfur",
+    "dadobugbedrockores:regenerative_th_tin",
+    "dadobugbedrockores:regenerative_th_lead",
+    "dadobugbedrockores:regenerative_th_silver",
+    "dadobugbedrockores:regenerative_th_nickel",
+    "dadobugbedrockores:regenerative_th_apatite",
+    "dadobugbedrockores:regenerative_th_cinnabar",
+    "dadobugbedrockores:regenerative_th_oil"
   ]
 }

@@ -136,5 +136,16 @@ public class LootTableGen extends BaseBedrockLootTableGen{
         createBedrockOreTable("bedrock_ma_soulstone_ore", EntryModule.BEDROCK_MA_SOULSTONE_ORE, new Identifier("malum", "blocks/soulstone_ore"), new Identifier("malum", "blocks/deepslate_soulstone_ore"));
         createBedrockOreTable("bedrock_ma_brilliance_ore", EntryModule.BEDROCK_MA_BRILLIANCE_ORE, new Identifier("malum", "blocks/brilliant_stone"), new Identifier("malum", "blocks/brilliant_deepslate"));
         createBedrockOreTable("bedrock_ma_blazing_quartz_ore", EntryModule.BEDROCK_MA_BLAZING_QUARTZ_ORE, new Identifier("malum", "blocks/blazing_quartz_ore"));
+
+
+        createBedrockOreTable("bedrock_th_niter_ore", EntryModule.BEDROCK_TH_NITER_ORE, new Identifier("thermal", "blocks/niter_ore"), new Identifier("thermal", "blocks/deepslate_niter_ore"));
+        createBedrockOreTable("bedrock_th_sulfur_ore", EntryModule.BEDROCK_TH_SULFUR_ORE, new Identifier("thermal", "blocks/sulfur_ore"), new Identifier("thermal", "blocks/deepslate_sulfur_ore"), new Identifier("thermal", "blocks/sulfur_ore_netherrack"));
+        createBedrockOreTable("bedrock_th_tin_ore", EntryModule.BEDROCK_TH_TIN_ORE, new Identifier("thermal", "blocks/tin_ore"), new Identifier("thermal", "blocks/deepslate_tin_ore"));
+        createBedrockOreTable("bedrock_th_lead_ore", EntryModule.BEDROCK_TH_LEAD_ORE, new Identifier("thermal", "blocks/lead_ore"), new Identifier("thermal", "blocks/deepslate_lead_ore"));
+        createBedrockOreTable("bedrock_th_silver_ore", EntryModule.BEDROCK_TH_SILVER_ORE, new Identifier("thermal", "blocks/silver_ore"), new Identifier("thermal", "blocks/deepslate_silver_ore"));
+        createBedrockOreTable("bedrock_th_nickel_ore", EntryModule.BEDROCK_TH_NICKEL_ORE, new Identifier("thermal", "blocks/nickel_ore"), new Identifier("thermal", "blocks/deepslate_nickel_ore"));
+        createBedrockOreTable("bedrock_th_apatite_ore", EntryModule.BEDROCK_TH_APATITE_ORE, new Identifier("thermal", "blocks/apatite_ore"), new Identifier("thermal", "blocks/deepslate_apatite_ore"));
+        createBedrockOreTable("bedrock_th_cinnabar_ore", EntryModule.BEDROCK_TH_CINNABAR_ORE, new Identifier("thermal", "blocks/cinnabar_ore"), new Identifier("thermal", "blocks/deepslate_cinnabar_ore"));
+        createBedrockOreTable("bedrock_th_oil_ore", EntryModule.BEDROCK_TH_OIL_ORE, new Identifier("thermal", "blocks/oil_sand"), new Identifier("thermal", "blocks/oil_red_sand"));
     }
 }

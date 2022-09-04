@@ -303,4 +303,33 @@ public class BlocksConfig implements ConfigData {
     @ConfigEntry.Category("malum")
     @ConfigEntry.Gui.CollapsibleObject()
     public BlockConfig BEDROCK_MA_BLAZING_QUARTZ_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+
+
+    @ConfigEntry.Category("thermal")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_TH_NITER_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 2);
+    @ConfigEntry.Category("thermal")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_TH_SULFUR_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 2);
+    @ConfigEntry.Category("thermal")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_TH_TIN_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+    @ConfigEntry.Category("thermal")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_TH_LEAD_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+    @ConfigEntry.Category("thermal")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_TH_SILVER_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+    @ConfigEntry.Category("thermal")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_TH_NICKEL_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+    @ConfigEntry.Category("thermal")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_TH_APATITE_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 2);
+    @ConfigEntry.Category("thermal")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_TH_CINNABAR_ORE = new BlockConfig(true, 50f, 0.5f, 0, 1, 3);
+    @ConfigEntry.Category("thermal")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_TH_OIL_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
 }

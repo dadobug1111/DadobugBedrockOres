@@ -89,6 +89,15 @@
     "dadobugbedrockores:bedrock_ic_uranium_ore",
     "dadobugbedrockores:bedrock_ma_soulstone_ore",
     "dadobugbedrockores:bedrock_ma_brilliance_ore",
-    "dadobugbedrockores:bedrock_ma_blazing_quartz_ore"
+    "dadobugbedrockores:bedrock_ma_blazing_quartz_ore",
+    "dadobugbedrockores:bedrock_th_niter_ore",
+    "dadobugbedrockores:bedrock_th_sulfur_ore",
+    "dadobugbedrockores:bedrock_th_tin_ore",
+    "dadobugbedrockores:bedrock_th_lead_ore",
+    "dadobugbedrockores:bedrock_th_silver_ore",
+    "dadobugbedrockores:bedrock_th_nickel_ore",
+    "dadobugbedrockores:bedrock_th_apatite_ore",
+    "dadobugbedrockores:bedrock_th_cinnabar_ore",
+    "dadobugbedrockores:bedrock_th_oil_ore"
   ]
 }

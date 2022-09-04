@@ -140,6 +140,17 @@ public class LanguageGen extends LanguageProvider{
         addBlock(EntryModule.BEDROCK_MA_SOULSTONE_ORE.ore(), "Bedrock Soulstone Ore");
         addBlock(EntryModule.BEDROCK_MA_BRILLIANCE_ORE.ore(), "Bedrock Brilliance Ore");
         addBlock(EntryModule.BEDROCK_MA_BLAZING_QUARTZ_ORE.ore(), "Bedrock Blazin Quartz Ore");
+
+        // Thermal
+        addBlock(EntryModule.BEDROCK_TH_NITER_ORE.ore(), "Bedrock Niter Ore");
+        addBlock(EntryModule.BEDROCK_TH_SULFUR_ORE.ore(), "Bedrock Sulfur Ore");
+        addBlock(EntryModule.BEDROCK_TH_TIN_ORE.ore(), "Bedrock Tin Ore");
+        addBlock(EntryModule.BEDROCK_TH_LEAD_ORE.ore(), "Bedrock Lead Ore");
+        addBlock(EntryModule.BEDROCK_TH_SILVER_ORE.ore(), "Bedrock Silver Ore");
+        addBlock(EntryModule.BEDROCK_TH_NICKEL_ORE.ore(), "Bedrock Nickel Ore");
+        addBlock(EntryModule.BEDROCK_TH_APATITE_ORE.ore(), "Bedrock Apatite Ore");
+        addBlock(EntryModule.BEDROCK_TH_CINNABAR_ORE.ore(), "Bedrock Cinnabar Ore");
+        addBlock(EntryModule.BEDROCK_TH_OIL_ORE.ore(), "Bituminous Bedrock");
     }
 
     private void addBlockItemTranslations() {
@@ -260,6 +271,17 @@ public class LanguageGen extends LanguageProvider{
         addItem(EntryModule.BEDROCK_MA_SOULSTONE_ORE.core(), "Regenerative Soulstone Cluster");
         addItem(EntryModule.BEDROCK_MA_BRILLIANCE_ORE.core(), "Regenerative Brilliance Cluster");
         addItem(EntryModule.BEDROCK_MA_BLAZING_QUARTZ_ORE.core(), "Regenerative Blazin Quartz Cluster");
+
+        // Thermal
+        addItem(EntryModule.BEDROCK_TH_NITER_ORE.core(), "Regenerative Niter Cluster");
+        addItem(EntryModule.BEDROCK_TH_SULFUR_ORE.core(), "Regenerative Sulfur Cluster");
+        addItem(EntryModule.BEDROCK_TH_TIN_ORE.core(), "Regenerative Tin Cluster");
+        addItem(EntryModule.BEDROCK_TH_LEAD_ORE.core(), "Regenerative Lead Cluster");
+        addItem(EntryModule.BEDROCK_TH_SILVER_ORE.core(), "Regenerative Silver Cluster");
+        addItem(EntryModule.BEDROCK_TH_NICKEL_ORE.core(), "Regenerative Nickel Cluster");
+        addItem(EntryModule.BEDROCK_TH_APATITE_ORE.core(), "Regenerative Apatite Cluster");
+        addItem(EntryModule.BEDROCK_TH_CINNABAR_ORE.core(), "Regenerative Cinnabar Cluster");
+        addItem(EntryModule.BEDROCK_TH_OIL_ORE.core(), "Regenerative Bitumen Cluster");
     }
 
     private void addTooltipTranslations() {

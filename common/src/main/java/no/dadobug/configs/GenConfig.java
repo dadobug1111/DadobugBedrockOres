@@ -385,4 +385,33 @@ public class GenConfig implements ConfigData {
     @ConfigEntry.Category("malum_nether")
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_MA_BLAZING_QUARTZ_NETHER = new OreConfig(true, 8, 2);
+
+
+    @ConfigEntry.Category("thermal_overworld")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_TH_NITER_OVERWORLD = new OreConfig(true, 7, 9);
+    @ConfigEntry.Category("thermal_overworld")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_TH_SULFUR_OVERWORLD = new OreConfig(true, 7, 9);
+    @ConfigEntry.Category("thermal_overworld")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_TH_TIN_OVERWORLD = new OreConfig(true, 9, 3);
+    @ConfigEntry.Category("thermal_overworld")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_TH_LEAD_OVERWORLD = new OreConfig(true, 8, 3);
+    @ConfigEntry.Category("thermal_overworld")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_TH_SILVER_OVERWORLD = new OreConfig(true, 8, 6);
+    @ConfigEntry.Category("thermal_overworld")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_TH_NICKEL_OVERWORLD = new OreConfig(true, 8, 6);
+    @ConfigEntry.Category("thermal_overworld")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_TH_APATITE_OVERWORLD = new OreConfig(true, 9, 6);
+    @ConfigEntry.Category("thermal_overworld")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_TH_CINNABAR_OVERWORLD = new OreConfig(true, 5, 13);
+    @ConfigEntry.Category("thermal_overworld")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_TH_OIL_OVERWORLD = new OreConfig(true, 24, 9);
 }
