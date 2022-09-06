@@ -7,6 +7,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
+import net.minecraft.data.server.BlockLootTableGenerator;
+import net.minecraft.enchantment.Enchantments;
+import net.minecraft.item.Items;
+import net.minecraft.loot.function.ApplyBonusLootFunction;
+import net.minecraft.loot.function.SetCountLootFunction;
+import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import no.dadobug.ModLoadedLootCondition;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -179,6 +185,43 @@ public abstract class BaseBedrockLootTableGen extends LootTableProvider{
      */
     protected void createHollowBedrockTable(String tableName, Block hollowBedrock, Item hollowBedrockItem) {
         lootTables.put(hollowBedrock, LootTable.builder().pool(bedrockOreArcaneExtractionLootPool(tableName, hollowBedrockItem)));
+    }
+
+    /*
+     * Creates and stores a loot table for the drops of the hollow bedrock block
+     */
+    protected void createCookieBedrockTable(String tableName, BedrockStack bedrock) {
+        LootPool.Builder extractionLoot = bedrockOreExtractionLootPool(tableName, bedrock.core().get());
+        LootPool.Builder arcaneExtractionLoot = bedrockOreArcaneExtractionLootPool(tableName, bedrock.oreItem().get());
+        LootPool.Builder cookieLoot = bedrockOreCookieLootPool(tableName);
+        lootTables.put(bedrock.ore().get(), LootTable.builder().pool(extractionLoot).pool(arcaneExtractionLoot).pool(cookieLoot));
+    }
+
+    private LootPool.Builder bedrockOreCookieLootPool(String tableName) {
+        LootPool.Builder builder = LootPool.builder()
+                .name(tableName)
+                .conditionally(
+                        InvertedLootCondition.builder(
+                                MatchToolLootCondition.builder(
+                                        ItemPredicate.Builder.create().enchantment(
+                                                new EnchantmentPredicate(EntryModule.CURSE_OF_FRACTURING.get(), IntRange.atLeast(1))))))
+                .conditionally(
+                        InvertedLootCondition.builder(
+                                MatchToolLootCondition.builder(
+                                        ItemPredicate.Builder.create().enchantment(
+                                                new EnchantmentPredicate(EntryModule.EXTRACTION.get(), IntRange.atLeast(1))))))
+                .conditionally(
+                        InvertedLootCondition.builder(
+                                MatchToolLootCondition.builder(
+                                        ItemPredicate.Builder.create().enchantment(
+                                                new EnchantmentPredicate(EntryModule.CURSE_OF_SHATTERING.get(), IntRange.atLeast(1))))))
+                .conditionally(
+                        InvertedLootCondition.builder(
+                                MatchToolLootCondition.builder(
+                                        ItemPredicate.Builder.create().enchantment(
+                                                new EnchantmentPredicate(EntryModule.ARCANE_EXTRACTION.get(), IntRange.atLeast(1))))));
+        builder.with(ItemEntry.builder(Items.COOKIE).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 4.0F))).apply(ApplyBonusLootFunction.oreDrops(Enchantments.FORTUNE)));
+        return builder;
     }
     
     @Override

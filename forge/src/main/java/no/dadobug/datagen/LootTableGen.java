@@ -19,6 +19,7 @@ public class LootTableGen extends BaseBedrockLootTableGen{
         // Vanilla
         createFracturedBedrockTable("bedrock_fractured", EntryModule.BEDROCK_FRACTURED);
         createHollowBedrockTable("bedrock_hollow", EntryModule.BEDROCK_HOLLOW.get(), EntryModule.BEDROCK_HOLLOW_ITEM.get());
+        createCookieBedrockTable("bedrock_cookie_ore", EntryModule.BEDROCK_COOKIE_ORE);
         createBedrockOreTable("bedrock_coal_ore", EntryModule.BEDROCK_COAL_ORE, Blocks.COAL_ORE.getLootTableId(), Blocks.DEEPSLATE_COAL_ORE.getLootTableId(), new Identifier("undergarden", "blocks/depthrock_coal_ore"), new Identifier("undergarden", "blocks/shiverstone_coal_ore"), new Identifier("undergarden", "blocks/venus_coal_ore"), new Identifier("undergarden", "blocks/venus_coal_ore"));
         createBedrockOreTable("bedrock_iron_ore", EntryModule.BEDROCK_IRON_ORE, Blocks.IRON_ORE.getLootTableId(), Blocks.DEEPSLATE_IRON_ORE.getLootTableId(), new Identifier("undergarden", "blocks/depthrock_iron_ore"), new Identifier("undergarden", "blocks/shiverstone_iron_ore"), new Identifier("undergarden", "blocks/moon_iron_ore"), new Identifier("undergarden", "blocks/mars_iron_ore"), new Identifier("undergarden", "blocks/mercury_iron_ore"), new Identifier("undergarden", "blocks/glacio_iron_ore"));
         createBedrockOreTable("bedrock_gold_ore", EntryModule.BEDROCK_GOLD_ORE, Blocks.GOLD_ORE.getLootTableId(), Blocks.DEEPSLATE_GOLD_ORE.getLootTableId(), new Identifier("undergarden", "blocks/depthrock_gold_ore"), new Identifier("undergarden", "blocks/venus_gold_ore"));
