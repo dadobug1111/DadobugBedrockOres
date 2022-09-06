@@ -70,7 +70,7 @@ public class RegenerativeFluid extends RegenerativeBlock implements FluidDrainab
         if (this.fluid != Fluids.EMPTY) {
             return new ItemStack(this.fluid.getBucketItem());
         }
-        return this.BucketItem;
+        return this.BucketItem.copy();
     }
 
     @Override
