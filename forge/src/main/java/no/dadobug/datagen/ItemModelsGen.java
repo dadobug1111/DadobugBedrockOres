@@ -5,6 +5,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import no.dadobug.EntryModule;
 
@@ -153,23 +154,23 @@ public class ItemModelsGen extends CustomItemModelProvider{
         // Vanilla
         registerItemWithUncheckedTexture(EntryModule.BEDROCK_FRACTURED.core(), getItemTextureName(EntryModule.BEDROCK_FRACTURED.core().getId()));
         registerItemWithUncheckedTexture(EntryModule.XP_LEAK.core(), getItemTextureName(EntryModule.XP_LEAK.core().getId()));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_COAL_ORE.core(), getItemTextureName(Items.COAL.getRegistryName()));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_IRON_ORE.core(), getItemTextureName(Items.RAW_IRON.getRegistryName()));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_GOLD_ORE.core(), getItemTextureName(Items.RAW_GOLD.getRegistryName()));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_DIAMOND_ORE.core(), getItemTextureName(Items.DIAMOND.getRegistryName()));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_REDSTONE_ORE.core(), getItemTextureName(Items.REDSTONE.getRegistryName()));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_COPPER_ORE.core(), getItemTextureName(Items.RAW_COPPER.getRegistryName()));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_LAPIS_ORE.core(), getItemTextureName(Items.LAPIS_LAZULI.getRegistryName()));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_EMERALD_ORE.core(), getItemTextureName(Items.EMERALD.getRegistryName()));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_WATER_ORE.core(), getItemTextureName(Items.WATER_BUCKET.getRegistryName()));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_LAVA_ORE.core(), getItemTextureName(Items.LAVA_BUCKET.getRegistryName()));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_NETHER_GOLD.core(), getItemTextureName(Items.GOLD_NUGGET.getRegistryName()));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_NETHER_QUARTZ.core(), getItemTextureName(Items.QUARTZ.getRegistryName()));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_ANCIENT_DEBRIS.core(), getItemTextureName(Items.NETHERITE_SCRAP.getRegistryName()));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_COAL_ORE.core(), getItemTextureName(Registry.ITEM.getId(Items.COAL)));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_IRON_ORE.core(), getItemTextureName(Registry.ITEM.getId(Items.RAW_IRON)));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_GOLD_ORE.core(), getItemTextureName(Registry.ITEM.getId(Items.RAW_GOLD)));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_DIAMOND_ORE.core(), getItemTextureName(Registry.ITEM.getId(Items.DIAMOND)));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_REDSTONE_ORE.core(), getItemTextureName(Registry.ITEM.getId(Items.REDSTONE)));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_COPPER_ORE.core(), getItemTextureName(Registry.ITEM.getId(Items.RAW_COPPER)));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_LAPIS_ORE.core(), getItemTextureName(Registry.ITEM.getId(Items.LAPIS_LAZULI)));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_EMERALD_ORE.core(), getItemTextureName(Registry.ITEM.getId(Items.EMERALD)));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_WATER_ORE.core(), getItemTextureName(Registry.ITEM.getId(Items.WATER_BUCKET)));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_LAVA_ORE.core(), getItemTextureName(Registry.ITEM.getId(Items.LAVA_BUCKET)));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_NETHER_GOLD.core(), getItemTextureName(Registry.ITEM.getId(Items.GOLD_NUGGET)));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_NETHER_QUARTZ.core(), getItemTextureName(Registry.ITEM.getId(Items.QUARTZ)));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_ANCIENT_DEBRIS.core(), getItemTextureName(Registry.ITEM.getId(Items.NETHERITE_SCRAP)));
 
         // Vanilla funny
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MILK_ORE.core(), getItemTextureName(Items.MILK_BUCKET.getRegistryName()));
-        registerItemWithUncheckedTexture(EntryModule.BEDROCK_COOKIE_ORE.core(), getItemTextureName(Items.COOKIE.getRegistryName()));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_MILK_ORE.core(), getItemTextureName(Registry.ITEM.getId(Items.MILK_BUCKET)));
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_COOKIE_ORE.core(), getItemTextureName(Registry.ITEM.getId(Items.COOKIE)));
 
         // Techreborn
         registerItemWithUncheckedTexture(EntryModule.BEDROCK_BAUXITE_ORE.core(), getItemTextureName("techreborn", "dust/aluminum_dust"));
