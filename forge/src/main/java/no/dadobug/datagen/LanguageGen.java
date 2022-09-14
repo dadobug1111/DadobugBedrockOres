@@ -302,5 +302,11 @@ public class LanguageGen extends LanguageProvider{
         add("enchantment.dadobugbedrockores.gentle_mining", "Gentle Mining");
         add("enchantment.dadobugbedrockores.curse_of_shattering", "Curse of Shattering");
         add("enchantment.dadobugbedrockores.arcane_extraction", "Arcane Extraction");
+        add("enchantment.dadobugbedrockores.shattering.desc", "Greatly increases the yield of regenerative ores, at the cost of damaging the ore.");
+        add("enchantment.dadobugbedrockores.curse_of_fracturing.desc", "Irreversibly damages bedrock ores.");
+        add("enchantment.dadobugbedrockores.extraction.desc", "Extracts the regenerative core of bedrock ores.");
+        add("enchantment.dadobugbedrockores.gentle_mining.desc", "Greatly increases efficiency for finite regenerative ores.");
+        add("enchantment.dadobugbedrockores.curse_of_shattering.desc", "Damages or destroys regenerative ores.");
+        add("enchantment.dadobugbedrockores.arcane_extraction.desc", "Picks up bedrock ores in block form.");
     }
 }

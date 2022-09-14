@@ -1,8 +1,0 @@
-{
-  "enchantment.dadobugbedrockores.arcane_extraction.desc" : "Picks up bedrock ores in block form.",
-  "enchantment.dadobugbedrockores.curse_of_fracturing.desc" : "Irreversibly damages bedrock ores.",
-  "enchantment.dadobugbedrockores.curse_of_shattering.desc" : "Damages or destroys regenerative ores.",
-  "enchantment.dadobugbedrockores.extraction.desc" : "Extracts the regenerative core of bedrock ores.",
-  "enchantment.dadobugbedrockores.gentle_mining.desc" : "Greatly increases efficiency for finite regenerative ores.",
-  "enchantment.dadobugbedrockores.shattering.desc" : "Greatly increases the yield of regenerative ores, at the cost of efficiency."
-}
