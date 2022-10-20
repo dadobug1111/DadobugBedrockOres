@@ -41,7 +41,7 @@ public class BedrockOreGenerator extends Feature<BedrockOreFeatureConfig> {
         for(byte yIndex = 0; yIndex < 5; yIndex++) {
             for(int xIndex = 0; xIndex < 1 + (maxDistanceFromOrigin*2); xIndex++) {
                 for(int zIndex = 0; zIndex < 1 + (maxDistanceFromOrigin*2); zIndex++) {
-                    mutable.set(x - 1 - maxDistanceFromOrigin + xIndex, isBottomOfWorld?y + 5 - yIndex:y - 5 + yIndex, z - 1 - maxDistanceFromOrigin + zIndex);
+                    mutable.set(x - 1 - maxDistanceFromOrigin + xIndex, isBottomOfWorld?y + 4 - yIndex:y - 4 + yIndex, z - 1 - maxDistanceFromOrigin + zIndex);
                     if(targets.stream().anyMatch((rule) -> rule.target.test(world.getBlockState(mutable), random))){
                         foundBlocks[yIndex].add(mutable.toImmutable());
                     }
