@@ -1,13 +1,12 @@
 package no.dadobug;
 
+import dev.architectury.injectables.annotations.ExpectPlatform;
 import dev.architectury.registry.level.biome.BiomeModifications;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.tag.Tag;
 import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.BuiltinRegistries;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryEntry;
-import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.util.registry.*;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeKeys;
@@ -27,7 +26,7 @@ public class BiomeSelectors {
     // Vanilla Biomes
     public static BiomeSource overworld = MultiNoiseBiomeSource.Preset.OVERWORLD.getBiomeSource(BuiltinRegistries.BIOME);
     public static BiomeSource nether = MultiNoiseBiomeSource.Preset.NETHER.getBiomeSource(BuiltinRegistries.BIOME);
-    public static BiomeSource end = new TheEndBiomeSource(BuiltinRegistries.BIOME);
+    public static BiomeSource end = new TheEndBiomeSource(BuiltinRegistries.BIOME, 0);
     // Modded Biomes
     // There is probably a better way of doing this but till someone figures it out this hack works
     public static String[] undergardenBiomesIds = new String[]{"undergarden:forgotten_field", "undergarden:ancient_sea", "undergarden:frostfields", "undergarden:icy_sea", "undergarden:smogstem_forest", "undergarden:wigglewood_forest", "undergarden:dense_forest", "undergarden:gronglegrowth", "undergarden:barren_abyss", "undergarden:dead_sea", "undergarden:smog_spires", "undergarden:mushroom_bog"};
@@ -56,27 +55,34 @@ public class BiomeSelectors {
     }
 
     public static Predicate<BiomeModifications.BiomeContext> gensEmeralds() {
-        return (context) -> hasTag(TagKey.of(Registry.BIOME_KEY, new Identifier("minecraft", "is_mountain"))).test(context) || hasTag(TagKey.of(Registry.BIOME_KEY, new Identifier("minecraft", "is_hill"))).test(context) || BiomeKeys.GROVE.getValue().equals(context.getKey().orElse(new Identifier(EntryModule.modid, "error")));
+        return (context) -> hasTag(TagKey.of(Registry.BIOME_KEY, new Identifier("minecraft", "is_mountain"))).test(context) || hasTag(TagKey.of(Registry.BIOME_KEY, new Identifier("minecraft", "is_hill"))).test(context) || BiomeKeys.GROVE.getValue().equals(context.getKey());
     }
 
     public static Optional<World> getWorld(MinecraftServer server, RegistryKey<World> world) {
         return Optional.ofNullable(server.getWorld(RegistryKey.of(Registry.WORLD_KEY, world.getValue())));
     }
 
+
+
+    public static Predicate<BiomeModifications.BiomeContext> inCategory(Biome.Category category) {
+        return (ctx)->ctx.getProperties().getCategory() == category;
+    }
+
+    public static Predicate<BiomeModifications.BiomeContext> hasTag(Tag<Biome> tag) {
+        return context -> tag.values().contains(BuiltinRegistries.BIOME.get(context.getKey()));
+    }
+
     public static Predicate<BiomeModifications.BiomeContext> hasTag(TagKey<Biome> tag) {
-        return context -> BuiltinRegistries.BIOME.getEntryList(tag).stream().anyMatch((taglist) -> taglist.stream().anyMatch((biome) -> biome.matchesId(context.getKey().orElse(new Identifier(EntryModule.modid, "error")))));
+        return context -> BuiltinRegistries.BIOME.getEntryList(tag).stream().anyMatch((taglist) -> taglist.stream().anyMatch((biome) -> biome.matchesId(context.getKey())));
     }
 
     public static Predicate<BiomeModifications.BiomeContext> gensInSource(BiomeSource sourceIn) {
-        return context -> sourceIn.getBiomes().stream().anyMatch(biome -> biome.value().equals(BuiltinRegistries.BIOME.get(context.getKey().orElse(new Identifier(EntryModule.modid, "error")))));
+        return context -> sourceIn.getBiomes().stream().anyMatch(biome -> biome.value().equals(BuiltinRegistries.BIOME.get(context.getKey())));
     }
 
-
+    @ExpectPlatform
     public static Predicate<BiomeModifications.BiomeContext> gensInBiome(Identifier identifier) {
-        return context -> {
-            Identifier currentBiome = context.getKey().orElse(new Identifier(EntryModule.modid, "error"));
-            return identifier.equals(currentBiome);
-        };
+        return context -> BuiltinRegistries.BIOME.get(identifier).equals(BuiltinRegistries.BIOME.get(context.getKey()));
     }
 
     // Returns a BiomeContext Predicate to check if the context is in a list of Biomes
@@ -94,17 +100,17 @@ public class BiomeSelectors {
         return predicate;
     }
 
-
+    @ExpectPlatform
     public static Predicate<BiomeModifications.BiomeContext> gensInOverworld() {
         return gensInSource(overworld);
     }
 
-
+    @ExpectPlatform
     public static Predicate<BiomeModifications.BiomeContext> gensInNether() {
         return gensInSource(nether);
     }
 
-
+    @ExpectPlatform
     public static Predicate<BiomeModifications.BiomeContext> gensInEnd() {
         return gensInSource(end);
     }

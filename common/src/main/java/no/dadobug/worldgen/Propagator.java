@@ -5,10 +5,10 @@ import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.util.Pair;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
-import net.minecraft.util.math.random.Random;
 import net.minecraft.world.ChunkRegion;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Propagator {
     private BlockPos pos;

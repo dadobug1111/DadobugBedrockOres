@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-import net.minecraft.data.DataWriter;
 import net.minecraft.data.server.BlockLootTableGenerator;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Items;
@@ -226,22 +225,22 @@ public abstract class BaseBedrockLootTableGen extends LootTableProvider{
     }
     
     @Override
-    public void run(DataWriter writer) {
+    public void run(DataCache cache) {
         addTables();
 
         Map<Identifier, LootTable> tables = new HashMap<>();
         for (Map.Entry<Block, LootTable.Builder> entry : lootTables.entrySet()) {
             tables.put(entry.getKey().getLootTableId(), entry.getValue().build());
         }
-        writeTables(writer, tables);
+        writeTables(cache, tables);
     }
 
-    private void writeTables(DataWriter writer, Map<Identifier, LootTable> tables) {
+    private void writeTables(DataCache cache, Map<Identifier, LootTable> tables) {
         Path outputFolder = this.generator.getOutput();
         tables.forEach((key, lootTable) -> {
             Path path = outputFolder.resolve("data/" + key.getNamespace() + "/loot_tables/" + key.getPath() + ".json");
             try {
-                DataProvider.writeToPath(writer, LootManager.toJson(lootTable), path);
+                DataProvider.writeToPath(GSON, cache, LootManager.toJson(lootTable), path);
             } catch (IOException e) {
                 LOGGER.error("Couldn't write loot table {}", path, e);
             }

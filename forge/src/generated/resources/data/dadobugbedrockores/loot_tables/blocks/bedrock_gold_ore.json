@@ -1,7 +1,39 @@
 {
   "pools": [
     {
+      "name": "bedrock_gold_ore",
+      "rolls": 1.0,
       "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "minecraft:blocks/gold_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "minecraft:blocks/deepslate_gold_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "undergarden"
+            }
+          ],
+          "name": "undergarden:blocks/depthrock_gold_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "undergarden"
+            }
+          ],
+          "name": "undergarden:blocks/venus_gold_ore"
+        }
+      ],
       "conditions": [
         {
           "condition": "minecraft:inverted",
@@ -67,42 +99,31 @@
             }
           }
         }
-      ],
-      "entries": [
-        {
-          "type": "minecraft:loot_table",
-          "name": "minecraft:blocks/gold_ore"
-        },
-        {
-          "type": "minecraft:loot_table",
-          "name": "minecraft:blocks/deepslate_gold_ore"
-        },
-        {
-          "type": "minecraft:loot_table",
-          "conditions": [
-            {
-              "condition": "dadobugbedrockores:modloaded",
-              "mod_id": "undergarden"
-            }
-          ],
-          "name": "undergarden:blocks/depthrock_gold_ore"
-        },
-        {
-          "type": "minecraft:loot_table",
-          "conditions": [
-            {
-              "condition": "dadobugbedrockores:modloaded",
-              "mod_id": "undergarden"
-            }
-          ],
-          "name": "undergarden:blocks/venus_gold_ore"
-        }
-      ],
-      "name": "bedrock_gold_ore",
-      "rolls": 1.0
+      ]
     },
     {
+      "name": "bedrock_gold_ore",
+      "rolls": 1.0,
       "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:copy_nbt",
+              "source": "block_entity",
+              "ops": [
+                {
+                  "source": "durability",
+                  "target": "BlockEntityTag.durability",
+                  "op": "replace"
+                }
+              ]
+            }
+          ],
+          "name": "dadobugbedrockores:regenerative_gold"
+        }
+      ],
       "conditions": [
         {
           "condition": "minecraft:match_tool",
@@ -117,31 +138,31 @@
             ]
           }
         }
-      ],
+      ]
+    },
+    {
+      "name": "bedrock_gold_ore",
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:item",
           "functions": [
             {
               "function": "minecraft:copy_nbt",
+              "source": "block_entity",
               "ops": [
                 {
-                  "op": "replace",
                   "source": "durability",
-                  "target": "BlockEntityTag.durability"
+                  "target": "BlockEntityTag.durability",
+                  "op": "replace"
                 }
-              ],
-              "source": "block_entity"
+              ]
             }
           ],
-          "name": "dadobugbedrockores:regenerative_gold"
+          "name": "dadobugbedrockores:bedrock_gold_ore"
         }
       ],
-      "name": "bedrock_gold_ore",
-      "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
       "conditions": [
         {
           "condition": "minecraft:match_tool",
@@ -156,28 +177,7 @@
             ]
           }
         }
-      ],
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:copy_nbt",
-              "ops": [
-                {
-                  "op": "replace",
-                  "source": "durability",
-                  "target": "BlockEntityTag.durability"
-                }
-              ],
-              "source": "block_entity"
-            }
-          ],
-          "name": "dadobugbedrockores:bedrock_gold_ore"
-        }
-      ],
-      "name": "bedrock_gold_ore",
-      "rolls": 1.0
+      ]
     }
   ]
 }

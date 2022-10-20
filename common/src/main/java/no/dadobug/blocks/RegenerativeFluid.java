@@ -14,10 +14,10 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.intprovider.IntProvider;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
-import net.minecraft.util.math.random.Random;
 import net.minecraft.world.WorldAccess;
 
 import java.util.Optional;
+import java.util.Random;
 
 public class RegenerativeFluid extends RegenerativeBlock implements FluidDrainable {
     protected final Fluid fluid;
@@ -84,6 +84,7 @@ public class RegenerativeFluid extends RegenerativeBlock implements FluidDrainab
     @Override
     public FluidState getFluidState(BlockState state) { return this.fluid.getDefaultState(); }
 
+    @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         state.getFluidState().onRandomTick(world, pos, random);
     }

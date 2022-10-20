@@ -2,23 +2,29 @@ package no.dadobug.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.datafixer.fix.PlayerUuidFix;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtHelper;
+import net.minecraft.nbt.NbtTypes;
 import net.minecraft.network.Packet;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.intprovider.IntProvider;
-import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import no.dadobug.EntryModule;
 
 import javax.annotation.Nullable;
+import java.util.Objects;
 
 public class RegenerativeBlockEntity extends BlockEntity {
 
@@ -35,7 +41,7 @@ public class RegenerativeBlockEntity extends BlockEntity {
         this.keepstate = state;
         Block block = state.getBlock();
         if(block instanceof RegenerativeBlock) {
-            this.durability = ((RegenerativeBlock) block).durabilityProvider.get(Random.create());
+            this.durability = ((RegenerativeBlock) block).durabilityProvider.get(((RegenerativeBlock) block).random);
         }
 
     }
@@ -188,6 +194,13 @@ public class RegenerativeBlockEntity extends BlockEntity {
     @Override
     public NbtCompound toInitialChunkDataNbt() {
         return createNbt();
+    }
+
+    public static <E extends BlockEntity> void tick(World world, BlockPos blockPos, BlockState state, RegenerativeBlockEntity entity) {
+        if (!state.equals(entity.getKeepstate())){
+            entity.regen(world, state);
+        }
+
     }
 
     public void sendData(World worldIn) {

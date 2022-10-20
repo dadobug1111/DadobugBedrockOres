@@ -1,7 +1,15 @@
 {
   "pools": [
     {
+      "name": "bedrock_nether_quartz_ore",
+      "rolls": 1.0,
       "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "minecraft:blocks/nether_quartz_ore"
+        }
+      ],
       "conditions": [
         {
           "condition": "minecraft:inverted",
@@ -67,18 +75,31 @@
             }
           }
         }
-      ],
-      "entries": [
-        {
-          "type": "minecraft:loot_table",
-          "name": "minecraft:blocks/nether_quartz_ore"
-        }
-      ],
-      "name": "bedrock_nether_quartz_ore",
-      "rolls": 1.0
+      ]
     },
     {
+      "name": "bedrock_nether_quartz_ore",
+      "rolls": 1.0,
       "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:copy_nbt",
+              "source": "block_entity",
+              "ops": [
+                {
+                  "source": "durability",
+                  "target": "BlockEntityTag.durability",
+                  "op": "replace"
+                }
+              ]
+            }
+          ],
+          "name": "dadobugbedrockores:regenerative_nether_quartz"
+        }
+      ],
       "conditions": [
         {
           "condition": "minecraft:match_tool",
@@ -93,31 +114,31 @@
             ]
           }
         }
-      ],
+      ]
+    },
+    {
+      "name": "bedrock_nether_quartz_ore",
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:item",
           "functions": [
             {
               "function": "minecraft:copy_nbt",
+              "source": "block_entity",
               "ops": [
                 {
-                  "op": "replace",
                   "source": "durability",
-                  "target": "BlockEntityTag.durability"
+                  "target": "BlockEntityTag.durability",
+                  "op": "replace"
                 }
-              ],
-              "source": "block_entity"
+              ]
             }
           ],
-          "name": "dadobugbedrockores:regenerative_nether_quartz"
+          "name": "dadobugbedrockores:bedrock_nether_quartz_ore"
         }
       ],
-      "name": "bedrock_nether_quartz_ore",
-      "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
       "conditions": [
         {
           "condition": "minecraft:match_tool",
@@ -132,28 +153,7 @@
             ]
           }
         }
-      ],
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:copy_nbt",
-              "ops": [
-                {
-                  "op": "replace",
-                  "source": "durability",
-                  "target": "BlockEntityTag.durability"
-                }
-              ],
-              "source": "block_entity"
-            }
-          ],
-          "name": "dadobugbedrockores:bedrock_nether_quartz_ore"
-        }
-      ],
-      "name": "bedrock_nether_quartz_ore",
-      "rolls": 1.0
+      ]
     }
   ]
 }

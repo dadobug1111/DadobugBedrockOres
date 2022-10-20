@@ -1,7 +1,21 @@
 {
   "pools": [
     {
+      "name": "bedrock_mm_palladium_ore",
+      "rolls": 1.0,
       "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "mythicmetals"
+            }
+          ],
+          "name": "mythicmetals:blocks/palladium_ore"
+        }
+      ],
       "conditions": [
         {
           "condition": "minecraft:inverted",
@@ -67,24 +81,31 @@
             }
           }
         }
-      ],
-      "entries": [
-        {
-          "type": "minecraft:loot_table",
-          "conditions": [
-            {
-              "condition": "dadobugbedrockores:modloaded",
-              "mod_id": "mythicmetals"
-            }
-          ],
-          "name": "mythicmetals:blocks/palladium_ore"
-        }
-      ],
-      "name": "bedrock_mm_palladium_ore",
-      "rolls": 1.0
+      ]
     },
     {
+      "name": "bedrock_mm_palladium_ore",
+      "rolls": 1.0,
       "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:copy_nbt",
+              "source": "block_entity",
+              "ops": [
+                {
+                  "source": "durability",
+                  "target": "BlockEntityTag.durability",
+                  "op": "replace"
+                }
+              ]
+            }
+          ],
+          "name": "dadobugbedrockores:regenerative_mm_palladium"
+        }
+      ],
       "conditions": [
         {
           "condition": "minecraft:match_tool",
@@ -99,31 +120,31 @@
             ]
           }
         }
-      ],
+      ]
+    },
+    {
+      "name": "bedrock_mm_palladium_ore",
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:item",
           "functions": [
             {
               "function": "minecraft:copy_nbt",
+              "source": "block_entity",
               "ops": [
                 {
-                  "op": "replace",
                   "source": "durability",
-                  "target": "BlockEntityTag.durability"
+                  "target": "BlockEntityTag.durability",
+                  "op": "replace"
                 }
-              ],
-              "source": "block_entity"
+              ]
             }
           ],
-          "name": "dadobugbedrockores:regenerative_mm_palladium"
+          "name": "dadobugbedrockores:bedrock_mm_palladium_ore"
         }
       ],
-      "name": "bedrock_mm_palladium_ore",
-      "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
       "conditions": [
         {
           "condition": "minecraft:match_tool",
@@ -138,28 +159,7 @@
             ]
           }
         }
-      ],
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:copy_nbt",
-              "ops": [
-                {
-                  "op": "replace",
-                  "source": "durability",
-                  "target": "BlockEntityTag.durability"
-                }
-              ],
-              "source": "block_entity"
-            }
-          ],
-          "name": "dadobugbedrockores:bedrock_mm_palladium_ore"
-        }
-      ],
-      "name": "bedrock_mm_palladium_ore",
-      "rolls": 1.0
+      ]
     }
   ]
 }
