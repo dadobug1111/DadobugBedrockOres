@@ -148,5 +148,8 @@ public class LootTableGen extends BaseBedrockLootTableGen{
         createBedrockOreTable("bedrock_th_apatite_ore", EntryModule.BEDROCK_TH_APATITE_ORE, new Identifier("thermal", "blocks/apatite_ore"), new Identifier("thermal", "blocks/deepslate_apatite_ore"));
         createBedrockOreTable("bedrock_th_cinnabar_ore", EntryModule.BEDROCK_TH_CINNABAR_ORE, new Identifier("thermal", "blocks/cinnabar_ore"), new Identifier("thermal", "blocks/deepslate_cinnabar_ore"));
         createBedrockOreTable("bedrock_th_oil_ore", EntryModule.BEDROCK_TH_OIL_ORE, new Identifier("thermal", "blocks/oil_sand"), new Identifier("thermal", "blocks/oil_red_sand"));
+
+
+        createBedrockOreTable("bedrock_pw_uraninite_ore", EntryModule.BEDROCK_PW_URANINITE_ORE, new Identifier("powah", "blocks/uraninite_ore"), new Identifier("powah", "blocks/uraninite_ore_dense"), new Identifier("powah", "blocks/uraninite_ore_poor"));
     }
 }

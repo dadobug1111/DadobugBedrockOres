@@ -178,7 +178,10 @@ public class BlockTagsGen extends BlockTagProvider {
         .add(EntryModule.BEDROCK_TH_NICKEL_ORE.ore().get())
         .add(EntryModule.BEDROCK_TH_APATITE_ORE.ore().get())
         .add(EntryModule.BEDROCK_TH_CINNABAR_ORE.ore().get())
-        .add(EntryModule.BEDROCK_TH_OIL_ORE.ore().get());
+        .add(EntryModule.BEDROCK_TH_OIL_ORE.ore().get())
+
+        // Powah
+        .add(EntryModule.BEDROCK_PW_URANINITE_ORE.ore().get());
     }
 
     @Override

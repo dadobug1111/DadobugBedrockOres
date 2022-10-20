@@ -142,7 +142,10 @@ public class ItemTagsGen extends ItemTagProvider{
             .add(EntryModule.BEDROCK_TH_NICKEL_ORE.core().get())
             .add(EntryModule.BEDROCK_TH_APATITE_ORE.core().get())
             .add(EntryModule.BEDROCK_TH_CINNABAR_ORE.core().get())
-            .add(EntryModule.BEDROCK_TH_OIL_ORE.core().get());
+            .add(EntryModule.BEDROCK_TH_OIL_ORE.core().get())
+
+            // Powah
+            .add(EntryModule.BEDROCK_PW_URANINITE_ORE.core().get());
         }
 
     @Override

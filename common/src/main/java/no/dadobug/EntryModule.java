@@ -80,6 +80,7 @@ public class EntryModule {
     public static final BlockConfigLambda<Item.Settings> ftbIndustrialContraptionsItemSettings = (cfg) -> {if(Platform.isModLoaded("ftbic") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
     public static final BlockConfigLambda<Item.Settings> malumItemSettings = (cfg) -> {if(Platform.isModLoaded("malum") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
     public static final BlockConfigLambda<Item.Settings> thermalItemSettings = (cfg) -> {if(Platform.isModLoaded("thermal") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
+    public static final BlockConfigLambda<Item.Settings> powahItemSettings = (cfg) -> {if(Platform.isModLoaded("powah") && cfg.showOre){return DefaultItemSettings;}else return CloakedItemSettings;};
 
 
     public static TagKey<Block> REGEN_TAG = TagKey.of(Registry.BLOCK_KEY, new Identifier("dadobugbedrockores", "regenerative_block"));
@@ -289,6 +290,11 @@ public class EntryModule {
     public static final BedrockStack BEDROCK_TH_APATITE_ORE = BedrockStack.BedrockStackStandardOre("th_apatite", CONFIG.BEDROCK_TH_APATITE_ORE, thermalItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
     public static final BedrockStack BEDROCK_TH_CINNABAR_ORE = BedrockStack.BedrockStackStandardOre("th_cinnabar", CONFIG.BEDROCK_TH_CINNABAR_ORE, thermalItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
     public static final BedrockStack BEDROCK_TH_OIL_ORE = BedrockStack.BedrockStackStandardOre("th_oil", CONFIG.BEDROCK_TH_OIL_ORE, thermalItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
+
+
+
+    //powah
+    public static final BedrockStack BEDROCK_PW_URANINITE_ORE = BedrockStack.BedrockStackStandardOre("pw_uraninite", CONFIG.BEDROCK_PW_URANINITE_ORE, powahItemSettings, DynamicBlockSettings, false, DEFAULT_TOOLTIP);
 
 
 

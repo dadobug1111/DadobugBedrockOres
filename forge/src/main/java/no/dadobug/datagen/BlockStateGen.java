@@ -151,6 +151,9 @@ public class BlockStateGen extends BlockStateProvider{
         simpleBlock(EntryModule.BEDROCK_TH_APATITE_ORE.ore().get());
         simpleBlock(EntryModule.BEDROCK_TH_CINNABAR_ORE.ore().get());
         simpleBlock(EntryModule.BEDROCK_TH_OIL_ORE.ore().get());
+
+        // Powah
+        simpleBlock(EntryModule.BEDROCK_PW_URANINITE_ORE.ore().get());
     }
     
 }

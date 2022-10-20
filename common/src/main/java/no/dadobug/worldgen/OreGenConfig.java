@@ -265,6 +265,10 @@ public class OreGenConfig {
     public static OreGen ORE_TH_OIL_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_TH_OIL_OVERWORLD.oreSize, CONFIG.ORE_TH_OIL_OVERWORLD.oreChance, EntryModule.BEDROCK_TH_OIL_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_th_oil_bedrock_overworld");
 
 
+    //powah
+    public static OreGen ORE_PW_URANINITE_OVERWORLD = new OreGen().GenBottom(BEDROCK, CONFIG.ORE_PW_URANINITE_OVERWORLD.oreSize, CONFIG.ORE_PW_URANINITE_OVERWORLD.oreChance, EntryModule.BEDROCK_PW_URANINITE_ORE.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, true), "ore_pw_uraninite_bedrock_overworld");
+
+
     public static void init(){
         ORE_COAL_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_COAL_BEDROCK_OVERWORLD.genOre, DimensionType.OVERWORLD, OreType.COAL);
         ORE_IRON_BEDROCK_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_IRON_BEDROCK_OVERWORLD.genOre, DimensionType.OVERWORLD, OreType.IRON);
@@ -451,6 +455,9 @@ public class OreGenConfig {
             ORE_TH_APATITE_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_TH_NICKEL_OVERWORLD.genOre, DimensionType.OVERWORLD, OreType.APATITE);
             ORE_TH_CINNABAR_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_TH_NICKEL_OVERWORLD.genOre, DimensionType.OVERWORLD, OreType.CINNABAR);
             ORE_TH_OIL_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_TH_NICKEL_OVERWORLD.genOre, DimensionType.OVERWORLD, OreType.OIL);
+        }
+        if (Platform.isModLoaded("thermal")) {
+            ORE_PW_URANINITE_OVERWORLD.addOreToGen(BiomeSelectors.gensInOverworld(), CONFIG.ORE_PW_URANINITE_OVERWORLD.genOre, DimensionType.OVERWORLD, OreType.URANINITE);
         }
     }
 
