@@ -151,6 +151,9 @@ public class LanguageGen extends LanguageProvider{
         addBlock(EntryModule.BEDROCK_TH_APATITE_ORE.ore(), "Bedrock Apatite Ore");
         addBlock(EntryModule.BEDROCK_TH_CINNABAR_ORE.ore(), "Bedrock Cinnabar Ore");
         addBlock(EntryModule.BEDROCK_TH_OIL_ORE.ore(), "Bituminous Bedrock");
+
+        // Powah
+        addBlock(EntryModule.BEDROCK_PW_URANINITE_ORE.ore(), "Bedrock Uraninite Ore");
     }
 
     private void addBlockItemTranslations() {
@@ -282,6 +285,9 @@ public class LanguageGen extends LanguageProvider{
         addItem(EntryModule.BEDROCK_TH_APATITE_ORE.core(), "Regenerative Apatite Cluster");
         addItem(EntryModule.BEDROCK_TH_CINNABAR_ORE.core(), "Regenerative Cinnabar Cluster");
         addItem(EntryModule.BEDROCK_TH_OIL_ORE.core(), "Regenerative Bitumen Cluster");
+
+        // Powah
+        addItem(EntryModule.BEDROCK_PW_URANINITE_ORE.core(), "Regenerative Uraninite Cluster");
     }
 
     private void addTooltipTranslations() {

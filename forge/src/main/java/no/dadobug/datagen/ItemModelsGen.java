@@ -151,6 +151,12 @@ public class ItemModelsGen extends CustomItemModelProvider{
         registerBlockItem(EntryModule.BEDROCK_TH_CINNABAR_ORE.oreItem());
         registerBlockItem(EntryModule.BEDROCK_TH_OIL_ORE.oreItem());
 
+        // Powah
+        registerBlockItem(EntryModule.BEDROCK_PW_URANINITE_ORE.oreItem());
+
+
+
+
         // Vanilla
         registerItemWithUncheckedTexture(EntryModule.BEDROCK_FRACTURED.core(), getItemTextureName(EntryModule.BEDROCK_FRACTURED.core().getId()));
         registerItemWithUncheckedTexture(EntryModule.XP_LEAK.core(), getItemTextureName(EntryModule.XP_LEAK.core().getId()));
@@ -279,6 +285,9 @@ public class ItemModelsGen extends CustomItemModelProvider{
         registerItemWithUncheckedTexture(EntryModule.BEDROCK_TH_APATITE_ORE.core(), getItemTextureName("thermal", "apatite"));
         registerItemWithUncheckedTexture(EntryModule.BEDROCK_TH_CINNABAR_ORE.core(), getItemTextureName("thermal", "cinnabar"));
         registerItemWithUncheckedTexture(EntryModule.BEDROCK_TH_OIL_ORE.core(), getItemTextureName("thermal", "bitumen"));
+
+        // Powah
+        registerItemWithUncheckedTexture(EntryModule.BEDROCK_PW_URANINITE_ORE.core(), getItemTextureName("powah", "uraninite_raw"));
     }
 
     private void registerBlockItem(RegistrySupplier<Item> itemSupplier) {

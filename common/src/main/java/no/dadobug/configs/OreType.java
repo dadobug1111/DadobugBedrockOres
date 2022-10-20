@@ -100,7 +100,8 @@ public enum OreType {
     NITER("Niter"),
     SULFUR("Sulfur"),
     APATITE("Apatite"),
-    OIL("Oil");
+    OIL("Oil"),
+    URANINITE("Uraninite");
 
     // Copied this from Mekanism ores but don't actually use it
     public final String key;

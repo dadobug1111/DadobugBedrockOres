@@ -413,4 +413,9 @@ public class GenConfig implements ConfigData {
     @ConfigEntry.Category("thermal_overworld")
     @ConfigEntry.Gui.CollapsibleObject()
     public OreConfig ORE_TH_OIL_OVERWORLD = new OreConfig(true, 24, 9);
+
+
+    @ConfigEntry.Category("powah_overworld")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public OreConfig ORE_PW_URANINITE_OVERWORLD = new OreConfig(true, 5, 4);
 }

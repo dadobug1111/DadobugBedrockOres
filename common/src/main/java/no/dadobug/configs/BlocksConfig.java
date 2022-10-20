@@ -7,7 +7,6 @@ import no.dadobug.EntryModule;
 
 @Config(name = EntryModule.modid + "_block_config")
 public class BlocksConfig implements ConfigData {
-
     @ConfigEntry.Category("vanilla")
     @ConfigEntry.Gui.CollapsibleObject()
     public BlockConfig BEDROCK_FRACTURED = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
@@ -332,4 +331,9 @@ public class BlocksConfig implements ConfigData {
     @ConfigEntry.Category("thermal")
     @ConfigEntry.Gui.CollapsibleObject()
     public BlockConfig BEDROCK_TH_OIL_ORE = new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
+
+
+    @ConfigEntry.Category("powah")
+    @ConfigEntry.Gui.CollapsibleObject()
+    public BlockConfig BEDROCK_PW_URANINITE_ORE =  new BlockConfig(true, 50f, 0.5f, 0, 0, 0);
 }
