@@ -1,28 +1,7 @@
 {
   "pools": [
     {
-      "name": "bedrock_cookie_ore",
-      "rolls": 1.0,
       "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:copy_nbt",
-              "source": "block_entity",
-              "ops": [
-                {
-                  "source": "durability",
-                  "target": "BlockEntityTag.durability",
-                  "op": "replace"
-                }
-              ]
-            }
-          ],
-          "name": "dadobugbedrockores:regenerative_cookie"
-        }
-      ],
       "conditions": [
         {
           "condition": "minecraft:match_tool",
@@ -37,31 +16,31 @@
             ]
           }
         }
-      ]
-    },
-    {
-      "name": "bedrock_cookie_ore",
-      "rolls": 1.0,
-      "bonus_rolls": 0.0,
+      ],
       "entries": [
         {
           "type": "minecraft:item",
           "functions": [
             {
               "function": "minecraft:copy_nbt",
-              "source": "block_entity",
               "ops": [
                 {
+                  "op": "replace",
                   "source": "durability",
-                  "target": "BlockEntityTag.durability",
-                  "op": "replace"
+                  "target": "BlockEntityTag.durability"
                 }
-              ]
+              ],
+              "source": "block_entity"
             }
           ],
-          "name": "dadobugbedrockores:bedrock_cookie_ore"
+          "name": "dadobugbedrockores:regenerative_cookie"
         }
       ],
+      "name": "bedrock_cookie_ore",
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
       "conditions": [
         {
           "condition": "minecraft:match_tool",
@@ -76,34 +55,31 @@
             ]
           }
         }
-      ]
-    },
-    {
-      "name": "bedrock_cookie_ore",
-      "rolls": 1.0,
-      "bonus_rolls": 0.0,
+      ],
       "entries": [
         {
           "type": "minecraft:item",
           "functions": [
             {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1.0,
-                "max": 4.0
-              },
-              "add": false
-            },
-            {
-              "function": "minecraft:apply_bonus",
-              "enchantment": "minecraft:fortune",
-              "formula": "minecraft:ore_drops"
+              "function": "minecraft:copy_nbt",
+              "ops": [
+                {
+                  "op": "replace",
+                  "source": "durability",
+                  "target": "BlockEntityTag.durability"
+                }
+              ],
+              "source": "block_entity"
             }
           ],
-          "name": "minecraft:cookie"
+          "name": "dadobugbedrockores:bedrock_cookie_ore"
         }
       ],
+      "name": "bedrock_cookie_ore",
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
       "conditions": [
         {
           "condition": "minecraft:inverted",
@@ -169,7 +145,31 @@
             }
           }
         }
-      ]
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 4.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            },
+            {
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops",
+              "function": "minecraft:apply_bonus"
+            }
+          ],
+          "name": "minecraft:cookie"
+        }
+      ],
+      "name": "bedrock_cookie_ore",
+      "rolls": 1.0
     }
   ]
 }

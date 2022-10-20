@@ -1,59 +1,7 @@
 {
   "pools": [
     {
-      "name": "bedrock_coal_ore",
-      "rolls": 1.0,
       "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:loot_table",
-          "name": "minecraft:blocks/coal_ore"
-        },
-        {
-          "type": "minecraft:loot_table",
-          "name": "minecraft:blocks/deepslate_coal_ore"
-        },
-        {
-          "type": "minecraft:loot_table",
-          "conditions": [
-            {
-              "condition": "dadobugbedrockores:modloaded",
-              "mod_id": "undergarden"
-            }
-          ],
-          "name": "undergarden:blocks/depthrock_coal_ore"
-        },
-        {
-          "type": "minecraft:loot_table",
-          "conditions": [
-            {
-              "condition": "dadobugbedrockores:modloaded",
-              "mod_id": "undergarden"
-            }
-          ],
-          "name": "undergarden:blocks/shiverstone_coal_ore"
-        },
-        {
-          "type": "minecraft:loot_table",
-          "conditions": [
-            {
-              "condition": "dadobugbedrockores:modloaded",
-              "mod_id": "undergarden"
-            }
-          ],
-          "name": "undergarden:blocks/venus_coal_ore"
-        },
-        {
-          "type": "minecraft:loot_table",
-          "conditions": [
-            {
-              "condition": "dadobugbedrockores:modloaded",
-              "mod_id": "undergarden"
-            }
-          ],
-          "name": "undergarden:blocks/venus_coal_ore"
-        }
-      ],
       "conditions": [
         {
           "condition": "minecraft:inverted",
@@ -119,31 +67,62 @@
             }
           }
         }
-      ]
-    },
-    {
-      "name": "bedrock_coal_ore",
-      "rolls": 1.0,
-      "bonus_rolls": 0.0,
+      ],
       "entries": [
         {
-          "type": "minecraft:item",
-          "functions": [
+          "type": "minecraft:loot_table",
+          "name": "minecraft:blocks/coal_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "minecraft:blocks/deepslate_coal_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
             {
-              "function": "minecraft:copy_nbt",
-              "source": "block_entity",
-              "ops": [
-                {
-                  "source": "durability",
-                  "target": "BlockEntityTag.durability",
-                  "op": "replace"
-                }
-              ]
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "undergarden"
             }
           ],
-          "name": "dadobugbedrockores:regenerative_coal"
+          "name": "undergarden:blocks/depthrock_coal_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "undergarden"
+            }
+          ],
+          "name": "undergarden:blocks/shiverstone_coal_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "undergarden"
+            }
+          ],
+          "name": "undergarden:blocks/venus_coal_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "undergarden"
+            }
+          ],
+          "name": "undergarden:blocks/venus_coal_ore"
         }
       ],
+      "name": "bedrock_coal_ore",
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
       "conditions": [
         {
           "condition": "minecraft:match_tool",
@@ -158,31 +137,31 @@
             ]
           }
         }
-      ]
-    },
-    {
-      "name": "bedrock_coal_ore",
-      "rolls": 1.0,
-      "bonus_rolls": 0.0,
+      ],
       "entries": [
         {
           "type": "minecraft:item",
           "functions": [
             {
               "function": "minecraft:copy_nbt",
-              "source": "block_entity",
               "ops": [
                 {
+                  "op": "replace",
                   "source": "durability",
-                  "target": "BlockEntityTag.durability",
-                  "op": "replace"
+                  "target": "BlockEntityTag.durability"
                 }
-              ]
+              ],
+              "source": "block_entity"
             }
           ],
-          "name": "dadobugbedrockores:bedrock_coal_ore"
+          "name": "dadobugbedrockores:regenerative_coal"
         }
       ],
+      "name": "bedrock_coal_ore",
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
       "conditions": [
         {
           "condition": "minecraft:match_tool",
@@ -197,7 +176,28 @@
             ]
           }
         }
-      ]
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:copy_nbt",
+              "ops": [
+                {
+                  "op": "replace",
+                  "source": "durability",
+                  "target": "BlockEntityTag.durability"
+                }
+              ],
+              "source": "block_entity"
+            }
+          ],
+          "name": "dadobugbedrockores:bedrock_coal_ore"
+        }
+      ],
+      "name": "bedrock_coal_ore",
+      "rolls": 1.0
     }
   ]
 }

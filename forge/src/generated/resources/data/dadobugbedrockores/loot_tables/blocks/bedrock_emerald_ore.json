@@ -1,19 +1,7 @@
 {
   "pools": [
     {
-      "name": "bedrock_emerald_ore",
-      "rolls": 1.0,
       "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:loot_table",
-          "name": "minecraft:blocks/emerald_ore"
-        },
-        {
-          "type": "minecraft:loot_table",
-          "name": "minecraft:blocks/deepslate_emerald_ore"
-        }
-      ],
       "conditions": [
         {
           "condition": "minecraft:inverted",
@@ -79,31 +67,22 @@
             }
           }
         }
-      ]
-    },
-    {
-      "name": "bedrock_emerald_ore",
-      "rolls": 1.0,
-      "bonus_rolls": 0.0,
+      ],
       "entries": [
         {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:copy_nbt",
-              "source": "block_entity",
-              "ops": [
-                {
-                  "source": "durability",
-                  "target": "BlockEntityTag.durability",
-                  "op": "replace"
-                }
-              ]
-            }
-          ],
-          "name": "dadobugbedrockores:regenerative_emerald"
+          "type": "minecraft:loot_table",
+          "name": "minecraft:blocks/emerald_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "minecraft:blocks/deepslate_emerald_ore"
         }
       ],
+      "name": "bedrock_emerald_ore",
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
       "conditions": [
         {
           "condition": "minecraft:match_tool",
@@ -118,31 +97,31 @@
             ]
           }
         }
-      ]
-    },
-    {
-      "name": "bedrock_emerald_ore",
-      "rolls": 1.0,
-      "bonus_rolls": 0.0,
+      ],
       "entries": [
         {
           "type": "minecraft:item",
           "functions": [
             {
               "function": "minecraft:copy_nbt",
-              "source": "block_entity",
               "ops": [
                 {
+                  "op": "replace",
                   "source": "durability",
-                  "target": "BlockEntityTag.durability",
-                  "op": "replace"
+                  "target": "BlockEntityTag.durability"
                 }
-              ]
+              ],
+              "source": "block_entity"
             }
           ],
-          "name": "dadobugbedrockores:bedrock_emerald_ore"
+          "name": "dadobugbedrockores:regenerative_emerald"
         }
       ],
+      "name": "bedrock_emerald_ore",
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
       "conditions": [
         {
           "condition": "minecraft:match_tool",
@@ -157,7 +136,28 @@
             ]
           }
         }
-      ]
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:copy_nbt",
+              "ops": [
+                {
+                  "op": "replace",
+                  "source": "durability",
+                  "target": "BlockEntityTag.durability"
+                }
+              ],
+              "source": "block_entity"
+            }
+          ],
+          "name": "dadobugbedrockores:bedrock_emerald_ore"
+        }
+      ],
+      "name": "bedrock_emerald_ore",
+      "rolls": 1.0
     }
   ]
 }
