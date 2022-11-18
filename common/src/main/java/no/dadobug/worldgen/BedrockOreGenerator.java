@@ -2,13 +2,13 @@ package no.dadobug.worldgen;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.*;
 import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.util.Pair;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.random.Random;
 import net.minecraft.world.ChunkRegion;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
@@ -79,7 +79,7 @@ public class BedrockOreGenerator extends Feature<BedrockOreFeatureConfig> {
         //propagate through all remaining ores
         Propagator[] propagators = new Propagator[config.propagatorCount];
         boolean[] propsDead = new boolean[config.propagatorCount];
-        int size = random.nextBetween(config.minSize, config.maxSize) - 1;
+        int size = random.nextInt(config.minSize, config.maxSize) - 1;
         byte propagatorsRemaining = config.propagatorCount;
         for(byte i = 0; i < config.propagatorCount; i++){
             propagators[i] = new Propagator(newOrigin);

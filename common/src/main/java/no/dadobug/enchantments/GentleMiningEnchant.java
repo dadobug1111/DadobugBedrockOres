@@ -8,9 +8,9 @@ import no.dadobug.configs.EnchantConfig;
 
 public class GentleMiningEnchant extends Enchantment {
 
-    private final boolean doTableEnchant;
-    private final boolean doVillagerEnchant;
-    private final boolean doLootEnchant;
+    private boolean doTableEnchant;
+    private boolean doVillagerEnchant;
+    private boolean doLootEnchant;
     public GentleMiningEnchant(EnchantConfig config) {
         super(Enchantment.Rarity.RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
         this.doTableEnchant = config.doTableEnchant;

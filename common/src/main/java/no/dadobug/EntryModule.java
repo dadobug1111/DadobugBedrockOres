@@ -20,11 +20,12 @@ import net.minecraft.loot.condition.LootConditionType;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.tag.TagKey;
 import net.minecraft.text.MutableText;
-import net.minecraft.text.TranslatableTextContent;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.FeatureConfig;
 import no.dadobug.blocks.HollowBedrock;
 import no.dadobug.blocks.RegenerativeBlockEntity;
 import no.dadobug.configs.BlockConfigLambda;
@@ -37,6 +38,7 @@ import no.dadobug.enchantments.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 @SuppressWarnings("unused")
@@ -47,6 +49,8 @@ public class EntryModule {
     public static final Logger LOGGER = LoggerFactory.getLogger(modid);
 
 
+    public static String newLine = System.lineSeparator();
+
     // We can use this if we don't want to use DeferredRegister
     //public static final Supplier<Registries> REGISTRIES = Suppliers.memoize(() -> Registries.get(MOD_ID));
     // Registering a new creative tab
@@ -54,6 +58,10 @@ public class EntryModule {
             new ItemStack(EntryModule.BEDROCK_DIAMOND_ORE.ore().get()));
 
 
+
+    public static final AbstractBlock.Settings DefaultBlockSettings = AbstractBlock.Settings.of(Material.STONE, MapColor.STONE_GRAY).strength(50.0f, 0f).requiresTool();
+    public static final AbstractBlock.Settings LightBlockSettings = AbstractBlock.Settings.of(Material.STONE, MapColor.STONE_GRAY).strength(50.0f, 0f).requiresTool().luminance((state) -> 15);
+    public static final AbstractBlock.Settings LowLightBlockSettings = AbstractBlock.Settings.of(Material.STONE, MapColor.STONE_GRAY).strength(50.0f, 0f).requiresTool().luminance((state) -> 1);
     public static final BlockConfigLambda<AbstractBlock.Settings> DynamicBlockSettings = (cfg) -> AbstractBlock.Settings.of(Material.STONE, MapColor.STONE_GRAY).strength(cfg.hardness, cfg.resistance).requiresTool().luminance((state) -> cfg.luminance);
     public static final  Item.Settings DefaultItemSettings = new Item.Settings().group(EntryModule.ITEMGROUP);
     public static final  Item.Settings CloakedItemSettings = new Item.Settings();
@@ -86,12 +94,12 @@ public class EntryModule {
 
 
 
-    public static MutableText DEFAULT_TOOLTIP = MutableText.of(new TranslatableTextContent("item.dadobugbedrockores.regen_power.tooltip")).formatted(Formatting.GREEN);
-    public static MutableText FRACTURED_TOOLTIP = MutableText.of(new TranslatableTextContent("item.dadobugbedrockores.regen_broken.tooltip")).formatted(Formatting.RED);
-    public static MutableText FLUID_TOOLTIP = MutableText.of(new TranslatableTextContent("item.dadobugbedrockores.regen_fluid.tooltip")).formatted(Formatting.GREEN);
-    public static MutableText JOKE_FLUID_ONE_TOOLTIP = MutableText.of(new TranslatableTextContent("item.dadobugbedrockores.regen_joke_fluid_one.tooltip")).formatted(Formatting.GOLD);
-    public static MutableText JOKE_ITEM_ONE_TOOLTIP = MutableText.of(new TranslatableTextContent("item.dadobugbedrockores.regen_joke_item_one.tooltip")).formatted(Formatting.GOLD);
-    public static MutableText XP_TOOLTIP = MutableText.of(new TranslatableTextContent("item.dadobugbedrockores.regen_xp.tooltip")).formatted(Formatting.AQUA);
+    public static MutableText DEFAULT_TOOLTIP = new TranslatableText("item.dadobugbedrockores.regen_power.tooltip").formatted(Formatting.GREEN);
+    public static MutableText FRACTURED_TOOLTIP = new TranslatableText("item.dadobugbedrockores.regen_broken.tooltip").formatted(Formatting.RED);
+    public static MutableText FLUID_TOOLTIP = new TranslatableText("item.dadobugbedrockores.regen_fluid.tooltip").formatted(Formatting.GREEN);
+    public static MutableText JOKE_FLUID_ONE_TOOLTIP = new TranslatableText("item.dadobugbedrockores.regen_joke_fluid_one.tooltip").formatted(Formatting.GOLD);
+    public static MutableText JOKE_ITEM_ONE_TOOLTIP = new TranslatableText("item.dadobugbedrockores.regen_joke_item_one.tooltip").formatted(Formatting.GOLD);
+    public static MutableText XP_TOOLTIP = new TranslatableText("item.dadobugbedrockores.regen_xp.tooltip").formatted(Formatting.AQUA);
 
 
 

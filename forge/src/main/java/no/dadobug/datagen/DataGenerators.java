@@ -1,9 +1,9 @@
 package no.dadobug.datagen;
 
 import net.minecraft.data.DataGenerator;
-import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import no.dadobug.EntryModule;
 
 /*
@@ -19,16 +19,16 @@ public class DataGenerators {
 
         if (event.includeClient()) {
             EntryModule.LOGGER.info("Started client data generation");
-            generator.addProvider(true, new BlockStateGen(generator, event.getExistingFileHelper()));
-            generator.addProvider(true, new ItemModelsGen(generator, event.getExistingFileHelper()));
-            generator.addProvider(true, new LanguageGen(generator, "en_us"));
+            generator.addProvider(new BlockStateGen(generator, event.getExistingFileHelper()));
+            generator.addProvider(new ItemModelsGen(generator, event.getExistingFileHelper()));
+            generator.addProvider(new LanguageGen(generator, "en_us"));
         }
         if (event.includeServer()) {
             EntryModule.LOGGER.info("Started server data generation");
-            generator.addProvider(true, new LootTableGen(generator));
+            generator.addProvider(new LootTableGen(generator));
             BlockTagsGen blockTagsGen = new BlockTagsGen(generator, event.getExistingFileHelper());
-            generator.addProvider(true, blockTagsGen);
-            generator.addProvider(true, new ItemTagsGen(generator, blockTagsGen, event.getExistingFileHelper()));
+            generator.addProvider(blockTagsGen);
+            generator.addProvider(new ItemTagsGen(generator, blockTagsGen, event.getExistingFileHelper()));
         }
         
     }

@@ -18,13 +18,13 @@ import net.minecraft.state.StateManager;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.intprovider.IntProvider;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
-import net.minecraft.util.math.random.ChunkRandom;
-import net.minecraft.util.math.random.Random;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import no.dadobug.EntryModule;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Random;
 
 public class RegenerativeBlock extends BlockWithEntity {
     protected final UniformIntProvider experienceDropped;
@@ -32,6 +32,7 @@ public class RegenerativeBlock extends BlockWithEntity {
     protected final boolean infinite;
     protected final boolean silk_able;
     protected final BlockState replaceBlock;
+    protected Random random;
 
 
     public RegenerativeBlock(AbstractBlock.Settings settings, boolean ReplaceWithBlock, boolean infinite, boolean silk_able, BlockState replaceBlock) {
@@ -58,6 +59,7 @@ public class RegenerativeBlock extends BlockWithEntity {
 
     public RegenerativeBlock(Settings settings, boolean ReplaceWithBlock, UniformIntProvider experienceDropped, IntProvider durabilityProvider, boolean infinite, boolean silk_able, BlockState replaceBlock){
         super(settings);
+        this.random = new Random();
         this.experienceDropped = experienceDropped;
         this.durabilityProvider = durabilityProvider;
         this.infinite = infinite;
@@ -88,6 +90,11 @@ public class RegenerativeBlock extends BlockWithEntity {
 
     }
 
+    @Nullable
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
+        return checkType(type, EntryModule.REGENERATIVEBLOCKTYPE.get(), RegenerativeBlockEntity::tick);
+    }
+
 
     @Override
     public float calcBlockBreakingDelta(BlockState state, PlayerEntity player, BlockView world, BlockPos pos) {
@@ -108,21 +115,28 @@ public class RegenerativeBlock extends BlockWithEntity {
         return PistonBehavior.BLOCK;
     }
 
+    /*
+    @Override
+    public void onDestroyedByExplosion(World world, BlockPos pos, Explosion explosion) {
+        if (!world.isClient) {
+            world.setBlockState(pos, super.asBlock().getDefaultState());
+        }
+    }
+    */
+
     @Override
     public boolean isTranslucent(BlockState state, BlockView world, BlockPos pos) {
         return true;
     }
 
-    public void onStacksDropped(BlockState state, ServerWorld world, BlockPos pos, ItemStack stack, boolean dropExperience) {
-        super.onStacksDropped(state, world, pos, stack, dropExperience);
-        if(dropExperience){
-            if (EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, stack) == 0 && EnchantmentHelper.getLevel(EntryModule.CURSE_OF_FRACTURING.get(), stack) == 0 && EnchantmentHelper.getLevel(EntryModule.CURSE_OF_SHATTERING.get(), stack) == 0 && EnchantmentHelper.getLevel(EntryModule.ARCANE_EXTRACTION.get(), stack) == 0 && EnchantmentHelper.getLevel(EntryModule.EXTRACTION.get(), stack) == 0) {
-                int i1 = 1 + EnchantmentHelper.getLevel(EntryModule.SHATTERING.get(), stack);
-                for (int x = 0; x < i1; x++) {
-                    int i = this.experienceDropped.get(world.random);
-                    if (i > 0) {
-                        this.dropExperience(world, pos, ((EnchantmentHelper.getLevel(EntryModule.SHATTERING.get(), stack) * (this.infinite ? 2 : 1)) + 1) * i);
-                    }
+    public void onStacksDropped(BlockState state, ServerWorld world, BlockPos pos, ItemStack stack) {
+        super.onStacksDropped(state, world, pos, stack);
+        if (EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, stack) == 0 && EnchantmentHelper.getLevel(EntryModule.CURSE_OF_FRACTURING.get(), stack) == 0 && EnchantmentHelper.getLevel(EntryModule.CURSE_OF_SHATTERING.get(), stack) == 0 && EnchantmentHelper.getLevel(EntryModule.ARCANE_EXTRACTION.get(), stack) == 0 && EnchantmentHelper.getLevel(EntryModule.EXTRACTION.get(), stack) == 0) {
+            int i1 = 1 + EnchantmentHelper.getLevel(EntryModule.SHATTERING.get(), stack);
+            for(int x = 0; x<i1; x++) {
+                int i = this.experienceDropped.get(world.random);
+                if (i > 0) {
+                    this.dropExperience(world, pos, ((EnchantmentHelper.getLevel(EntryModule.SHATTERING.get(), stack) * (this.infinite?2:1)) + 1) * i);
                 }
             }
         }
@@ -139,7 +153,7 @@ public class RegenerativeBlock extends BlockWithEntity {
                         dropStack(world, pos, stackx);
                     });
                 } else {
-                    int i1 = (1 + EnchantmentHelper.getLevel(EntryModule.SHATTERING.get(), stack)) * ((this.infinite && EnchantmentHelper.getLevel(EntryModule.SHATTERING.get(), stack) > 0) ? world.random.nextBetween(3, 7) : 1);
+                    int i1 = (1 + EnchantmentHelper.getLevel(EntryModule.SHATTERING.get(), stack)) * ((this.infinite && EnchantmentHelper.getLevel(EntryModule.SHATTERING.get(), stack) > 0) ? world.random.nextInt(3, 7) : 1);
                     for (int x = 0; x < i1; x++) {
                         getDroppedStacks(state, (ServerWorld) world, pos, blockEntity, entity, stack).forEach((stackx) -> {
                             dropStack(world, pos, stackx);
@@ -147,7 +161,7 @@ public class RegenerativeBlock extends BlockWithEntity {
                     }
                 }
             }
-            state.onStacksDropped((ServerWorld) world, pos, stack, true);
+            state.onStacksDropped((ServerWorld) world, pos, stack);
         }
 
 
@@ -210,7 +224,6 @@ public class RegenerativeBlock extends BlockWithEntity {
         return BlockRenderType.MODEL;
     }
 
-    /*
     public int getExpDrop(BlockState state, WorldView reader, BlockPos pos, int fortune, int silktouch) {
         EntryModule.LOGGER.debug("checked XP");
         BlockEntity entity = reader.getBlockEntity(pos);
@@ -219,7 +232,7 @@ public class RegenerativeBlock extends BlockWithEntity {
                 int z = 0;
                 int i1 = 1 + EnchantmentHelper.getLevel(EntryModule.SHATTERING.get(), ((RegenerativeBlockEntity)entity).getLastItem());
                 for (int x = 0; x < i1; x++) {
-                    int i = this.experienceDropped.get(reader.getChunk(pos).);
+                    int i = this.experienceDropped.get(this.random);
                     if (i > 0) {
                         z = z + ((EnchantmentHelper.getLevel(EntryModule.SHATTERING.get(), ((RegenerativeBlockEntity)entity).getLastItem()) * (this.infinite ? 2 : 1)) + 1) * i;
                     }
@@ -229,7 +242,6 @@ public class RegenerativeBlock extends BlockWithEntity {
         }
         return 0;
     }
-     */
 
     @Override
     @Nullable

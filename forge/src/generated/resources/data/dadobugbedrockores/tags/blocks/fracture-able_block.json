@@ -1,4 +1,5 @@
 {
+  "replace": false,
   "values": [
     "dadobugbedrockores:bedrock_hollow",
     "dadobugbedrockores:bedrock_xp_leak",

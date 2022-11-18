@@ -1,4 +1,5 @@
 {
+  "replace": false,
   "values": [
     "dadobugbedrockores:regenerative_fractured",
     "dadobugbedrockores:regenerative_xp_leak",
