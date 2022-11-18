@@ -1,41 +1,7 @@
 {
   "pools": [
     {
-      "name": "bedrock_mm_orichalcum_ore",
-      "rolls": 1.0,
       "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:loot_table",
-          "conditions": [
-            {
-              "condition": "dadobugbedrockores:modloaded",
-              "mod_id": "mythicmetals"
-            }
-          ],
-          "name": "mythicmetals:blocks/orichalcum_ore"
-        },
-        {
-          "type": "minecraft:loot_table",
-          "conditions": [
-            {
-              "condition": "dadobugbedrockores:modloaded",
-              "mod_id": "mythicmetals"
-            }
-          ],
-          "name": "mythicmetals:blocks/deepslate_orichalcum_ore"
-        },
-        {
-          "type": "minecraft:loot_table",
-          "conditions": [
-            {
-              "condition": "dadobugbedrockores:modloaded",
-              "mod_id": "mythicmetals"
-            }
-          ],
-          "name": "mythicmetals:blocks/smooth_basalt_orichalcum_ore"
-        }
-      ],
       "conditions": [
         {
           "condition": "minecraft:inverted",
@@ -101,31 +67,44 @@
             }
           }
         }
-      ]
-    },
-    {
-      "name": "bedrock_mm_orichalcum_ore",
-      "rolls": 1.0,
-      "bonus_rolls": 0.0,
+      ],
       "entries": [
         {
-          "type": "minecraft:item",
-          "functions": [
+          "type": "minecraft:loot_table",
+          "conditions": [
             {
-              "function": "minecraft:copy_nbt",
-              "source": "block_entity",
-              "ops": [
-                {
-                  "source": "durability",
-                  "target": "BlockEntityTag.durability",
-                  "op": "replace"
-                }
-              ]
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "mythicmetals"
             }
           ],
-          "name": "dadobugbedrockores:regenerative_mm_orichalcum"
+          "name": "mythicmetals:blocks/orichalcum_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "mythicmetals"
+            }
+          ],
+          "name": "mythicmetals:blocks/deepslate_orichalcum_ore"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "mythicmetals"
+            }
+          ],
+          "name": "mythicmetals:blocks/smooth_basalt_orichalcum_ore"
         }
       ],
+      "name": "bedrock_mm_orichalcum_ore",
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
       "conditions": [
         {
           "condition": "minecraft:match_tool",
@@ -140,31 +119,31 @@
             ]
           }
         }
-      ]
-    },
-    {
-      "name": "bedrock_mm_orichalcum_ore",
-      "rolls": 1.0,
-      "bonus_rolls": 0.0,
+      ],
       "entries": [
         {
           "type": "minecraft:item",
           "functions": [
             {
               "function": "minecraft:copy_nbt",
-              "source": "block_entity",
               "ops": [
                 {
+                  "op": "replace",
                   "source": "durability",
-                  "target": "BlockEntityTag.durability",
-                  "op": "replace"
+                  "target": "BlockEntityTag.durability"
                 }
-              ]
+              ],
+              "source": "block_entity"
             }
           ],
-          "name": "dadobugbedrockores:bedrock_mm_orichalcum_ore"
+          "name": "dadobugbedrockores:regenerative_mm_orichalcum"
         }
       ],
+      "name": "bedrock_mm_orichalcum_ore",
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
       "conditions": [
         {
           "condition": "minecraft:match_tool",
@@ -179,7 +158,28 @@
             ]
           }
         }
-      ]
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:copy_nbt",
+              "ops": [
+                {
+                  "op": "replace",
+                  "source": "durability",
+                  "target": "BlockEntityTag.durability"
+                }
+              ],
+              "source": "block_entity"
+            }
+          ],
+          "name": "dadobugbedrockores:bedrock_mm_orichalcum_ore"
+        }
+      ],
+      "name": "bedrock_mm_orichalcum_ore",
+      "rolls": 1.0
     }
   ]
 }

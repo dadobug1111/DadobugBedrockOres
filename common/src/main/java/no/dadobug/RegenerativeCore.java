@@ -15,16 +15,16 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.Property;
-import net.minecraft.text.LiteralText;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.TranslatableTextContent;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
+import no.dadobug.blocks.RegenerativeBlock;
 
 import java.util.Iterator;
 import java.util.List;
@@ -132,11 +132,13 @@ public class RegenerativeCore extends BlockItem {
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
 
         tooltip.add(this.toolTip);
-        tooltip.add( new TranslatableText("item.dadobugbedrockores.regen_need_host.tooltip").formatted(Formatting.LIGHT_PURPLE) );
+        tooltip.add( MutableText.of(new TranslatableTextContent("item.dadobugbedrockores.regen_need_host.tooltip")).formatted(Formatting.LIGHT_PURPLE) );
         NbtCompound nbt = getBlockEntityNbt(itemStack);
         if(nbt != null) {
             if (nbt.contains("durability")) {
-                tooltip.add(new TranslatableText("item.dadobugbedrockores.durability.tooltip").append(new LiteralText(String.valueOf(nbt.getInt("durability")))));
+                if(!((RegenerativeBlock)this.getBlock()).isInfinite()){
+                    tooltip.add(MutableText.of(new TranslatableTextContent("item.dadobugbedrockores.durability.tooltip")).append(String.valueOf(nbt.getInt("durability"))));
+                }
             }
         }
 

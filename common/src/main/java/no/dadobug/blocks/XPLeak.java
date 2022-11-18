@@ -46,7 +46,7 @@ public class XPLeak extends RegenerativeBlock{
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         AtomicBoolean used = new AtomicBoolean(false);
-        player.getItemsHand().forEach((stack) -> {
+        player.getHandItems().forEach((stack) -> {
             if(stack.getItem() instanceof GlassBottleItem && !used.get()) {
                 stack.decrement(1);
                 used.set(true);
