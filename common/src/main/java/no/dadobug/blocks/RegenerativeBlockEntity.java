@@ -146,9 +146,25 @@ public class RegenerativeBlockEntity extends BlockEntity {
                 }
                 sendData(worldIn);
                 return false;
-            } else if(((RegenerativeBlock) this.keepstate.getBlock()).isSilk_able() && (EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, this.lastItem) > 0)){
-                return false;
-            } else if(newState != this.keepstate && (this.durability >0 || ((RegenerativeBlock) this.keepstate.getBlock()).isInfinite())){
+            } else if(this.keepstate.getBlock() instanceof RegenerativeBlock block){
+                if(block.isSilk_able() && (EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, this.lastItem) > 0)) {
+                    return false;
+                } else if(newState != this.keepstate && (this.durability > 0 || block.isInfinite())){
+                    EntryModule.LOGGER.debug("put it back");
+                    worldIn.setBlockState(this.pos, this.keepstate);
+                    if (!this.stacksDropped && !this.regenComplete) {
+                        this.keepstate.getBlock().afterBreak(worldIn, this.lastPlayer, pos, this.keepstate, this, this.lastItem);
+                        EntryModule.LOGGER.debug("forced drops");
+                    }
+                    this.lastItem = ItemStack.EMPTY;
+                    this.regenComplete = true;
+                    this.lastPlayer = null;
+                    this.stacksDropped = false;
+                    sendData(worldIn);
+                    return true;
+                }
+            } else if(newState != this.keepstate && (this.durability > 0)){
+                EntryModule.LOGGER.warn("Non-Regenerative block set as keepstate at " + pos.toString());
                 EntryModule.LOGGER.debug("put it back");
                 worldIn.setBlockState(this.pos, this.keepstate);
                 if (!this.stacksDropped && !this.regenComplete) {
@@ -161,6 +177,8 @@ public class RegenerativeBlockEntity extends BlockEntity {
                 this.stacksDropped = false;
                 sendData(worldIn);
                 return true;
+            } else {
+                EntryModule.LOGGER.warn("Non-Regenerative block set as keepstate at " + pos.toString());
             }
         }
         return false;
