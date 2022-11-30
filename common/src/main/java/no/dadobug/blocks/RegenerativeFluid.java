@@ -3,6 +3,7 @@ package no.dadobug.blocks;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.FluidDrainable;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.fluid.Fluid;
@@ -64,8 +65,11 @@ public class RegenerativeFluid extends RegenerativeBlock implements FluidDrainab
     @Override
     public ItemStack tryDrainFluid(WorldAccess world, BlockPos pos, BlockState state) {
         BlockEntity blockEntity = world.getBlockEntity(pos);
-        if (blockEntity instanceof RegenerativeBlockEntity && !world.isClient()) {
-            ((RegenerativeBlockEntity)blockEntity).damageBlock(state);
+        if (blockEntity instanceof RegenerativeBlockEntity entity && !world.isClient()) {
+            entity.damageBlock(state, false);
+            if(entity.getDurability() < 1){
+                world.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
+            }
         }
         if (this.fluid != Fluids.EMPTY) {
             return new ItemStack(this.fluid.getBucketItem());

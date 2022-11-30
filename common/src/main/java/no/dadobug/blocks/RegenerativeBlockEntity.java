@@ -40,8 +40,8 @@ public class RegenerativeBlockEntity extends BlockEntity {
         super(EntryModule.REGENERATIVEBLOCKTYPE.get(), pos, state);
         this.keepstate = state;
         Block block = state.getBlock();
-        if(block instanceof RegenerativeBlock) {
-            this.durability = ((RegenerativeBlock) block).durabilityProvider.get(((RegenerativeBlock) block).random);
+        if(block instanceof RegenerativeBlock block1) {
+            this.durability = block1.durabilityProvider.get(block1.random);
         }
 
     }
@@ -81,16 +81,22 @@ public class RegenerativeBlockEntity extends BlockEntity {
         this.regenComplete = false;
         this.lastItem = player.getMainHandStack();
         this.lastPlayer = player;
-        this.damageBlock(state);
+        this.damageBlock(state, true);
         sendData(worldIn);
     }
 
-    public void damageBlock(BlockState state){
+    public void damageBlock(BlockState state, boolean doEnchant){
         Block block = state.getBlock();
-        if(block instanceof RegenerativeBlock){
-            if(!((RegenerativeBlock) block).isInfinite() && !(state.isIn(EntryModule.CORE_TAG) && (EnchantmentHelper.getLevel(EntryModule.EXTRACTION.get(), this.lastItem) > 0)) && !(state.isIn(EntryModule.FRACTURE_TAG) && (EnchantmentHelper.getLevel(EntryModule.CURSE_OF_FRACTURING.get(), this.lastItem) > 0)) && !(((RegenerativeBlock) block).isSilk_able() && (EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, this.lastItem) > 0))){
-                for(int i = 0; i<(EnchantmentHelper.getLevel(EntryModule.SHATTERING.get(), this.lastItem)+1);i++) {
-                    this.durability = this.durability - 6 - (EnchantmentHelper.getLevel(EntryModule.SHATTERING.get(), this.lastItem) > 0 ? 1 : 0) + Math.min(EnchantmentHelper.getLevel(EntryModule.GENTLE_MINING.get(), this.lastItem), 5);
+        if(block instanceof RegenerativeBlock block1){
+            if(!block1.isInfinite()){
+                if(doEnchant) {
+                    if (!(state.isIn(EntryModule.CORE_TAG) && (EnchantmentHelper.getLevel(EntryModule.EXTRACTION.get(), this.lastItem) > 0)) && !(state.isIn(EntryModule.FRACTURE_TAG) && (EnchantmentHelper.getLevel(EntryModule.CURSE_OF_FRACTURING.get(), this.lastItem) > 0)) && (!block1.isSilk_able() && (EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, this.lastItem) > 0))) {
+                        for (int i = 0; i < (EnchantmentHelper.getLevel(EntryModule.SHATTERING.get(), this.lastItem) + 1); i++) {
+                            this.durability = this.durability - 6 - (EnchantmentHelper.getLevel(EntryModule.SHATTERING.get(), this.lastItem) > 0 ? 1 : 0) + Math.min(EnchantmentHelper.getLevel(EntryModule.GENTLE_MINING.get(), this.lastItem), 5);
+                        }
+                    }
+                } else {
+                    this.durability -= 6;
                 }
             }
         }
@@ -115,7 +121,7 @@ public class RegenerativeBlockEntity extends BlockEntity {
 
         if(worldIn != null && !worldIn.isClient) {
             if(this.regenComplete){
-                this.damageBlock(this.keepstate);
+                this.damageBlock(this.keepstate, true);
             }
             if (this.keepstate.isIn(EntryModule.FRACTURE_TAG) && (EnchantmentHelper.getLevel(EntryModule.CURSE_OF_FRACTURING.get(), this.lastItem) > 0)) {
                 worldIn.setBlockState(pos, EntryModule.BEDROCK_FRACTURED.ore().get().getDefaultState().with(OresBlockStates.REPLACE_WITH_BLOCK, this.keepstate.get(OresBlockStates.REPLACE_WITH_BLOCK)));
@@ -135,19 +141,19 @@ public class RegenerativeBlockEntity extends BlockEntity {
                 }
                 sendData(worldIn);
                 return false;
-            } else if((this.keepstate.contains(OresBlockStates.REPLACE_WITH_BLOCK) && (((EnchantmentHelper.getLevel(EntryModule.SHATTERING.get(), this.lastItem) > 0) && ((RegenerativeBlock) this.keepstate.getBlock()).isInfinite()) || (EnchantmentHelper.getLevel(EntryModule.CURSE_OF_SHATTERING.get(), this.lastItem) > 0))) || this.durability < 0  || (EnchantmentHelper.getLevel(EntryModule.ARCANE_EXTRACTION.get(), this.lastItem) > 0)) {
-                if(this.keepstate.get(OresBlockStates.REPLACE_WITH_BLOCK)) {
-                    worldIn.setBlockState(pos, ((RegenerativeBlock) this.keepstate.getBlock()).getReplaceBlock());
-                    if (!this.stacksDropped && !this.regenComplete) {
-                        this.keepstate.getBlock().afterBreak(worldIn, this.lastPlayer, pos, this.keepstate, this, this.lastItem);
-                        this.stacksDropped = false;
-                        EntryModule.LOGGER.debug("forced drops");
-                    }
-                }
-                sendData(worldIn);
-                return false;
             } else if(this.keepstate.getBlock() instanceof RegenerativeBlock block){
                 if(block.isSilk_able() && (EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, this.lastItem) > 0)) {
+                    return false;
+                } else if((this.keepstate.contains(OresBlockStates.REPLACE_WITH_BLOCK) && (((EnchantmentHelper.getLevel(EntryModule.SHATTERING.get(), this.lastItem) > 0) && block.isInfinite()) || (EnchantmentHelper.getLevel(EntryModule.CURSE_OF_SHATTERING.get(), this.lastItem) > 0))) || this.durability < 0  || (EnchantmentHelper.getLevel(EntryModule.ARCANE_EXTRACTION.get(), this.lastItem) > 0)) {
+                    if(this.keepstate.get(OresBlockStates.REPLACE_WITH_BLOCK)) {
+                        worldIn.setBlockState(pos, block.getReplaceBlock());
+                        if (!this.stacksDropped && !this.regenComplete) {
+                            this.keepstate.getBlock().afterBreak(worldIn, this.lastPlayer, pos, this.keepstate, this, this.lastItem);
+                            this.stacksDropped = false;
+                            EntryModule.LOGGER.debug("forced drops");
+                        }
+                    }
+                    sendData(worldIn);
                     return false;
                 } else if(newState != this.keepstate && (this.durability > 0 || block.isInfinite())){
                     EntryModule.LOGGER.debug("put it back");
