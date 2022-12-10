@@ -2,6 +2,7 @@ package no.dadobug.blocks;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.GlassBottleItem;
@@ -48,15 +49,18 @@ public class XPLeak extends RegenerativeBlock{
         AtomicBoolean used = new AtomicBoolean(false);
         player.getHandItems().forEach((stack) -> {
             if(stack.getItem() instanceof GlassBottleItem && !used.get()) {
-                stack.decrement(1);
+                if(!player.isCreative())stack.decrement(1);
                 used.set(true);
                 player.getInventory().insertStack(Items.EXPERIENCE_BOTTLE.getDefaultStack());
             }
         });
         if(used.get()){
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof RegenerativeBlockEntity && !world.isClient()) {
-                ((RegenerativeBlockEntity)blockEntity).damageBlock(state);
+            if (blockEntity instanceof RegenerativeBlockEntity entity && !world.isClient()) {
+                entity.damageBlock(state, false);
+                if(entity.getDurability() < 1){
+                    world.setBlockState(pos, Blocks.AIR.getDefaultState());
+                }
             }
             return ActionResult.SUCCESS;
         }
