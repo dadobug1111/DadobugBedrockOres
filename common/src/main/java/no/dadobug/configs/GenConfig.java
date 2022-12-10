@@ -3,7 +3,6 @@ package no.dadobug.configs;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
-import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.Comment;
 import no.dadobug.EntryModule;
 
 @Config(name = EntryModule.modid + "_gen_config")

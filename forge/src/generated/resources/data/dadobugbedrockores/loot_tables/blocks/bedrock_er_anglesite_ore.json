@@ -1,21 +1,7 @@
 {
   "pools": [
     {
-      "name": "bedrock_er_anglesite_ore",
-      "rolls": 1.0,
       "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:loot_table",
-          "conditions": [
-            {
-              "condition": "dadobugbedrockores:modloaded",
-              "mod_id": "bigreactors"
-            }
-          ],
-          "name": "bigreactors:blocks/anglesite_ore"
-        }
-      ],
       "conditions": [
         {
           "condition": "minecraft:inverted",
@@ -81,31 +67,24 @@
             }
           }
         }
-      ]
-    },
-    {
-      "name": "bedrock_er_anglesite_ore",
-      "rolls": 1.0,
-      "bonus_rolls": 0.0,
+      ],
       "entries": [
         {
-          "type": "minecraft:item",
-          "functions": [
+          "type": "minecraft:loot_table",
+          "conditions": [
             {
-              "function": "minecraft:copy_nbt",
-              "source": "block_entity",
-              "ops": [
-                {
-                  "source": "durability",
-                  "target": "BlockEntityTag.durability",
-                  "op": "replace"
-                }
-              ]
+              "condition": "dadobugbedrockores:modloaded",
+              "mod_id": "bigreactors"
             }
           ],
-          "name": "dadobugbedrockores:regenerative_er_anglesite"
+          "name": "bigreactors:blocks/anglesite_ore"
         }
       ],
+      "name": "bedrock_er_anglesite_ore",
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
       "conditions": [
         {
           "condition": "minecraft:match_tool",
@@ -120,31 +99,31 @@
             ]
           }
         }
-      ]
-    },
-    {
-      "name": "bedrock_er_anglesite_ore",
-      "rolls": 1.0,
-      "bonus_rolls": 0.0,
+      ],
       "entries": [
         {
           "type": "minecraft:item",
           "functions": [
             {
               "function": "minecraft:copy_nbt",
-              "source": "block_entity",
               "ops": [
                 {
+                  "op": "replace",
                   "source": "durability",
-                  "target": "BlockEntityTag.durability",
-                  "op": "replace"
+                  "target": "BlockEntityTag.durability"
                 }
-              ]
+              ],
+              "source": "block_entity"
             }
           ],
-          "name": "dadobugbedrockores:bedrock_er_anglesite_ore"
+          "name": "dadobugbedrockores:regenerative_er_anglesite"
         }
       ],
+      "name": "bedrock_er_anglesite_ore",
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
       "conditions": [
         {
           "condition": "minecraft:match_tool",
@@ -159,7 +138,28 @@
             ]
           }
         }
-      ]
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:copy_nbt",
+              "ops": [
+                {
+                  "op": "replace",
+                  "source": "durability",
+                  "target": "BlockEntityTag.durability"
+                }
+              ],
+              "source": "block_entity"
+            }
+          ],
+          "name": "dadobugbedrockores:bedrock_er_anglesite_ore"
+        }
+      ],
+      "name": "bedrock_er_anglesite_ore",
+      "rolls": 1.0
     }
   ]
 }

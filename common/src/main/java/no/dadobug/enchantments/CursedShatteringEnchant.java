@@ -7,9 +7,9 @@ import no.dadobug.EntryModule;
 import no.dadobug.configs.EnchantConfig;
 
 public class CursedShatteringEnchant extends Enchantment {
-    private boolean doTableEnchant;
-    private boolean doVillagerEnchant;
-    private boolean doLootEnchant;
+    private final boolean doTableEnchant;
+    private final boolean doVillagerEnchant;
+    private final boolean doLootEnchant;
     public CursedShatteringEnchant(EnchantConfig config) {
         super(Enchantment.Rarity.RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
         this.doTableEnchant = config.doTableEnchant;

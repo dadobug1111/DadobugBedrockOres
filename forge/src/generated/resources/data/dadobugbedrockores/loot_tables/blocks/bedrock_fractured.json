@@ -1,28 +1,7 @@
 {
   "pools": [
     {
-      "name": "bedrock_fractured",
-      "rolls": 1.0,
       "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:copy_nbt",
-              "source": "block_entity",
-              "ops": [
-                {
-                  "source": "durability",
-                  "target": "BlockEntityTag.durability",
-                  "op": "replace"
-                }
-              ]
-            }
-          ],
-          "name": "dadobugbedrockores:regenerative_fractured"
-        }
-      ],
       "conditions": [
         {
           "condition": "minecraft:match_tool",
@@ -37,7 +16,28 @@
             ]
           }
         }
-      ]
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:copy_nbt",
+              "ops": [
+                {
+                  "op": "replace",
+                  "source": "durability",
+                  "target": "BlockEntityTag.durability"
+                }
+              ],
+              "source": "block_entity"
+            }
+          ],
+          "name": "dadobugbedrockores:regenerative_fractured"
+        }
+      ],
+      "name": "bedrock_fractured",
+      "rolls": 1.0
     }
   ]
 }

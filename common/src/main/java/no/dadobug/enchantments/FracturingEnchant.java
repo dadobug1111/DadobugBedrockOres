@@ -3,16 +3,14 @@ package no.dadobug.enchantments;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.PickaxeItem;
 import no.dadobug.EntryModule;
 import no.dadobug.configs.EnchantConfig;
 
 public class FracturingEnchant extends Enchantment {
 
-    private boolean doTableEnchant;
-    private boolean doVillagerEnchant;
-    private boolean doLootEnchant;
+    private final boolean doTableEnchant;
+    private final boolean doVillagerEnchant;
+    private final boolean doLootEnchant;
     public FracturingEnchant(EnchantConfig config) {
         super(Enchantment.Rarity.RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
         this.doTableEnchant = config.doTableEnchant;
