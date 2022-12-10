@@ -49,7 +49,7 @@ public class XPLeak extends RegenerativeBlock{
         AtomicBoolean used = new AtomicBoolean(false);
         player.getItemsHand().forEach((stack) -> {
             if(stack.getItem() instanceof GlassBottleItem && !used.get()) {
-                stack.decrement(1);
+                if(!player.isCreative())stack.decrement(1);
                 used.set(true);
                 player.getInventory().insertStack(Items.EXPERIENCE_BOTTLE.getDefaultStack());
             }

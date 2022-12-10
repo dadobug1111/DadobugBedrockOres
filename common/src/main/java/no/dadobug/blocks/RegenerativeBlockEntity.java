@@ -220,13 +220,6 @@ public class RegenerativeBlockEntity extends BlockEntity {
         return createNbt();
     }
 
-    public static <E extends BlockEntity> void tick(World world, BlockPos blockPos, BlockState state, RegenerativeBlockEntity entity) {
-        if (!state.equals(entity.getKeepstate())){
-            entity.regen(world, state);
-        }
-
-    }
-
     public void sendData(World worldIn) {
         if (worldIn != null && !worldIn.isClient)
             worldIn.updateListeners(this.pos, this.keepstate, this.keepstate, 2 | 4 | 16);

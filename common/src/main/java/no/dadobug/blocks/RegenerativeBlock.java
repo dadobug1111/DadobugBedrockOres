@@ -90,12 +90,6 @@ public class RegenerativeBlock extends BlockWithEntity {
 
     }
 
-    @Nullable
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return checkType(type, EntryModule.REGENERATIVEBLOCKTYPE.get(), RegenerativeBlockEntity::tick);
-    }
-
-
     @Override
     public float calcBlockBreakingDelta(BlockState state, PlayerEntity player, BlockView world, BlockPos pos) {
         if(!player.canHarvest(state))return 0.0f;
